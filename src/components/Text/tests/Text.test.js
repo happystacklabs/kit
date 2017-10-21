@@ -5,7 +5,7 @@ import Text from ".."
 
 describe('Text', () => {
   it('show the children in text', () => {
-    const wrapper = shallow(<Text>foo</Text>);
-    expect(wrapper.text()).toBe("foo");
+    const text = shallow(<Text>foo</Text>);
+    expect(text.text()).toBe("foo");
   });
 });
