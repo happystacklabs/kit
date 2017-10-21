@@ -1,7 +1,25 @@
 {
-  "name": "happystack-kit",
+  "name": "@happystack/kit",
+  "description": "Happystack components kit.",
   "version": "0.1.0",
   "private": true,
+  "author": "Heinrich Tremblay",
+  "homepage": "https://github.com/HeinrichTremblay/happystack-kit",
+  "repository": "https://github.com/HeinrichTremblay/happystack-kit",
+  "bugs": {
+    "url": "https://github.com/HeinrichTremblay/happystack-kit/issues"
+  },
+  "keywords": [
+    "happystack",
+    "kit",
+    "react",
+    "components",
+    "component library"
+  ],
+  "devDependencies": {
+    "enzyme": "^3.1.0",
+    "jest": "^21.2.1"
+  },
   "dependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
