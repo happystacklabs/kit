@@ -3,82 +3,137 @@ import Text from ".."
 
 
 describe('Text', () => {
-  it('show the children in text', () => {
-    const text = shallow(
-      <Text>foo</Text>
-    );
-    expect(text.text()).toBe('foo');
+  describe('children', () => {
+    it('show in text', () => {
+      const text = shallow(
+        <Text>foo</Text>
+      );
+      expect(text.text()).toBe('foo');
+    });
+
+    it('can be optional', () => {
+      const text = shallow(
+        <Text></Text>
+      );
+      expect(text.text()).toBe('');
+    });
   });
 
-  it('can be empty', () => {
-    const text = shallow(
-      <Text></Text>
-    );
-    expect(text.text()).toBe('');
+  describe('type', () => {
+    it('show span by default', () => {
+      const text = shallow(
+        <Text>foo</Text>
+      );
+      expect(text.type()).toBe('span');
+    });
+
+    it('show p when given by props', () => {
+      const text = shallow(
+        <Text element="p">foo</Text>
+      );
+      expect(text.type()).toBe('p');
+    });
+
+    it('show h1 when given by props', () => {
+      const text = shallow(
+        <Text element="h1">foo</Text>
+      );
+      expect(text.type()).toBe('h1');
+    });
+
+    it('show h2 when given by props', () => {
+      const text = shallow(
+        <Text element="h2">foo</Text>
+      );
+      expect(text.type()).toBe('h2');
+    });
+
+    it('show h3 when given by props', () => {
+      const text = shallow(
+        <Text element="h3">foo</Text>
+      );
+      expect(text.type()).toBe('h3');
+    });
+
+    it('show h4 when given by props', () => {
+      const text = shallow(
+        <Text element="h4">foo</Text>
+      );
+      expect(text.type()).toBe('h4');
+    });
+
+    it('show h5 when given by props', () => {
+      const text = shallow(
+        <Text element="h5">foo</Text>
+      );
+      expect(text.type()).toBe('h5');
+    });
+
+    it('show h6 when given by props', () => {
+      const text = shallow(
+        <Text element="h6">foo</Text>
+      );
+      expect(text.type()).toBe('h6');
+    });
   });
 
-  it('show the span type by default', () => {
-    const text = shallow(
-      <Text>foo</Text>
-    );
-    expect(text.type()).toBe('span');
+  describe('size', () => {
+    it('show regular by default', () => {
+      const text = shallow(
+        <Text>foo</Text>
+      );
+      expect(text.hasClass('sizeRegular')).toBe(true);
+    });
+
+    it('show small when given by props', () => {
+      const text = shallow(
+        <Text size="small">foo</Text>
+      );
+      expect(text.hasClass('sizeSmall')).toBe(true);
+    });
+
+    it('show medium when given by props', () => {
+      const text = shallow(
+        <Text size="medium">foo</Text>
+      );
+      expect(text.hasClass('sizeMedium')).toBe(true);
+    });
+
+    it('show large when given by props', () => {
+      const text = shallow(
+        <Text size="large">foo</Text>
+      );
+      expect(text.hasClass('sizeLarge')).toBe(true);
+    });
+
+    it('show extra large when given by props', () => {
+      const text = shallow(
+        <Text size="extraLarge">foo</Text>
+      );
+      expect(text.hasClass('sizeExtraLarge')).toBe(true);
+    });
+
+    it('show extra small when given by props', () => {
+      const text = shallow(
+        <Text size="extraSmall">foo</Text>
+      );
+      expect(text.hasClass('sizeExtraSmall')).toBe(true);
+    });
   });
 
+  describe('weight', () => {
+    it('show normal by default', () => {
+      const text = shallow(
+        <Text>foo</Text>
+      );
+      expect(text.hasClass('normalWeight')).toBe(true);
+    });
 
-  it('show the p type when given by props', () => {
-    const text = shallow(
-      <Text element="p">foo</Text>
-    );
-    expect(text.type()).toBe('p');
+    it('show bold when given by props', () => {
+      const text = shallow(
+        <Text weight="bold">foo</Text>
+      );
+      expect(text.hasClass('boldWeight')).toBe(true);
+    });
   });
-
-  it('show the h1 type when given by props', () => {
-    const text = shallow(
-      <Text element="h1">foo</Text>
-    );
-    expect(text.type()).toBe('h1');
-  });
-
-  it('show the h2 type when given by props', () => {
-    const text = shallow(
-      <Text element="h2">foo</Text>
-    );
-    expect(text.type()).toBe('h2');
-  });
-
-  it('show the h3 type when given by props', () => {
-    const text = shallow(
-      <Text element="h3">foo</Text>
-    );
-    expect(text.type()).toBe('h3');
-  });
-
-  it('show the h4 type when given by props', () => {
-    const text = shallow(
-      <Text element="h4">foo</Text>
-    );
-    expect(text.type()).toBe('h4');
-  });
-
-  it('show the h5 type when given by props', () => {
-    const text = shallow(
-      <Text element="h5">foo</Text>
-    );
-    expect(text.type()).toBe('h5');
-  });
-
-  it('show the h6 type when given by props', () => {
-    const text = shallow(
-      <Text element="h6">foo</Text>
-    );
-    expect(text.type()).toBe('h6');
-  });
-
-  it('show the regular size by default', () => {
-    const text = shallow(
-      <Text>foo</Text>
-    );
-    expect(text.hasClass('sizeRegular')).toBe(true);
-  });
-
 });

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import * as Style from './Text.scss';
+import './Text.css';
 
 
 export const tagNames = [
@@ -15,7 +15,12 @@ export const tagNames = [
 ];
 
 export const tagSizes = [
+  'extraSmall',
+  'small',
   'regular',
+  'medium',
+  'large',
+  'extraLarge'
 ]
 
 class Text extends Component {
@@ -28,14 +33,49 @@ class Text extends Component {
   static defaultProps = {
       element: 'span',
       size: 'regular',
+      weight: 'normal',
    };
 
   render() {
     const Element = `${this.props.element}`;
-    var classes = ['sizeRegular'];
+    const classes = ['fontFamily'];
+
+    switch (this.props.size) {
+      case "extraSmall":
+        classes.push('sizeExtraSmall');
+        break;
+      case "small":
+        classes.push('sizeSmall');
+        break;
+      case "regular":
+        classes.push('sizeRegular');
+        break;
+      case "medium":
+        classes.push('sizeMedium');
+        break;
+      case "large":
+        classes.push('sizeLarge');
+        break;
+      case "extraLarge":
+        classes.push('sizeExtraLarge');
+        break;
+      default:
+        classes.push('sizeRegular');
+    }
+
+    switch (this.props.weight) {
+      case "normal":
+        classes.push('normalWeight');
+        break;
+      case "bold":
+        classes.push('boldWeight');
+        break;
+      default:
+        classes.push('normalWeight');
+    }
 
     return (
-      <Element className={classes}>{this.props.children}</Element>
+      <Element className={classes.join(' ')}>{this.props.children}</Element>
     );
   }
 }

@@ -6,14 +6,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Text element="h1">Heading h1</Text>
-        <Text element="h2">Heading h2</Text>
-        <Text element="h3">Heading h3</Text>
-        <Text element="h4">Heading h4</Text>
-        <Text element="h5">Heading h5</Text>
-        <Text element="h6">Heading h6</Text>
-        <Text element="p">Paragraph</Text>
-        <Text element="span">Span</Text>
+        <Text element="p" size="small">Paragraph small</Text>
+        <Text element="p" size="regular">Paragraph regular</Text>
+        <Text element="p" size="medium">Paragraph medium</Text>
+        <Text element="h2" size="large">Paragraph large</Text>
+        <Text element="h1" size="extraLarge">Paragraph extra large</Text>
+        <Text element="h5" size="extraSmall" weight="bold">Paragraph small</Text>
       </div>
     );
   }
