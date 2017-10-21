@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import * as Style from './Text.scss';
 
 
 export const tagNames = [
@@ -31,9 +32,10 @@ class Text extends Component {
 
   render() {
     const Element = `${this.props.element}`;
+    var classes = ['sizeRegular'];
 
     return (
-      <Element className={this.props.size}>{this.props.children}</Element>
+      <Element className={classes}>{this.props.children}</Element>
     );
   }
 }
