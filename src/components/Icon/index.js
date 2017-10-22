@@ -7,6 +7,16 @@ import './Icon.css';
 export const iconNames = {
   'plus': 'fa-plus',
   'exclamation': 'fa-exclamation',
+  'arrow-down': 'fa-arrow-down',
+  'arrow-left': 'fa-arrow-left',
+  'arrow-right': 'fa-arrow-right',
+  'arrow-up': 'fa-arrow-up',
+  'sort': 'fa-sort',
+  'calendar': 'fa-calendar',
+  'times': 'fa-times',
+  'caret-down': 'fa-caret-down',
+  'caret-up': 'fa-caret-up',
+  'check': 'fa-check',
 }
 
 
