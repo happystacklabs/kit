@@ -14,7 +14,8 @@ class App extends Component {
         <Text element="h1" size="extraLarge">Paragraph extra large</Text>
         <Text element="h5" size="extraSmall" weight="bold">Paragraph small</Text>
         <Icon name="plus"></Icon>
-        <Icon name="chevron-circle-left"></Icon>
+        <Icon name="chevron-circle-left" color="positive"></Icon>
+        <Icon name="plus" color="negative"></Icon>
       </div>
     );
   }

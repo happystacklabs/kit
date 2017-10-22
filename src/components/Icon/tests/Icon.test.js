@@ -284,4 +284,41 @@ describe('Icon', () => {
       expect(icon.find('i').hasClass('fa-eye')).toBe(true);
     });
   });
+
+  describe('color', () => {
+    it('should be ink by default', () => {
+      const icon = shallow(
+        <Icon name="eye"></Icon>
+      );
+      expect(icon.find('i').hasClass('colorInk')).toBe(true);
+    });
+
+    it('is inkLight when given by props', () => {
+      const icon = shallow(
+        <Icon name="eye" color="inkLight"></Icon>
+      );
+      expect(icon.find('i').hasClass('colorInkLight')).toBe(true);
+    });
+
+    it('is positive when given by props', () => {
+      const icon = shallow(
+        <Icon name="eye" color="positive"></Icon>
+      );
+      expect(icon.find('i').hasClass('colorPositive')).toBe(true);
+    });
+
+    it('is negative when given by props', () => {
+      const icon = shallow(
+        <Icon name="eye" color="negative"></Icon>
+      );
+      expect(icon.find('i').hasClass('colorNegative')).toBe(true);
+    });
+
+    it('is purple when given by props', () => {
+      const icon = shallow(
+        <Icon name="eye" color="purple"></Icon>
+      );
+      expect(icon.find('i').hasClass('colorPurple')).toBe(true);
+    });
+  });
 });

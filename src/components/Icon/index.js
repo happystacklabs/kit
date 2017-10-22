@@ -46,6 +46,14 @@ export const iconNames = {
   'eye': 'fa-eye',
 }
 
+export const iconColors = {
+  'ink': 'colorInk',
+  'inkLight': 'colorInkLight',
+  'positive': 'colorPositive',
+  'negative': 'colorNegative',
+  'purple': 'colorPurple',
+}
+
 
 class Icon extends Component {
   static propTypes = {
@@ -53,11 +61,13 @@ class Icon extends Component {
   };
 
   static defaultProps = {
+    color: 'ink',
    };
 
   render() {
     const classes = ['fa'];
     classes.push(iconNames[this.props.name]);
+    classes.push(iconColors[this.props.color]);
 
     return (
       <i className={classes.join(' ')} aria-hidden='true'></i>
