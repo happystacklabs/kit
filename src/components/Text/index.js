@@ -14,20 +14,26 @@ export const tagNames = [
   'h6',
 ];
 
-export const tagSizes = [
-  'extraSmall',
-  'small',
-  'regular',
-  'medium',
-  'large',
-  'extraLarge'
-]
+export const tagSizes = {
+  'extraSmall': 'sizeExtraSmall',
+  'small': 'sizeSmall',
+  'regular': 'sizeRegular',
+  'medium': 'sizeMedium',
+  'large': 'sizeLarge',
+  'extraLarge': 'sizeExtraLarge',
+};
+
+export const fontWeights = {
+  'normal': 'normalWeight',
+  'bold': 'boldWeight',
+};
 
 class Text extends Component {
   static propTypes = {
     children: PropTypes.node,
     element: PropTypes.oneOf(tagNames),
-    size: PropTypes.oneOf(tagSizes),
+    size: PropTypes.oneOf(Object.keys(tagSizes)),
+    weight: PropTypes.oneOf(Object.keys(fontWeights)),
   };
 
   static defaultProps = {
@@ -39,40 +45,9 @@ class Text extends Component {
   render() {
     const Element = `${this.props.element}`;
     const classes = ['fontFamily'];
-
-    switch (this.props.size) {
-      case "extraSmall":
-        classes.push('sizeExtraSmall');
-        break;
-      case "small":
-        classes.push('sizeSmall');
-        break;
-      case "regular":
-        classes.push('sizeRegular');
-        break;
-      case "medium":
-        classes.push('sizeMedium');
-        break;
-      case "large":
-        classes.push('sizeLarge');
-        break;
-      case "extraLarge":
-        classes.push('sizeExtraLarge');
-        break;
-      default:
-        classes.push('sizeRegular');
-    }
-
-    switch (this.props.weight) {
-      case "normal":
-        classes.push('normalWeight');
-        break;
-      case "bold":
-        classes.push('boldWeight');
-        break;
-      default:
-        classes.push('normalWeight');
-    }
+    
+    classes.push(tagSizes[this.props.size]);
+    classes.push(fontWeights[this.props.weight]);
 
     return (
       <Element className={classes.join(' ')}>{this.props.children}</Element>

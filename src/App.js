@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Text from './components/Text'
+import Icon from './components/Icon'
 import './App.css';
 
 class App extends Component {
@@ -12,6 +13,8 @@ class App extends Component {
         <Text element="h2" size="large">Paragraph large</Text>
         <Text element="h1" size="extraLarge">Paragraph extra large</Text>
         <Text element="h5" size="extraSmall" weight="bold">Paragraph small</Text>
+        <Icon name="exclamation"></Icon>
+        <Icon></Icon>
       </div>
     );
   }
