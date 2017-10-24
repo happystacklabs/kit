@@ -17,12 +17,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Text element="h5" size="extraSmall" weight="bold">{this.state.value}</Text>
         <Text element="p" size="small">{this.state.value}</Text>
         <Text element="p" size="regular">{this.state.value}</Text>
         <Text element="p" size="medium">{this.state.value}</Text>
         <Text element="h2" size="large">{this.state.value}</Text>
         <Text element="h1" size="extraLarge" weight="bold">{this.state.value}</Text>
-        <Text element="h5" size="extraSmall" weight="bold">{this.state.value}</Text>
         <br />
         <TextInput
           name="Foo"
@@ -30,6 +30,7 @@ class App extends Component {
           value={this.state.value}
           onChange={this.onInputChange}
           maxLength="10"
+          label="some label"
           helpText="This is some help."
         />
       </div>

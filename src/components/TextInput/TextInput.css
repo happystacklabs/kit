@@ -28,6 +28,9 @@
 .errorMessage, .helpText {
   margin-top: 5px; }
 
+.label {
+  margin-bottom: 5px; }
+
 .errorIcon {
   margin-right: 5px; }
 

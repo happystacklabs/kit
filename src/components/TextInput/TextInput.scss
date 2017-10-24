@@ -33,6 +33,10 @@
   margin-top: 5px;
 }
 
+.label {
+  margin-bottom: 5px;
+}
+
 .errorIcon {
   margin-right: 5px;
 }
@@ -43,6 +47,7 @@
   backface-visibility: hidden;
   perspective: 1000px;
 }
+
 
 @keyframes shake {
   10%, 90% {

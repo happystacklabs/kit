@@ -25,6 +25,18 @@ const renderHelpText = (helpText) => {
   }
 };
 
+const renderLabel = (name, labelText) => {
+  if (labelText) {
+    return (
+      <div className='label'>
+        <label htmlFor={name}>
+          <Text size='regular'>{ labelText }</Text>
+        </label>
+      </div>
+    );
+  }
+};
+
 export const type = [
   'email',
   'text',
@@ -45,6 +57,7 @@ class TextInput extends Component {
     shake: PropTypes.bool,
     error: PropTypes.string,
     type: PropTypes.oneOf(type),
+    label: PropTypes.string,
   };
 
   static defaultProps = {
@@ -70,6 +83,7 @@ class TextInput extends Component {
     }
     return (
       <div>
+        {renderLabel(this.props.name, this.props.label)}
         <input
           name={this.props.name}
           value={this.props.value}

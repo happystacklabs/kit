@@ -116,4 +116,13 @@ describe('TextInput', () => {
       expect(input.find('span').first().text()).toBe('Foo');
     });
   });
+
+  describe('label', () => {
+    it('add a label when given by props', () => {
+      const input = mount(
+        <TextInput name="Foo" label="Foo"/>
+      );
+      expect(input.find('label').first().text()).toBe('Foo');
+    });
+  });
 });
