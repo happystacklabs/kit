@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Text from './components/Text';
 import Icon from './components/Icon';
 import TextInput from './components/TextInput';
+import Select from './components/Select';
 import './App.css';
 
 class App extends Component {
