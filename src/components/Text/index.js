@@ -28,6 +28,14 @@ export const fontWeights = {
   'bold': 'boldWeight',
 };
 
+export const iconColors = {
+  'ink': 'colorInk',
+  'inkLight': 'colorInkLight',
+  'positive': 'colorPositive',
+  'negative': 'colorNegative',
+  'purple': 'colorPurple',
+}
+
 class Text extends Component {
   static propTypes = {
     children: PropTypes.node,
@@ -40,6 +48,7 @@ class Text extends Component {
       element: 'span',
       size: 'regular',
       weight: 'normal',
+      color: 'ink',
    };
 
   render() {
@@ -49,6 +58,7 @@ class Text extends Component {
     classes.push(this.props.className);
     classes.push(tagSizes[this.props.size]);
     classes.push(fontWeights[this.props.weight]);
+    classes.push(iconColors[this.props.color]);
 
     return (
       <Element className={classes.join(' ')}>{this.props.children}</Element>

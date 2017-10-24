@@ -9,7 +9,7 @@ const renderError = (error) => {
     return (
       <div className='errorMessage'>
         <Icon name='exclamation' color='negative' className='errorIcon'/>
-        <Text type='element' size='small'>{ error }</Text>
+        <Text color='negative' type='element' size='small'>{ error }</Text>
       </div>
     );
   }
@@ -33,7 +33,7 @@ class TextInput extends Component {
   render() {
     const readOnly = !this.props.readOnly && this.props.onChange ? false : true;
     const classes = ['textInput'];
-    
+
     classes.push(this.props.className);
 
     if (this.props.shake) {
