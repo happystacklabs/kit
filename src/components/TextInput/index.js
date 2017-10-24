@@ -33,6 +33,8 @@ class TextInput extends Component {
   render() {
     const readOnly = !this.props.readOnly && this.props.onChange ? false : true;
     const classes = ['textInput'];
+    
+    classes.push(this.props.className);
 
     if (this.props.shake) {
       classes.push('shake');

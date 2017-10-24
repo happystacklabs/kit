@@ -45,7 +45,8 @@ class Text extends Component {
   render() {
     const Element = `${this.props.element}`;
     const classes = ['fontFamily'];
-    
+
+    classes.push(this.props.className);
     classes.push(tagSizes[this.props.size]);
     classes.push(fontWeights[this.props.weight]);
 

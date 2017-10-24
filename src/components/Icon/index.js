@@ -66,6 +66,7 @@ class Icon extends Component {
 
   render() {
     const classes = ['fa'];
+    classes.push(this.props.className);
     classes.push(iconNames[this.props.name]);
     classes.push(iconColors[this.props.color]);
 
