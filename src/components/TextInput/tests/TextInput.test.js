@@ -76,7 +76,6 @@ describe('TextInput', () => {
       const input = mount(
         <TextInput name="Foo" type="email"/>
       );
-      console.log(input.find('input').first().props.type);
       expect(input.find('input').first().props().type).toBe('email');
     });
 
@@ -84,7 +83,6 @@ describe('TextInput', () => {
       const input = mount(
         <TextInput name="Foo" type="number"/>
       );
-      console.log(input.find('input').first().props.type);
       expect(input.find('input').first().props().type).toBe('number');
     });
 
@@ -92,7 +90,6 @@ describe('TextInput', () => {
       const input = mount(
         <TextInput name="Foo" type="password"/>
       );
-      console.log(input.find('input').first().props.type);
       expect(input.find('input').first().props().type).toBe('password');
     });
 
@@ -100,7 +97,6 @@ describe('TextInput', () => {
       const input = mount(
         <TextInput name="Foo" type="search"/>
       );
-      console.log(input.find('input').first().props.type);
       expect(input.find('input').first().props().type).toBe('search');
     });
 
@@ -108,9 +104,16 @@ describe('TextInput', () => {
       const input = mount(
         <TextInput name="Foo" type="url"/>
       );
-      console.log(input.find('input').first().props.type);
       expect(input.find('input').first().props().type).toBe('url');
     });
   });
 
+  describe('helpText', () => {
+    it('add a helpText when given by props', () => {
+      const input = mount(
+        <TextInput name="Foo" helpText="Foo"/>
+      );
+      expect(input.find('span').first().text()).toBe('Foo');
+    });
+  });
 });

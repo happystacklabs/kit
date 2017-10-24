@@ -9,7 +9,17 @@ const renderError = (error) => {
     return (
       <div className='errorMessage'>
         <Icon name='exclamation' color='negative' className='errorIcon'/>
-        <Text color='negative' type='element' size='small'>{ error }</Text>
+        <Text color='negative' element='span' size='small'>{ error }</Text>
+      </div>
+    );
+  }
+};
+
+const renderHelpText = (helpText) => {
+  if (helpText) {
+    return (
+      <div className='helpText'>
+        <Text color='inkLight' element='span' size='small'>{ helpText }</Text>
       </div>
     );
   }
@@ -72,6 +82,7 @@ class TextInput extends Component {
           type={this.props.type}
         />
         {renderError(this.props.error)}
+        {renderHelpText(this.props.helpText)}
       </div>
     );
   }

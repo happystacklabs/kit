@@ -30,6 +30,7 @@ class App extends Component {
           value={this.state.value}
           onChange={this.onInputChange}
           maxLength="10"
+          helpText="This is some help."
         />
       </div>
     );
