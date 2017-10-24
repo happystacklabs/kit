@@ -64,10 +64,52 @@ describe('TextInput', () => {
     });
 
     it('show an error message', () => {
-      const input = shallow(
+      const input = mount(
         <TextInput name="Foo" error="Foo"/>
       );
-      expect(input.find('span').text()).toBe('Foo');
+      expect(input.find('span').first().text()).toBe('Foo');
+    });
+  });
+
+  describe('type', () => {
+    it('give an email field when given in props', () => {
+      const input = mount(
+        <TextInput name="Foo" type="email"/>
+      );
+      console.log(input.find('input').first().props.type);
+      expect(input.find('input').first().props().type).toBe('email');
+    });
+
+    it('give a number field when given in props', () => {
+      const input = mount(
+        <TextInput name="Foo" type="number"/>
+      );
+      console.log(input.find('input').first().props.type);
+      expect(input.find('input').first().props().type).toBe('number');
+    });
+
+    it('give a password field when given in props', () => {
+      const input = mount(
+        <TextInput name="Foo" type="password"/>
+      );
+      console.log(input.find('input').first().props.type);
+      expect(input.find('input').first().props().type).toBe('password');
+    });
+
+    it('give a search field when given in props', () => {
+      const input = mount(
+        <TextInput name="Foo" type="search"/>
+      );
+      console.log(input.find('input').first().props.type);
+      expect(input.find('input').first().props().type).toBe('search');
+    });
+
+    it('give a url field when given in props', () => {
+      const input = mount(
+        <TextInput name="Foo" type="url"/>
+      );
+      console.log(input.find('input').first().props.type);
+      expect(input.find('input').first().props().type).toBe('url');
     });
   });
 

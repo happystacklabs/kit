@@ -7,7 +7,7 @@ import './App.css';
 class App extends Component {
 
   state = {
-    value: 'Lorem ipsum',
+    value: '',
   }
 
   onInputChange = (event) => {
@@ -29,7 +29,6 @@ class App extends Component {
           placeholder="This input rocks"
           value={this.state.value}
           onChange={this.onInputChange}
-          error="This is an error."
           maxLength="10"
         />
       </div>

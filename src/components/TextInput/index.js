@@ -15,6 +15,15 @@ const renderError = (error) => {
   }
 };
 
+export const type = [
+  'email',
+  'text',
+  'number',
+  'password',
+  'search',
+  'url',
+];
+
 class TextInput extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
@@ -25,9 +34,11 @@ class TextInput extends Component {
     maxLength: PropTypes.string,
     shake: PropTypes.bool,
     error: PropTypes.string,
+    type: PropTypes.oneOf(type),
   };
 
   static defaultProps = {
+    type: 'text',
   };
 
   render() {
@@ -58,6 +69,7 @@ class TextInput extends Component {
           disabled={this.props.disabled}
           className={classes.join(' ')}
           maxLength={this.props.maxLength}
+          type={this.props.type}
         />
         {renderError(this.props.error)}
       </div>
