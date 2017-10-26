@@ -7,12 +7,12 @@ describe('TextInput', () => {
   it('set all props', () => {
     const textInput = shallow(
       <TextInput
-        name="Foo"
-        value="Bar"
-        placeholder="Baz"
+        name='Foo'
+        value='Bar'
+        placeholder='Baz'
         readOnly
         disabled
-        maxLength="2"
+        maxLength='2'
       />
     ).find('input');
     expect(textInput.prop('name')).toBe('Foo');

@@ -3,6 +3,7 @@ import Text from './components/Text';
 import Icon from './components/Icon';
 import TextInput from './components/TextInput';
 import Select from './components/Select';
+import Button from './components/Button';
 import './App.css';
 
 class App extends Component {
@@ -16,6 +17,11 @@ class App extends Component {
   };
 
   render() {
+    const options = [
+      {label: 'Christine Young', value: 'christine_young'},
+      {label: 'Jada Fire', value: 'jada_fire'},
+    ];
+
     return (
       <div className="App">
         <Text element="h5" size="extraSmall" weight="bold">{this.state.value}</Text>
@@ -25,14 +31,14 @@ class App extends Component {
         <Text element="h2" size="large">{this.state.value}</Text>
         <Text element="h1" size="extraLarge" weight="bold">{this.state.value}</Text>
         <br />
-        <TextInput
-          name="Foo"
-          placeholder="This input rocks"
-          value={this.state.value}
+
+        <Select
+          name='Foo'
+          options={options}
           onChange={this.onInputChange}
-          maxLength="10"
-          label="some label"
-          helpText="This is some help."
+          placeholder='Select'
+          value={this.state.value}
+          disabled
         />
       </div>
     );

@@ -58,6 +58,7 @@ class TextInput extends Component {
     error: PropTypes.string,
     type: PropTypes.oneOf(type),
     label: PropTypes.string,
+    helpText: PropTypes.string,
   };
 
   static defaultProps = {

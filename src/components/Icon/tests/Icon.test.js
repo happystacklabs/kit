@@ -283,6 +283,13 @@ describe('Icon', () => {
       );
       expect(icon.find('i').hasClass('fa-eye')).toBe(true);
     });
+
+    it('show angle-down when given by props', () => {
+      const icon = shallow(
+        <Icon name="angle-down"></Icon>
+      );
+      expect(icon.find('i').hasClass('fa-angle-down')).toBe(true);
+    });
   });
 
   describe('color', () => {

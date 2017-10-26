@@ -44,6 +44,7 @@ export const iconNames = {
   'search': 'fa-search',
   'minus': 'fa-minus',
   'eye': 'fa-eye',
+  'angle-down': 'fa-angle-down',
 }
 
 export const iconColors = {
