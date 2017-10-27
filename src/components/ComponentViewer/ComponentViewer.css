@@ -1,0 +1,47 @@
+.viewerElement {
+  margin: 45px 0; }
+
+.viewerCode {
+  background: #282828;
+  border-radius: 3px 3px 0 0; }
+
+.viewerList {
+  background: #FFFFFF;
+  border: 1px solid #DFE2E3;
+  box-shadow: 0 1px 1px 0 #D9DADC;
+  border-radius: 0 0 3px 3px;
+  padding: 30px 25px;
+  margin-bottom: 45px; }
+  .viewerList table {
+    width: 100%;
+    border-collapse: collapse; }
+  .viewerList td.bottomLine {
+    border-bottom: 1px solid #C4CDD5;
+    padding-right: 0; }
+  .viewerList tr:last-child td.bottomLine {
+    border-bottom: none; }
+  .viewerList td {
+    padding: 15px 0 15px 15px; }
+
+th {
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-family: -apple-system,BlinkMacSystemFont,San Francisco,Roboto,Segoe UI,Helvetica Neue,sans-serif; }
+
+.viewerCodeMenu {
+  text-align: right;
+  padding: 20px 20px 0 20px; }
+
+.viewerCodeText {
+  padding: 20px 25px;
+  display: inline-block; }
+
+.codeColorRed {
+  color: #FC1E70; }
+
+.codeColorYellow {
+  color: #E6DC6D; }
+
+.codeColorGreen {
+  color: #A4E406; }

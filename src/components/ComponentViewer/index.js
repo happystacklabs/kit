@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './ComponentViewer.css';
 import Text from '../Text';
-import ComponentViewerRow from './ComponentViewerRow';
-
+import ComponentViewerList from './ComponentViewerList';
+import Icon from '../Icon';
+import Button from '../Button';
+import * as copy from 'copy-to-clipboard';
 
 
 class ComponentViewer extends Component {
@@ -23,31 +25,45 @@ class ComponentViewer extends Component {
      // Change the option
      const newState = Object.assign({}, this.state);
      const index = newState['options'].findIndex(x => x.name === event.target.name);
-     console.log(newState['options'][index]);
      newState['options'][index]['value'] = event.target.value;
      this.setState(newState);
    };
 
-  renderOptions = (options) => {
-     if (options) {
-       return (
-         options.map(option =>
-           <ComponentViewerRow
-             key={option.name}
-             name={option.name}
-             type={option.type}
-             value={option.value}
-             description={option.description}
-             onChange={this.onInputChange}
-           />
-         )
-       );
-     }
-   };
+   onClickCopy = (event) => {
+     copy(this.getCode());
+   }
+
+   getCode = () => {
+     var children = '';
+
+     this.state.options.map((item) => {
+       console.log(item['name']);
+       if (item['name'] === 'children') {
+         children = item['value'];
+       }
+     })
+
+     return (
+       <div>
+         <span>&lt;</span>
+         <span className='codeColorRed'>Element </span>
+         <span className='codeColorGreen'>size</span>
+         =<span className='codeColorYellow'>'regular'</span>
+         <span>&gt;</span>
+         {children}
+         <span>&lt;</span>
+         <span className='codeColorRed'>Element</span>
+         <span>/&gt;</span>
+       </div>
+     );
+   }
 
   render() {
     const newProps = this.state.options.reduce(function(object, item) {
-      object[item['name']] = item['value'].toLowerCase();
+      if (item['value'] === '' && Array.isArray(item['type'])) {
+        return object;
+      }
+      object[item['name']] = item['value'];
       return object;
     }, {});
 
@@ -55,20 +71,26 @@ class ComponentViewer extends Component {
       <div>
         <div className='viewerExample'>
           <Text size='large' element='h2'>Example</Text>
-          {React.cloneElement(this.props.children, newProps)}
+          <div className='viewerElement'>
+            {React.cloneElement(this.props.children, newProps)}
+          </div>
         </div>
-        <div className='viewerForm'>
-          <table>
-            <tbody>
-              <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Description</th>
-              </tr>
-              {this.renderOptions(this.state.options)}
-            </tbody>
-          </table>
+        <div className='viewerCode'>
+          <div className='viewerCodeMenu'>
+            <Button
+              onClick={this.onClickCopy}
+              size='slim'
+              square
+            >
+              <Icon name='clone'/>
+            </Button>
+          </div>
+          <Text element='span' size='regular' color='white' className='viewerCodeText'>{this.getCode()}</Text>
         </div>
+        <ComponentViewerList
+          options={this.state.options}
+          onChange={this.onInputChange}
+        />
       </div>
     );
   }

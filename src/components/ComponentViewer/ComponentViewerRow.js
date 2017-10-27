@@ -10,7 +10,12 @@ import Select from '../Select';
 class ComponentViewerRow extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
-    value: PropTypes.string,
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.arrayOf(PropTypes.string),
+      PropTypes.bool,
+      PropTypes.func,
+    ]),
     description: PropTypes.string,
     type: PropTypes.oneOfType([
       PropTypes.string,
@@ -31,16 +36,19 @@ class ComponentViewerRow extends Component {
    }
 
    getType = () => {
-     if (typeof this.props.type === 'string') {
+     if (this.props.type === 'string') {
        return 'string';
      } else if (Array.isArray(this.props.type)) {
        return 'array';
+     } else if (this.props.type === 'bool') {
+       return 'bool';
+     } else if (this.props.type === 'function') {
+       return 'function';
      }
    }
 
    renderInput = () => {
-     console.log(this.props.type.isArray);
-     if (typeof this.props.type === 'string') {
+     if (this.props.type === 'string') {
        return (
          <TextInput
           name={this.props.name}
@@ -57,15 +65,25 @@ class ComponentViewerRow extends Component {
           options={this.getOptions()}
          />
        );
+     } else if (this.props.type === 'bool') {
+       return (
+         <TextInput
+          name={this.props.name}
+          onChange={this.props.onChange}
+          value={this.props.value}
+         />
+       );
+     } else if (this.props.type === 'function') {
+       return;
      }
    };
 
   render() {
     return (
       <tr key={this.key}>
-        <td><Text>{this.props.name}</Text></td>
-        <td><Text>{this.getType()}</Text></td>
-        <td><Text>{this.props.description}</Text></td>
+        <td className='bottomLine'><Text color='purple' size='small'>{this.props.name}</Text></td>
+        <td className='bottomLine'><Text color='inkLight' size='small'>{this.getType()}</Text></td>
+        <td className='bottomLine'><Text>{this.props.description}</Text></td>
         <td>
           {this.renderInput()}
         </td>

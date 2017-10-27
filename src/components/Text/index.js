@@ -28,7 +28,8 @@ export const fontWeights = {
   'bold': 'boldWeight',
 };
 
-export const iconColors = {
+export const textColors = {
+  'white': 'colorWhite',
   'ink': 'colorInk',
   'inkLight': 'colorInkLight',
   'positive': 'colorPositive',
@@ -42,6 +43,7 @@ class Text extends Component {
     element: PropTypes.oneOf(tagNames),
     size: PropTypes.oneOf(Object.keys(tagSizes)),
     weight: PropTypes.oneOf(Object.keys(fontWeights)),
+    color: PropTypes.oneOf(Object.keys(textColors)),
   };
 
   static defaultProps = {
@@ -58,7 +60,7 @@ class Text extends Component {
     classes.push(this.props.className);
     classes.push(tagSizes[this.props.size]);
     classes.push(fontWeights[this.props.weight]);
-    classes.push(iconColors[this.props.color]);
+    classes.push(textColors[this.props.color]);
 
     return (
       <Element className={classes.join(' ')}>{this.props.children}</Element>

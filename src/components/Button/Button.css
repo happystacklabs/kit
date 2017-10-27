@@ -83,6 +83,8 @@
   padding: 3px 8px;
   transition-property: color;
   transition-duration: .2s; }
+  .buttonPlain span {
+    padding: 3px 8px; }
   .buttonPlain:hover {
     background: none;
     color: #404EAE; }
@@ -90,9 +92,7 @@
     box-shadow: none; }
     .buttonPlain:active span {
       background: #FAFAFA;
-      border-radius: 3px;
-      padding: 3px 8px;
-      margin-left: -8px; }
+      border-radius: 3px; }
 
 .buttonOutline {
   background: none; }

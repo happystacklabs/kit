@@ -107,6 +107,9 @@
   padding: 3px 8px;
   transition-property: color;
   transition-duration: .2s;
+  span {
+    padding: 3px 8px;
+  }
   &:hover {
     background: none;
     color: #404EAE;
@@ -116,8 +119,6 @@
     span {
       background: #FAFAFA;
       border-radius: 3px;
-      padding: 3px 8px;
-      margin-left: -8px;
     }
   }
 }

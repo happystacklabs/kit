@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import Text from './components/Text';
-import TextInput from './components/TextInput';
 import Button from './components/Button';
 import ComponentViewer from './components/ComponentViewer';
 import './App.css';
 
 const options = [
   {
-    value: 'foo',
+    value: 'Add to cart',
     name: 'children',
     type: 'string',
     description: 'Text of the object',
@@ -21,6 +19,53 @@ const options = [
       'large',
     ],
     description: 'Change the size',
+  },
+  {
+    value: '',
+    name: 'color',
+    type: [
+      'positive',
+      'negative',
+      'purple',
+      '',
+    ],
+    description: 'Change the color',
+  },
+  {
+    value: false,
+    name: 'disabled',
+    type: 'bool',
+    description: 'Disabled the button',
+  },
+  {
+    value: false,
+    name: 'square',
+    type: 'bool',
+    description: 'Square shape of button',
+  },
+  {
+    value: false,
+    name: 'fullWidth',
+    type: 'bool',
+    description: 'Make the button full width',
+  },
+  {
+    value: false,
+    name: 'plain',
+    type: 'bool',
+    description: 'Make the button plain',
+  },
+  {
+    value: false,
+    name: 'outline',
+    type: 'bool',
+    description: 'Make the button outline',
+  },
+  {
+    value: ()=>{},
+    name: 'onClick',
+    type: 'function',
+    description: 'call the parent when clicked',
   }
 ];
 
@@ -41,16 +86,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Text element="h5" size="extraSmall" weight="bold">{this.state.value}</Text>
-        <Text element="p" size="small">{this.state.value}</Text>
-        <Text element="p" size="regular">{this.state.value}</Text>
-        <Text element="p" size="medium">{this.state.value}</Text>
-        <Text element="h2" size="large">{this.state.value}</Text>
-        <Text element="h1" size="extraLarge" weight="bold">{this.state.value}</Text>
-        <br />
-        <TextInput name="f" value={this.state.value} onChange={this.onInputChange}/>
-        <br />
-        <Button onClick={this.handleSubmit}>Reset</Button>
         <br />
         <ComponentViewer options={options}>
           <Button/>

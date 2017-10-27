@@ -25,6 +25,7 @@
     "react-test-renderer": "^16.0.0"
   },
   "dependencies": {
+    "copy-to-clipboard": "^3.0.8",
     "font-awesome": "^4.7.0",
     "node-sass-chokidar": "0.0.3",
     "prop-types": "^15.6.0",
