@@ -1,9 +1,24 @@
 import React, { Component } from 'react';
 import Text from './components/Text';
-import Icon from './components/Icon';
 import TextInput from './components/TextInput';
 import Button from './components/Button';
+import ComponentViewer from './components/ComponentViewer';
 import './App.css';
+
+const options = [
+  {
+    value: 'foo',
+    name: 'children',
+    type: 'string',
+    description: 'Text of the object',
+  },
+  {
+    value: 'large',
+    name: 'size',
+    type: 'string',
+    description: 'Change the size',
+  }
+];
 
 class App extends Component {
 
@@ -32,6 +47,10 @@ class App extends Component {
         <TextInput name="f" value={this.state.value} onChange={this.onInputChange}/>
         <br />
         <Button onClick={this.handleSubmit}>Reset</Button>
+        <br />
+        <ComponentViewer options={options}>
+          <Button/>
+        </ComponentViewer>
       </div>
     );
   }
