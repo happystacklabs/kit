@@ -15,7 +15,11 @@ const options = [
   {
     value: 'large',
     name: 'size',
-    type: 'string',
+    type: [
+      'small',
+      'regular',
+      'large',
+    ],
     description: 'Change the size',
   }
 ];

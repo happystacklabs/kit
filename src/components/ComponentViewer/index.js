@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './ComponentViewer.css';
 import Text from '../Text';
-import TextInput from '../TextInput';
+import ComponentViewerRow from './ComponentViewerRow';
 
 
 
@@ -22,7 +22,7 @@ class ComponentViewer extends Component {
    onInputChange = (event) => {
      // Change the option
      const newState = Object.assign({}, this.state);
-     const index = newState['options'].findIndex(x => x.name == event.target.name);
+     const index = newState['options'].findIndex(x => x.name === event.target.name);
      console.log(newState['options'][index]);
      newState['options'][index]['value'] = event.target.value;
      this.setState(newState);
@@ -32,18 +32,14 @@ class ComponentViewer extends Component {
      if (options) {
        return (
          options.map(option =>
-           <tr key={option.name}>
-             <td>{option.name}</td>
-             <td>{option.type}</td>
-             <td>{option.description}</td>
-             <td>
-               <TextInput
-                 name={option.name}
-                 onChange={this.onInputChange}
-                 value={option.value}
-               />
-             </td>
-           </tr>
+           <ComponentViewerRow
+             key={option.name}
+             name={option.name}
+             type={option.type}
+             value={option.value}
+             description={option.description}
+             onChange={this.onInputChange}
+           />
          )
        );
      }
