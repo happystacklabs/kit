@@ -4,6 +4,7 @@ import './ComponentViewer.css';
 import Text from '../Text';
 import TextInput from '../TextInput';
 import Select from '../Select';
+import Switch from '../Switch';
 
 
 
@@ -23,6 +24,7 @@ class ComponentViewerRow extends Component {
       PropTypes.bool,
       PropTypes.func,
     ]).isRequired,
+    onSwitch: PropTypes.func,
   };
 
   static defaultProps = {
@@ -52,7 +54,7 @@ class ComponentViewerRow extends Component {
        return (
          <TextInput
           name={this.props.name}
-          onChange={this.props.onChange}
+          onChange={this.onInputChange}
           value={this.props.value}
          />
        );
@@ -60,22 +62,30 @@ class ComponentViewerRow extends Component {
        return (
          <Select
           name={this.props.name}
-          onChange={this.props.onChange}
+          onChange={this.onInputChange}
           value={this.props.value}
           options={this.getOptions()}
          />
        );
      } else if (this.props.type === 'bool') {
        return (
-         <TextInput
-          name={this.props.name}
-          onChange={this.props.onChange}
-          value={this.props.value}
+         <Switch
+           name={this.props.name}
+           onClick={this.onSwitchChange}
+           on={this.props.value}
          />
        );
      } else if (this.props.type === 'function') {
        return;
      }
+   };
+
+   onInputChange = (event) => {
+     this.props.onChange({name: this.props.name, value: event.target.value});
+   };
+
+   onSwitchChange = (event) => {
+     this.props.onChange({name: this.props.name, value: event.target.value});
    };
 
   render() {

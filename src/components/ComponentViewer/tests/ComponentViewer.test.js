@@ -4,14 +4,29 @@ import ComponentViewer from ".."
 import Button from '../../Button'
 
 
-describe('example', () => {
-  it('show the component passed by children', () => {
-    const options = [{ name: 'size', value: 'large' }];
-    const viewer = shallow(
-      <ComponentViewer options={options}>
-        <Button>bar</Button>
-      </ComponentViewer>
-    );
-    expect(viewer.find('Button').first().prop('children')).toBe('bar');
+
+describe('ComponentViewerRow', () => {
+
+});
+
+describe('ComponentViewerList', () => {
+
+});
+
+describe('ComponentViewerCode', () => {
+
+});
+
+describe('ComponentViewer', () => {
+  describe('example', () => {
+    it('show the component passed by children', () => {
+      const options = [{ name: 'size', value: 'large' }];
+      const viewer = shallow(
+        <ComponentViewer options={options}>
+          <Button>bar</Button>
+        </ComponentViewer>
+      );
+      expect(viewer.find('Button').first().prop('children')).toBe('bar');
+    });
   });
 });

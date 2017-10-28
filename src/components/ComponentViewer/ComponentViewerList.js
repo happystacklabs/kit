@@ -30,7 +30,7 @@ class ComponentViewerList extends Component {
       }
     };
 
-  render() {
+    render() {
     return (
       <div className='viewerList'>
         <table>
@@ -47,4 +47,5 @@ class ComponentViewerList extends Component {
     );
   }
 }
+
 export default ComponentViewerList;

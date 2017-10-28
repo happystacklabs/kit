@@ -79,15 +79,28 @@ class ComponentViewerCode extends Component {
   }
 
   renderProps = (props) => {
-    console.log(props);
+    const arr = [];
+    props.map((prop) => {
+      console.log(typeof prop.value);
+      if (typeof prop.value === 'boolean') {
+        arr.push((
+          <span key={prop.name}>
+            <span className='codeColorGreen'> {prop.name}</span>
+          </span>
+        ))
+      } else {
+        arr.push((
+          <span key={prop.name}>
+            <span className='codeColorGreen'> {prop.name}</span>
+            =<span className='codeColorYellow'>'{prop.value}'</span>
+          </span>
+        ));
+      }
+    });
+
     return (
       <span>
-        {props.map((prop) =>
-          <span>
-            <span className='codeColorGreen'>{prop.name}</span>
-            =<span className='codeColorYellow'>'{prop.value}' </span>
-          </span>
-        )}
+        {arr}
       </span>
     );
   }
