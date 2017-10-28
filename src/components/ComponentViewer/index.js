@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './ComponentViewer.css';
 import Text from '../Text';
 import ComponentViewerList from './ComponentViewerList';
+import ComponentViewerCode from './ComponentViewerCode';
 import Icon from '../Icon';
 import Button from '../Button';
 import * as copy from 'copy-to-clipboard';
@@ -33,31 +34,6 @@ class ComponentViewer extends Component {
      copy(this.getCode());
    }
 
-   getCode = () => {
-     var children = '';
-
-     this.state.options.map((item) => {
-       console.log(item['name']);
-       if (item['name'] === 'children') {
-         children = item['value'];
-       }
-     })
-
-     return (
-       <div>
-         <span>&lt;</span>
-         <span className='codeColorRed'>Element </span>
-         <span className='codeColorGreen'>size</span>
-         =<span className='codeColorYellow'>'regular'</span>
-         <span>&gt;</span>
-         {children}
-         <span>&lt;</span>
-         <span className='codeColorRed'>Element</span>
-         <span>/&gt;</span>
-       </div>
-     );
-   }
-
   render() {
     const newProps = this.state.options.reduce(function(object, item) {
       if (item['value'] === '' && Array.isArray(item['type'])) {
@@ -75,18 +51,7 @@ class ComponentViewer extends Component {
             {React.cloneElement(this.props.children, newProps)}
           </div>
         </div>
-        <div className='viewerCode'>
-          <div className='viewerCodeMenu'>
-            <Button
-              onClick={this.onClickCopy}
-              size='slim'
-              square
-            >
-              <Icon name='clone'/>
-            </Button>
-          </div>
-          <Text element='span' size='regular' color='white' className='viewerCodeText'>{this.getCode()}</Text>
-        </div>
+        <ComponentViewerCode></ComponentViewerCode>
         <ComponentViewerList
           options={this.state.options}
           onChange={this.onInputChange}
