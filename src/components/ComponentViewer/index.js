@@ -4,9 +4,6 @@ import './ComponentViewer.css';
 import Text from '../Text';
 import ComponentViewerList from './ComponentViewerList';
 import ComponentViewerCode from './ComponentViewerCode';
-import Icon from '../Icon';
-import Button from '../Button';
-import * as copy from 'copy-to-clipboard';
 
 
 class ComponentViewer extends Component {
@@ -30,10 +27,6 @@ class ComponentViewer extends Component {
      this.setState(newState);
    };
 
-   onClickCopy = (event) => {
-     copy(this.getCode());
-   }
-
   render() {
     const newProps = this.state.options.reduce(function(object, item) {
       if (item['value'] === '' && Array.isArray(item['type'])) {
@@ -44,14 +37,18 @@ class ComponentViewer extends Component {
     }, {});
 
     return (
-      <div>
+      <div class='ComponentViewer'>
+        <Text element='h1' size='extraLarge'>{this.props.children.type.name}</Text>
         <div className='viewerExample'>
-          <Text size='large' element='h2'>Example</Text>
+          <Text size='medium' element='h2'>Example</Text>
           <div className='viewerElement'>
             {React.cloneElement(this.props.children, newProps)}
           </div>
         </div>
-        <ComponentViewerCode></ComponentViewerCode>
+        <ComponentViewerCode
+          element={this.props.children.type.name}
+          options={this.state.options}
+        />
         <ComponentViewerList
           options={this.state.options}
           onChange={this.onInputChange}
