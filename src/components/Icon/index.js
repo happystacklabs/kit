@@ -59,6 +59,7 @@ export const iconColors = {
 class Icon extends Component {
   static propTypes = {
     name: PropTypes.oneOf(Object.keys(iconNames)),
+    color: PropTypes.oneOf(Object.keys(iconColors)),
   };
 
   static defaultProps = {
