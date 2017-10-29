@@ -47,6 +47,13 @@ describe('Button', () => {
       );
       expect(text.hasClass('buttonSizeSlim')).toBe(true);
     });
+
+    it('show large when given by props', () => {
+      const text = shallow(
+        <Button size='large'>foo</Button>
+      );
+      expect(text.hasClass('buttonSizeLarge')).toBe(true);
+    });
   });
 
   describe('square', () => {

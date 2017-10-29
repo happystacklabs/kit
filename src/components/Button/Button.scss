@@ -11,6 +11,7 @@
   appearance: none;
   transition-property: background, border, box-shadow;
   transition-duration: .2s;
+  cursor: pointer;
 }
 
 .button:hover {

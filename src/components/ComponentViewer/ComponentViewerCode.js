@@ -19,13 +19,14 @@ class ComponentViewerCode extends Component {
 
   onClickCopy = (event) => {
     copy(this.getCode());
+    return;
   }
 
   getCode = () => {
     const props = [];
     var children = '';
 
-    this.props.options.map((item) => {
+    this.props.options.forEach((item) => {
       if (item['name'] === 'children') {
         children = item['value'];
       }
@@ -37,7 +38,7 @@ class ComponentViewerCode extends Component {
     const stringArray = [];
     stringArray.push('<');
     stringArray.push(this.props.element);
-    props.map((prop) => {
+    props.forEach((prop) => {
       stringArray.push(' ');
       stringArray.push(prop.name);
       stringArray.push('=');
@@ -55,7 +56,7 @@ class ComponentViewerCode extends Component {
     const props = [];
     var children = '';
 
-    this.props.options.map((item) => {
+    this.props.options.forEach((item) => {
       if (item['name'] === 'children') {
         children = item['value'];
       }
@@ -80,8 +81,7 @@ class ComponentViewerCode extends Component {
 
   renderProps = (props) => {
     const arr = [];
-    props.map((prop) => {
-      console.log(typeof prop.value);
+    props.forEach((prop) => {
       if (typeof prop.value === 'boolean') {
         arr.push((
           <span key={prop.name}>

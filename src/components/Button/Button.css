@@ -8,7 +8,8 @@
   font-size: 0.875rem;
   appearance: none;
   transition-property: background, border, box-shadow;
-  transition-duration: .2s; }
+  transition-duration: .2s;
+  cursor: pointer; }
 
 .button:hover {
   background: #F4F4F4; }

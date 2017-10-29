@@ -42,7 +42,7 @@ class ComponentViewer extends Component {
     }, {});
 
     return (
-      <div class='ComponentViewer'>
+      <div className='ComponentViewer'>
         <Text element='h1' size='extraLarge'>{this.props.children.type.name}</Text>
         <div className='viewerExample'>
           <Text size='medium' element='h2'>Example</Text>
