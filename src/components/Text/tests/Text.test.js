@@ -142,42 +142,42 @@ describe('Text', () => {
       const text = shallow(
         <Text></Text>
       );
-      expect(icon.find('span').hasClass('colorInk')).toBe(true);
+      expect(text.find('span').hasClass('colorInk')).toBe(true);
     });
 
     it('is inkLight when given by props', () => {
       const text = shallow(
         <Text color='inkLight'></Text>
       );
-      expect(icon.find('span').hasClass('colorInkLight')).toBe(true);
+      expect(text.find('span').hasClass('colorInkLight')).toBe(true);
     });
 
     it('is positive when given by props', () => {
       const text = shallow(
         <Text color='positive'></Text>
       );
-      expect(icon.find('span').hasClass('colorPositive')).toBe(true);
+      expect(text.find('span').hasClass('colorPositive')).toBe(true);
     });
 
     it('is negative when given by props', () => {
       const text = shallow(
         <Text color='negative'></Text>
       );
-      expect(icon.find('span').hasClass('colorNegative')).toBe(true);
+      expect(text.find('span').hasClass('colorNegative')).toBe(true);
     });
 
     it('is white when given by props', () => {
       const text = shallow(
         <Text color='white'></Text>
       );
-      expect(icon.find('span').hasClass('colorWhite')).toBe(true);
+      expect(text.find('span').hasClass('colorWhite')).toBe(true);
     });
 
     it('is purple when given by props', () => {
       const text = shallow(
         <Text color='purple'></Text>
       );
-      expect(icon.find('span').hasClass('colorPurple')).toBe(true);
+      expect(text.find('span').hasClass('colorPurple')).toBe(true);
     });
   });
 });
