@@ -13,14 +13,14 @@ class ComponentViewerRow extends Component {
     name: PropTypes.string.isRequired,
     value: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.arrayOf(PropTypes.string),
+      PropTypes.array,
       PropTypes.bool,
       PropTypes.func,
     ]),
     description: PropTypes.string,
     type: PropTypes.oneOfType([
       PropTypes.string,
-      PropTypes.arrayOf(PropTypes.string),
+      PropTypes.array,
       PropTypes.bool,
       PropTypes.func,
     ]).isRequired,

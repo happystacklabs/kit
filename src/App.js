@@ -5,6 +5,8 @@ import Button from './components/Button';
 import buttonViewerOptions from './components/Button/buttonViewerOptions';
 import Icon from './components/Icon';
 import iconViewerOptions from './components/Icon/iconViewerOptions';
+import Select from './components/Select';
+import selectViewerOptions from './components/Select/selectViewerOptions';
 
 
 class App extends Component {
@@ -16,9 +18,17 @@ class App extends Component {
           <Button/>
         </ComponentViewer>
         <br/>
-          <ComponentViewer options={iconViewerOptions}>
-            <Icon/>
-          </ComponentViewer>
+        <ComponentViewer options={iconViewerOptions}>
+          <Icon/>
+        </ComponentViewer>
+        <br/>
+        <ComponentViewer options={selectViewerOptions}>
+          <Select
+            options={[]}
+            name=''
+            value=''
+          />
+        </ComponentViewer>
       </div>
     );
   }

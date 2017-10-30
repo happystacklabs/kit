@@ -88,6 +88,24 @@ class ComponentViewerCode extends Component {
             <span className='codeColorGreen'> {prop.name}</span>
           </span>
         ))
+      } else if (Array.isArray(prop.value)) {
+        arr.push((
+          <span key={prop.name}>
+            <span className='codeColorGreen'> {prop.name}</span>
+            {'={['}<br />
+            {prop.value.map((row) => {
+              return (
+                <span>
+                  <pre>{'{'}
+                  label: <span className='codeColorYellow'>'{row.label}'</span>,
+                  value: <span className='codeColorYellow'>'{row.value}'</span>
+                  {'}'},</pre>
+                </span>
+              );
+            })}
+            {']}'}
+          </span>
+        ));
       } else {
         arr.push((
           <span key={prop.name}>
