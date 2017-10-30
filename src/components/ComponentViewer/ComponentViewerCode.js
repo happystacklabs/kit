@@ -42,7 +42,19 @@ class ComponentViewerCode extends Component {
       stringArray.push(' ');
       stringArray.push(prop.name);
       stringArray.push('=');
-      stringArray.push(prop.value);
+      if (Array.isArray(prop.value)) {
+        stringArray.push('{[');
+        prop.value.forEach((row) => {
+          stringArray.push('{label: ');
+          stringArray.push(row.label);
+          stringArray.push(', value: ');
+          stringArray.push(row.value);
+          stringArray.push('}, ');
+        });
+        stringArray.push(']}');
+      } else {
+        stringArray.push(prop.value);
+      }
     });
     stringArray.push('>');
     stringArray.push(children);

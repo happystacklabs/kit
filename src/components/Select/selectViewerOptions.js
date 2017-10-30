@@ -12,6 +12,36 @@ const selectViewerOptions = [
     description: 'Add a placeholder',
   },
   {
+    name: 'value',
+    value: 'wechat',
+    type: 'string',
+    description: 'The value of the input',
+  },
+  {
+    name: 'label',
+    value: '',
+    type: 'string',
+    description: 'Add a label to the input',
+  },
+  {
+    name: 'helpText',
+    value: '',
+    type: 'string',
+    description: 'Add an help text label',
+  },
+  {
+    name: 'error',
+    value: false,
+    type: 'bool',
+    description: 'Add an error state to the input',
+  },
+  {
+    name: 'disabled',
+    value: false,
+    type: 'bool',
+    description: 'Disable the input',
+  },
+  {
     name: 'options',
     value: [
       {label: 'wechat', value: 'wechat'},
@@ -20,12 +50,6 @@ const selectViewerOptions = [
     ],
     type: 'array',
     description: 'The options of the select input',
-  },
-  {
-    name: 'value',
-    value: 'wechat',
-    type: 'string',
-    description: 'The value',
   },
   {
     name: 'onChange',

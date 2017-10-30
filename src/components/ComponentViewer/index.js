@@ -21,7 +21,6 @@ class ComponentViewer extends Component {
 
    onInputChange = (event) => {
      // Change the option
-     console.log(event);
      const newState = Object.assign({}, this.state);
      const index = newState['options'].findIndex(x => x.name === event.name);
      if (newState['options'][index]['type'] === 'bool') {

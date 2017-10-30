@@ -40,7 +40,7 @@ class ComponentViewerRow extends Component {
    getType = () => {
      if (this.props.type === 'string') {
        return 'string';
-     } else if (Array.isArray(this.props.type)) {
+     } else if (Array.isArray(this.props.type) || this.props.type === 'array') {
        return 'array';
      } else if (this.props.type === 'bool') {
        return 'bool';
