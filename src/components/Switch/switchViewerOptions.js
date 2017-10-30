@@ -1,9 +1,8 @@
 const switchViewerOptions = [
   {
     name: 'color',
-    value: '',
+    value: 'purple',
     type: [
-      '',
       'positive',
       'negative',
       'purple',
@@ -12,9 +11,8 @@ const switchViewerOptions = [
   },
   {
     name: 'size',
-    value: '',
+    value: 'regular',
     type: [
-      '',
       'slim',
       'regular',
       'large',

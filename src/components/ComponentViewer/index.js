@@ -40,7 +40,7 @@ class ComponentViewer extends Component {
 
    onChildrenClick = (name) => {
      const newState = Object.assign({}, this.state);
-     if (name === '') {
+     if (!name) {
        return;
      }
      const index = this.state['options'].findIndex(x => x.name === name);
@@ -76,7 +76,7 @@ class ComponentViewer extends Component {
 
     return (
       <div className='ComponentViewer'>
-        <Text element='h1' size='extraLarge'>{this.props.children.type.name}</Text>
+        <Text element='h1' className='viewerH1' size='extraLarge'>{this.props.children.type.name}</Text>
         <div className='viewerExample'>
           <Text size='medium' element='h2'>Example</Text>
           <div className='viewerElement'>
