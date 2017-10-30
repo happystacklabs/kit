@@ -13,13 +13,17 @@ import Text from './components/Text';
 import textViewerOptions from './components/Text/textViewerOptions';
 import TextInput from './components/TextInput';
 import textInputViewerOptions from './components/TextInput/textInputViewerOptions';
+import Checkbox from './components/Checkbox';
+import checkboxViewerOptions from './components/Checkbox/checkboxViewerOptions';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <br />
+        <ComponentViewer options={checkboxViewerOptions}>
+          <Checkbox/>
+        </ComponentViewer>
         <ComponentViewer options={buttonViewerOptions}>
           <Button/>
         </ComponentViewer>
