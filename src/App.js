@@ -11,6 +11,8 @@ import Switch from './components/Switch';
 import switchViewerOptions from './components/Switch/switchViewerOptions';
 import Text from './components/Text';
 import textViewerOptions from './components/Text/textViewerOptions';
+import TextInput from './components/TextInput';
+import textInputViewerOptions from './components/TextInput/textInputViewerOptions';
 
 
 class App extends Component {
@@ -38,6 +40,9 @@ class App extends Component {
         </ComponentViewer>
         <ComponentViewer options={textViewerOptions}>
           <Text/>
+        </ComponentViewer>
+        <ComponentViewer options={textInputViewerOptions}>
+          <TextInput/>
         </ComponentViewer>
       </div>
     );
