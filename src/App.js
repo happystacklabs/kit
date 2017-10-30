@@ -7,6 +7,8 @@ import Icon from './components/Icon';
 import iconViewerOptions from './components/Icon/iconViewerOptions';
 import Select from './components/Select';
 import selectViewerOptions from './components/Select/selectViewerOptions';
+import Switch from './components/Switch';
+import switchViewerOptions from './components/Switch/switchViewerOptions';
 
 
 class App extends Component {
@@ -28,6 +30,9 @@ class App extends Component {
             name=''
             value=''
           />
+        </ComponentViewer>
+        <ComponentViewer options={switchViewerOptions}>
+          <Switch/>
         </ComponentViewer>
       </div>
     );

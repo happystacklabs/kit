@@ -38,19 +38,41 @@ class ComponentViewer extends Component {
      this.setState(newState);
    };
 
+   onChildrenClick = (name) => {
+     const newState = Object.assign({}, this.state);
+     if (name === '') {
+       return;
+     }
+     const index = this.state['options'].findIndex(x => x.name === name);
+     newState['options'][index]['value'] = !this.state['options'][index]['value'];
+     this.setState(newState);
+   };
+
   render() {
     const onChildrenChange = this.onChildrenChange;
+    const onChildrenClick = this.onChildrenClick;
+
     const newProps = this.state.options.reduce(function(object, item) {
       if (item['name'] === 'onChange') {
-        item['value'] = onChildrenChange;
-      }
-      else if (item['value'] === '' && Array.isArray(item['type'])) {
+        object[item['name']] = onChildrenChange;
+        return object;
+
+      } else if (item['value'] === '' && Array.isArray(item['type'])) {
+        return object;
+
+      } else if (item['name'] === 'onClick') {
+          object[item['name']] = () => {
+            return onChildrenClick(item['value']);
+          };
+          return object;
+
+      } else {
+        object[item['name']] = item['value'];
         return object;
       }
-      object[item['name']] = item['value'];
-      return object;
     }, {});
 
+    console.log(this.state.options);
 
     return (
       <div className='ComponentViewer'>

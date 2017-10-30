@@ -57,7 +57,7 @@ const buttonViewerOptions = [
     description: 'Make the button outline',
   },
   {
-    value: ()=>{},
+    value: '',
     name: 'onClick',
     type: 'function',
     description: 'call the parent when clicked',
