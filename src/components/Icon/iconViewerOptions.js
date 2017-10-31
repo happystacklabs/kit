@@ -55,6 +55,7 @@ const iconViewerOptions = [
       'negative',
       'positive',
       'purple',
+      'white',
     ],
     description: 'Change the color',
   }

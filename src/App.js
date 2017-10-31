@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <div className="App">
         <ComponentViewer options={checkboxViewerOptions}>
-          <Checkbox/>
+          <Checkbox name=''/>
         </ComponentViewer>
         <ComponentViewer options={buttonViewerOptions}>
           <Button/>
@@ -46,7 +46,7 @@ class App extends Component {
           <Text/>
         </ComponentViewer>
         <ComponentViewer options={textInputViewerOptions}>
-          <TextInput/>
+          <TextInput name=''/>
         </ComponentViewer>
       </div>
     );

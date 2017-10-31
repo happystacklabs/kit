@@ -107,7 +107,7 @@ class ComponentViewerCode extends Component {
             {'={['}<br />
             {prop.value.map((row) => {
               return (
-                <span>
+                <span key={row.label}>
                   <pre>{'{'}
                   label: <span className='codeColorYellow'>'{row.label}'</span>,
                   value: <span className='codeColorYellow'>'{row.value}'</span>

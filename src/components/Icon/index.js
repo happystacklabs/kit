@@ -53,6 +53,7 @@ export const iconColors = {
   'positive': 'colorPositive',
   'negative': 'colorNegative',
   'purple': 'colorPurple',
+  'white': 'colorWhite',
 }
 
 

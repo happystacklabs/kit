@@ -34,6 +34,7 @@ class ComponentViewer extends Component {
    onChildrenChange = (event) => {
      const newState = Object.assign({}, this.state);
      const index = newState['options'].findIndex(x => x.name === 'value');
+     console.log(newState['options'][index]);
      newState['options'][index]['value'] = event.target.value;
      this.setState(newState);
    };
@@ -71,8 +72,6 @@ class ComponentViewer extends Component {
         return object;
       }
     }, {});
-
-    console.log(this.state.options);
 
     return (
       <div className='ComponentViewer'>
