@@ -20,41 +20,48 @@ class ComponentViewer extends Component {
    }
 
    onInputChange = (event) => {
-     // Change the option
+     // Make a clone of state
      const newState = Object.assign({}, this.state);
+     // Find the index of the onChange option
      const index = newState['options'].findIndex(x => x.name === event.name);
-     if (newState['options'][index]['type'] === 'bool') {
-       newState['options'][index]['value'] = !this.state['options'][index]['value'];
-     } else {
-       newState['options'][index]['value'] = event.value;
-     }
+     newState['options'][index]['value'] = event.value;
      this.setState(newState);
    };
 
    onChildrenChange = (event) => {
+     // Make a clone of state
      const newState = Object.assign({}, this.state);
+     // Find the index of the onChange option
      const indexOnChange = newState['options'].findIndex(x => x.name === 'onChange');
-    const fieldValue = newState['options'][indexOnChange]['value'];
-    const indexValue = newState['options'].findIndex(x => x.name === fieldValue);
+     // Get the value of the Onchange option, it contains the name of the option to update
+     const fieldValue = newState['options'][indexOnChange]['value'];
+     // Find the index of the option to update
+     const indexValue = newState['options'].findIndex(x => x.name === fieldValue);
+     // Update the option value with the event value
      newState['options'][indexValue]['value'] = event.value;
+     // Update the state
      this.setState(newState);
-     console.log(newState['options'][indexValue]);
    };
 
-   onChildrenClick = (name) => {
+   onChildrenClick = (event) => {
+     // Make a clone of state
      const newState = Object.assign({}, this.state);
-     if (!name) {
-       return;
-     }
-     const index = this.state['options'].findIndex(x => x.name === name);
-     newState['options'][index]['value'] = !this.state['options'][index]['value'];
+     // Find the index of the onClick option
+     const indexOnClick = newState['options'].findIndex(x => x.name === 'onClick');
+     // Get the value of the Onclick option, it contains the name of the option to update
+     const fieldValue = newState['options'][indexOnClick]['value'];
+     // Find the index of the option to update
+     const indexValue = newState['options'].findIndex(x => x.name === fieldValue);
+     // Update the option value with the event value
+     newState['options'][indexValue]['value'] = event.value;
+     // Update the state
      this.setState(newState);
    };
 
   render() {
     const onChildrenChange = this.onChildrenChange;
     const onChildrenClick = this.onChildrenClick;
-
+    // When cloning the element passed by children we want to init the props from options
     const newProps = this.state.options.reduce(function(object, item) {
       if (item['name'] === 'onChange') {
         object[item['name']] = onChildrenChange;
@@ -64,10 +71,8 @@ class ComponentViewer extends Component {
         return object;
 
       } else if (item['name'] === 'onClick') {
-          object[item['name']] = () => {
-            return onChildrenClick(item['value']);
-          };
-          return object;
+        object[item['name']] = onChildrenClick;
+        return object;
 
       } else {
         object[item['name']] = item['value'];
@@ -91,6 +96,7 @@ class ComponentViewer extends Component {
         <ComponentViewerList
           options={this.state.options}
           onChange={this.onInputChange}
+          onClick={this.onInputChange}
         />
       </div>
     );

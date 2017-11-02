@@ -24,6 +24,7 @@ class ComponentViewerList extends Component {
               value={option.value}
               description={option.description}
               onChange={this.props.onChange}
+              onClick={this.props.onClick}
             />
           )
         );

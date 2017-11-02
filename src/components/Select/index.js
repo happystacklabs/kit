@@ -63,6 +63,11 @@ class Select extends Component {
   static defaultProps = {
    };
 
+   handleChange = (event) => {
+     if (this.props.onChange === null) { return; }
+     this.props.onChange({value: event.target.value, name: this.props.name});
+   };
+
   render() {
     const classes = ['selectInput'];
 
@@ -78,7 +83,7 @@ class Select extends Component {
             name={this.props.name}
             value={this.props.value}
             disabled={this.props.disabled}
-            onChange={this.props.onChange}
+            onChange={this.handleChange}
             className={classes.join(' ')}
           >
           {renderPlaceholder(this.props.placeholder)}

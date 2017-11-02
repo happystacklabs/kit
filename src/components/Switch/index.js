@@ -27,6 +27,11 @@ class Switch extends Component {
     on: false,
    };
 
+   handleClick = (event) => {
+     if (this.props.onClick === null) { return; }
+     this.props.onClick({value: !this.props.on, name: this.props.name});
+   };
+
   render() {
     const classes = ['switch'];
     const classesWrapper = [];
@@ -52,7 +57,7 @@ class Switch extends Component {
       <div className={classesWrapper.join(' ')}>
         <div
           className={classes.join(' ')}
-          onClick={this.props.onClick}
+          onClick={this.handleClick}
         >
           <div className='switchToggle'></div>
         </div>

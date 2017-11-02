@@ -74,7 +74,7 @@ const textInputViewerOptions = [
   },
   {
     name: 'onChange',
-    value: ()=>{},
+    value: 'value',
     type: 'function',
     description: 'Function to be called on change',
   },

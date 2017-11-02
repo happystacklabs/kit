@@ -24,7 +24,6 @@ class ComponentViewerRow extends Component {
       PropTypes.bool,
       PropTypes.func,
     ]).isRequired,
-    onSwitch: PropTypes.func,
   };
 
   static defaultProps = {
@@ -54,7 +53,7 @@ class ComponentViewerRow extends Component {
        return (
          <TextInput
           name={this.props.name}
-          onChange={this.onInputChange}
+          onChange={this.props.onChange}
           value={this.props.value}
          />
        );
@@ -62,7 +61,7 @@ class ComponentViewerRow extends Component {
        return (
          <Select
           name={this.props.name}
-          onChange={this.onInputChange}
+          onChange={this.props.onChange}
           value={this.props.value}
           options={this.getOptions()}
          />
@@ -71,21 +70,13 @@ class ComponentViewerRow extends Component {
        return (
          <Switch
            name={this.props.name}
-           onClick={this.onSwitchChange}
+           onClick={this.props.onClick}
            on={this.props.value}
          />
        );
      } else if (this.props.type === 'function') {
        return;
      }
-   };
-
-   onInputChange = (event) => {
-     this.props.onChange({name: this.props.name, value: event.target.value});
-   };
-
-   onSwitchChange = (event) => {
-     this.props.onChange({name: this.props.name, value: event.target.value});
    };
 
   render() {

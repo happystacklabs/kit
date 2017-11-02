@@ -65,6 +65,11 @@ class TextInput extends Component {
     type: 'text',
   };
 
+  handleChange = (event) => {
+    if (this.props.onChange === null) { return; }
+    this.props.onChange({name: this.props.name, value: event.target.value});
+  };
+
   render() {
     const readOnly = !this.props.readOnly && this.props.onChange ? false : true;
     const classes = ['textInput'];
@@ -89,7 +94,7 @@ class TextInput extends Component {
           name={this.props.name}
           value={this.props.value}
           placeholder={this.props.placeholder}
-          onChange={this.props.onChange}
+          onChange={this.handleChange}
           readOnly={readOnly}
           disabled={this.props.disabled}
           className={classes.join(' ')}
