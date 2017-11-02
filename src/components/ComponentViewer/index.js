@@ -33,10 +33,12 @@ class ComponentViewer extends Component {
 
    onChildrenChange = (event) => {
      const newState = Object.assign({}, this.state);
-     const index = newState['options'].findIndex(x => x.name === 'value');
-     console.log(newState['options'][index]);
-     newState['options'][index]['value'] = event.target.value;
+     const indexOnChange = newState['options'].findIndex(x => x.name === 'onChange');
+    const fieldValue = newState['options'][indexOnChange]['value'];
+    const indexValue = newState['options'].findIndex(x => x.name === fieldValue);
+     newState['options'][indexValue]['value'] = event.value;
      this.setState(newState);
+     console.log(newState['options'][indexValue]);
    };
 
    onChildrenClick = (name) => {

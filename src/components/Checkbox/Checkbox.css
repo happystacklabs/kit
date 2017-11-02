@@ -1,9 +1,14 @@
 .checkboxWrapper input {
-  cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  outline: 0; }
+  outline: 0;
+  margin: 0;
+  padding: 0; }
+
+.checkboxWrapper {
+  width: 16px;
+  height: 16px; }
 
 .checkboxWrapper input:after {
   display: inline-block;
@@ -20,11 +25,23 @@
 .checkboxWrapper input:checked:after {
   background: #5C6AC4; }
 
+.checkboxWrapper .checked .checkmark {
+  transform: translate(-50%, -50%) scale(1); }
+
 .checkboxInnerWrapper {
-  position: relative; }
+  position: relative;
+  width: 16px;
+  height: 16px; }
 
 .checkboxWrapper .checkmark {
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
   position: absolute;
   font-size: 14px;
+  transform: translate(-50%, -50%) scale(0);
   left: 50%;
-  top: 50%; }
+  top: 50%;
+  margin-top: 2px;
+  margin-left: 2px;
+  transition: transform .2s ease-in-out; }

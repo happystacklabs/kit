@@ -16,32 +16,26 @@ class Checkbox extends Component {
 
    handleChange = (event) => {
      if (this.props.onChange === null) { return; }
-     this.props.onChange(value: event.target.checked, name: this.props.name);
+     this.props.onChange({value: event.target.checked, name: this.props.name});
    };
 
-   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    if (onChange == null) { return; }
-    const {currentTarget} = event;
-    onChange(currentTarget.checked, id);
-  }
-
   render() {
-    const classWrapper = [];
+    const classes = ['checkboxInnerWrapper'];
 
     if (this.props.checked) {
-      classWrapper.push('checked');
+      classes.push('checked');
     }
 
     return (
       <div className='checkboxWrapper'>
-        <div className='checkboxInnerWrapper'>
+        <div className={classes.join(' ')}>
           <input
             name={this.props.name}
             type='checkbox'
             checked={this.props.checked}
             onChange={this.handleChange}
           />
-          <Icon name='check' color='purple' className='checkmark'/>
+          <Icon name='check' color='white' className='checkmark'/>
         </div>
       </div>
     );

@@ -12,7 +12,7 @@ const checkboxViewerOptions = [
     description: 'Check the checkbox',
   },
   {
-    value: '',
+    value: 'checked',
     name: 'onChange',
     type: 'function',
     description: 'Called when onChange checkbox',
