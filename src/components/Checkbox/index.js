@@ -15,6 +15,16 @@ const renderLabel = (name, labelText) => {
   }
 };
 
+const renderHelpText = (helpText) => {
+  if (helpText) {
+    return (
+      <div className='helpText'>
+        <Text color='inkLight' element='span' size='small'>{ helpText }</Text>
+      </div>
+    );
+  }
+};
+
 class Checkbox extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
@@ -22,6 +32,7 @@ class Checkbox extends Component {
     disabled: PropTypes.bool,
     error: PropTypes.bool,
     label: PropTypes.string,
+    helpText: PropTypes.string,
   };
 
   static defaultProps = {
@@ -56,6 +67,7 @@ class Checkbox extends Component {
           />
           <Icon name='check' color='white' className='checkmark'/>
         </div>
+        {renderHelpText(this.props.helpText)}
       </div>
     );
   }

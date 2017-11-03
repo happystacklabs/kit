@@ -63,3 +63,7 @@
 .checkboxWrapper .label {
   display: inline-block;
   float: left; }
+
+.checkboxWrapper .helpText {
+  clear: both;
+  margin-left: 27px; }

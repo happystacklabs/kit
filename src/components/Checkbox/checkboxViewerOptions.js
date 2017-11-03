@@ -12,6 +12,12 @@ const checkboxViewerOptions = [
     description: 'Label of the checkbox',
   },
   {
+    value: '',
+    name: 'helpText',
+    type: 'string',
+    description: 'Helptext of the checkbox',
+  },
+  {
     value: false,
     name: 'checked',
     type: 'bool',

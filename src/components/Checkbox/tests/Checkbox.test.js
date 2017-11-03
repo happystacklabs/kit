@@ -53,4 +53,14 @@ describe('Checkbox', () => {
       expect(checkbox.find('label').first().text()).toBe('Bar');
     });
   });
+
+  describe('helpText', () => {
+    it('add a helpText when given by props', () => {
+      const checkbox = mount(<Checkbox
+        name='Foo'
+        helpText='Bar'
+      />);
+      expect(checkbox.find('span').first().text()).toBe('Bar');
+    });
+  });
 });
