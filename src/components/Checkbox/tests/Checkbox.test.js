@@ -33,4 +33,14 @@ describe('Checkbox', () => {
       expect(checkbox.prop('disabled')).toBe(true);
     });
   });
+
+  describe('error', () => {
+    it('add error style', () => {
+      const checkbox = shallow(<Checkbox
+        name='Foo'
+        error
+      />).find('div').at(1);
+      expect(checkbox.hasClass('checkboxError')).toBe(true);
+    });
+  });
 });

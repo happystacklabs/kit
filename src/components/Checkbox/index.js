@@ -10,6 +10,7 @@ class Checkbox extends Component {
     name: PropTypes.string.isRequired,
     checked: PropTypes.bool,
     disabled: PropTypes.bool,
+    error: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -25,6 +26,10 @@ class Checkbox extends Component {
 
     if (this.props.checked) {
       classes.push('checked');
+    }
+
+    if (this.props.error) {
+      classes.push('checkboxError');
     }
 
     return (

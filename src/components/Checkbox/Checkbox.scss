@@ -20,21 +20,22 @@
 }
 
 .checkboxWrapper {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
 }
 
 .checkboxWrapper input:after {
   display: inline-block;
   content: '';
-  width: 16px;
-  height: 16px;
-  line-height: 16px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
   background: #FAFAFA;
   border: 1px solid #C4CDD5;
   box-shadow: 0 2px 0 0 rgba(0,0,0,0.04);
   border-radius: 3px;
   transition: background .2s ease-in-out;
+  box-sizing: border-box;
 }
 
 .checkboxWrapper input:checked:after {
@@ -49,20 +50,23 @@
 
 .checkboxInnerWrapper {
     position: relative;
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
 }
 
 .checkboxWrapper .checkmark {
   pointer-events: none;
-  width: 16px;
-  height: 16px;
+  width: 13px;
+  height: 13px;
   position: absolute;
-  font-size: 14px;
+  font-size: 13px;
   transform: translate(-50%,-50%) scale(0);
   left: 50%;
   top: 50%;
-  margin-top: 2px;
-  margin-left: 2px;
   transition: transform .2s ease-in-out;
+}
+
+.checkboxError input:after, .checkboxError input:checked:after {
+  background: #F9D8D6;
+  border: 2px solid #E03E30;
 }
