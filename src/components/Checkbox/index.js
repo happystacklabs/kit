@@ -9,6 +9,7 @@ class Checkbox extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
     checked: PropTypes.bool,
+    disabled: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -34,6 +35,7 @@ class Checkbox extends Component {
             type='checkbox'
             checked={this.props.checked}
             onChange={this.handleChange}
+            disabled={this.props.disabled}
           />
           <Icon name='check' color='white' className='checkmark'/>
         </div>

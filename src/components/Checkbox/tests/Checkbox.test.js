@@ -23,4 +23,14 @@ describe('Checkbox', () => {
       expect(spy).toHaveBeenCalledWith({"name": "foo", "value": true});
     });
   });
+
+  describe('disabled', () => {
+    it('disable the checkbox when given by props', () => {
+      const checkbox = shallow(<Checkbox
+        name='Foo'
+        disabled
+      />).find('input');
+      expect(checkbox.prop('disabled')).toBe(true);
+    });
+  });
 });

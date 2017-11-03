@@ -12,6 +12,12 @@ const checkboxViewerOptions = [
     description: 'Check the checkbox',
   },
   {
+    value: false,
+    name: 'disabled',
+    type: 'bool',
+    description: 'Disable the checkbox',
+  },
+  {
     value: 'checked',
     name: 'onChange',
     type: 'function',

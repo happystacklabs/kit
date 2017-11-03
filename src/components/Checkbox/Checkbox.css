@@ -5,6 +5,12 @@
   outline: 0;
   margin: 0;
   padding: 0; }
+  .checkboxWrapper input:disabled:after {
+    border: 1px solid #E3E6EA; }
+  .checkboxWrapper input:checked:disabled:after {
+    background: #FAFAFA; }
+  .checkboxWrapper input:checked:disabled + .checkmark {
+    color: #E3E6EA; }
 
 .checkboxWrapper {
   width: 16px;
