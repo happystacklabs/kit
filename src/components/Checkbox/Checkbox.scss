@@ -5,6 +5,7 @@
   outline: 0;
   margin: 0;
   padding: 0;
+  float: left;
 
   &:disabled:after {
     border: 1px solid #E3E6EA;
@@ -20,8 +21,11 @@
 }
 
 .checkboxWrapper {
-  width: 20px;
   height: 20px;
+}
+
+.checkboxWrapper label {
+  margin-left: 5px;
 }
 
 .checkboxWrapper input:after {
@@ -49,9 +53,11 @@
 }
 
 .checkboxInnerWrapper {
-    position: relative;
-    width: 20px;
-    height: 20px;
+  position: relative;
+  height: 20px;
+  float: left;
+  width: 20px;
+  display: inline-block;
 }
 
 .checkboxWrapper .checkmark {
@@ -69,4 +75,9 @@
 .checkboxError input:after, .checkboxError input:checked:after {
   background: #F9D8D6;
   border: 2px solid #E03E30;
+}
+
+.checkboxWrapper .label {
+  display: inline-block;
+  float: left;
 }

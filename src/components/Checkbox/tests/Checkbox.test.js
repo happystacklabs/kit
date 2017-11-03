@@ -43,4 +43,14 @@ describe('Checkbox', () => {
       expect(checkbox.hasClass('checkboxError')).toBe(true);
     });
   });
+
+  describe('label', () => {
+    it('add a label when given by props', () => {
+      const checkbox = mount(<Checkbox
+        name='Foo'
+        label='Bar'
+      />);
+      expect(checkbox.find('label').first().text()).toBe('Bar');
+    });
+  });
 });

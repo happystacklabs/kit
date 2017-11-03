@@ -2,8 +2,18 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Checkbox.css';
 import Icon from '../Icon';
+import Text from '../Text';
 
 
+const renderLabel = (name, labelText) => {
+  if (labelText) {
+    return (
+      <label htmlFor={name}>
+        <Text size='regular'>{ labelText }</Text>
+      </label>
+    );
+  }
+};
 
 class Checkbox extends Component {
   static propTypes = {
@@ -11,6 +21,7 @@ class Checkbox extends Component {
     checked: PropTypes.bool,
     disabled: PropTypes.bool,
     error: PropTypes.bool,
+    label: PropTypes.string,
   };
 
   static defaultProps = {
@@ -34,6 +45,7 @@ class Checkbox extends Component {
 
     return (
       <div className='checkboxWrapper'>
+        {renderLabel(this.props.name, this.props.label)}
         <div className={classes.join(' ')}>
           <input
             name={this.props.name}

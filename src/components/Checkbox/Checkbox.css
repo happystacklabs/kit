@@ -4,7 +4,8 @@
   appearance: none;
   outline: 0;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  float: left; }
   .checkboxWrapper input:disabled:after {
     border: 1px solid #E3E6EA; }
   .checkboxWrapper input:checked:disabled:after {
@@ -13,8 +14,10 @@
     color: #E3E6EA; }
 
 .checkboxWrapper {
-  width: 20px;
   height: 20px; }
+
+.checkboxWrapper label {
+  margin-left: 5px; }
 
 .checkboxWrapper input:after {
   display: inline-block;
@@ -37,8 +40,10 @@
 
 .checkboxInnerWrapper {
   position: relative;
+  height: 20px;
+  float: left;
   width: 20px;
-  height: 20px; }
+  display: inline-block; }
 
 .checkboxWrapper .checkmark {
   pointer-events: none;
@@ -54,3 +59,7 @@
 .checkboxError input:after, .checkboxError input:checked:after {
   background: #F9D8D6;
   border: 2px solid #E03E30; }
+
+.checkboxWrapper .label {
+  display: inline-block;
+  float: left; }
