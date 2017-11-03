@@ -50,6 +50,8 @@ class ComponentViewer extends Component {
      const indexOnClick = newState['options'].findIndex(x => x.name === 'onClick');
      // Get the value of the Onclick option, it contains the name of the option to update
      const fieldValue = newState['options'][indexOnClick]['value'];
+     // Fail Safe
+     if (fieldValue === false) { return; }
      // Find the index of the option to update
      const indexValue = newState['options'].findIndex(x => x.name === fieldValue);
      // Update the option value with the event value

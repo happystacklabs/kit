@@ -1,5 +1,6 @@
 import React from 'react';
 import Checkbox from ".."
+import {shallow, mount} from 'enzyme';
 
 describe('Checkbox', () => {
   it('set all props', () => {
@@ -16,8 +17,10 @@ describe('Checkbox', () => {
   describe('onClick()', () => {
     it('is called when the checkbox is clicked', () => {
       const spy = jest.fn();
-      shallow(<Checkbox onClick={spy} name='foo'/>).find('input').at(0).simulate('click');
-      expect(spy).toHaveBeenCalled();
+      const checkbox = mount(<Checkbox onChange={spy} name='foo'/>);
+      checkbox.find('input').instance().checked = true;
+      checkbox.find('input').simulate('change');
+      expect(spy).toHaveBeenCalledWith({"name": "foo", "value": true});
     });
   });
 });
