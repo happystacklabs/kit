@@ -7,20 +7,24 @@ describe('Checkbox', () => {
     const checkbox = shallow(
       <Checkbox
         name='Foo'
+        value='Bar'
+        id='Bar'
         checked
       />
     ).find('input');
     expect(checkbox.prop('name')).toBe('Foo');
+    expect(checkbox.prop('value')).toBe('Bar');
+    expect(checkbox.prop('id')).toBe('Bar');
     expect(checkbox.prop('checked')).toBe(true);
   });
 
   describe('onClick()', () => {
     it('is called when the checkbox is clicked', () => {
       const spy = jest.fn();
-      const checkbox = mount(<Checkbox onChange={spy} name='foo'/>);
+      const checkbox = mount(<Checkbox onChange={spy} name='foo' id='foo'/>);
       checkbox.find('input').instance().checked = true;
       checkbox.find('input').simulate('change');
-      expect(spy).toHaveBeenCalledWith({"name": "foo", "value": true});
+      expect(spy).toHaveBeenCalledWith({"id": "foo", "value": true});
     });
   });
 
@@ -61,6 +65,32 @@ describe('Checkbox', () => {
         helpText='Bar'
       />);
       expect(checkbox.find('span').first().text()).toBe('Bar');
+    });
+  });
+
+  describe('radio', () => {
+    it('change the input type to radio', () => {
+      const checkbox = mount(<Checkbox
+        name='Foo'
+        type='radio'
+      />);
+      expect(checkbox.find('input').first().props().type).toBe('radio');
+    });
+
+    it('render checkbox by default instead of radio', () => {
+      const checkbox = mount(<Checkbox
+        name='Foo'
+        type='radio'
+      />);
+      expect(checkbox.prop('type')).toBe('radio');
+    });
+
+    it('add the radio style selector', () => {
+      const checkbox = shallow(<Checkbox
+        name='Foo'
+        type='radio'
+      />).find('div').at(1);
+      expect(checkbox.hasClass('radioInput')).toBe(true);
     });
   });
 });

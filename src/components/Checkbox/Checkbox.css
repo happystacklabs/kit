@@ -12,9 +12,11 @@
     background: #FAFAFA; }
   .checkboxWrapper input:checked:disabled + .checkmark {
     color: #E3E6EA; }
+  .checkboxWrapper input:checked:disabled + .radioMiddle {
+    background: #E3E6EA; }
 
 .checkboxWrapper {
-  height: 20px; }
+  min-height: 20px; }
 
 .checkboxWrapper label {
   margin-left: 5px; }
@@ -35,7 +37,7 @@
 .checkboxWrapper input:checked:after {
   background: #5C6AC4; }
 
-.checkboxWrapper .checked .checkmark {
+.checkboxWrapper input:checked ~ .checkmark {
   transform: translate(-50%, -50%) scale(1); }
 
 .checkboxInnerWrapper {
@@ -67,3 +69,22 @@
 .checkboxWrapper .helpText {
   clear: both;
   margin-left: 27px; }
+
+.radioInput input:after {
+  border-radius: 20px; }
+
+.radioMiddle {
+  pointer-events: none;
+  display: block;
+  width: 5px;
+  border-radius: 5px;
+  height: 5px;
+  background: white;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(0);
+  left: 50%;
+  top: 50%;
+  transition: transform .2s ease-in-out; }
+
+.radioInput input:checked ~ .radioMiddle {
+  transform: translate(-50%, -50%) scale(1); }

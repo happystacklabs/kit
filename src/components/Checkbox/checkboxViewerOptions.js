@@ -13,9 +13,24 @@ const checkboxViewerOptions = [
   },
   {
     value: '',
+    name: 'value',
+    type: 'string',
+    description: 'Value of the checkbox',
+  },
+  {
+    value: '',
     name: 'helpText',
     type: 'string',
     description: 'Helptext of the checkbox',
+  },
+  {
+    value: 'checkbox',
+    name: 'type',
+    type: [
+      'checkbox',
+      'radio',
+    ],
+    description: 'the type of the input',
   },
   {
     value: false,

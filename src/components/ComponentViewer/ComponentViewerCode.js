@@ -45,11 +45,17 @@ class ComponentViewerCode extends Component {
       if (Array.isArray(prop.value)) {
         stringArray.push('{[');
         prop.value.forEach((row) => {
-          stringArray.push('{label: ');
-          stringArray.push(row.label);
-          stringArray.push(', value: ');
-          stringArray.push(row.value);
-          stringArray.push('}, ');
+          if (typeof row === 'string') {
+            stringArray.push("'");
+            stringArray.push(row);
+            stringArray.push("', ");
+          } else {
+            stringArray.push("{label: '");
+            stringArray.push(row.label);
+            stringArray.push("', value: '");
+            stringArray.push(row.value);
+            stringArray.push("'}, ");
+          }
         });
         stringArray.push(']}');
       } else {
@@ -105,15 +111,25 @@ class ComponentViewerCode extends Component {
           <span key={prop.name}>
             <span className='codeColorGreen'> {prop.name}</span>
             {'={['}<br />
-            {prop.value.map((row) => {
-              return (
-                <span key={row.label}>
-                  <pre>{'{'}
-                  label: <span className='codeColorYellow'>'{row.label}'</span>,
-                  value: <span className='codeColorYellow'>'{row.value}'</span>
-                  {'}'},</pre>
-                </span>
-              );
+            {prop.value.map((row, i) => {
+              if (typeof row === 'string') {
+                return (
+                  <span key={i}>
+                    <pre>
+                      <span className='codeColorYellow'>'{row}'</span>,
+                    </pre>
+                  </span>
+                );
+              } else {
+                return (
+                  <span key={i}>
+                    <pre>{'{'}
+                    label: <span className='codeColorYellow'>'{row.label}'</span>,
+                    value: <span className='codeColorYellow'>'{row.value}'</span>
+                    {'}'},</pre>
+                  </span>
+                );
+              }
             })}
             {']}'}
           </span>

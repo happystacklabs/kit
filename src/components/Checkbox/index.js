@@ -25,6 +25,23 @@ const renderHelpText = (helpText) => {
   }
 };
 
+const renderCheckmark = (type) => {
+  if (type === 'checkbox') {
+    return (
+      <Icon name='check' color='white' className='checkmark'/>
+    );
+  } else {
+    return (
+      <div className='radioMiddle'></div>
+    );
+  }
+}
+
+export const type = [
+  'checkbox',
+  'radio',
+];
+
 class Checkbox extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
@@ -32,15 +49,20 @@ class Checkbox extends Component {
     disabled: PropTypes.bool,
     error: PropTypes.bool,
     label: PropTypes.string,
+    value: PropTypes.string,
+    id: PropTypes.string,
     helpText: PropTypes.string,
+    type: PropTypes.oneOf(type),
   };
 
   static defaultProps = {
+    type: 'checkbox',
+    checked: false,
    };
 
    handleChange = (event) => {
      if (this.props.onChange === null) { return; }
-     this.props.onChange({value: event.target.checked, name: this.props.name});
+     this.props.onChange({value: !this.props.checked, id: this.props.id});
    };
 
   render() {
@@ -54,18 +76,24 @@ class Checkbox extends Component {
       classes.push('checkboxError');
     }
 
+    if (this.props.type === 'radio') {
+      classes.push('radioInput');
+    }
+
     return (
       <div className='checkboxWrapper'>
-        {renderLabel(this.props.name, this.props.label)}
+        {renderLabel(this.props.id, this.props.label)}
         <div className={classes.join(' ')}>
           <input
             name={this.props.name}
-            type='checkbox'
+            type={this.props.type}
+            id={this.props.id}
+            value={this.props.value}
             checked={this.props.checked}
             onChange={this.handleChange}
             disabled={this.props.disabled}
           />
-          <Icon name='check' color='white' className='checkmark'/>
+          {renderCheckmark(this.props.type)}
         </div>
         {renderHelpText(this.props.helpText)}
       </div>

@@ -15,12 +15,20 @@ import TextInput from './components/TextInput';
 import textInputViewerOptions from './components/TextInput/textInputViewerOptions';
 import Checkbox from './components/Checkbox';
 import checkboxViewerOptions from './components/Checkbox/checkboxViewerOptions';
+import ChoiceList from './components/ChoiceList';
+import choiceListViewerOptions from './components/ChoiceList/choiceListViewerOptions';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <ComponentViewer options={choiceListViewerOptions}>
+          <ChoiceList
+            name=''
+            choices={[]}
+          />
+        </ComponentViewer>
         <ComponentViewer options={checkboxViewerOptions}>
           <Checkbox name=''/>
         </ComponentViewer>
