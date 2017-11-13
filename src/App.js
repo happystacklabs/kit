@@ -19,12 +19,17 @@ import ChoiceList from './components/ChoiceList';
 import choiceListViewerOptions from './components/ChoiceList/choiceListViewerOptions';
 import Spinner from './components/Spinner';
 import spinnerViewerOptions from './components/Spinner/spinnerViewerOptions';
+import Paginator from './components/Paginator';
+import paginatorViewerOptions from './components/Paginator/paginatorViewerOptions';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <ComponentViewer options={paginatorViewerOptions}>
+          <Paginator/>
+        </ComponentViewer>
         <ComponentViewer options={spinnerViewerOptions}>
           <Spinner/>
         </ComponentViewer>

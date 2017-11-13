@@ -32,6 +32,12 @@
 .button:disabled:hover {
   background: #FAFAFA; }
 
+.buttonPlain:disabled, .buttonPlain:disabled:hover {
+  background: none;
+  border: none;
+  color: #C4CDD5;
+  box-shadow: none; }
+
 .buttonSizeSlim {
   min-height: 28px;
   min-width: 28px; }
