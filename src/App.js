@@ -17,12 +17,17 @@ import Checkbox from './components/Checkbox';
 import checkboxViewerOptions from './components/Checkbox/checkboxViewerOptions';
 import ChoiceList from './components/ChoiceList';
 import choiceListViewerOptions from './components/ChoiceList/choiceListViewerOptions';
+import Spinner from './components/Spinner';
+import spinnerViewerOptions from './components/Spinner/spinnerViewerOptions';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <ComponentViewer options={spinnerViewerOptions}>
+          <Spinner/>
+        </ComponentViewer>
         <ComponentViewer options={choiceListViewerOptions}>
           <ChoiceList
             name=''

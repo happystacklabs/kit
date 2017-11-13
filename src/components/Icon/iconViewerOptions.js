@@ -58,7 +58,7 @@ const iconViewerOptions = [
       'white',
     ],
     description: 'Change the color',
-  }
+  },
 ];
 
 export default iconViewerOptions;
