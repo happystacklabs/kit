@@ -114,4 +114,19 @@ describe('Button', () => {
       expect(button.find('button').hasClass('buttonOutline')).toBe(true);
     });
   });
+  describe('loading', () => {
+    it('render spinner when given by props', () => {
+      const button = shallow(
+        <Button loading></Button>
+      );
+      expect(button.find('div').first().hasClass('buttonContentLoading')).toBe(true);
+    });
+
+    it('disable the button', () => {
+      const button = shallow(
+        <Button loading></Button>
+      );
+      expect(button.find('button').prop('disabled')).toBe(true);
+    });
+  });
 });

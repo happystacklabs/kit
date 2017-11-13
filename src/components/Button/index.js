@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Button.css';
+import Spinner from '../Spinner';
 
 
 export const buttonSizes = {
@@ -15,6 +16,25 @@ export const buttonColors = {
   'purple': 'buttonColorPurple',
 };
 
+const renderContent = (props) => {
+  if (props.loading) {
+    const size = props.size === 'slim' || props.size === 'regular' ? 'small' : 'regular';
+    const type = props.size === 'slim' ? 'loader2' : 'loader1';
+    return (
+      <div className='buttonContentLoading'>
+        <span className='buttonSpinner'>
+          <Spinner color='inkLight' size={size} type={type}></Spinner>
+        </span>
+        <span className='hidden'>{props.children}</span>
+      </div>
+    );
+  } else {
+    return (
+      <span>{props.children}</span>
+    );
+  }
+};
+
 class Button extends Component {
   static propTypes = {
     children: PropTypes.node,
@@ -25,6 +45,7 @@ class Button extends Component {
     fullWidth: PropTypes.bool,
     plain: PropTypes.bool,
     outline: PropTypes.bool,
+    loading: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -56,14 +77,20 @@ class Button extends Component {
       classes.push(buttonColors[this.props.color]);
     }
 
+    if (this.props.loading) {
+      classes.push('loading');
+    }
+
+    const disabled = this.props.loading ? true : this.props.disabled;
+
     return (
       <button
         onClick={this.props.onClick}
-        disabled={this.props.disabled}
+        disabled={disabled}
         className={classes.join(' ')}
         size={this.props.size}
       >
-        <span>{this.props.children}</span>
+        {renderContent(this.props)}
       </button>
     );
   }

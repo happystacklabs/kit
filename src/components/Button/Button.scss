@@ -28,6 +28,8 @@
 
 .button:disabled {
   color: #C4CDD5;
+  border: 1px solid #C4CDD5;
+  background: #FAFAFA;
   i {
     color: #C4CDD5;
   }
@@ -126,4 +128,39 @@
 
 .buttonOutline {
   background: none;
+}
+
+.button .hidden {
+  color: transparent;
+}
+
+.buttonSpinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.button .spinner {
+  color: #C4CDD5;
+}
+
+.buttonSizeSlim .buttonSpinner {
+  margin-top: rem(-5px);
+  margin-left: rem(-2px);
+}
+
+.buttonSizeRegular .buttonSpinner {
+  margin-top: 0;
+  margin-left: rem(-3px)/2;
+}
+
+.buttonSizeLarge .buttonSpinner {
+  margin-top: 0;
+  margin-left: rem(-3px)/2;
+}
+
+.buttonContentLoading {
+  position: relative;
+  margin-top: -3px;
+  height: 1em;
 }

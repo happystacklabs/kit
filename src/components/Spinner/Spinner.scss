@@ -1,14 +1,17 @@
 @import '../utilities';
 
+.spinner {
+  margin: auto;
+}
+
 .loader1 {
-  margin: 100px auto;
   width: 1em;
   height: 1em;
   border-radius: 50%;
   position: relative;
   text-indent: -9999em;
-  -webkit-animation: load1 1.3s infinite linear;
-  animation: load1 1.3s infinite linear;
+  -webkit-animation: load1 1s infinite linear;
+  animation: load1 1s infinite linear;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);
@@ -76,12 +79,11 @@
   height: 2.5em;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-  -webkit-animation: load2 1.8s infinite ease-in-out;
-  animation: load2 1.8s infinite ease-in-out;
+  -webkit-animation: load2 1s infinite ease-in-out;
+  animation: load2 1s infinite ease-in-out;
 }
 
 .loader2 {
-  margin: 80px auto;
   position: relative;
   text-indent: -9999em;
   -webkit-transform: translateZ(0);
@@ -150,13 +152,13 @@
 }
 
 .spinnerSizeSmall {
-  font-size: rem(2px);
+  font-size: 2px;
 }
 
 .spinnerSizeRegular {
-  font-size: rem(4px);
+  font-size: 4px;
 }
 
 .spinnerSizeLarge {
-  font-size: rem(10px);
+  font-size: 6px;
 }

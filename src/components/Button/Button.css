@@ -21,7 +21,9 @@
   outline: 0; }
 
 .button:disabled {
-  color: #C4CDD5; }
+  color: #C4CDD5;
+  border: 1px solid #C4CDD5;
+  background: #FAFAFA; }
   .button:disabled i {
     color: #C4CDD5; }
   .button:disabled:active {
@@ -97,3 +99,31 @@
 
 .buttonOutline {
   background: none; }
+
+.button .hidden {
+  color: transparent; }
+
+.buttonSpinner {
+  position: absolute;
+  top: 50%;
+  left: 50%; }
+
+.button .spinner {
+  color: #C4CDD5; }
+
+.buttonSizeSlim .buttonSpinner {
+  margin-top: -0.3125rem;
+  margin-left: -0.125rem; }
+
+.buttonSizeRegular .buttonSpinner {
+  margin-top: 0;
+  margin-left: -0.09375rem; }
+
+.buttonSizeLarge .buttonSpinner {
+  margin-top: 0;
+  margin-left: -0.09375rem; }
+
+.buttonContentLoading {
+  position: relative;
+  margin-top: -3px;
+  height: 1em; }

@@ -28,6 +28,12 @@ const buttonViewerOptions = [
   },
   {
     value: false,
+    name: 'loading',
+    type: 'bool',
+    description: 'Change the state of the button to loading',
+  },
+  {
+    value: false,
     name: 'disabled',
     type: 'bool',
     description: 'Disabled the button',
