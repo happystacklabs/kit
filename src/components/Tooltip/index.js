@@ -49,7 +49,7 @@ class Tooltip extends Component {
     this.setState(newState);
   }
 
-  render() {
+  calculateStyle = () => {
     // child dimension
     const childWidth = this.state['childPosition'] ? Math.round(this.state['childPosition'].width) : null;
     const childHeight = this.state['childPosition'] ? Math.round(this.state['childPosition'].height) : null;
@@ -79,6 +79,13 @@ class Tooltip extends Component {
       'marginBottom': marginBottom,
       'marginTop': marginTop,
     }
+
+    return tooltipStyle;
+  };
+
+  render() {
+    const tooltipStyle = this.calculateStyle();
+
     const classes = ['tooltip'];
     classes.push(this.props.position);
     if (this.props.active || this.state.active) {
