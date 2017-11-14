@@ -76,6 +76,9 @@ class ComponentViewer extends Component {
         object[item['name']] = onChildrenClick;
         return object;
 
+      } else if (item['type'] === 'node') {
+        return object;
+
       } else {
         object[item['name']] = item['value'];
         return object;

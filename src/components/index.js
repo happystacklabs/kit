@@ -8,3 +8,5 @@ export Switch from './Switch';
 export Checkbox from './Checkbox';
 export ChoiceList from './ChoiceList';
 export Spinner from './Spinner';
+export Paginator from './Paginator';
+export Tooltip from './Tooltip';

@@ -21,12 +21,19 @@ import Spinner from './components/Spinner';
 import spinnerViewerOptions from './components/Spinner/spinnerViewerOptions';
 import Paginator from './components/Paginator';
 import paginatorViewerOptions from './components/Paginator/paginatorViewerOptions';
+import Tooltip from './components/Tooltip';
+import tooltipViewerOptions from './components/Tooltip/tooltipViewerOptions';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <ComponentViewer options={tooltipViewerOptions}>
+          <Tooltip>
+            <Button>Hover me!</Button>
+          </Tooltip>
+        </ComponentViewer>
         <ComponentViewer options={paginatorViewerOptions}>
           <Paginator/>
         </ComponentViewer>

@@ -45,6 +45,8 @@ class ComponentViewerRow extends Component {
        return 'bool';
      } else if (this.props.type === 'function') {
        return 'function';
+     } else if (this.props.type === 'node') {
+       return 'node';
      }
    }
 
@@ -75,6 +77,8 @@ class ComponentViewerRow extends Component {
          />
        );
      } else if (this.props.type === 'function') {
+       return;
+     } else if (this.props.type === 'node') {
        return;
      }
    };
