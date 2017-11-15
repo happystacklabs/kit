@@ -3,13 +3,13 @@ const avatarViewerOptions = [
     value: 'http://via.placeholder.com/350x350',
     name: 'source',
     type: 'string',
-    description: 'Source of the image of the avatar',
+    description: 'Source of the image of the thumbnail',
   },
   {
-    value: '',
-    name: 'initial',
+    value: 'Placeholder',
+    name: 'alt',
     type: 'string',
-    description: 'Show initial instead of image',
+    description: 'Alternative text for the image',
   },
   {
     value: 'medium',
@@ -19,7 +19,7 @@ const avatarViewerOptions = [
       'medium',
       'large',
     ],
-    description: 'Size of the avatar',
+    description: 'Size of the thumbnail',
   },
 ];
 

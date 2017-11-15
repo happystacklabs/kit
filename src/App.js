@@ -25,12 +25,17 @@ import Tooltip from './components/Tooltip';
 import tooltipViewerOptions from './components/Tooltip/tooltipViewerOptions';
 import Avatar from './components/Avatar';
 import avatarViewerOptions from './components/Avatar/avatarViewerOptions';
+import Thumbnail from './components/Thumbnail';
+import thumbnailViewerOptions from './components/Thumbnail/thumbnailViewerOptions';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <ComponentViewer options={thumbnailViewerOptions}>
+          <Thumbnail alt=''/>
+        </ComponentViewer>
         <ComponentViewer options={avatarViewerOptions}>
           <Avatar/>
         </ComponentViewer>
