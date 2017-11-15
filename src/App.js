@@ -23,12 +23,17 @@ import Paginator from './components/Paginator';
 import paginatorViewerOptions from './components/Paginator/paginatorViewerOptions';
 import Tooltip from './components/Tooltip';
 import tooltipViewerOptions from './components/Tooltip/tooltipViewerOptions';
+import Avatar from './components/Avatar';
+import avatarViewerOptions from './components/Avatar/avatarViewerOptions';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <ComponentViewer options={avatarViewerOptions}>
+          <Avatar/>
+        </ComponentViewer>
         <ComponentViewer options={tooltipViewerOptions}>
           <Tooltip>
             <Button>Hover me!</Button>
