@@ -1,0 +1,32 @@
+
+.skeletonLine {
+  background: rgba(196,205,213,0.40);
+  border-radius: 3px;
+  width: 100%;
+  height: 8px;
+  margin-bottom: 10px;
+  animation: skeletonAnimation 1.0s linear infinite alternate;
+
+  &:last-child:not(:first-child) {
+    width: 90%;
+  }
+}
+
+.skeletonDisplay {
+  background: rgba(196,205,213,0.40);
+  border-radius: 3px;
+  width: 110px;
+  height: 30px;
+  margin-bottom: 10px;
+  animation: skeletonAnimation 1.0s linear infinite alternate;
+}
+
+@keyframes skeletonAnimation {
+  0% {
+    opacity: 0.45;
+  }
+
+  100% {
+    opacity: 0.9;
+  }
+}

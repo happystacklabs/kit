@@ -29,12 +29,17 @@ import Thumbnail from './components/Thumbnail';
 import thumbnailViewerOptions from './components/Thumbnail/thumbnailViewerOptions';
 import ButtonGroup from './components/ButtonGroup';
 import buttonGroupViewerOptions from './components/ButtonGroup/buttonGroupViewerOptions';
+import Skeleton from './components/Skeleton';
+import skeletonViewerOptions from './components/Skeleton/skeletonViewerOptions';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <ComponentViewer options={skeletonViewerOptions}>
+          <Skeleton/>
+        </ComponentViewer>
         <ComponentViewer options={buttonGroupViewerOptions}>
           <ButtonGroup>
             <Button>Left</Button>
