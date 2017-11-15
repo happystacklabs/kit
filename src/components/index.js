@@ -12,3 +12,4 @@ export Paginator from './Paginator';
 export Tooltip from './Tooltip';
 export Avatar from './Avatar';
 export Thumbnail from './Thumbnail';
+export ButtonGroup from './ButtonGroup';

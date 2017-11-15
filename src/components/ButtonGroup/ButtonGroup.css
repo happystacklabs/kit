@@ -1,0 +1,15 @@
+.buttonGroup button {
+  margin-right: 10px; }
+
+.buttonGroup.segmented button {
+  margin: 0;
+  border-radius: 0; }
+
+.buttonGroup.segmented button:first-child {
+  border-radius: 3px 0 0 3px; }
+
+.buttonGroup.segmented button:last-child {
+  border-radius: 0 3px 3px 0; }
+
+.buttonGroup.segmented button:not(:first-child) {
+  margin-left: -1px; }

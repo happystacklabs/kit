@@ -27,12 +27,21 @@ import Avatar from './components/Avatar';
 import avatarViewerOptions from './components/Avatar/avatarViewerOptions';
 import Thumbnail from './components/Thumbnail';
 import thumbnailViewerOptions from './components/Thumbnail/thumbnailViewerOptions';
+import ButtonGroup from './components/ButtonGroup';
+import buttonGroupViewerOptions from './components/ButtonGroup/buttonGroupViewerOptions';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <ComponentViewer options={buttonGroupViewerOptions}>
+          <ButtonGroup>
+            <Button>Left</Button>
+            <Button>Center</Button>
+            <Button>Right</Button>
+          </ButtonGroup>
+        </ComponentViewer>
         <ComponentViewer options={thumbnailViewerOptions}>
           <Thumbnail alt=''/>
         </ComponentViewer>
