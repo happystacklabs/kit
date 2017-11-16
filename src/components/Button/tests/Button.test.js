@@ -3,12 +3,6 @@ import Button from ".."
 
 
 describe('Button', () => {
-  it('set all props', () => {
-    const button = shallow(
-      <Button></Button>
-    ).find('button');
-  });
-
   describe('children', () => {
     it('show the text', () => {
       const button = shallow(

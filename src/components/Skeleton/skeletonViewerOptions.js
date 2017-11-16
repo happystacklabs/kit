@@ -2,7 +2,7 @@ const skeletonViewerOptions = [
   {
     value: 3,
     name: 'lines',
-    type: 'string',
+    type: 'number',
     description: 'Number of lines',
   },
   {

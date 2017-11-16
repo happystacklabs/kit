@@ -49,7 +49,10 @@ export const type = [
 class TextInput extends Component {
   static propTypes = {
     name: PropTypes.string.isRequired,
-    value: PropTypes.string,
+    value: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number,
+    ]),
     placeholder: PropTypes.string,
     readOnly: PropTypes.bool,
     disabled: PropTypes.bool,

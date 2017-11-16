@@ -16,6 +16,7 @@ class ComponentViewerRow extends Component {
       PropTypes.array,
       PropTypes.bool,
       PropTypes.func,
+      PropTypes.number,
     ]),
     description: PropTypes.string,
     type: PropTypes.oneOfType([
@@ -80,6 +81,15 @@ class ComponentViewerRow extends Component {
        return;
      } else if (this.props.type === 'node') {
        return;
+     } else if (this.props.type === 'number') {
+       return (
+         <TextInput
+          name={this.props.name}
+          onChange={this.props.onChange}
+          value={this.props.value}
+          type='number'
+         />
+       );
      }
    };
 

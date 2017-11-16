@@ -31,12 +31,17 @@ import ButtonGroup from './components/ButtonGroup';
 import buttonGroupViewerOptions from './components/ButtonGroup/buttonGroupViewerOptions';
 import Skeleton from './components/Skeleton';
 import skeletonViewerOptions from './components/Skeleton/skeletonViewerOptions';
+import Progress from './components/Progress';
+import progressViewerOptions from './components/Progress/progressViewerOptions';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <ComponentViewer options={progressViewerOptions}>
+          <Progress/>
+        </ComponentViewer>
         <ComponentViewer options={skeletonViewerOptions}>
           <Skeleton/>
         </ComponentViewer>
