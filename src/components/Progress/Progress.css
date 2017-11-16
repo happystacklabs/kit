@@ -12,6 +12,18 @@
   animation: progressAnimation 1.0s linear infinite alternate;
   transition: width 0.18s ease-in-out; }
 
+.progressMax {
+  border-radius: 2px; }
+
+.progressBar.progressSmall, .progressSmall .progressInside {
+  height: 8px; }
+
+.progressBar.progressMedium, .progressMedium .progressInside {
+  height: 15px; }
+
+.progressBar.progressLarge, .progressLarge .progressInside {
+  height: 25px; }
+
 @keyframes progressAnimation {
   0% {
     opacity: 0.6; }

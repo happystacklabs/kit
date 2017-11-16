@@ -11,23 +11,26 @@ describe('Progress', () => {
       expect(progress.find('div').first().hasClass('progressBar')).toBe(true);
   });
 
-  describe('vertical', () => {
-    it('flip the orientation of the progress bar', () => {
-
-    });
-  });
-
   describe('size', () => {
     it('render the medium size by default', () => {
-
+      const progress = shallow(
+        <Progress/>
+      );
+      expect(progress.find('div').first().hasClass('progressMedium')).toBe(true);
     });
 
     it('render the small size when given by props', () => {
-
+      const progress = shallow(
+        <Progress size='small'/>
+      );
+      expect(progress.find('div').first().hasClass('progressSmall')).toBe(true);
     });
 
     it('render the large size when given by props', () => {
-
+      const progress = shallow(
+        <Progress size='large'/>
+      );
+      expect(progress.find('div').first().hasClass('progressLarge')).toBe(true);
     });
   });
 
@@ -36,7 +39,14 @@ describe('Progress', () => {
         const progress = shallow(
           <Progress progress={50}/>
         );
-        expect(progress.find('div').first().style).to.have.property('opacity', '1');
+        expect(progress.find('div').at(1).prop('style')).toEqual({"width": "50%"});
+    });
+
+    it('limit the boundary between 0 and 100', () => {
+      const progress = shallow(
+        <Progress progress={200}/>
+      );
+      expect(progress.find('div').at(1).prop('style')).toEqual({"width": "100%"});
     });
   });
 });
