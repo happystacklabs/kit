@@ -4,12 +4,14 @@
   position: fixed;
   border-radius: 0;
   height: 100%;
-  padding: 12px;
+  padding: 15px;
   box-sizing: border-box;
-  border-right: 1px solid rgba(196, 205, 213, 0.6); }
+  border-right: 1px solid rgba(196, 205, 213, 0.6);
+  overflow-y: scroll; }
   .navigationBar .branding {
     margin: 15px 0 35px 0;
-    vertical-align: middle; }
+    vertical-align: middle;
+    line-height: 0; }
     .navigationBar .branding img {
       width: 36px;
       height: 24px; }
@@ -24,3 +26,18 @@
     display: block;
     width: 100%;
     margin-bottom: 10px; }
+  .navigationBar a, .navigationBar a:active, .navigationBar a:focus, .navigationBar a:visited {
+    color: #222C35;
+    text-decoration: none;
+    width: 100%;
+    display: inline-block;
+    outline: none; }
+  .navigationBar a:hover span {
+    color: #5C6AC4; }
+  .navigationBar a.active {
+    background: #5C6AC4;
+    padding: 8px 0 8px 10px;
+    box-sizing: border-box;
+    border-radius: 3px; }
+    .navigationBar a.active span {
+      color: white; }
