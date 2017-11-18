@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ComponentViewer from './components/ComponentViewer';
 import './App.css';
+import Navigation from './appComponents/Navigation';
+
 import Button from './components/Button';
 import buttonViewerOptions from './components/Button/buttonViewerOptions';
 import Icon from './components/Icon';
@@ -40,73 +42,76 @@ import actionListViewerOptions from './components/ActionList/actionListViewerOpt
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <ComponentViewer options={actionListViewerOptions}>
-          <ActionList></ActionList>
-        </ComponentViewer>
-        <ComponentViewer options={progressViewerOptions}>
-          <Progress/>
-        </ComponentViewer>
-        <ComponentViewer options={skeletonViewerOptions}>
-          <Skeleton/>
-        </ComponentViewer>
-        <ComponentViewer options={buttonGroupViewerOptions}>
-          <ButtonGroup>
-            <Button>Left</Button>
-            <Button>Center</Button>
-            <Button>Right</Button>
-          </ButtonGroup>
-        </ComponentViewer>
-        <ComponentViewer options={thumbnailViewerOptions}>
-          <Thumbnail alt=''/>
-        </ComponentViewer>
-        <ComponentViewer options={avatarViewerOptions}>
-          <Avatar/>
-        </ComponentViewer>
-        <ComponentViewer options={tooltipViewerOptions}>
-          <Tooltip>
-            <Button>Hover me!</Button>
-          </Tooltip>
-        </ComponentViewer>
-        <ComponentViewer options={paginatorViewerOptions}>
-          <Paginator/>
-        </ComponentViewer>
-        <ComponentViewer options={spinnerViewerOptions}>
-          <Spinner/>
-        </ComponentViewer>
-        <ComponentViewer options={choiceListViewerOptions}>
-          <ChoiceList
-            name=''
-            choices={[]}
-          />
-        </ComponentViewer>
-        <ComponentViewer options={checkboxViewerOptions}>
-          <Checkbox name=''/>
-        </ComponentViewer>
-        <ComponentViewer options={buttonViewerOptions}>
-          <Button/>
-        </ComponentViewer>
-        <br/>
-        <ComponentViewer options={iconViewerOptions}>
-          <Icon/>
-        </ComponentViewer>
-        <br/>
-        <ComponentViewer options={selectViewerOptions}>
-          <Select
-            options={[]}
-            name=''
-            value=''
-          />
-        </ComponentViewer>
-        <ComponentViewer options={switchViewerOptions}>
-          <Switch/>
-        </ComponentViewer>
-        <ComponentViewer options={textViewerOptions}>
-          <Text/>
-        </ComponentViewer>
-        <ComponentViewer options={textInputViewerOptions}>
-          <TextInput name=''/>
-        </ComponentViewer>
+      <div className="app">
+        <Navigation/>
+        <div className='container'>
+          <ComponentViewer options={actionListViewerOptions}>
+            <ActionList></ActionList>
+          </ComponentViewer>
+          <ComponentViewer options={progressViewerOptions}>
+            <Progress/>
+          </ComponentViewer>
+          <ComponentViewer options={skeletonViewerOptions}>
+            <Skeleton/>
+          </ComponentViewer>
+          <ComponentViewer options={buttonGroupViewerOptions}>
+            <ButtonGroup>
+              <Button>Left</Button>
+              <Button>Center</Button>
+              <Button>Right</Button>
+            </ButtonGroup>
+          </ComponentViewer>
+          <ComponentViewer options={thumbnailViewerOptions}>
+            <Thumbnail alt=''/>
+          </ComponentViewer>
+          <ComponentViewer options={avatarViewerOptions}>
+            <Avatar/>
+          </ComponentViewer>
+          <ComponentViewer options={tooltipViewerOptions}>
+            <Tooltip>
+              <Button>Hover me!</Button>
+            </Tooltip>
+          </ComponentViewer>
+          <ComponentViewer options={paginatorViewerOptions}>
+            <Paginator/>
+          </ComponentViewer>
+          <ComponentViewer options={spinnerViewerOptions}>
+            <Spinner/>
+          </ComponentViewer>
+          <ComponentViewer options={choiceListViewerOptions}>
+            <ChoiceList
+              name=''
+              choices={[]}
+            />
+          </ComponentViewer>
+          <ComponentViewer options={checkboxViewerOptions}>
+            <Checkbox name=''/>
+          </ComponentViewer>
+          <ComponentViewer options={buttonViewerOptions}>
+            <Button/>
+          </ComponentViewer>
+          <br/>
+          <ComponentViewer options={iconViewerOptions}>
+            <Icon/>
+          </ComponentViewer>
+          <br/>
+          <ComponentViewer options={selectViewerOptions}>
+            <Select
+              options={[]}
+              name=''
+              value=''
+            />
+          </ComponentViewer>
+          <ComponentViewer options={switchViewerOptions}>
+            <Switch/>
+          </ComponentViewer>
+          <ComponentViewer options={textViewerOptions}>
+            <Text/>
+          </ComponentViewer>
+          <ComponentViewer options={textInputViewerOptions}>
+            <TextInput name=''/>
+          </ComponentViewer>
+        </div>
       </div>
     );
   }

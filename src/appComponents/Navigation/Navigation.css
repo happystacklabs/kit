@@ -1,0 +1,26 @@
+.navigationBar {
+  background: #FAFAFA;
+  width: 250px;
+  position: fixed;
+  border-radius: 0;
+  height: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  border-right: 1px solid rgba(196, 205, 213, 0.6); }
+  .navigationBar .branding {
+    margin: 15px 0 35px 0;
+    vertical-align: middle; }
+    .navigationBar .branding img {
+      width: 36px;
+      height: 24px; }
+    .navigationBar .branding h1 {
+      margin: 0 5px 0 10px;
+      display: inline; }
+  .navigationBar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+  .navigationBar li {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px; }
