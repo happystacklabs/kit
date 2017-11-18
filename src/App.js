@@ -33,12 +33,17 @@ import Skeleton from './components/Skeleton';
 import skeletonViewerOptions from './components/Skeleton/skeletonViewerOptions';
 import Progress from './components/Progress';
 import progressViewerOptions from './components/Progress/progressViewerOptions';
+import ActionList from './components/ActionList';
+import actionListViewerOptions from './components/ActionList/actionListViewerOptions';
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <ComponentViewer options={actionListViewerOptions}>
+          <ActionList></ActionList>
+        </ComponentViewer>
         <ComponentViewer options={progressViewerOptions}>
           <Progress/>
         </ComponentViewer>

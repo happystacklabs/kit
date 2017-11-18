@@ -15,3 +15,4 @@ export Thumbnail from './Thumbnail';
 export ButtonGroup from './ButtonGroup';
 export Skeleton from './Skeleton';
 export Progress from './Progress';
+export ActionList from './ActionList';
