@@ -8,7 +8,6 @@ import {
 } from 'react-router-dom'
 import Navigation from './appComponents/Navigation';
 
-
 import Button from './components/Button';
 import buttonViewerOptions from './components/Button/buttonViewerOptions';
 import Icon from './components/Icon';
@@ -44,199 +43,175 @@ import progressViewerOptions from './components/Progress/progressViewerOptions';
 import ActionList from './components/ActionList';
 import actionListViewerOptions from './components/ActionList/actionListViewerOptions';
 
-const routes = [
+const components = [
   {
     path: '/actionlist',
     name: 'Action List',
+    options: actionListViewerOptions,
+    code: (
+      <ActionList/>
+    ),
   },
   {
     path: '/progress',
     name: 'Progress',
+    options: progressViewerOptions,
+    code: (
+      <Progress/>
+    ),
   },
   {
     path: '/skeleton',
     name: 'Skeleton',
+    options: skeletonViewerOptions,
+    code: (
+      <Skeleton/>
+    ),
   },
   {
     path: '/buttongroup',
     name: 'Button Group',
+    options: buttonGroupViewerOptions,
+    code: (
+      <ButtonGroup>
+        <Button>Left</Button>
+        <Button>Center</Button>
+        <Button>Right</Button>
+      </ButtonGroup>
+    ),
   },
   {
     path: '/thumbnail',
     name: 'Thumbnail',
+    options: thumbnailViewerOptions,
+    code: (
+      <Thumbnail alt=''/>
+    ),
   },
   {
     path: '/avatar',
     name: 'Avatar',
+    options: avatarViewerOptions,
+    code: (
+      <Avatar/>
+    ),
   },
   {
     path: '/tooltip',
     name: 'Tooltip',
+    options: tooltipViewerOptions,
+    code: (
+      <Tooltip>
+        <Button>Hover me!</Button>
+      </Tooltip>
+    ),
   },
   {
     path: '/paginator',
     name: 'Paginator',
+    options: paginatorViewerOptions,
+    code: (
+      <Paginator/>
+    ),
   },
   {
     path: '/spinner',
     name: 'Spinner',
+    options: spinnerViewerOptions,
+    code: (
+      <Spinner/>
+    ),
   },
   {
     path: '/choicelist',
     name: 'Choice List',
+    options: choiceListViewerOptions,
+    code: (
+      <ChoiceList
+        name=''
+        choices={[]}
+      />
+    ),
   },
   {
     path: '/checkbox',
     name: 'Checkbox',
+    options: checkboxViewerOptions,
+    code: (
+      <Checkbox name=''/>
+    ),
   },
   {
     path: '/button',
     name: 'Button',
+    options: buttonViewerOptions,
+    code: (
+      <Button/>
+    ),
   },
   {
     path: '/icon',
     name: 'Icon',
+    options: iconViewerOptions,
+    code: (
+      <Icon/>
+    ),
   },
   {
     path: '/select',
     name: 'Select',
+    options: selectViewerOptions,
+    code: (
+      <Select
+        options={[]}
+        name=''
+        value=''
+      />
+    ),
   },
   {
     path: '/switch',
     name: 'Switch',
+    options: switchViewerOptions,
+    code: (
+      <Switch/>
+    ),
   },
   {
     path: '/text',
     name: 'Text',
+    options: textViewerOptions,
+    code: (
+      <Text/>
+    ),
   },
   {
     path: '/textinput',
     name: 'Text Input',
+    options: textInputViewerOptions,
+    code: (
+      <TextInput name=''/>
+    ),
   },
 ];
 
 class App extends Component {
   render() {
+    const routes =  components.map((component) => {
+      return {name: component.name, path: component.path};
+    });
     return (
       <Router>
         <div className="app">
           <Navigation routes={routes}/>
           <div className='container'>
-
-            <Route exact path='/actionlist' render={() => (
-              <ComponentViewer options={actionListViewerOptions}>
-                <ActionList></ActionList>
-              </ComponentViewer>
-            )}/>
-
-            <Route exact path='/progress' render={() => (
-              <ComponentViewer options={progressViewerOptions}>
-                <Progress/>
-              </ComponentViewer>
-            )}/>
-
-            <Route exact path='/skeleton' render={() => (
-              <ComponentViewer options={skeletonViewerOptions}>
-                <Skeleton/>
-              </ComponentViewer>
-            )}/>
-
-            <Route exact path='/buttongroup' render={() => (
-              <ComponentViewer options={buttonGroupViewerOptions}>
-                <ButtonGroup>
-                  <Button>Left</Button>
-                  <Button>Center</Button>
-                  <Button>Right</Button>
-                </ButtonGroup>
-              </ComponentViewer>
-            )}/>
-
-          <Route exact path='/thumbnail' render={() => (
-              <ComponentViewer options={thumbnailViewerOptions}>
-                <Thumbnail alt=''/>
-              </ComponentViewer>
-            )}/>
-
-          <Route exact path='/avatar' render={() => (
-              <ComponentViewer options={avatarViewerOptions}>
-                <Avatar/>
-              </ComponentViewer>
-            )}/>
-
-          <Route exact path='/tooltip' render={() => (
-              <ComponentViewer options={tooltipViewerOptions}>
-                <Tooltip>
-                  <Button>Hover me!</Button>
-                </Tooltip>
-              </ComponentViewer>
-            )}/>
-
-          <Route exact path='/paginator' render={() => (
-              <ComponentViewer options={paginatorViewerOptions}>
-                <Paginator/>
-              </ComponentViewer>
-            )}/>
-
-          <Route exact path='/spinner' render={() => (
-              <ComponentViewer options={spinnerViewerOptions}>
-                <Spinner/>
-              </ComponentViewer>
-            )}/>
-
-          <Route exact path='/choicelist' render={() => (
-              <ComponentViewer options={choiceListViewerOptions}>
-                <ChoiceList
-                  name=''
-                  choices={[]}
-                />
-              </ComponentViewer>
-            )}/>
-
-          <Route exact path='/checkbox' render={() => (
-              <ComponentViewer options={checkboxViewerOptions}>
-                <Checkbox name=''/>
-              </ComponentViewer>
-            )}/>
-
-          <Route exact path='/button' render={() => (
-              <ComponentViewer options={buttonViewerOptions}>
-                <Button/>
-              </ComponentViewer>
-            )}/>
-
-          <Route exact path='/icon' render={() => (
-              <ComponentViewer options={iconViewerOptions}>
-                <Icon/>
-              </ComponentViewer>
-            )}/>
-
-          <Route exact path='/select' render={() => (
-              <ComponentViewer options={selectViewerOptions}>
-                <Select
-                  options={[]}
-                  name=''
-                  value=''
-                />
-              </ComponentViewer>
-            )}/>
-
-          <Route exact path='/switch' render={() => (
-              <ComponentViewer options={switchViewerOptions}>
-                <Switch/>
-              </ComponentViewer>
-            )}/>
-
-          <Route exact path='/text' render={() => (
-              <ComponentViewer options={textViewerOptions}>
-                <Text/>
-              </ComponentViewer>
-            )}/>
-
-          <Route exact path='/textinput' render={() => (
-              <ComponentViewer options={textInputViewerOptions}>
-                <TextInput name=''/>
-              </ComponentViewer>
-            )}/>
+            {components.map((component, index) => (
+              <Route key={index} exact path={component.path} render={() => (
+                <ComponentViewer options={component.options}>
+                  {component.code}
+                </ComponentViewer>
+              )}/>
+            ))}
           </div>
         </div>
       </Router>

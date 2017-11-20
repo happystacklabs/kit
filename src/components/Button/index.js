@@ -4,13 +4,13 @@ import './Button.css';
 import Spinner from '../Spinner';
 
 
-export const buttonSizes = {
+const buttonSizes = {
   'slim': 'buttonSizeSlim',
   'regular': 'buttonSizeRegular',
   'large': 'buttonSizeLarge',
 };
 
-export const buttonColors = {
+const buttonColors = {
   'positive': 'buttonColorPositive',
   'negative': 'buttonColorNegative',
   'purple': 'buttonColorPurple',
