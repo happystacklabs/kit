@@ -1,0 +1,44 @@
+.fontFamily {
+  font-family: -apple-system,BlinkMacSystemFont,San Francisco,Roboto,Segoe UI,Helvetica Neue,sans-serif; }
+
+.normalWeight {
+  font-weight: 400; }
+
+.boldWeight {
+  font-weight: 700; }
+
+.sizeExtraSmall {
+  font-size: 0.625rem; }
+
+.sizeSmall {
+  font-size: 0.8125rem; }
+
+.sizeRegular {
+  font-size: 1rem; }
+
+.sizeMedium {
+  font-size: 1.625rem; }
+
+.sizeLarge {
+  font-size: 1.75rem; }
+
+.sizeExtraLarge {
+  font-size: 2.625rem; }
+
+.colorInk {
+  color: #222C35; }
+
+.colorInkLight {
+  color: #797D80; }
+
+.colorPositive {
+  color: #58BE8C; }
+
+.colorNegative {
+  color: #E03E30; }
+
+.colorPurple {
+  color: #5C6AC4; }
+
+.colorWhite {
+  color: white; }

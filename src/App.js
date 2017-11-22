@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Text from 'components/Text'
+import Text from 'components/Text';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Text>Test</Text>
+        <Text color='purple'>Test</Text>
       </div>
     );
   }
