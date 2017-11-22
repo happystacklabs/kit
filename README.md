@@ -2,7 +2,7 @@
 
 # Happystack Kit
 
-![Version](https://img.shields.io/badge/Version-0.0.9-green.svg?style=flat)
+![Version](https://img.shields.io/badge/Version-0.1.6-green.svg?style=flat)
 ![license](https://img.shields.io/github/license/mashape/apistatus.svg)
 
 #### Kit is a React component library created by Happystack to help streamline your development. Visit the [playground](https://github.com) to learn more.
