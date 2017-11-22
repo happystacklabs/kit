@@ -1,10 +1,3 @@
-
-  /\=========\
- /__\______/__\
-|    |         |
-|    |  \___/  |
-|____|_________| ™
-
 # Happystack Kit
 
 #### Kit is a React component library created by Happystack to help streamline your development. Visit the [playground](https://github.com) to learn more.
