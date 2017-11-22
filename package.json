@@ -1,6 +1,7 @@
 {
   "name": "@happystack/kit",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "private": false,
   "author": "Heinrich Tremblay",
   "homepage": "https://github.com/HeinrichTremblay/happystack-kit",
   "repository": "https://github.com/HeinrichTremblay/happystack-kit",
@@ -14,7 +15,6 @@
     "components",
     "component library"
   ],
-  "private": false,
   "license": "MIT",
   "main": "lib/index.js",
   "devDependencies": {
