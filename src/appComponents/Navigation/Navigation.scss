@@ -1,0 +1,46 @@
+.navigationBar {
+  background: #FAFAFA;
+  width: 250px;
+  position: fixed;
+  border-radius: 0;
+  height: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  border-right: 1px solid rgba(196,205,213,0.60);
+  overflow-y: scroll;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  a, a:active, a:focus, a:visited {
+    color: #222C35;
+    text-decoration: none;
+    width: 100%;
+    display: inline-block;
+    outline: none;
+  }
+
+  a:hover span {
+    color: #5C6AC4;
+  }
+
+  a.active {
+    background: #5C6AC4;
+    padding: 8px 0 8px 10px;
+    box-sizing: border-box;
+    border-radius: 3px;
+
+    span {
+      color: white;
+    }
+  }
+}

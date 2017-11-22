@@ -1,0 +1,33 @@
+.navigationBar {
+  background: #FAFAFA;
+  width: 250px;
+  position: fixed;
+  border-radius: 0;
+  height: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  border-right: 1px solid rgba(196, 205, 213, 0.6);
+  overflow-y: scroll; }
+  .navigationBar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+  .navigationBar li {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px; }
+  .navigationBar a, .navigationBar a:active, .navigationBar a:focus, .navigationBar a:visited {
+    color: #222C35;
+    text-decoration: none;
+    width: 100%;
+    display: inline-block;
+    outline: none; }
+  .navigationBar a:hover span {
+    color: #5C6AC4; }
+  .navigationBar a.active {
+    background: #5C6AC4;
+    padding: 8px 0 8px 10px;
+    box-sizing: border-box;
+    border-radius: 3px; }
+    .navigationBar a.active span {
+      color: white; }

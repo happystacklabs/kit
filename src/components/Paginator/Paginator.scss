@@ -1,0 +1,16 @@
+
+.paginator {
+  .buttonLeft {
+    display: inline-block;
+    button {
+      border-radius: 3px 0 0 3px;
+    }
+  }
+  .buttonRight {
+    display: inline-block;
+    button {
+      border-left: none;
+      border-radius: 0 3px 3px 0;
+    }
+  }
+}

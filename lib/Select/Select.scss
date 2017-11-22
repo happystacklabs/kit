@@ -1,0 +1,51 @@
+@import '../utilities';
+
+.selectInput {
+  background: #FFFFFF;
+  border: 1px solid #C4CDD5;
+  border-radius: 3px;
+  font-size: rem(14px);
+  font-weight: 400;
+  color: #585C60;
+  padding-left: 10px;
+  appearance: none;
+  min-height: 35px;
+  box-sizing: border-box;
+  width: 100%;
+  box-shadow: 0 2px 0 0 rgba(0,0,0,0.04);
+  cursor: pointer;
+}
+
+.selectInput:disabled {
+  background: #FAFAFA;
+  color: #C4CDD5;
+}
+
+.selectInput:focus {
+  border: 2px solid #5C6AC4;
+  outline: 0;
+  margin-left: -1px;
+}
+
+.selectWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.selectArrow {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  height: 100%;
+  line-height: 35px;
+}
+
+.error {
+  margin-left: -1px;
+  border: 2px solid #E03E30 !important;
+  background: #F9D8D6 !important;
+}
+
+.helpText {
+  margin-top: 5px;
+}

@@ -1,0 +1,15 @@
+.choiceList fieldset {
+  margin: 0;
+  padding: 0;
+  border: none; }
+
+.choiceList legend {
+  margin-bottom: 10px; }
+
+.choiceList ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.choiceList li {
+  margin-bottom: 10px; }
