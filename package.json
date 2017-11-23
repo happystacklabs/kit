@@ -3,7 +3,7 @@
   "version": "0.1.7",
   "private": false,
   "author": "Heinrich Tremblay",
-  "homepage": "https://happystacklabs.github.io/kit",
+  "homepage": "https://kit.happystack.io",
   "repository": "https://github.com/happystacklabs/kit",
   "bugs": {
     "url": "https://github.com/happystacklabs/kit/issues"
@@ -82,8 +82,7 @@
     "start": "concurrently \"npm run watch-css\" \"npm run start-js\"",
     "build": "npm run build-css && node scripts/build.js",
     "lib": "npm run build-css && babel src/components --out-dir lib --copy-files",
-    "test": "node scripts/test.js --env=jsdom",
-    "deploy": "npm run build&&gh-pages -d build"
+    "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {
     "collectCoverageFrom": [

@@ -9,8 +9,9 @@
   padding: 0 15px;
   box-sizing: border-box;
 
-  a {
+  a, a:focus, a:hover, a:visited {
     width: inherit;
+    display: inline;
   }
 
   img {
@@ -29,12 +30,11 @@
   }
 
   span {
-    display: inline-block;
     margin: 0;
     line-height: 56px;
   }
 
-  .logo {
+  a.logo, a.logo:hover, a.logo:focus, a.logo:visited {
     height: 56px;
     width: 36px;
     display: inline-block;
@@ -43,5 +43,9 @@
 
   .clear {
     clear: both;
+  }
+
+  a:hover {
+    opacity: 0.7;
   }
 }

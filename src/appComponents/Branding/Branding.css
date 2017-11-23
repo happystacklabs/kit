@@ -8,8 +8,9 @@
   left: 0;
   padding: 0 15px;
   box-sizing: border-box; }
-  .branding a {
-    width: inherit; }
+  .branding a, .branding a:focus, .branding a:hover, .branding a:visited {
+    width: inherit;
+    display: inline; }
   .branding img {
     height: 24px;
     width: 36px;
@@ -22,13 +23,14 @@
     margin: 0 5px 0 10px;
     line-height: 56px; }
   .branding span {
-    display: inline-block;
     margin: 0;
     line-height: 56px; }
-  .branding .logo {
+  .branding a.logo, .branding a.logo:hover, .branding a.logo:focus, .branding a.logo:visited {
     height: 56px;
     width: 36px;
     display: inline-block;
     float: left; }
   .branding .clear {
     clear: both; }
+  .branding a:hover {
+    opacity: 0.7; }

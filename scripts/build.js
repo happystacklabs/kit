@@ -133,6 +133,7 @@ function build(previousFileSizes) {
         );
         return reject(new Error(messages.warnings.join('\n\n')));
       }
+      copyIndexTo200();
       return resolve({
         stats,
         previousFileSizes,
@@ -147,4 +148,8 @@ function copyPublicFolder() {
     dereference: true,
     filter: file => file !== paths.appHtml,
   });
+}
+
+function copyIndexTo200() {
+  fs.createReadStream(paths.appBuildIndex).pipe(fs.createWriteStream(paths.appBuild200));
 }

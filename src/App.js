@@ -7,6 +7,7 @@ import {
   Link
 } from 'react-router-dom';
 import Navigation from './appComponents/Navigation';
+import Home from './appComponents/Home';
 import components from './componentsConfig';
 
 
@@ -27,6 +28,9 @@ class App extends Component {
                 </ComponentViewer>
               )}/>
             ))}
+            <Route exact path='/' render={() => (
+                <Home/>
+            )}/>
           </div>
         </div>
       </Router>
