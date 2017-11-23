@@ -10,13 +10,13 @@ const Navigation = ({routes}) => {
   routes.sort((a, b) => a.name.localeCompare(b.name));
   return (
     <nav className='navigationBar'>
-      <Branding name='Kit' subtitle='Docs'/>
+      <Branding name='Kit' url='https://github.com/happystacklabs/kit'/>
       <div>
         <ul>
           {routes.map((route) => (
             <li key={route.path}>
               <NavLink to={route.path}>
-                <Text>{route.name}</Text>
+                <Text color='inkLight'>{route.name}</Text>
               </NavLink>
             </li>
           ))}

@@ -7,7 +7,8 @@
   padding: 15px;
   box-sizing: border-box;
   border-right: 1px solid rgba(196, 205, 213, 0.6);
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  padding-top: 70px; }
   .navigationBar ul {
     list-style-type: none;
     margin: 0;

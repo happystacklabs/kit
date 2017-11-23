@@ -10,6 +10,7 @@ class ComponentViewer extends Component {
   static propTypes = {
     children: PropTypes.element,
     options: PropTypes.array,
+    name: PropTypes.string,
   };
 
   static defaultProps = {
@@ -87,7 +88,7 @@ class ComponentViewer extends Component {
 
     return (
       <div className='ComponentViewer'>
-        <Text element='h1' className='viewerH1' size='extraLarge'>{this.props.children.type.name}</Text>
+        <Text element='h1' className='viewerH1' size='extraLarge'>{this.props.name}</Text>
         <div className='viewerExample'>
           <Text size='medium' element='h2'>Example</Text>
           <div className='viewerElement'>

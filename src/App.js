@@ -22,7 +22,7 @@ class App extends Component {
           <div className='container'>
             {components.map((component, index) => (
               <Route key={index} exact path={component.path} render={() => (
-                <ComponentViewer options={component.options}>
+                <ComponentViewer options={component.options} name={component.name}>
                   {component.code}
                 </ComponentViewer>
               )}/>
