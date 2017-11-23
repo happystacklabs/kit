@@ -15,7 +15,15 @@ npm install @happystack/kit --save
 ```
 
 ### Usage
-Todo
+Import the component you want from Kit:
+```javascript
+import { Text } from '@happystack/kit';
+```
+
+You can now use this component inside your React application:
+```javascript
+<Text>Happystack is awesome!</Text>
+```
 
 ## Licenses
 * Source code is licensed under [MIT](https://opensource.org/licenses/MIT)
