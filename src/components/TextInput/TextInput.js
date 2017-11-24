@@ -56,7 +56,7 @@ class TextInput extends Component {
     placeholder: PropTypes.string,
     readOnly: PropTypes.bool,
     disabled: PropTypes.bool,
-    maxLength: PropTypes.string,
+    maxLength: PropTypes.number,
     shake: PropTypes.bool,
     error: PropTypes.string,
     type: PropTypes.oneOf(type),

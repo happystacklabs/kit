@@ -12,7 +12,7 @@ describe('TextInput', () => {
         placeholder='Baz'
         readOnly
         disabled
-        maxLength='2'
+        maxLength={2}
       />
     ).find('input');
     expect(textInput.prop('name')).toBe('Foo');
@@ -20,7 +20,7 @@ describe('TextInput', () => {
     expect(textInput.prop('placeholder')).toBe('Baz');
     expect(textInput.prop('readOnly')).toBe(true);
     expect(textInput.prop('disabled')).toBe(true);
-    expect(textInput.prop('maxLength')).toBe('2');
+    expect(textInput.prop('maxLength')).toBe(2);
   });
 
   describe('onChange()', () => {
@@ -40,7 +40,7 @@ describe('TextInput', () => {
 
     it('add shake on max lenght', () => {
       const input = shallow(
-        <TextInput name="Foo" value="Foo Bar" maxLength="2"/>
+        <TextInput name="Foo" value="Foo Bar" maxLength={2}/>
       );
       expect(input.find('input').hasClass('shake')).toBe(true);
     });

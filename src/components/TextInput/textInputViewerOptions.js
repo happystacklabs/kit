@@ -49,8 +49,8 @@ const textInputViewerOptions = [
   },
   {
     name: 'maxLength',
-    value: '',
-    type: 'string',
+    value: undefined,
+    type: 'number',
     description: 'Set a max length to the input',
   },
   {

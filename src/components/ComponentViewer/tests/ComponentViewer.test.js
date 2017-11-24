@@ -22,7 +22,7 @@ describe('ComponentViewer', () => {
     it('show the component passed by children', () => {
       const options = [{ name: 'size', value: 'large' }];
       const viewer = shallow(
-        <ComponentViewer options={options}>
+        <ComponentViewer options={options} name='Button'>
           <Button>bar</Button>
         </ComponentViewer>
       );

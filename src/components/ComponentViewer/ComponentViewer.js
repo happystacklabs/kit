@@ -96,7 +96,7 @@ class ComponentViewer extends Component {
           </div>
         </div>
         <ComponentViewerCode
-          element={this.props.children.type.name}
+          element={this.props.name.split(' ').join('')}
           options={this.state.options}
         />
         <ComponentViewerList
