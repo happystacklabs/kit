@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import './TextInput.css';
 import Text from '../Text';
 import Icon from '../Icon';
+import Button from '../Button';
 
 const renderError = (error) => {
   if (error) {
     return (
       <div className='errorMessage'>
         <Icon name='exclamation' color='negative' className='errorIcon'/>
-        <Text color='negative' element='span' size='small'>{ error }</Text>
+        <Text color='negative' element='span' size='small'>{error}</Text>
       </div>
     );
   }
@@ -19,7 +20,7 @@ const renderHelpText = (helpText) => {
   if (helpText) {
     return (
       <div className='helpText'>
-        <Text color='inkLight' element='span' size='small'>{ helpText }</Text>
+        <Text color='inkLight' element='span' size='small'>{helpText}</Text>
       </div>
     );
   }
@@ -30,8 +31,18 @@ const renderLabel = (name, labelText) => {
     return (
       <div className='label'>
         <label htmlFor={name}>
-          <Text size='regular'>{ labelText }</Text>
+          <Text size='regular'>{labelText}</Text>
         </label>
+      </div>
+    );
+  }
+};
+
+const renderAction = (action) => {
+  if (action) {
+    return (
+      <div className='action'>
+        <Button plain onClick={action.onAction}>{action.title}</Button>
       </div>
     );
   }
@@ -62,6 +73,10 @@ class TextInput extends Component {
     type: PropTypes.oneOf(type),
     label: PropTypes.string,
     helpText: PropTypes.string,
+    action: PropTypes.shape({
+      title: PropTypes.string,
+      onAction: PropTypes.function,
+    }),
   };
 
   static defaultProps = {
@@ -91,8 +106,9 @@ class TextInput extends Component {
       classes.push('error');
     }
     return (
-      <div>
+      <div className='textInput_wrapper'>
         {renderLabel(this.props.name, this.props.label)}
+        {renderAction(this.props.action)}
         <input
           name={this.props.name}
           value={this.props.value}

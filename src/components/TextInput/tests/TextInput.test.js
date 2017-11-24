@@ -1,6 +1,7 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
-import TextInput from ".."
+import TextInput from '..';
+import Button from '..';
 
 
 describe('TextInput', () => {
@@ -123,6 +124,27 @@ describe('TextInput', () => {
         <TextInput name="Foo" label="Foo"/>
       );
       expect(input.find('label').first().text()).toBe('Foo');
+    });
+  });
+
+  describe('action', () => {
+    it('render an action link when given by props', () => {
+      const action = { title: 'Bar' };
+      const input = mount(
+        <TextInput name='Foo' action={action}/>
+      );
+      expect(input.containsMatchingElement(Button)).toBe(true);
+      expect(input.find(Button).text()).toBe('Bar');
+    });
+
+    it('call onAction() when cliked', () => {
+      const spy = jest.fn();
+      const action = { title: 'Bar', onAction:spy };
+      const input = mount(
+        <TextInput name="Foo" action={action}/>
+      );
+      input.find('button').simulate('click');
+      expect(spy).toHaveBeenCalled();
     });
   });
 });

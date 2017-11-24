@@ -46,6 +46,10 @@ class ComponentViewerRow extends Component {
        return 'bool';
      } else if (this.props.type === 'function') {
        return 'function';
+     } else if (this.props.type === 'number') {
+       return 'number';
+     } else if (this.props.type === 'object') {
+       return 'object';
      } else if (this.props.type === 'node') {
        return 'node';
      }

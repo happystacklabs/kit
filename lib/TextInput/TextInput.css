@@ -11,6 +11,19 @@
   box-sizing: border-box;
   width: 100%; }
 
+.textInput_wrapper .action {
+  display: inline;
+  float: right; }
+  .textInput_wrapper .action button {
+    min-height: inherit;
+    min-width: inherit;
+    padding: 0;
+    margin-right: -8px;
+    margin-bottom: 5px; }
+
+.textInput_wrapper .label {
+  display: inline-block; }
+
 .textInput:focus {
   border: 2px solid #5C6AC4;
   outline: 0;
@@ -26,7 +39,8 @@
   background: #F9D8D6 !important; }
 
 .errorMessage, .helpText {
-  margin-top: 5px; }
+  margin-top: 5px;
+  text-align: left; }
 
 .label {
   margin-bottom: 5px;

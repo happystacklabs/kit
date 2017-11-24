@@ -78,6 +78,12 @@ const textInputViewerOptions = [
     type: 'function',
     description: 'Function to be called on change',
   },
+  {
+    name: 'action',
+    value: null,
+    type: 'object',
+    description: 'Add an action with text button and callback',
+  },
 ];
 
 export default textInputViewerOptions;
