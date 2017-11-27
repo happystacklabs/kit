@@ -1,24 +1,28 @@
 
-.thumbnail img, .thumbnailPlaceholder {
+.thumbnail img,
+.placeholder {
   border-radius: 3px;
   background: #FAFAFA;
 }
 
-.thumbnailPlaceholder {
+.placeholder {
   border: 1px solid #C4CDD5;
 }
 
-.thumbnail.thumbnailSmall img, .thumbnailSmall .thumbnailPlaceholder {
+.thumbnail.small img,
+.small .placeholder {
   width: 40px;
   height: 40px;
 }
 
-.thumbnail.thumbnailMedium img, .thumbnailMedium .thumbnailPlaceholder {
+.thumbnail.medium img,
+.medium .placeholder {
   width: 60px;
   height: 60px;
 }
 
-.thumbnail.thumbnailLarge img, .thumbnailLarge .thumbnailPlaceholder {
+.thumbnail.large img,
+.large .placeholder {
   width: 80px;
   height: 80px;
 }

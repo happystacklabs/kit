@@ -1,10 +1,7 @@
-.app .container {
+.container {
   max-width: 650px;
   padding-top:45px;
   margin: auto;
-}
-
-.navigationBar + .container {
   padding-left: 250px;
 }
 
@@ -13,7 +10,11 @@
   height: 100%;
 }
 
-body {
+:global body {
   margin: 0;
   padding: 0;
+}
+
+.padding {
+  padding: 0 15px;
 }

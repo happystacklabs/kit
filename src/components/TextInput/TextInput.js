@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './TextInput.css';
+import styles from './TextInput.css';
 import Text from '../Text';
 import Icon from '../Icon';
 import Button from '../Button';
+import classNames from 'classnames/bind';
+
+
+let cx = classNames.bind(styles);
 
 const renderError = (error) => {
   if (error) {
     return (
-      <div className='errorMessage'>
-        <Icon name='exclamation' color='negative' className='errorIcon'/>
+      <div className={styles.errorMessage}>
+        <Icon name='exclamation' color='negative' className={styles.errorIcon}/>
         <Text color='negative' element='span' size='small'>{error}</Text>
       </div>
     );
@@ -19,7 +23,7 @@ const renderError = (error) => {
 const renderHelpText = (helpText) => {
   if (helpText) {
     return (
-      <div className='helpText'>
+      <div className={styles.helpText}>
         <Text color='inkLight' element='span' size='small'>{helpText}</Text>
       </div>
     );
@@ -29,7 +33,7 @@ const renderHelpText = (helpText) => {
 const renderLabel = (name, labelText) => {
   if (labelText) {
     return (
-      <div className='label'>
+      <div className={styles.label}>
         <label htmlFor={name}>
           <Text size='regular'>{labelText}</Text>
         </label>
@@ -41,7 +45,7 @@ const renderLabel = (name, labelText) => {
 const renderAction = (action) => {
   if (action) {
     return (
-      <div className='action'>
+      <div className={styles.action}>
         <Button plain onClick={action.onAction}>{action.title}</Button>
       </div>
     );
@@ -90,23 +94,17 @@ class TextInput extends Component {
 
   render() {
     const readOnly = !this.props.readOnly && this.props.onChange ? false : true;
-    const classes = ['textInput'];
 
-    classes.push(this.props.className);
+    const classes = cx(
+      styles.input,
+      {
+        shake: this.props.shake || (this.props.maxLength && this.props.value.length >= this.props.maxLength),
+        error: this.props.error,
+      }
+    );
 
-    if (this.props.shake) {
-      classes.push('shake');
-    }
-
-    if (this.props.maxLength && this.props.value.length >= this.props.maxLength) {
-      classes.push('shake');
-    }
-
-    if (this.props.error) {
-      classes.push('error');
-    }
     return (
-      <div className='textInput_wrapper'>
+      <div className={cx(this.props.className, styles.wrapper)}>
         {renderLabel(this.props.name, this.props.label)}
         {renderAction(this.props.action)}
         <input
@@ -116,7 +114,7 @@ class TextInput extends Component {
           onChange={this.handleChange}
           readOnly={readOnly}
           disabled={this.props.disabled}
-          className={classes.join(' ')}
+          className={classes}
           maxLength={this.props.maxLength}
           type={this.props.type}
         />

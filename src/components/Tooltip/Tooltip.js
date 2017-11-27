@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Tooltip.css';
+import styles from './Tooltip.css';
 import Text from '../Text';
+import classNames from 'classnames/bind';
 
 
-export const tooltipPosition = [
+let cx = classNames.bind(styles);
+
+export const position = [
   'top',
   'bottom',
   'left',
@@ -16,7 +19,7 @@ class Tooltip extends Component {
     children: PropTypes.node,
     content: PropTypes.string,
     active: PropTypes.bool,
-    position: PropTypes.oneOf(tooltipPosition),
+    position: PropTypes.oneOf(position),
     light: PropTypes.bool,
   };
 
@@ -26,14 +29,14 @@ class Tooltip extends Component {
 
   state = {
     childPosition: {},
-    tooltipPosition: {},
+    position: {},
     active: false,
   }
 
   componentDidMount() {
     const newState = Object.assign({}, this.state);
     newState['childPosition'] = this.refs.child ? this.refs.child.getBoundingClientRect() : null;
-    newState['tooltipPosition'] = this.refs.tooltip ? this.refs.tooltip.getBoundingClientRect() : null;
+    newState['position'] = this.refs.tooltip ? this.refs.tooltip.getBoundingClientRect() : null;
     this.setState(newState);
   }
 
@@ -54,13 +57,13 @@ class Tooltip extends Component {
     const childWidth = this.state['childPosition'] ? Math.round(this.state['childPosition'].width) : null;
     const childHeight = this.state['childPosition'] ? Math.round(this.state['childPosition'].height) : null;
     // tooltip dimension
-    const tooltipHeight = this.state['tooltipPosition'] ? Math.round(this.state['tooltipPosition'].height) : null;
+    const height = this.state['position'] ? Math.round(this.state['position'].height) : null;
     // set margin bottom
     const marginBottom = this.props.position === 'top' ? childHeight+8 : 0;
     // set margin top
     var marginTop = 0;
     if (this.props.position === 'left' || this.props.position === 'right') {
-      marginTop = childHeight ? -Math.round(tooltipHeight/2)-Math.round(childHeight/2) : 0;
+      marginTop = childHeight ? -Math.round(height/2)-Math.round(childHeight/2) : 0;
     } else if (this.props.position === 'bottom') {
       marginTop = childHeight ? 8 : 0;
     }
@@ -74,38 +77,40 @@ class Tooltip extends Component {
       marginLeft = childWidth ? Math.round(childWidth/2) : 0;
     }
     // tooltip style
-    const tooltipStyle = {
+    const style = {
       'marginLeft': marginLeft,
       'marginBottom': marginBottom,
       'marginTop': marginTop,
     }
 
-    return tooltipStyle;
+    return style;
   };
 
   render() {
-    const tooltipStyle = this.calculateStyle();
-
-    const classes = ['tooltip'];
-    classes.push(this.props.position);
-    if (this.props.active || this.state.active) {
-      classes.push('active');
-    }
-    if (this.props.light) {
-      classes.push('light');
-    }
+    const style = this.calculateStyle();
     const color = this.props.light ? 'ink' : 'white';
+
+    const classes = cx(
+      this.props.className,
+      this.props.position,
+      styles.tooltip,
+      {
+        active: this.props.active || this.state.active,
+        light: this.props.light,
+      }
+    );
+
     return (
-      <div className={classes.join(' ')}>
+      <div className={classes}>
         <span
-          className='tooltipContent'
+          className={styles.content}
           ref='child'
           onMouseEnter={this.handleOnMouseEnter}
           onMouseLeave={this.handleOnMouseLeave}
         >
           {this.props.children}
         </span>
-        <div className='tooltipBox' style={tooltipStyle} ref='tooltip'>
+        <div className={styles.box} style={style} ref='tooltip'>
           <Text color={color} size='small'>{this.props.content}</Text>
         </div>
       </div>

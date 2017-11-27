@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Avatar.css';
+import styles from './Avatar.css';
 import Text from '../Text';
+import classNames from 'classnames';
 
 
-export const avatarSizes = {
-  'small': 'avatarSmall',
-  'medium': 'avatarMedium',
-  'large': 'avatarLarge',
+export const sizes = {
+  'small': styles.small,
+  'medium': styles.medium,
+  'large': styles.large,
 };
 
 class Avatar extends Component {
   static propTypes = {
     source: PropTypes.string,
     initial: PropTypes.string,
-    size: PropTypes.oneOf(Object.keys(avatarSizes)),
+    size: PropTypes.oneOf(Object.keys(sizes)),
   };
 
   static defaultProps = {
@@ -25,7 +26,7 @@ class Avatar extends Component {
      if (this.props.initial) {
        const initial = this.props.initial.toUpperCase().substring(0,2);
        return (
-         <div className='avatarPlaceholder'>
+         <div className={classNames(styles.placeholder, sizes[this.props.size])}>
           <Text weight='bold'>{initial}</Text>
          </div>
        );
@@ -33,20 +34,23 @@ class Avatar extends Component {
      }
      if (this.props.source) {
        return (
-         <img src={this.props.source}/>
+         <img className={sizes[this.props.size]} src={this.props.source}/>
        );
      } else {
        return (
-         <div className='avatarPlaceholder'></div>
+         <div className={classNames(styles.placeholder, sizes[this.props.size])}></div>
        );
      }
    }
 
   render() {
-    const classes = ['avatar'];
-    classes.push(avatarSizes[this.props.size]);
+    const classes = classNames(
+      styles.avatar,
+      this.props.className,
+      sizes[this.props.size],
+    );
     return (
-      <span className={classes.join(' ')}>
+      <span className={classes}>
         {this.renderAvatar()}
       </span>
     );

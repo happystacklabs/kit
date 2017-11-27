@@ -9,7 +9,9 @@
   border-right: 1px solid rgba(196,205,213,0.60);
   overflow-y: scroll;
   padding-top: 70px;
+}
 
+.navigationBar {
   ul {
     list-style-type: none;
     margin: 0;
@@ -22,7 +24,10 @@
     margin-bottom: 10px;
   }
 
-  a, a:active, a:focus, a:visited {
+  a,
+  a:active,
+  a:focus,
+  a:visited {
     color: #222C35;
     text-decoration: none;
     width: 100%;

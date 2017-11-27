@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Text.css';
+import styles from './Text.css';
+import classNames from 'classnames';
 
 
-export const tagNames = [
+export const elements = [
   'span',
   'p',
   'h1',
@@ -14,36 +15,36 @@ export const tagNames = [
   'h6',
 ];
 
-export const tagSizes = {
-  'extraSmall': 'sizeExtraSmall',
-  'small': 'sizeSmall',
-  'regular': 'sizeRegular',
-  'medium': 'sizeMedium',
-  'large': 'sizeLarge',
-  'extraLarge': 'sizeExtraLarge',
+export const sizes = {
+  'extraSmall': styles.extraSmall,
+  'small': styles.small,
+  'regular': styles.regular,
+  'medium': styles.medium,
+  'large': styles.large,
+  'extraLarge': styles.extraLarge,
 };
 
-export const fontWeights = {
-  'normal': 'normalWeight',
-  'bold': 'boldWeight',
+export const weights = {
+  'normal': styles.normalWeight,
+  'bold': styles.boldWeight,
 };
 
-export const textColors = {
-  'white': 'colorWhite',
-  'ink': 'colorInk',
-  'inkLight': 'colorInkLight',
-  'positive': 'colorPositive',
-  'negative': 'colorNegative',
-  'purple': 'colorPurple',
+export const colors = {
+  'white': styles.white,
+  'ink': styles.ink,
+  'inkLight': styles.inkLight,
+  'positive': styles.positive,
+  'negative': styles.negative,
+  'purple': styles.purple,
 }
 
 class Text extends Component {
   static propTypes = {
     children: PropTypes.node,
-    element: PropTypes.oneOf(tagNames),
-    size: PropTypes.oneOf(Object.keys(tagSizes)),
-    weight: PropTypes.oneOf(Object.keys(fontWeights)),
-    color: PropTypes.oneOf(Object.keys(textColors)),
+    element: PropTypes.oneOf(elements),
+    size: PropTypes.oneOf(Object.keys(sizes)),
+    weight: PropTypes.oneOf(Object.keys(weights)),
+    color: PropTypes.oneOf(Object.keys(colors)),
   };
 
   static defaultProps = {
@@ -55,15 +56,17 @@ class Text extends Component {
 
   render() {
     const Element = `${this.props.element}`;
-    const classes = ['fontFamily'];
 
-    classes.push(this.props.className);
-    classes.push(tagSizes[this.props.size]);
-    classes.push(fontWeights[this.props.weight]);
-    classes.push(textColors[this.props.color]);
+    const classes = classNames(
+      this.props.className,
+      styles.fontFamily,
+      sizes[this.props.size],
+      weights[this.props.weight],
+      colors[this.props.color],
+    );
 
     return (
-      <Element className={classes.join(' ')}>{this.props.children}</Element>
+      <Element className={classes}>{this.props.children}</Element>
     );
   }
 }

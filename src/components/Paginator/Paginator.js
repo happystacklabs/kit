@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Paginator.css';
+import styles from './Paginator.css';
 import Button from '../Button';
 import Icon from '../Icon';
 
@@ -13,14 +13,11 @@ class Paginator extends Component {
     onNext: PropTypes.func,
     onPrevious: PropTypes.func,
   };
-
-  static defaultProps = {
-   };
-
+  
   render() {
     return (
-      <nav className='paginator'>
-        <div className='buttonLeft'>
+      <nav className={this.props.className}>
+        <div className={styles.left}>
           <Button
             size='large'
             disabled={this.props.disablePrevious}
@@ -33,7 +30,7 @@ class Paginator extends Component {
             />
             </Button>
         </div>
-        <div className='buttonRight'>
+        <div className={styles.right}>
           <Button
             size='large'
             disabled={this.props.disableNext}

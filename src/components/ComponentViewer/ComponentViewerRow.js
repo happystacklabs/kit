@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './ComponentViewer.css';
+import styles from './ComponentViewer.css';
 import Text from '../Text';
 import TextInput from '../TextInput';
 import Select from '../Select';
@@ -100,9 +100,9 @@ class ComponentViewerRow extends Component {
   render() {
     return (
       <tr key={this.key}>
-        <td className='bottomLine'><Text color='purple' size='small'>{this.props.name}</Text></td>
-        <td className='bottomLine'><Text color='inkLight' size='small'>{this.getType()}</Text></td>
-        <td className='bottomLine'><Text>{this.props.description}</Text></td>
+        <td className={styles.bottomLine}><Text color='purple' size='small'>{this.props.name}</Text></td>
+        <td className={styles.bottomLine}><Text color='inkLight' size='small'>{this.getType()}</Text></td>
+        <td className={styles.bottomLine}><Text>{this.props.description}</Text></td>
         <td>
           {this.renderInput()}
         </td>

@@ -1,4 +1,4 @@
-.textInput {
+.input {
   background: #FFFFFF;
   border: 1px solid #C4CDD5;
   border-radius: 3px;
@@ -11,25 +11,21 @@
   box-sizing: border-box;
   width: 100%; }
 
-.textInput_wrapper .action {
-  display: inline;
-  float: right; }
-  .textInput_wrapper .action button {
-    min-height: inherit;
-    min-width: inherit;
-    padding: 0;
-    margin-right: -8px;
-    margin-bottom: 5px; }
-
-.textInput_wrapper .label {
-  display: inline-block; }
-
-.textInput:focus {
+.input:focus {
   border: 2px solid #5C6AC4;
   outline: 0;
   margin-left: -1px; }
 
-.textInput:disabled {
+.action {
+  display: inline;
+  float: right; }
+
+.label {
+  display: inline-block;
+  margin-bottom: 5px;
+  text-align: left; }
+
+.input:disabled {
   background: #FAFAFA;
   color: #C4CDD5; }
 
@@ -38,12 +34,9 @@
   border: 2px solid #E03E30 !important;
   background: #F9D8D6 !important; }
 
-.errorMessage, .helpText {
+.errorMessage,
+.helpText {
   margin-top: 5px;
-  text-align: left; }
-
-.label {
-  margin-bottom: 5px;
   text-align: left; }
 
 .errorIcon {
@@ -55,6 +48,13 @@
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px; }
+
+.wrapper button {
+  min-height: inherit;
+  min-width: inherit;
+  padding: 0;
+  margin-right: -8px;
+  margin-bottom: 5px; }
 
 @keyframes shake {
   10%, 90% {

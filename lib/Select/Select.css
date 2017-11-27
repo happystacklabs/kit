@@ -1,4 +1,4 @@
-.selectInput {
+.input {
   background: #FFFFFF;
   border: 1px solid #C4CDD5;
   border-radius: 3px;
@@ -13,20 +13,20 @@
   box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
   cursor: pointer; }
 
-.selectInput:disabled {
+.input:disabled {
   background: #FAFAFA;
   color: #C4CDD5; }
 
-.selectInput:focus {
+.input:focus {
   border: 2px solid #5C6AC4;
   outline: 0;
   margin-left: -1px; }
 
-.selectWrapper {
+.wrapper {
   position: relative;
   width: 100%; }
 
-.selectArrow {
+.arrow {
   position: absolute;
   top: 0;
   right: 10px;
@@ -40,3 +40,7 @@
 
 .helpText {
   margin-top: 5px; }
+
+.label {
+  margin-bottom: 5px;
+  text-align: left; }

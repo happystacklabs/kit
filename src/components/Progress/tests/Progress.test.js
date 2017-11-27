@@ -16,21 +16,21 @@ describe('Progress', () => {
       const progress = shallow(
         <Progress/>
       );
-      expect(progress.find('div').first().hasClass('progressMedium')).toBe(true);
+      expect(progress.find('div').first().hasClass('medium')).toBe(true);
     });
 
     it('render the small size when given by props', () => {
       const progress = shallow(
         <Progress size='small'/>
       );
-      expect(progress.find('div').first().hasClass('progressSmall')).toBe(true);
+      expect(progress.find('div').first().hasClass('small')).toBe(true);
     });
 
     it('render the large size when given by props', () => {
       const progress = shallow(
         <Progress size='large'/>
       );
-      expect(progress.find('div').first().hasClass('progressLarge')).toBe(true);
+      expect(progress.find('div').first().hasClass('large')).toBe(true);
     });
   });
 

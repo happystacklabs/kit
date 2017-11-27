@@ -1,22 +1,26 @@
-.avatar img, .avatarPlaceholder {
+.placeholder {
+  border: 1px solid #C4CDD5; }
+
+.avatar {
+  display: inline-block; }
+
+.avatar img,
+.placeholder {
   border-radius: 50%;
   background: #FAFAFA;
   text-align: center; }
 
-.avatarPlaceholder {
-  border: 1px solid #C4CDD5; }
-
-.avatar.avatarSmall img, .avatarSmall .avatarPlaceholder {
+.small {
   width: 32px;
   height: 32px;
   line-height: 32px; }
 
-.avatar.avatarMedium img, .avatarMedium .avatarPlaceholder {
+.medium {
   width: 40px;
   height: 40px;
   line-height: 40px; }
 
-.avatar.avatarLarge img, .avatarLarge .avatarPlaceholder {
+.large {
   width: 60px;
   height: 60px;
   line-height: 60px; }

@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Checkbox.css';
+import styles from './Checkbox.css';
+import classNames from 'classnames/bind';
 import Icon from '../Icon';
 import Text from '../Text';
 
 
+let cx = classNames.bind(styles);
+
 const renderLabel = (name, labelText) => {
   if (labelText) {
     return (
-      <label htmlFor={name}>
+      <label htmlFor={name} className={styles.label}>
         <Text size='regular'>{ labelText }</Text>
       </label>
     );
@@ -18,7 +21,7 @@ const renderLabel = (name, labelText) => {
 const renderHelpText = (helpText) => {
   if (helpText) {
     return (
-      <div className='helpText'>
+      <div className={styles.helpText}>
         <Text color='inkLight' element='span' size='small'>{ helpText }</Text>
       </div>
     );
@@ -28,11 +31,11 @@ const renderHelpText = (helpText) => {
 const renderCheckmark = (type) => {
   if (type === 'checkbox') {
     return (
-      <Icon name='check' color='white' className='checkmark'/>
+      <Icon name='check' color='white' className={styles.checkmark}/>
     );
   } else {
     return (
-      <div className='radioMiddle'></div>
+      <div className={styles.radioMiddle}></div>
     );
   }
 }
@@ -66,24 +69,19 @@ class Checkbox extends Component {
    };
 
   render() {
-    const classes = ['checkboxInnerWrapper'];
-
-    if (this.props.checked) {
-      classes.push('checked');
-    }
-
-    if (this.props.error) {
-      classes.push('checkboxError');
-    }
-
-    if (this.props.type === 'radio') {
-      classes.push('radioInput');
-    }
+    const classes = cx(
+      styles.innerWrapper,
+      {
+        radioInput: this.props.type === 'radio',
+        error: this.props.error,
+        checked: this.props.checked,
+      }
+    );
 
     return (
-      <div className='checkboxWrapper'>
+      <div className={classNames(this.props.className, styles.wrapper)}>
         {renderLabel(this.props.id, this.props.label)}
-        <div className={classes.join(' ')}>
+        <div className={classes}>
           <input
             name={this.props.name}
             type={this.props.type}
@@ -92,6 +90,7 @@ class Checkbox extends Component {
             checked={this.props.checked}
             onChange={this.handleChange}
             disabled={this.props.disabled}
+            className={styles.input}
           />
           {renderCheckmark(this.props.type)}
         </div>

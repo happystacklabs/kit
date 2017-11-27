@@ -1,22 +1,22 @@
-.skeletonLine {
+.line {
   background: rgba(196, 205, 213, 0.4);
   border-radius: 3px;
   width: 100%;
   height: 8px;
   margin-bottom: 10px;
-  animation: skeletonAnimation 1.0s linear infinite alternate; }
-  .skeletonLine:last-child:not(:first-child) {
+  animation: animation 1.0s linear infinite alternate; }
+  .line:last-child:not(:first-child) {
     width: 90%; }
 
-.skeletonDisplay {
+.display {
   background: rgba(196, 205, 213, 0.4);
   border-radius: 3px;
   width: 110px;
   height: 30px;
   margin-bottom: 10px;
-  animation: skeletonAnimation 1.0s linear infinite alternate; }
+  animation: animation 1.0s linear infinite alternate; }
 
-@keyframes skeletonAnimation {
+@keyframes animation {
   0% {
     opacity: 0.45; }
   100% {

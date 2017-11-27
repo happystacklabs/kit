@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './ChoiceList.css';
+import styles from './ChoiceList.css';
 import Text from '../Text';
 import Checkbox from '../Checkbox';
+import classNames from 'classnames';
 
 
 
@@ -59,7 +60,7 @@ class ChoiceList extends Component {
 
   render() {
     return (
-      <div className='choiceList'>
+      <div className={classNames(this.props.className, styles.choiceList)}>
         <fieldset>
           <legend><Text size='regular'>{this.props.title}</Text></legend>
           <ul>

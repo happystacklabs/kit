@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './ComponentViewer.css';
+import styles from './ComponentViewer.css';
 import ComponentViewerRow from './ComponentViewerRow';
 
 
@@ -33,7 +33,7 @@ class ComponentViewerList extends Component {
 
     render() {
     return (
-      <div className='viewerList'>
+      <div className={styles.list}>
         <table>
           <tbody>
             <tr>

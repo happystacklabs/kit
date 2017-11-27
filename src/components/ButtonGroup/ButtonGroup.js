@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './ButtonGroup.css';
+import styles from './ButtonGroup.css';
+import classNames from 'classnames/bind';
 
+
+let cx = classNames.bind(styles);
 
 class ButtonGroup extends Component {
   static propTypes = {
@@ -9,16 +12,17 @@ class ButtonGroup extends Component {
       segmented: PropTypes.bool,
   };
 
-  static defaultProps = {
-   };
-
   render() {
-    const classes = ['buttonGroup'];
-    if (this.props.segmented) {
-      classes.push('segmented');
-    }
+    const classes = cx(
+      this.props.className,
+      styles.buttonGroup,
+      {
+        segmented: this.props.segmented,
+      }
+    );
+
     return (
-      <div className={classes.join(' ')}>
+      <div className={classes}>
         {this.props.children}
       </div>
     );

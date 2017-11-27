@@ -12,7 +12,7 @@
 
 }
 
-.switchToggle {
+.toggle {
   background: #FFFFFF;
   box-sizing: border-box;
   border: 1px solid #DFE2E3;
@@ -24,86 +24,85 @@
   position: relative;
   transition: left .2s ease-in-out;
   margin-left: 0;
-  &:hover {
-    background: #F4F4F4;
-  }
 }
 
-.switchOn {
+.toggle:hover {
+  background: #F4F4F4;
+}
+
+.on {
   background: #5C6AC4;
-  .switchToggle {
+}
+
+.on {
+  .toggle {
     left: 34px;
   }
 }
 
-.switchRound {
+.round {
   border-radius: 100px;
-  .switchToggle {
-    border-radius: 100px;
-  }
 }
 
-.switchColorPositive  {
-  .switchOn {
-    background: #58BE8C;
-  }
+.round .toggle {
+  border-radius: 100px;
 }
 
-.switchColorNegative  {
-  .switchOn {
-    background: #E03E30;
-  }
+.positive .on {
+  background: #58BE8C;
 }
 
-.switchColorPurple  {
-  .switchOn {
-    background: #5C6AC4;
-  }
+.negative .on {
+  background: #E03E30;
 }
 
-.switchSizeSlim {
+.purple .on {
+  background: #5C6AC4;
+}
+
+.slim {
   .switch {
     height: 28px;
     width: 28px * 2 - 1;
   }
-  .switchToggle {
+  .toggle {
     height: 24px;
     width: 24px;
   }
-  .switchOn {
-    .switchToggle {
+  .on {
+    .toggle {
       left: 27px;
     }
   }
 }
 
-.switchSizeRegular {
+.regular {
   .switch {
     height: 35px;
     width: 35px * 2 - 1;
   }
-  .switchToggle {
+  .toggle {
     height: 31px;
     width: 31px;
   }
-  .switchOn {
-    .switchToggle {
+  .on {
+    .toggle {
       left: 34px;
     }
   }
 }
 
-.switchSizeLarge {
+.large {
   .switch {
     height: 44px;
     width: 44px * 2 - 1;
   }
-  .switchToggle {
+  .toggle {
     height: 40px;
     width: 40px;
   }
-  .switchOn {
-    .switchToggle {
+  .on {
+    .toggle {
       left: 43px;
     }
   }

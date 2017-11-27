@@ -82,42 +82,42 @@ describe('Text', () => {
       const text = shallow(
         <Text>foo</Text>
       );
-      expect(text.hasClass('sizeRegular')).toBe(true);
+      expect(text.hasClass('regular')).toBe(true);
     });
 
     it('show small when given by props', () => {
       const text = shallow(
         <Text size="small">foo</Text>
       );
-      expect(text.hasClass('sizeSmall')).toBe(true);
+      expect(text.hasClass('small')).toBe(true);
     });
 
     it('show medium when given by props', () => {
       const text = shallow(
         <Text size="medium">foo</Text>
       );
-      expect(text.hasClass('sizeMedium')).toBe(true);
+      expect(text.hasClass('medium')).toBe(true);
     });
 
     it('show large when given by props', () => {
       const text = shallow(
         <Text size="large">foo</Text>
       );
-      expect(text.hasClass('sizeLarge')).toBe(true);
+      expect(text.hasClass('large')).toBe(true);
     });
 
     it('show extra large when given by props', () => {
       const text = shallow(
         <Text size="extraLarge">foo</Text>
       );
-      expect(text.hasClass('sizeExtraLarge')).toBe(true);
+      expect(text.hasClass('extraLarge')).toBe(true);
     });
 
     it('show extra small when given by props', () => {
       const text = shallow(
         <Text size="extraSmall">foo</Text>
       );
-      expect(text.hasClass('sizeExtraSmall')).toBe(true);
+      expect(text.hasClass('extraSmall')).toBe(true);
     });
   });
 
@@ -142,42 +142,42 @@ describe('Text', () => {
       const text = shallow(
         <Text></Text>
       );
-      expect(text.find('span').hasClass('colorInk')).toBe(true);
+      expect(text.find('span').hasClass('ink')).toBe(true);
     });
 
     it('is inkLight when given by props', () => {
       const text = shallow(
         <Text color='inkLight'></Text>
       );
-      expect(text.find('span').hasClass('colorInkLight')).toBe(true);
+      expect(text.find('span').hasClass('inkLight')).toBe(true);
     });
 
     it('is positive when given by props', () => {
       const text = shallow(
         <Text color='positive'></Text>
       );
-      expect(text.find('span').hasClass('colorPositive')).toBe(true);
+      expect(text.find('span').hasClass('positive')).toBe(true);
     });
 
     it('is negative when given by props', () => {
       const text = shallow(
         <Text color='negative'></Text>
       );
-      expect(text.find('span').hasClass('colorNegative')).toBe(true);
+      expect(text.find('span').hasClass('negative')).toBe(true);
     });
 
     it('is white when given by props', () => {
       const text = shallow(
         <Text color='white'></Text>
       );
-      expect(text.find('span').hasClass('colorWhite')).toBe(true);
+      expect(text.find('span').hasClass('white')).toBe(true);
     });
 
     it('is purple when given by props', () => {
       const text = shallow(
         <Text color='purple'></Text>
       );
-      expect(text.find('span').hasClass('colorPurple')).toBe(true);
+      expect(text.find('span').hasClass('purple')).toBe(true);
     });
   });
 });

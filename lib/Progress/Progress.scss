@@ -6,31 +6,35 @@
   height: 15px;
 }
 
-.progressInside {
+.inside {
   width: 50%;
   height: 15px;
   background-image: linear-gradient(90deg, #98A6E4 0%, #5F6DC5 100%);
   border-radius: 2px 0 0 2px;
-  animation: progressAnimation 1.0s linear infinite alternate;
+  animation: animation 1.0s linear infinite alternate;
   transition: width 0.18s ease-in-out;
 }
-.progressMax {
+
+.max {
   border-radius: 2px;
 }
 
-.progressBar.progressSmall, .progressSmall .progressInside {
+.progressBar.small,
+.small .inside {
   height: 8px;
 }
 
-.progressBar.progressMedium, .progressMedium .progressInside {
+.progressBar.medium,
+.medium .inside {
   height: 15px;
 }
 
-.progressBar.progressLarge, .progressLarge .progressInside {
+.progressBar.large,
+.large .inside {
   height: 25px;
 }
 
-@keyframes progressAnimation {
+@keyframes animation {
   0% {
     opacity: 0.6;
   }

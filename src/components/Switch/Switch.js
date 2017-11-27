@@ -1,26 +1,29 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Switch.css';
+import styles from './Switch.css';
+import classNames from 'classnames/bind';
 
 
-export const switchColors = {
-  'positive': 'switchColorPositive',
-  'negative': 'switchColorNegative',
-  'purple': 'switchColorPurple',
+let cx = classNames.bind(styles);
+
+export const colors = {
+  'positive': styles.positive,
+  'negative': styles.negative,
+  'purple': styles.purple,
 };
 
-export const switchSizes = {
-  'slim': 'switchSizeSlim',
-  'regular': 'switchSizeRegular',
-  'large': 'switchSizeLarge',
+export const sizes = {
+  'slim': styles.slim,
+  'regular': styles.regular,
+  'large': styles.large,
 };
 
 class Switch extends Component {
   static propTypes = {
     on: PropTypes.bool.isRequired,
     round: PropTypes.bool,
-    color: PropTypes.oneOf(Object.keys(switchColors)),
-    size: PropTypes.oneOf(Object.keys(switchSizes)),
+    color: PropTypes.oneOf(Object.keys(colors)),
+    size: PropTypes.oneOf(Object.keys(sizes)),
   };
 
   static defaultProps = {
@@ -33,33 +36,27 @@ class Switch extends Component {
    };
 
   render() {
-    const classes = ['switch'];
-    const classesWrapper = [];
+    const classes = cx(
+      styles.switch,
+      {
+        on: this.props.on,
+        round: this.props.round,
+      }
+    );
 
-    if (this.props.on) {
-      classes.push('switchOn');
-    }
-
-    if (this.props.round) {
-      classes.push('switchRound');
-    }
-
-    if (this.props.size) {
-      classesWrapper.push(switchSizes[this.props.size]);
-    }
-
-    if (this.props.color) {
-      classesWrapper.push(switchColors[this.props.color]);
-    }
-
+    const wrapper = cx(
+      this.props.className,
+      sizes[this.props.size],
+      colors[this.props.color],
+    )
 
     return (
-      <div className={classesWrapper.join(' ')}>
+      <div className={wrapper}>
         <div
-          className={classes.join(' ')}
+          className={classes}
           onClick={this.handleClick}
         >
-          <div className='switchToggle'></div>
+          <div className={styles.toggle}></div>
         </div>
       </div>
     );

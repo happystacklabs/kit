@@ -44,7 +44,7 @@ describe('Checkbox', () => {
         name='Foo'
         error
       />).find('div').at(1);
-      expect(checkbox.hasClass('checkboxError')).toBe(true);
+      expect(checkbox.hasClass('error')).toBe(true);
     });
   });
 

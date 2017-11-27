@@ -51,7 +51,7 @@ describe('Paginator', () => {
       const paginator = mount(
         <Paginator plain/>
       );
-      expect(paginator.find('button').at(0).hasClass('buttonPlain')).toBe(true);
+      expect(paginator.find('button').at(0).hasClass('plain')).toBe(true);
     });
   });
 });

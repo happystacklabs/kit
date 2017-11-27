@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Select.css';
+import styles from './Select.css';
 import Icon from '../Icon';
 import Text from '../Text'
+import classNames from 'classnames/bind';
 
+
+let cx = classNames.bind(styles);
 
 const renderOptions = (options) => {
   if (options) {
@@ -26,7 +29,7 @@ const renderPlaceholder = (placeholder, value) => {
 const renderHelpText = (helpText) => {
   if (helpText) {
     return (
-      <div className='helpText'>
+      <div className={styles.helpText}>
         <Text color='inkLight' element='span' size='small'>{ helpText }</Text>
       </div>
     );
@@ -36,7 +39,7 @@ const renderHelpText = (helpText) => {
 const renderLabel = (name, labelText) => {
   if (labelText) {
     return (
-      <div className='label'>
+      <div className={styles.label}>
         <label htmlFor={name}>
           <Text size='regular'>{ labelText }</Text>
         </label>
@@ -60,36 +63,34 @@ class Select extends Component {
     disabled: PropTypes.bool,
   };
 
-  static defaultProps = {
-   };
-
-   handleChange = (event) => {
-     if (this.props.onChange === null) { return; }
-     this.props.onChange({value: event.target.value, name: this.props.name});
-   };
+  handleChange = (event) => {
+    if (this.props.onChange === null) { return; }
+    this.props.onChange({value: event.target.value, name: this.props.name});
+  };
 
   render() {
-    const classes = ['selectInput'];
-
-    if (this.props.error) {
-      classes.push('error');
-    }
+    const classes = cx(
+      styles.input,
+      {
+        error: this.props.error,
+      }
+    );
 
     return (
-      <div>
+      <div className={this.props.className}>
         {renderLabel(this.props.name, this.props.label)}
-        <div className='selectWrapper'>
+        <div className={styles.wrapper}>
           <select
             name={this.props.name}
             value={this.props.value}
             disabled={this.props.disabled}
             onChange={this.handleChange}
-            className={classes.join(' ')}
+            className={classes}
           >
           {renderPlaceholder(this.props.placeholder)}
           {renderOptions(this.props.options)}
           </select>
-          <div className='selectArrow'>
+          <div className={styles.arrow}>
             <Icon
               name='angle-down'
               color='inkLight'

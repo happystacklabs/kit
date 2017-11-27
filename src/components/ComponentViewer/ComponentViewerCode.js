@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './ComponentViewer.css';
+import styles from './ComponentViewer.css';
 import Icon from '../Icon';
 import Button from '../Button';
 import Text from '../Text';
-import * as copy from 'copy-to-clipboard';
+import copy from 'copy-to-clipboard';
 
 
 
@@ -17,7 +17,7 @@ class ComponentViewerCode extends Component {
   static defaultProps = {
   };
 
-  onClickCopy = (event) => {
+  onClickCopy = () => {
     copy(this.getCode());
     return;
   }
@@ -86,12 +86,12 @@ class ComponentViewerCode extends Component {
     return (
       <div>
         <span>&lt;</span>
-        <span className='codeColorRed'>{this.props.element} </span>
+        <span className={styles.red}>{this.props.element} </span>
         {this.renderProps(props)}
         <span>&gt;</span>
         {children}
         <span>&lt;/</span>
-        <span className='codeColorRed'>{this.props.element}</span>
+        <span className={styles.red}>{this.props.element}</span>
         <span>&gt;</span>
       </div>
     );
@@ -109,14 +109,14 @@ class ComponentViewerCode extends Component {
       } else if (Array.isArray(prop.value)) {
         arr.push((
           <span key={prop.name}>
-            <span className='codeColorGreen'> {prop.name}</span>
+            <span className={styles.green}> {prop.name}</span>
             {'={['}<br />
             {prop.value.map((row, i) => {
               if (typeof row === 'string') {
                 return (
                   <span key={i}>
                     <pre>
-                      <span className='codeColorYellow'>'{row}'</span>,
+                      <span className={styles.yellow}>'{row}'</span>,
                     </pre>
                   </span>
                 );
@@ -124,8 +124,8 @@ class ComponentViewerCode extends Component {
                 return (
                   <span key={i}>
                     <pre>{'{'}
-                    label: <span className='codeColorYellow'>'{row.label}'</span>,
-                    value: <span className='codeColorYellow'>'{row.value}'</span>
+                    label: <span className={styles.yellow}>'{row.label}'</span>,
+                    value: <span className={styles.yellow}>'{row.value}'</span>
                     {'}'},</pre>
                   </span>
                 );
@@ -137,8 +137,8 @@ class ComponentViewerCode extends Component {
       } else {
         arr.push((
           <span key={prop.name}>
-            <span className='codeColorGreen'> {prop.name}</span>
-            =<span className='codeColorYellow'>'{prop.value}'</span>
+            <span className={styles.green}> {prop.name}</span>
+            =<span className={styles.yellow}>'{prop.value}'</span>
           </span>
         ));
       }
@@ -153,9 +153,9 @@ class ComponentViewerCode extends Component {
 
   render() {
     return (
-      <div className='viewerCode'>
-        <div className='viewerCodeMenu'>
-          <Text size='small' color='inkLight' className='item'>React</Text>
+      <div className={styles.code}>
+        <div className={styles.codeMenu}>
+          <Text size='small' color='inkLight' className={styles.item}>React</Text>
           <Button
             onClick={this.onClickCopy}
             size='slim'
@@ -168,7 +168,7 @@ class ComponentViewerCode extends Component {
           element='span'
           size='regular'
           color='white'
-          className='viewerCodeText'
+          className={styles.codeText}
         >
           {this.renderCode()}
         </Text>

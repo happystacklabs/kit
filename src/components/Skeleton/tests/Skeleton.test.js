@@ -9,16 +9,16 @@ describe('Skeleton', () => {
       const skeleton = shallow(
         <Skeleton/>
       );
-      expect(skeleton.find('div').at(1).hasClass('skeletonLine')).toBe(true);
-      expect(skeleton.find('div').at(2).hasClass('skeletonLine')).toBe(true);
-      expect(skeleton.find('div').at(3).hasClass('skeletonLine')).toBe(true);
+      expect(skeleton.find('div').at(1).hasClass('line')).toBe(true);
+      expect(skeleton.find('div').at(2).hasClass('line')).toBe(true);
+      expect(skeleton.find('div').at(3).hasClass('line')).toBe(true);
     });
 
     it('add the number of lines given by props', () => {
       const skeleton = shallow(
         <Skeleton lines={5}/>
       );
-      expect(skeleton.find('div').at(5).hasClass('skeletonLine')).toBe(true);
+      expect(skeleton.find('div').at(5).hasClass('line')).toBe(true);
     });
   });
 
@@ -27,7 +27,7 @@ describe('Skeleton', () => {
       const skeleton = shallow(
         <Skeleton display/>
       );
-      expect(skeleton.find('div').at(1).hasClass('skeletonDisplay')).toBe(true);
+      expect(skeleton.find('div').at(1).hasClass('display')).toBe(true);
     });
   });
 });

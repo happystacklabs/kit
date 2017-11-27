@@ -1,26 +1,44 @@
 .home {
   padding: 0 0 45px 0;
+}
 
+.badge {
+  margin-right: 5px;
+}
+
+.logo {
+  display: block;
+  margin: auto;
+}
+
+.foo {
+  color: red;
+}
+
+.home {
   h1 {
     text-align: center;
   }
 
-  h1, h2 {
+  h1,
+  h2 {
     padding-bottom: 16px;
     margin-bottom: 16px;
     border-bottom: 1px solid rgba(196,205,213,0.60);
   }
 
-  h2, h3, h4 {
+  h2,
+  h3,
+  h4 {
     margin-top: 24px;
     margin-bottom: 16px;
   }
 
-  .badge {
-    margin-right: 5px;
-  }
-
-  a, a:hover, a:focus, a:visited, a:active {
+  a,
+  a:hover,
+  a:focus,
+  a:visited,
+  a:active {
     text-decoration: none;
     color: #5C6AC4;
   }
@@ -43,9 +61,4 @@
   li {
     margin-top: 10px;
   }
-}
-
-.homeLogo {
-  display: block;
-  margin: auto;
 }

@@ -1,6 +1,8 @@
-.checkboxWrapper input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
+.wrapper {
+  min-height: 20px;
+}
+
+.input {
   appearance: none;
   outline: 0;
   margin: 0;
@@ -24,15 +26,11 @@
   }
 }
 
-.checkboxWrapper {
-  min-height: 20px;
-}
-
-.checkboxWrapper label {
+.label {
   margin-left: 5px;
 }
 
-.checkboxWrapper input:after {
+.input:after {
   display: inline-block;
   content: '';
   width: 20px;
@@ -46,15 +44,15 @@
   box-sizing: border-box;
 }
 
-.checkboxWrapper input:checked:after {
+.input:checked:after {
   background: #5C6AC4;
 }
 
-.checkboxWrapper input:checked~.checkmark {
+.input:checked~.checkmark {
   transform: translate(-50%,-50%) scale(1);
 }
 
-.checkboxInnerWrapper {
+.innerWrapper {
   position: relative;
   height: 20px;
   float: left;
@@ -62,7 +60,7 @@
   display: inline-block;
 }
 
-.checkboxWrapper .checkmark {
+.checkmark {
   pointer-events: none;
   width: 13px;
   height: 13px;
@@ -74,22 +72,18 @@
   transition: transform .2s ease-in-out;
 }
 
-.checkboxError input:after, .checkboxError input:checked:after {
+.error .input:after,
+.error .input:checked:after {
   background: #F9D8D6;
   border: 2px solid #E03E30;
 }
 
-.checkboxWrapper .label {
-  display: inline-block;
-  float: left;
-}
-
-.checkboxWrapper .helpText {
+.helpText {
   clear: both;
   margin-left: 27px;
 }
 
-.radioInput input:after {
+.radioInput .input:after {
   border-radius: 20px;
 }
 
@@ -107,6 +101,6 @@
   transition: transform .2s ease-in-out;
 }
 
-.radioInput input:checked~.radioMiddle {
+.radioInput .input:checked~.radioMiddle {
   transform: translate(-50%,-50%) scale(1);
 }

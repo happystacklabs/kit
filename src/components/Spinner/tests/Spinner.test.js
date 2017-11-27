@@ -30,42 +30,42 @@ describe('Spinner', () => {
       const spinner = shallow(
         <Spinner></Spinner>
       );
-      expect(spinner.find('div').hasClass('colorInk')).toBe(true);
+      expect(spinner.find('div').hasClass('ink')).toBe(true);
     });
 
     it('is inkLight when given by props', () => {
       const spinner = shallow(
         <Spinner color='inkLight'></Spinner>
       );
-      expect(spinner.find('div').hasClass('colorInkLight')).toBe(true);
+      expect(spinner.find('div').hasClass('inkLight')).toBe(true);
     });
 
     it('is positive when given by props', () => {
       const spinner = shallow(
         <Spinner color='positive'></Spinner>
       );
-      expect(spinner.find('div').hasClass('colorPositive')).toBe(true);
+      expect(spinner.find('div').hasClass('positive')).toBe(true);
     });
 
     it('is negative when given by props', () => {
       const spinner = shallow(
         <Spinner color='negative'></Spinner>
       );
-      expect(spinner.find('div').hasClass('colorNegative')).toBe(true);
+      expect(spinner.find('div').hasClass('negative')).toBe(true);
     });
 
     it('is purple when given by props', () => {
       const spinner = shallow(
         <Spinner color='purple'></Spinner>
       );
-      expect(spinner.find('div').hasClass('colorPurple')).toBe(true);
+      expect(spinner.find('div').hasClass('purple')).toBe(true);
     });
 
     it('is white when given by props', () => {
       const spinner = shallow(
         <Spinner color='white'></Spinner>
       );
-      expect(spinner.find('div').hasClass('colorWhite')).toBe(true);
+      expect(spinner.find('div').hasClass('white')).toBe(true);
     });
   });
 
@@ -74,21 +74,21 @@ describe('Spinner', () => {
       const spinner = shallow(
         <Spinner></Spinner>
       );
-      expect(spinner.find('div').hasClass('spinnerSizeRegular')).toBe(true);
+      expect(spinner.find('div').hasClass('regular')).toBe(true);
     });
 
     it('show small when given by props', () => {
       const spinner = shallow(
         <Spinner size='small'></Spinner>
       );
-      expect(spinner.find('div').hasClass('spinnerSizeSmall')).toBe(true);
+      expect(spinner.find('div').hasClass('small')).toBe(true);
     });
 
     it('show large when given by props', () => {
       const spinner = shallow(
         <Spinner size='large'></Spinner>
       );
-      expect(spinner.find('div').hasClass('spinnerSizeLarge')).toBe(true);
+      expect(spinner.find('div').hasClass('large')).toBe(true);
     });
   });
 });

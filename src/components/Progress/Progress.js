@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Progress.css';
+import styles from './Progress.css';
+import classNames from 'classnames/bind';
 
+
+let cx = classNames.bind(styles);
 
 class Progress extends Component {
   static propTypes = {
@@ -15,34 +18,30 @@ class Progress extends Component {
    };
 
   render() {
-    const classes = ['progressBar'];
-    const classesInside = ['progressInside'];
     var progress = this.props.progress;
 
     if (progress >= 100) {
       progress = 100;
-      classesInside.push('progressMax');
     } else if (progress < 0) {
       progress = 0;
     }
 
     const width = progress + '%';
 
-    if (this.props.size === 'small') {
-      classes.push('progressSmall');
-    }
+    const classes = cx(
+      styles.progressBar,
+      {
+        small: this.props.size === 'small',
+        medium: this.props.size === 'medium',
+        large: this.props.size === 'large',
+      }
+    );
 
-    if (this.props.size === 'medium') {
-      classes.push('progressMedium');
-    }
-
-    if (this.props.size === 'large') {
-      classes.push('progressLarge');
-    }
+    const inside = cx(styles.inside, {max: progress >= 100});
 
     return (
-      <div className={classes.join(' ')}>
-        <div className={classesInside.join(' ')} style={{width: width}}></div>
+      <div className={classes}>
+        <div className={inside} style={{width: width}}></div>
       </div>
     );
   }

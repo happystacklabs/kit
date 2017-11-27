@@ -18,7 +18,7 @@ describe('Tooltip', () => {
       const tooltip = mount(
         <Tooltip content='Foo'></Tooltip>
       );
-      expect(tooltip.find('.tooltipBox').first().text()).toBe('Foo');
+      expect(tooltip.find('.box').first().text()).toBe('Foo');
     });
   });
 

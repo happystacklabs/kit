@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ComponentViewer from './components/ComponentViewer/ComponentViewer';
-import './App.css';
+import styles from './App.css';
 import {
   BrowserRouter as Router,
   Route,
@@ -18,14 +18,16 @@ class App extends Component {
     });
     return (
       <Router>
-        <div className="app">
+        <div className={styles.app}>
           <Navigation routes={routes}/>
-          <div className='container'>
+          <div className={styles.container}>
             {components.map((component, index) => (
               <Route key={index} exact path={component.path} render={() => (
-                <ComponentViewer options={component.options} name={component.name}>
-                  {component.code}
-                </ComponentViewer>
+                  <div className={styles.padding}>
+                    <ComponentViewer options={component.options} name={component.name}>
+                      {component.code}
+                    </ComponentViewer>
+                  </div>
               )}/>
             ))}
             <Route exact path='/' render={() => (

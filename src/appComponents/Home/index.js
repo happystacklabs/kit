@@ -1,5 +1,5 @@
 import React from 'react';
-import './Home.css';
+import styles from './Home.css';
 import Text from '../../components/Text';
 
 
@@ -7,11 +7,11 @@ import Text from '../../components/Text';
 const Home = () => {
 
   return (
-    <div className='home'>
-      <img className='homeLogo' src='/images/happystack@2x.png' width='150' width='150'/>
+    <div className={styles.home}>
+      <img className={styles.logo} src='/images/happystack@2x.png' width='150' width='150'/>
       <Text element='h1' size='extraLarge' weight='bold'>Happystack Kit</Text>
-      <img className='badge' src='https://img.shields.io/badge/Version-0.1.9-green.svg?style=flat'/>
-      <img className='badge' src='https://img.shields.io/github/license/mashape/apistatus.svg'/>
+      <img className={styles.badge} src='https://img.shields.io/badge/Version-0.2.0-green.svg?style=flat'/>
+      <img className={styles.badge} src='https://img.shields.io/github/license/mashape/apistatus.svg'/>
       <Text element='h4' size='regular' weight='bold'>Kit is a React component library created by Happystack to help streamline your development.</Text>
       <Text element='h3' size='medium' weight='bold'>Installation:</Text>
       <Text element='p'>You&apos;ll need npm to install Kit <a href='https://www.npmjs.com/' target='blank'>npm</a>:</Text>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Skeleton.css';
+import styles from './Skeleton.css';
 
 
 class Skeleton extends Component {
@@ -16,12 +16,12 @@ class Skeleton extends Component {
   renderSkeleton = () => {
     if (this.props.display) {
       return (
-        <div className='skeletonDisplay'></div>
+        <div className={styles.display}></div>
       );
     } else {
       const lines = [];
       for (var i = 0; i < this.props.lines; i++) {
-        lines.push(<div className='skeletonLine' key={i}></div>);
+        lines.push(<div className={styles.line} key={i}></div>);
       }
       return (
         <span>
@@ -33,7 +33,7 @@ class Skeleton extends Component {
 
   render() {
     return (
-      <div className='skeleton'>{this.renderSkeleton()}</div>
+      <div className={this.props.className}>{this.renderSkeleton()}</div>
     );
   }
 }

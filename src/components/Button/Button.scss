@@ -42,34 +42,35 @@
   background: #FAFAFA;
 }
 
-.buttonPlain:disabled, .buttonPlain:disabled:hover {
+.plain:disabled,
+.plain:disabled:hover {
   background: none;
   border: none;
   color: #C4CDD5;
   box-shadow: none;
 }
 
-.buttonSizeSlim {
+.slim {
   min-height: 28px;
   min-width: 28px;
 }
 
-.buttonSizeRegular {
+.regular {
   min-height: 35px;
   min-width: 35px;
 }
 
-.buttonSizeLarge {
+.large {
   min-height: 44px;
   min-width: 44px;
   font-size: rem(16px);
 }
 
-.buttonSquare {
+.square {
   padding: 2px 0 3px;
 }
 
-.buttonColorPositive, {
+.positive {
   color: white;
   background: #58BE8C;
   border: 1px solid #3FA372;
@@ -81,7 +82,7 @@
   }
 }
 
-.buttonColorNegative, {
+.negative, {
   color: white;
   background: #E03E30;
   border: 1px solid #BF2A1E;
@@ -93,7 +94,7 @@
   }
 }
 
-.buttonColorPurple, {
+.purple, {
   color: white;
   background: #5F6DC5;
   border: 1px solid #404EAE;
@@ -109,7 +110,7 @@
   width: 100%;
 }
 
-.buttonPlain {
+.plain {
   background: none;
   border: none;
   box-shadow: none;
@@ -133,15 +134,15 @@
   }
 }
 
-.buttonOutline {
+.outline {
   background: none;
 }
 
-.button .hidden {
+.hidden {
   color: transparent;
 }
 
-.buttonSpinner {
+.spinner {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -151,22 +152,22 @@
   color: #C4CDD5;
 }
 
-.buttonSizeSlim .buttonSpinner {
+.slim .spinner {
   margin-top: rem(-5px);
   margin-left: rem(-2px);
 }
 
-.buttonSizeRegular .buttonSpinner {
+.regular .spinner {
   margin-top: 0;
   margin-left: rem(-3px)/2;
 }
 
-.buttonSizeLarge .buttonSpinner {
+.large .spinner {
   margin-top: 0;
   margin-left: rem(-3px)/2;
 }
 
-.buttonContentLoading {
+.loading {
   position: relative;
   margin-top: -3px;
   height: 1em;
