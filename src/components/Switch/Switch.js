@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './Switch.css';
+import './Switch.css';
+import styles from './Switch.styles';
 import classNames from 'classnames/bind';
 
 
@@ -36,27 +37,28 @@ class Switch extends Component {
    };
 
   render() {
-    const classes = cx(
+    const classSwitch = cx({
+      on: this.props.on,
+      round: this.props.round },
       styles.switch,
-      {
-        on: this.props.on,
-        round: this.props.round,
-      }
+      sizes[this.props.size],
+      colors[this.props.color]
     );
 
-    const wrapper = cx(
-      this.props.className,
+    const classToggle = cx({
+      on: this.props.on,
+      round: this.props.round },
+      styles.toggle,
       sizes[this.props.size],
-      colors[this.props.color],
-    )
+    );
 
     return (
-      <div className={wrapper}>
+      <div className={this.props.className}>
         <div
-          className={classes}
+          className={classSwitch}
           onClick={this.handleClick}
         >
-          <div className={styles.toggle}></div>
+          <div className={classToggle}></div>
         </div>
       </div>
     );

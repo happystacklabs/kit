@@ -1,4 +1,4 @@
-.box {
+.kit-Tooltip__box {
   position: absolute;
   transform: translateX(-50%);
   background: #4A4A4A;
@@ -8,53 +8,53 @@
   transition: all 0.18s ease-out 0.18s;
   opacity: 0;
   text-align: left;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    transition: all 0.18s ease-out 0.18s;
+    left: 50%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #4A4A4A transparent;
+  }
 }
 
-.active .box {
+.kit-Tooltip--active .kit-Tooltip__box {
   opacity: 1;
 }
 
-.box:after {
-  content: " ";
-  position: absolute;
-  transition: all 0.18s ease-out 0.18s;
-  left: 50%;
-  margin-left: -8px;
-  border-width: 8px;
-  border-style: solid;
-  border-color: transparent transparent #4A4A4A transparent;
-}
-
-.content {
+.kit-Tooltip__content {
   display: inline-block;
 }
 
-.tooltip {
+.kit-Tooltip__tooltip {
   display: inline-block;
   position: relative;
 }
 
-.tooltip.bottom .box:after {
+.kit-Tooltip__tooltip--bottom .kit-Tooltip__box:after {
   bottom: 100%;
 }
 
-.tooltip.top {
-  .box {
+.kit-Tooltip__tooltip--top {
+  .kit-Tooltip__box {
     bottom: 0;
   }
 
-  .box:after {
+  .kit-Tooltip__box:after {
     top: 100%;
     border-color: #4A4A4A transparent transparent transparent;
   }
 }
 
-.tooltip.left {
-  .box {
+.kit-Tooltip__tooltip--left {
+  .kit-Tooltip__box {
     transform: translateX(-100%);
   }
 
-  .box:after {
+  .kit-Tooltip__box:after {
     top: 50%;
     left: 100%;
     margin-left: 0;
@@ -63,12 +63,12 @@
   }
 }
 
-.tooltip.right {
-  .box {
+.kit-Tooltip__tooltip--right {
+  .kit-Tooltip__box {
     transform: translateX(0);
   }
 
-  .box:after {
+  .kit-Tooltip__box:after {
       left: -8px;
       top: 50%;
       margin-left: -8px;
@@ -77,28 +77,28 @@
   }
 }
 
-.tooltip.light .box {
+.kit-Tooltip__tooltip--light .kit-Tooltip__box {
   background: #FFFFFF;
   border: 1px solid #DFE2E3;
   box-shadow: 0 1px 1px 0 rgba(217,218,220,0.50);
 }
 
-.tooltip.right.light .box:after {
+.kit-Tooltip__tooltip--light .kit-Tooltip__box:after {
   filter:drop-shadow(-1px 0 0 #DFE2E3);
   border-color: transparent #FFFFFF transparent transparent;
 }
 
-.tooltip.left.light .box:after {
+.kit-Tooltip__tooltip--left.kit-Tooltip__tooltip--light .kit-Tooltip__box:after {
   filter:drop-shadow(1px 0 0 #DFE2E3);
   border-color: transparent transparent transparent #FFFFFF;
 }
 
-.tooltip.top.light .box:after {
+.kit-Tooltip__tooltip--top.kit-Tooltip__tooltip--light .kit-Tooltip__box:after {
   filter:drop-shadow(0 1px 0 #DFE2E3);
   border-color: #FFFFFF transparent transparent transparent;
 }
 
-.tooltip.bottom.light .box:after {
+.kit-Tooltip__tooltip--bottom.kit-Tooltip__tooltip--light .kit-Tooltip__box:after {
   filter:drop-shadow(0 -1px 0 #DFE2E3);
   border-color: transparent transparent #FFFFFF transparent;
 }

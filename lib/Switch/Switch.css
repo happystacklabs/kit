@@ -1,4 +1,4 @@
-.switch {
+.kit-Switch__switch {
   background: #F4F4F4;
   border: 1px solid #C4CDD5;
   box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04), inset 0 2px 4px 0 rgba(0, 0, 0, 0.1);
@@ -9,8 +9,27 @@
   cursor: pointer;
   transition: background .2s ease-in-out;
   box-sizing: border-box; }
+  .kit-Switch__switch.kit-Switch--on {
+    background: #5C6AC4; }
+    .kit-Switch__switch.kit-Switch--on.kit-Switch--positive {
+      background: #58BE8C; }
+    .kit-Switch__switch.kit-Switch--on.kit-Switch--negative {
+      background: #E03E30; }
+    .kit-Switch__switch.kit-Switch--on.kit-Switch--purple {
+      background: #5C6AC4; }
+  .kit-Switch__switch.kit-Switch--round {
+    border-radius: 100px; }
+  .kit-Switch__switch.kit-Switch--slim {
+    height: 28px;
+    width: 55px; }
+  .kit-Switch__switch.kit-Switch--regular {
+    height: 35px;
+    width: 69px; }
+  .kit-Switch__switch.kit-Switch--large {
+    height: 44px;
+    width: 87px; }
 
-.toggle {
+.kit-Switch__toggle {
   background: #FFFFFF;
   box-sizing: border-box;
   border: 1px solid #DFE2E3;
@@ -22,60 +41,24 @@
   position: relative;
   transition: left .2s ease-in-out;
   margin-left: 0; }
-
-.toggle:hover {
-  background: #F4F4F4; }
-
-.on {
-  background: #5C6AC4; }
-
-.on .toggle {
-  left: 34px; }
-
-.round {
-  border-radius: 100px; }
-
-.round .toggle {
-  border-radius: 100px; }
-
-.positive .on {
-  background: #58BE8C; }
-
-.negative .on {
-  background: #E03E30; }
-
-.purple .on {
-  background: #5C6AC4; }
-
-.slim .switch {
-  height: 28px;
-  width: 55px; }
-
-.slim .toggle {
-  height: 24px;
-  width: 24px; }
-
-.slim .on .toggle {
-  left: 27px; }
-
-.regular .switch {
-  height: 35px;
-  width: 69px; }
-
-.regular .toggle {
-  height: 31px;
-  width: 31px; }
-
-.regular .on .toggle {
-  left: 34px; }
-
-.large .switch {
-  height: 44px;
-  width: 87px; }
-
-.large .toggle {
-  height: 40px;
-  width: 40px; }
-
-.large .on .toggle {
-  left: 43px; }
+  .kit-Switch__toggle:hover {
+    background: #F4F4F4; }
+  .kit-Switch__toggle.kit-Switch--on {
+    left: 34px; }
+  .kit-Switch__toggle.kit-Switch--round {
+    border-radius: 100px; }
+  .kit-Switch__toggle.kit-Switch--slim {
+    height: 24px;
+    width: 24px; }
+    .kit-Switch__toggle.kit-Switch--slim.kit-Switch--on {
+      left: 27px; }
+  .kit-Switch__toggle.kit-Switch--regular {
+    height: 31px;
+    width: 31px; }
+    .kit-Switch__toggle.kit-Switch--regular.kit-Switch--on {
+      left: 34px; }
+  .kit-Switch__toggle.kit-Switch--large {
+    height: 40px;
+    width: 40px; }
+    .kit-Switch__toggle.kit-Switch--large.kit-Switch--on {
+      left: 43px; }

@@ -6,7 +6,7 @@ describe('Spinner', () => {
     const spinner = shallow(
       <Spinner></Spinner>
     );
-    expect(spinner.find('div').hasClass('spinner')).toBe(true);
+    expect(spinner.find('div').hasClass('kit-Spinner__spinner')).toBe(true);
   });
 
   describe('type', () => {
@@ -14,14 +14,14 @@ describe('Spinner', () => {
       const spinner = shallow(
         <Spinner></Spinner>
       );
-      expect(spinner.find('div').hasClass('loader1')).toBe(true);
+      expect(spinner.find('div').hasClass('kit-Spinner__spinner--loader1')).toBe(true);
     });
 
     it('show the loader 2 when given by props', () => {
       const spinner = shallow(
         <Spinner type='loader2'></Spinner>
       );
-      expect(spinner.find('div').hasClass('loader2')).toBe(true);
+      expect(spinner.find('div').hasClass('kit-Spinner__spinner--loader2')).toBe(true);
     });
   });
 
@@ -30,65 +30,65 @@ describe('Spinner', () => {
       const spinner = shallow(
         <Spinner></Spinner>
       );
-      expect(spinner.find('div').hasClass('ink')).toBe(true);
+      expect(spinner.find('div').hasClass('kit-Spinner__spinner--ink')).toBe(true);
     });
 
     it('is inkLight when given by props', () => {
       const spinner = shallow(
         <Spinner color='inkLight'></Spinner>
       );
-      expect(spinner.find('div').hasClass('inkLight')).toBe(true);
+      expect(spinner.find('div').hasClass('kit-Spinner__spinner--inkLight')).toBe(true);
     });
 
     it('is positive when given by props', () => {
       const spinner = shallow(
         <Spinner color='positive'></Spinner>
       );
-      expect(spinner.find('div').hasClass('positive')).toBe(true);
+      expect(spinner.find('div').hasClass('kit-Spinner__spinner--positive')).toBe(true);
     });
 
     it('is negative when given by props', () => {
       const spinner = shallow(
         <Spinner color='negative'></Spinner>
       );
-      expect(spinner.find('div').hasClass('negative')).toBe(true);
+      expect(spinner.find('div').hasClass('kit-Spinner__spinner--negative')).toBe(true);
     });
 
     it('is purple when given by props', () => {
       const spinner = shallow(
         <Spinner color='purple'></Spinner>
       );
-      expect(spinner.find('div').hasClass('purple')).toBe(true);
+      expect(spinner.find('div').hasClass('kit-Spinner__spinner--purple')).toBe(true);
     });
 
     it('is white when given by props', () => {
       const spinner = shallow(
         <Spinner color='white'></Spinner>
       );
-      expect(spinner.find('div').hasClass('white')).toBe(true);
+      expect(spinner.find('div').hasClass('kit-Spinner__spinner--white')).toBe(true);
     });
   });
 
   describe('size', () => {
-    it('show regular by default', () => {
+    it('show medium by default', () => {
       const spinner = shallow(
         <Spinner></Spinner>
       );
-      expect(spinner.find('div').hasClass('regular')).toBe(true);
+      expect(spinner.find('div').hasClass('kit-Spinner__spinner--medium')).toBe(true);
     });
 
     it('show small when given by props', () => {
       const spinner = shallow(
         <Spinner size='small'></Spinner>
       );
-      expect(spinner.find('div').hasClass('small')).toBe(true);
+      expect(spinner.find('div').hasClass('kit-Spinner__spinner--small')).toBe(true);
     });
 
     it('show large when given by props', () => {
       const spinner = shallow(
         <Spinner size='large'></Spinner>
       );
-      expect(spinner.find('div').hasClass('large')).toBe(true);
+      expect(spinner.find('div').hasClass('kit-Spinner__spinner--large')).toBe(true);
     });
   });
 });

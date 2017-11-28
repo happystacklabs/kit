@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './Checkbox.css';
+import './Checkbox.css';
+import styles from './Checkbox.styles';
 import classNames from 'classnames/bind';
 import Icon from '../Icon';
 import Text from '../Text';
@@ -69,13 +70,11 @@ class Checkbox extends Component {
    };
 
   render() {
-    const classes = cx(
+    const classes = cx({
+      radioInput: this.props.type === 'radio',
+      error: this.props.error,
+      checked: this.props.checked},
       styles.innerWrapper,
-      {
-        radioInput: this.props.type === 'radio',
-        error: this.props.error,
-        checked: this.props.checked,
-      }
     );
 
     return (

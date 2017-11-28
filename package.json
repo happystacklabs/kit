@@ -1,6 +1,6 @@
 {
   "name": "@happystack/kit",
-  "version": "0.2.1",
+  "version": "0.2.5",
   "private": false,
   "author": "Heinrich Tremblay",
   "homepage": "https://kit.happystack.io",
@@ -110,8 +110,7 @@
     ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web",
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-        "<rootDir>/__mocks__/fileMock.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
       "\\.(css|less)$": "identity-obj-proxy"
     },
     "moduleFileExtensions": [

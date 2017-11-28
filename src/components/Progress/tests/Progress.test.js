@@ -8,7 +8,7 @@ describe('Progress', () => {
       const progress = shallow(
         <Progress/>
       );
-      expect(progress.find('div').first().hasClass('progressBar')).toBe(true);
+      expect(progress.find('div').first().hasClass('kit-Progress__progressBar')).toBe(true);
   });
 
   describe('size', () => {
@@ -16,21 +16,21 @@ describe('Progress', () => {
       const progress = shallow(
         <Progress/>
       );
-      expect(progress.find('div').first().hasClass('medium')).toBe(true);
+      expect(progress.find('div').first().hasClass('kit-Progress--medium')).toBe(true);
     });
 
     it('render the small size when given by props', () => {
       const progress = shallow(
         <Progress size='small'/>
       );
-      expect(progress.find('div').first().hasClass('small')).toBe(true);
+      expect(progress.find('div').first().hasClass('kit-Progress--small')).toBe(true);
     });
 
     it('render the large size when given by props', () => {
       const progress = shallow(
         <Progress size='large'/>
       );
-      expect(progress.find('div').first().hasClass('large')).toBe(true);
+      expect(progress.find('div').first().hasClass('kit-Progress--large')).toBe(true);
     });
   });
 

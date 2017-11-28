@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ComponentViewer from './components/ComponentViewer/ComponentViewer';
-import styles from './App.css';
+import './App.css';
+import styles from './App.styles';
 import {
   BrowserRouter as Router,
   Route,

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './Button.css';
+import './Button.css';
+import styles from './Button.styles';
 import Spinner from '../Spinner';
 import classNames from 'classnames/bind';
 
@@ -58,18 +59,16 @@ class Button extends Component {
 
   render() {
 
-    const classes = cx(
+    const classButton = cx({
+      loading: this.props.loading,
+      outline: this.props.outline,
+      plain: this.props.plain,
+      fullWidth: this.props.fullWidth,
+      square: this.props.square},
       this.props.classNames,
       styles.button,
       colors[this.props.color],
       sizes[this.props.size],
-      {
-        loading: this.props.loading,
-        outline: this.props.outline,
-        plain: this.props.plain,
-        fullWidth: this.props.fullWidth,
-        square: this.props.square,
-      }
     );
 
     const disabled = this.props.loading ? true : this.props.disabled;
@@ -78,7 +77,7 @@ class Button extends Component {
       <button
         onClick={this.props.onClick}
         disabled={disabled}
-        className={classes}
+        className={classButton}
         size={this.props.size}
       >
         {renderContent(this.props)}

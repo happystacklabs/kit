@@ -43,7 +43,7 @@ describe('TextInput', () => {
       const input = shallow(
         <TextInput name="Foo" value="Foo Bar" maxLength={2}/>
       );
-      expect(input.find('input').hasClass('shake')).toBe(true);
+      expect(input.find('input').hasClass('kit-TextInput__input--shake')).toBe(true);
     });
   });
 
@@ -52,7 +52,7 @@ describe('TextInput', () => {
       const input = shallow(
         <TextInput name="Foo" shake/>
       );
-      expect(input.find('input').hasClass('shake')).toBe(true);
+      expect(input.find('input').hasClass('kit-TextInput__input--shake')).toBe(true);
     });
   });
 
@@ -61,7 +61,7 @@ describe('TextInput', () => {
       const input = shallow(
         <TextInput name="Foo" error="Foo"/>
       );
-      expect(input.find('input').hasClass('error')).toBe(true);
+      expect(input.find('input').hasClass('kit-TextInput__input--error')).toBe(true);
     });
 
     it('show an error message', () => {

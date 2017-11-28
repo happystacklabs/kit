@@ -1,21 +1,98 @@
 @import '../utilities';
 
-.spinner {
+.kit-Spinner__spinner {
   margin: auto;
+
+  &--loader1 {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    position: relative;
+    text-indent: -9999em;
+    -webkit-animation: load1 1s infinite linear;
+    animation: load1 1s infinite linear;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  &--loader2,
+  &--loader2:before,
+  &--loader2:after {
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation: load2 1s infinite ease-in-out;
+    animation: load2 1s infinite ease-in-out;
+  }
+
+  &--loader2 {
+    position: relative;
+    text-indent: -9999em;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+  }
+
+  &--loader2:before,
+  &--loader2:after {
+    content: '';
+    position: absolute;
+    top: 0;
+  }
+
+  &--loader2:before {
+    left: -3.5em;
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+  }
+
+  &--loader2:after {
+    left: 3.5em;
+  }
+
+  &--ink {
+    color: #222C35;
+  }
+
+  &--inkLight {
+    color: #797D80;
+  }
+
+  &--positive {
+    color: #58BE8C;
+  }
+
+  &--negative {
+    color: #E03E30;
+  }
+
+  &--purple {
+    color: #5C6AC4;
+  }
+
+  &--white {
+    color: white;
+  }
+
+  &--small {
+    font-size: 2px;
+  }
+
+  &--medium {
+    font-size: 4px;
+  }
+
+  &--large {
+    font-size: 6px;
+  }
+
 }
 
-.loader1 {
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  position: relative;
-  text-indent: -9999em;
-  -webkit-animation: load1 1s infinite linear;
-  animation: load1 1s infinite linear;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-}
 @-webkit-keyframes load1 {
   0%,
   100% {
@@ -71,45 +148,6 @@
   }
 }
 
-.loader2,
-.loader2:before,
-.loader2:after {
-  border-radius: 50%;
-  width: 2.5em;
-  height: 2.5em;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation: load2 1s infinite ease-in-out;
-  animation: load2 1s infinite ease-in-out;
-}
-
-.loader2 {
-  position: relative;
-  text-indent: -9999em;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-animation-delay: -0.16s;
-  animation-delay: -0.16s;
-}
-
-.loader2:before,
-.loader2:after {
-  content: '';
-  position: absolute;
-  top: 0;
-}
-
-.loader2:before {
-  left: -3.5em;
-  -webkit-animation-delay: -0.32s;
-  animation-delay: -0.32s;
-}
-
-.loader2:after {
-  left: 3.5em;
-}
-
 @-webkit-keyframes load2 {
   0%,
   80%,
@@ -130,40 +168,4 @@
   40% {
     box-shadow: 0 2.5em 0 0;
   }
-}
-
-.ink {
-  color: #222C35;
-}
-
-.inkLight {
-  color: #797D80;
-}
-
-.positive {
-  color: #58BE8C;
-}
-
-.negative {
-  color: #E03E30;
-}
-
-.purple {
-  color: #5C6AC4;
-}
-
-.white {
-  color: white;
-}
-
-.small {
-  font-size: 2px;
-}
-
-.regular {
-  font-size: 4px;
-}
-
-.large {
-  font-size: 6px;
 }

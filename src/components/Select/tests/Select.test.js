@@ -86,7 +86,7 @@ describe('Select', () => {
           error
         />
       ).find('select');
-      expect(selectInput.hasClass('error')).toBe(true);
+      expect(selectInput.hasClass('kit-Select__input--error')).toBe(true);
     });
   });
 

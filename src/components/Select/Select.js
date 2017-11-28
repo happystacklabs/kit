@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './Select.css';
+import './Select.css';
+import styles from './Select.styles';
 import Icon from '../Icon';
 import Text from '../Text'
 import classNames from 'classnames/bind';
@@ -69,11 +70,9 @@ class Select extends Component {
   };
 
   render() {
-    const classes = cx(
-      styles.input,
-      {
-        error: this.props.error,
-      }
+    const classSelect = cx({
+      error: this.props.error},
+      styles.input
     );
 
     return (
@@ -85,7 +84,7 @@ class Select extends Component {
             value={this.props.value}
             disabled={this.props.disabled}
             onChange={this.handleChange}
-            className={classes}
+            className={classSelect}
           >
           {renderPlaceholder(this.props.placeholder)}
           {renderOptions(this.props.options)}

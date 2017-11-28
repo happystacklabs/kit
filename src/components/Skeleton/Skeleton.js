@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './Skeleton.css';
+import './Skeleton.css';
+import styles from './Skeleton.styles';
 
 
 class Skeleton extends Component {

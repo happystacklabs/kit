@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './TextInput.css';
+import './TextInput.css';
+import styles from './TextInput.styles';
 import Text from '../Text';
 import Icon from '../Icon';
 import Button from '../Button';
@@ -45,9 +46,13 @@ const renderLabel = (name, labelText) => {
 const renderAction = (action) => {
   if (action) {
     return (
-      <div className={styles.action}>
-        <Button plain onClick={action.onAction}>{action.title}</Button>
-      </div>
+      <Button
+        plain
+        className={styles.action}
+        onClick={action.onAction}
+      >
+        {action.title}
+      </Button>
     );
   }
 };
@@ -95,16 +100,14 @@ class TextInput extends Component {
   render() {
     const readOnly = !this.props.readOnly && this.props.onChange ? false : true;
 
-    const classes = cx(
-      styles.input,
-      {
-        shake: this.props.shake || (this.props.maxLength && this.props.value.length >= this.props.maxLength),
-        error: this.props.error,
-      }
+    const classInput = cx({
+      shake: this.props.shake || (this.props.maxLength && this.props.value.length >= this.props.maxLength),
+      error: this.props.error },
+      styles.input
     );
 
     return (
-      <div className={cx(this.props.className, styles.wrapper)}>
+      <div className={this.props.className}>
         {renderLabel(this.props.name, this.props.label)}
         {renderAction(this.props.action)}
         <input
@@ -114,7 +117,7 @@ class TextInput extends Component {
           onChange={this.handleChange}
           readOnly={readOnly}
           disabled={this.props.disabled}
-          className={classes}
+          className={classInput}
           maxLength={this.props.maxLength}
           type={this.props.type}
         />

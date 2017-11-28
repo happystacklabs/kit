@@ -1,21 +1,6 @@
-.home {
+.kit-Home__home {
   padding: 0 0 45px 0;
-}
 
-.badge {
-  margin-right: 5px;
-}
-
-.logo {
-  display: block;
-  margin: auto;
-}
-
-.foo {
-  color: red;
-}
-
-.home {
   h1 {
     text-align: center;
   }
@@ -61,4 +46,13 @@
   li {
     margin-top: 10px;
   }
+}
+
+.kit-Home__badge {
+  margin-right: 5px;
+}
+
+.kit-Home__logo {
+  display: block;
+  margin: auto;
 }

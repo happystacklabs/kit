@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from './Branding.css';
+import './Branding.css';
+import styles from './Branding.styles';
 import Text from '../../components/Text';
 import { Link } from 'react-router-dom';
 

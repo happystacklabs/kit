@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from './Home.css';
+import './Home.css';
+import styles from './Home.styles';
 import Text from '../../components/Text';
 
 

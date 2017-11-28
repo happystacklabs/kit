@@ -24,7 +24,7 @@ describe('ButtonGroup', () => {
         <ButtonGroup segmented>
         </ButtonGroup>
       );
-      expect(buttonGroup.find('div').hasClass('segmented')).toBe(true);
+      expect(buttonGroup.find('div').hasClass('kit-ButtonGroup__buttonGroup--segmented')).toBe(true);
     });
   });
 });

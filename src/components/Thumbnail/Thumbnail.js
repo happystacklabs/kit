@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './Thumbnail.css';
+import './Thumbnail.css';
+import styles from './Thumbnail.styles';
 import classNames from 'classnames';
 
 
@@ -35,14 +36,14 @@ class Thumbnail extends Component {
 
 
   render() {
-    const classes = classNames(
+    const classThumbnail = classNames(
       this.props.className,
       styles.thumbnail,
       sizes[this.props.size],
     );
 
     return (
-      <span className={classes}>
+      <span className={classThumbnail}>
         {this.renderThumbnail()}
       </span>
     );

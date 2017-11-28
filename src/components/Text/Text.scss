@@ -1,61 +1,61 @@
 @import '../utilities';
 
-.fontFamily {
+.kit-Text__text {
   font-family: -apple-system,BlinkMacSystemFont,San Francisco,Roboto,Segoe UI,Helvetica Neue,sans-serif;
-}
 
-.normalWeight {
-  font-weight: 400;
-}
+  &--normalWeight {
+    font-weight: 400;
+  }
 
-.boldWeight {
-  font-weight: 700;
-}
+  &--boldWeight {
+    font-weight: 700;
+  }
 
-.extraSmall {
-  font-size: rem(10px);
-}
+  &--extraSmall {
+    font-size: rem(10px);
+  }
 
-.small {
-  font-size: rem(13px);
-}
+  &--small {
+    font-size: rem(13px);
+  }
 
-.regular {
-  font-size: rem(16px);
-}
+  &--regular {
+    font-size: rem(16px);
+  }
 
-.medium {
-  font-size: rem(20px);
-}
+  &--medium {
+    font-size: rem(20px);
+  }
 
-.large {
-  font-size: rem(28px),;
-}
+  &--large {
+    font-size: rem(28px),;
+  }
 
-.extraLarge {
-  font-size: rem(42px);
-}
+  &--extraLarge {
+    font-size: rem(42px);
+  }
 
-.ink {
-  color: #222C35;
-}
+  &--ink {
+    color: #222C35;
+  }
 
-.inkLight {
-  color: #797D80;
-}
+  &--inkLight {
+    color: #797D80;
+  }
 
-.positive {
-  color: #58BE8C;
-}
+  &--positive {
+    color: #58BE8C;
+  }
 
-.negative {
-  color: #E03E30;
-}
+  &--negative {
+    color: #E03E30;
+  }
 
-.purple {
-  color: #5C6AC4;
-}
+  &--purple {
+    color: #5C6AC4;
+  }
 
-.white {
-  color: white;
+  &--white {
+    color: white;
+  }
 }

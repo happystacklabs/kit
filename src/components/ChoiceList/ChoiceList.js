@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './ChoiceList.css';
+import './ChoiceList.css';
+import styles from './ChoiceList.styles';
 import Text from '../Text';
 import Checkbox from '../Checkbox';
 import classNames from 'classnames';

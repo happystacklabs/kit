@@ -1,6 +1,6 @@
 @import '../utilities';
 
-.input {
+.kit-TextInput__input {
   background: #FFFFFF;
   border: 1px solid #C4CDD5;
   border-radius: 3px;
@@ -12,62 +12,57 @@
   min-height: 35px;
   box-sizing: border-box;
   width: 100%;
+
+  &:focus {
+    border: 2px solid #5C6AC4;
+    outline: 0;
+    margin-left: -1px;
+  }
+
+  &:disabled {
+    background: #FAFAFA;
+    color: #C4CDD5;
+  }
+
+  &--shake {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  &--error {
+    margin-left: -1px;
+    border: 2px solid #E03E30 !important;
+    background: #F9D8D6 !important;
+  }
 }
 
-.input:focus {
-  border: 2px solid #5C6AC4;
-  outline: 0;
-  margin-left: -1px;
-}
-
-.action {
+.kit-TextInput__action {
   display: inline;
   float: right;
+  min-height: inherit;
+  min-width: inherit;
+  padding: 0;
+  margin-right: -8px;
+  margin-bottom: 5px;
 }
 
-.label {
+.kit-TextInput__label {
   display: inline-block;
   margin-bottom: 5px;
   text-align: left;
 }
 
-.input:disabled {
-  background: #FAFAFA;
-  color: #C4CDD5;
-}
-
-.error {
-  margin-left: -1px;
-  border: 2px solid #E03E30 !important;
-  background: #F9D8D6 !important;
-}
-
-.errorMessage,
-.helpText {
+.kit-TextInput__errorMessage,
+.kit-TextInput__helpText {
   margin-top: 5px;
   text-align: left;
 }
 
-.errorIcon {
+.kit-TextInput__errorIcon {
   margin-right: 5px;
   text-align: left;
-}
-
-.shake {
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-.wrapper {
-  button {
-    min-height: inherit;
-    min-width: inherit;
-    padding: 0;
-    margin-right: -8px;
-    margin-bottom: 5px;
-  }
 }
 
 @keyframes shake {

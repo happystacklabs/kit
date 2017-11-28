@@ -26,7 +26,7 @@ const spinnerViewerOptions = [
     name: 'size',
     type: [
       'small',
-      'regular',
+      'medium',
       'large',
     ],
     description: 'Change the size',

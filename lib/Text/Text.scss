@@ -1,30 +1,30 @@
 @import '../utilities';
 
-.fontFamily {
+.kit-Text__text {
   font-family: -apple-system,BlinkMacSystemFont,San Francisco,Roboto,Segoe UI,Helvetica Neue,sans-serif;
 }
 
-.normalWeight {
+.kit-Text__text--normalWeight {
   font-weight: 400;
 }
 
-.boldWeight {
+.kit-Text__text--boldWeight {
   font-weight: 700;
 }
 
-.extraSmall {
+.kit-Text__text--extraSmall {
   font-size: rem(10px);
 }
 
-.small {
+.kit-Text__text--small {
   font-size: rem(13px);
 }
 
-.regular {
+.kit-Text__text--regular {
   font-size: rem(16px);
 }
 
-.medium {
+.kit-Text__text--medium {
   font-size: rem(20px);
 }
 

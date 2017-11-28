@@ -16,7 +16,7 @@ describe('Avatar', () => {
       const avatar = shallow(
         <Avatar/>
       );
-      expect(avatar.find('div').first().hasClass('placeholder')).toBe(true);
+      expect(avatar.find('div').first().hasClass('kit-Avatar__placeholder')).toBe(true);
     });
   });
 
@@ -25,21 +25,21 @@ describe('Avatar', () => {
       const avatar = shallow(
         <Avatar/>
       );
-      expect(avatar.find('span').first().hasClass('medium')).toBe(true);
+      expect(avatar.find('span').first().hasClass('kit-Avatar__avatar--medium')).toBe(true);
     });
 
     it('add small class when given by prop', () => {
       const avatar = shallow(
         <Avatar size='small'/>
       );
-      expect(avatar.find('span').first().hasClass('small')).toBe(true);
+      expect(avatar.find('span').first().hasClass('kit-Avatar__avatar--small')).toBe(true);
     });
 
     it('add large class when given by prop', () => {
       const avatar = shallow(
         <Avatar size='large'/>
       );
-      expect(avatar.find('span').first().hasClass('large')).toBe(true);
+      expect(avatar.find('span').first().hasClass('kit-Avatar__avatar--large')).toBe(true);
     });
   });
 

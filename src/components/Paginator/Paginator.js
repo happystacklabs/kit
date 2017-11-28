@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './Paginator.css';
+import './Paginator.css';
+import styles from './Paginator.styles';
 import Button from '../Button';
 import Icon from '../Icon';
 
@@ -13,7 +14,7 @@ class Paginator extends Component {
     onNext: PropTypes.func,
     onPrevious: PropTypes.func,
   };
-  
+
   render() {
     return (
       <nav className={this.props.className}>

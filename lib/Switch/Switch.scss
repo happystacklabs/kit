@@ -1,4 +1,4 @@
-.switch {
+.kit-Switch__switch {
   background: #F4F4F4;
   border: 1px solid #C4CDD5;
   box-shadow: 0 2px 0 0 rgba(0,0,0,0.04), inset 0 2px 4px 0 rgba(0,0,0,0.10);
@@ -10,9 +10,40 @@
   transition: background .2s ease-in-out;
   box-sizing: border-box;
 
+  &.kit-Switch--on {
+    background: #5C6AC4;
+    &.kit-Switch--positive {
+      background: #58BE8C;
+    }
+    &.kit-Switch--negative {
+      background: #E03E30;
+    }
+    &.kit-Switch--purple {
+      background: #5C6AC4;
+    }
+  }
+
+  &.kit-Switch--round {
+    border-radius: 100px;
+  }
+
+  &.kit-Switch--slim {
+    height: 28px;
+    width: 28px * 2 - 1;
+  }
+
+  &.kit-Switch--regular {
+    height: 35px;
+    width: 35px * 2 - 1;
+  }
+
+  &.kit-Switch--large {
+    height: 44px;
+    width: 44px * 2 - 1;
+  }
 }
 
-.toggle {
+.kit-Switch__toggle {
   background: #FFFFFF;
   box-sizing: border-box;
   border: 1px solid #DFE2E3;
@@ -24,85 +55,39 @@
   position: relative;
   transition: left .2s ease-in-out;
   margin-left: 0;
-}
 
-.toggle:hover {
-  background: #F4F4F4;
-}
+  &:hover {
+    background: #F4F4F4;
+  }
 
-.on {
-  background: #5C6AC4;
-}
-
-.on {
-  .toggle {
+  &.kit-Switch--on {
     left: 34px;
   }
-}
 
-.round {
-  border-radius: 100px;
-}
-
-.round .toggle {
-  border-radius: 100px;
-}
-
-.positive .on {
-  background: #58BE8C;
-}
-
-.negative .on {
-  background: #E03E30;
-}
-
-.purple .on {
-  background: #5C6AC4;
-}
-
-.slim {
-  .switch {
-    height: 28px;
-    width: 28px * 2 - 1;
+  &.kit-Switch--round {
+    border-radius: 100px;
   }
-  .toggle {
+
+  &.kit-Switch--slim {
     height: 24px;
     width: 24px;
-  }
-  .on {
-    .toggle {
+    &.kit-Switch--on {
       left: 27px;
     }
   }
-}
 
-.regular {
-  .switch {
-    height: 35px;
-    width: 35px * 2 - 1;
-  }
-  .toggle {
+  &.kit-Switch--regular {
     height: 31px;
     width: 31px;
-  }
-  .on {
-    .toggle {
+    &.kit-Switch--on {
       left: 34px;
     }
   }
-}
 
-.large {
-  .switch {
-    height: 44px;
-    width: 44px * 2 - 1;
-  }
-  .toggle {
+  &.kit-Switch--large {
     height: 40px;
     width: 40px;
-  }
-  .on {
-    .toggle {
+    &.kit-Switch--on {
       left: 43px;
     }
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './Text.css';
+import './Text.css';
+import styles from './Text.styles';
 import classNames from 'classnames';
 
 
@@ -57,16 +58,16 @@ class Text extends Component {
   render() {
     const Element = `${this.props.element}`;
 
-    const classes = classNames(
+    const classText = classNames(
       this.props.className,
-      styles.fontFamily,
+      styles.text,
       sizes[this.props.size],
       weights[this.props.weight],
       colors[this.props.color],
     );
 
     return (
-      <Element className={classes}>{this.props.children}</Element>
+      <Element className={classText}>{this.props.children}</Element>
     );
   }
 }

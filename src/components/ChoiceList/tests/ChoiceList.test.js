@@ -58,7 +58,7 @@ describe('ChoiceList', () => {
           choices={choices}
         />
       );
-      expect(choiceList.find('.helpText').text()).toBe('Bar');
+      expect(choiceList.find('.kit-Checkbox__helpText').text()).toBe('Bar');
     });
   });
 

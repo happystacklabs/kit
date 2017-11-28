@@ -1,53 +1,54 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import fontAwesome from 'font-awesome/css/font-awesome.min.css';
-import styles from './Icon.css';
+import 'font-awesome/css/font-awesome.min.css';
+import './Icon.css';
+import styles from './Icon.styles';
 import classNames from 'classnames/bind';
 
 
 let cx = classNames.bind(styles);
 
 export const names = {
-  'plus': fontAwesome['fa-plus'],
-  'exclamation': fontAwesome['fa-exclamation'],
-  'exclamation-triangle': fontAwesome['fa-exclamation-triangle'],
-  'arrow-down': fontAwesome['fa-arrow-down'],
-  'arrow-left': fontAwesome['fa-arrow-left'],
-  'arrow-right': fontAwesome['fa-arrow-right'],
-  'arrow-up': fontAwesome['fa-arrow-up'],
-  'sort': fontAwesome['fa-sort'],
-  'calendar': fontAwesome['fa-calendar'],
-  'times': fontAwesome['fa-times'],
-  'caret-down': fontAwesome['fa-caret-down'],
-  'caret-up': fontAwesome['fa-caret-up'],
-  'check': fontAwesome['fa-check'],
-  'chevron-down': fontAwesome['fa-chevron-down'],
-  'chevron-left': fontAwesome['fa-chevron-left'],
-  'chevron-right': fontAwesome['fa-chevron-right'],
-  'chevron-up': fontAwesome['fa-chevron-up'],
-  'times-circle': fontAwesome['fa-times-circle'],
-  'chevron-circle-down': fontAwesome['fa-chevron-circle-down'],
-  'chevron-circle-left': fontAwesome['fa-chevron-circle-left'],
-  'chevron-circle-right': fontAwesome['fa-chevron-circle-right'],
-  'chevron-circle-up': fontAwesome['fa-chevron-circle-up'],
-  'plus-circle': fontAwesome['fa-plus-circle'],
-  'commenting': fontAwesome['fa-commenting'],
-  'trash': fontAwesome['fa-trash'],
-  'ban': fontAwesome['fa-ban'],
-  'clone': fontAwesome['fa-clone'],
-  'code': fontAwesome['fa-code'],
-  'download': fontAwesome['fa-download'],
-  'upload': fontAwesome['fa-upload'],
-  'external-link': fontAwesome['fa-external-link'],
-  'question-circle': fontAwesome['fa-question-circle'],
-  'ellipsis-h': fontAwesome['fa-ellipsis-h'],
-  'file-text': fontAwesome['fa-file-text'],
-  'print': fontAwesome['fa-print'],
-  'retweet': fontAwesome['fa-retweet'],
-  'search': fontAwesome['fa-search'],
-  'minus': fontAwesome['fa-minus'],
-  'eye': fontAwesome['fa-eye'],
-  'angle-down': fontAwesome['fa-angle-down'],
+  'plus': 'fa-plus',
+  'exclamation': 'fa-exclamation',
+  'exclamation-triangle': 'fa-exclamation-triangle',
+  'arrow-down': 'fa-arrow-down',
+  'arrow-left': 'fa-arrow-left',
+  'arrow-right': 'fa-arrow-right',
+  'arrow-up': 'fa-arrow-up',
+  'sort': 'fa-sort',
+  'calendar': 'fa-calendar',
+  'times': 'fa-times',
+  'caret-down': 'fa-caret-down',
+  'caret-up': 'fa-caret-up',
+  'check': 'fa-check',
+  'chevron-down': 'fa-chevron-down',
+  'chevron-left': 'fa-chevron-left',
+  'chevron-right': 'fa-chevron-right',
+  'chevron-up': 'fa-chevron-up',
+  'times-circle': 'fa-times-circle',
+  'chevron-circle-down': 'fa-chevron-circle-down',
+  'chevron-circle-left': 'fa-chevron-circle-left',
+  'chevron-circle-right': 'fa-chevron-circle-right',
+  'chevron-circle-up': 'fa-chevron-circle-up',
+  'plus-circle': 'fa-plus-circle',
+  'commenting': 'fa-commenting',
+  'trash': 'fa-trash',
+  'ban': 'fa-ban',
+  'clone': 'fa-clone',
+  'code': 'fa-code',
+  'download': 'fa-download',
+  'upload': 'fa-upload',
+  'external-link': 'fa-external-link',
+  'question-circle': 'fa-question-circle',
+  'ellipsis-h': 'fa-ellipsis-h',
+  'file-text': 'fa-file-text',
+  'print': 'fa-print',
+  'retweet': 'fa-retweet',
+  'search': 'fa-search',
+  'minus': 'fa-minus',
+  'eye': 'fa-eye',
+  'angle-down': 'fa-angle-down',
 }
 
 export const colors = {
@@ -71,15 +72,15 @@ class Icon extends Component {
    };
 
   render() {
-    const classes = cx(
+    const classIcon = cx(
       this.props.className,
-      fontAwesome.fa,
+      'fa',
       names[this.props.name],
       colors[this.props.color],
     );
 
     return (
-      <i className={classes} aria-hidden='true'></i>
+      <i className={classIcon} aria-hidden='true'></i>
     );
   }
 }

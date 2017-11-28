@@ -1,4 +1,4 @@
-.branding {
+.kit-Branding__branding {
   height: 56px;
   display: inline-block;
   width: 250px-1px;
@@ -9,13 +9,7 @@
   padding: 0 15px;
   box-sizing: border-box;
   box-shadow: 0 12px 12px -3px #FAFAFA;
-}
 
-.clear {
-  clear: both;
-}
-
-.branding {
   a,
   a:focus,
   a:hover,
@@ -57,4 +51,8 @@
     margin: 0;
     line-height: 56px;
   }
+}
+
+.kit-Branding__clear {
+  clear: both;
 }

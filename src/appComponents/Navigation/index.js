@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from './Navigation.css';
+import './Navigation.css';
+import styles from './Navigation.styles';
 import Text from '../../components/Text';
 import Branding from '../Branding';
 import { NavLink } from 'react-router-dom';

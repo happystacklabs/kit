@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './Progress.css';
+import './Progress.css';
+import styles from './Progress.styles';
 import classNames from 'classnames/bind';
 
 
@@ -28,20 +29,18 @@ class Progress extends Component {
 
     const width = progress + '%';
 
-    const classes = cx(
+    const classProgress = cx({
+      small: this.props.size === 'small',
+      medium: this.props.size === 'medium',
+      large: this.props.size === 'large'},
       styles.progressBar,
-      {
-        small: this.props.size === 'small',
-        medium: this.props.size === 'medium',
-        large: this.props.size === 'large',
-      }
     );
 
-    const inside = cx(styles.inside, {max: progress >= 100});
+    const classInside = cx({max: progress >= 100}, styles.inside);
 
     return (
-      <div className={classes}>
-        <div className={inside} style={{width: width}}></div>
+      <div className={classProgress}>
+        <div className={classInside} style={{width: width}}></div>
       </div>
     );
   }

@@ -16,7 +16,7 @@ describe('Thumbnail', () => {
       const thumbnail = shallow(
         <Thumbnail alt='Foo'/>
       );
-      expect(thumbnail.find('div').first().hasClass('placeholder')).toBe(true);
+      expect(thumbnail.find('div').first().hasClass('kit-Thumbnail__placeholder')).toBe(true);
     });
   });
 
@@ -25,21 +25,21 @@ describe('Thumbnail', () => {
       const thumbnail = shallow(
         <Thumbnail alt='Foo'/>
       );
-      expect(thumbnail.find('span').first().hasClass('medium')).toBe(true);
+      expect(thumbnail.find('span').first().hasClass('kit-Thumbnail--medium')).toBe(true);
     });
 
     it('add small class when given by prop', () => {
       const thumbnail = shallow(
         <Thumbnail size='small' alt='Foo'/>
       );
-      expect(thumbnail.find('span').first().hasClass('small')).toBe(true);
+      expect(thumbnail.find('span').first().hasClass('kit-Thumbnail--small')).toBe(true);
     });
 
     it('add large class when given by prop', () => {
       const thumbnail = shallow(
         <Thumbnail size='large' alt='Foo'/>
       );
-      expect(thumbnail.find('span').first().hasClass('large')).toBe(true);
+      expect(thumbnail.find('span').first().hasClass('kit-Thumbnail--large')).toBe(true);
     });
   });
 

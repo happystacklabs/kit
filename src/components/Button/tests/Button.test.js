@@ -32,21 +32,21 @@ describe('Button', () => {
       const text = shallow(
         <Button size='regular'>foo</Button>
       );
-      expect(text.hasClass('regular')).toBe(true);
+      expect(text.hasClass('kit-Button__button--regular')).toBe(true);
     });
 
     it('show slim when given by props', () => {
       const text = shallow(
         <Button size='slim'>foo</Button>
       );
-      expect(text.hasClass('slim')).toBe(true);
+      expect(text.hasClass('kit-Button__button--slim')).toBe(true);
     });
 
     it('show large when given by props', () => {
       const text = shallow(
         <Button size='large'>foo</Button>
       );
-      expect(text.hasClass('large')).toBe(true);
+      expect(text.hasClass('kit-Button__button--large')).toBe(true);
     });
   });
 
@@ -55,7 +55,7 @@ describe('Button', () => {
       const text = shallow(
         <Button square></Button>
       );
-      expect(text.hasClass('square')).toBe(true);
+      expect(text.hasClass('kit-Button__button--square')).toBe(true);
     });
   });
 
@@ -64,21 +64,21 @@ describe('Button', () => {
       const button = shallow(
         <Button color='positive'></Button>
       );
-      expect(button.find('button').hasClass('positive')).toBe(true);
+      expect(button.find('button').hasClass('kit-Button__button--positive')).toBe(true);
     });
 
     it('is negative when given by props', () => {
       const button = shallow(
         <Button color='negative'></Button>
       );
-      expect(button.find('button').hasClass('negative')).toBe(true);
+      expect(button.find('button').hasClass('kit-Button__button--negative')).toBe(true);
     });
 
     it('is purple when given by props', () => {
       const button = shallow(
         <Button color='purple'></Button>
       );
-      expect(button.find('button').hasClass('purple')).toBe(true);
+      expect(button.find('button').hasClass('kit-Button__button--purple')).toBe(true);
     });
   });
 
@@ -87,7 +87,7 @@ describe('Button', () => {
       const button = shallow(
         <Button fullWidth></Button>
       );
-      expect(button.find('button').hasClass('fullWidth')).toBe(true);
+      expect(button.find('button').hasClass('kit-Button__button--fullWidth')).toBe(true);
     });
   });
 
@@ -96,7 +96,7 @@ describe('Button', () => {
       const button = shallow(
         <Button plain></Button>
       );
-      expect(button.find('button').hasClass('plain')).toBe(true);
+      expect(button.find('button').hasClass('kit-Button__button--plain')).toBe(true);
     });
   });
 
@@ -105,7 +105,7 @@ describe('Button', () => {
       const button = shallow(
         <Button outline></Button>
       );
-      expect(button.find('button').hasClass('outline')).toBe(true);
+      expect(button.find('button').hasClass('kit-Button__button--outline')).toBe(true);
     });
   });
   describe('loading', () => {
@@ -113,7 +113,7 @@ describe('Button', () => {
       const button = shallow(
         <Button loading></Button>
       );
-      expect(button.find('div').first().hasClass('loading')).toBe(true);
+      expect(button.find('div').first().hasClass('kit-Button__button--loading')).toBe(true);
     });
 
     it('disable the button', () => {

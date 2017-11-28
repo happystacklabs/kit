@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './Tooltip.css';
+import './Tooltip.css';
+import styles from './Tooltip.styles';
 import Text from '../Text';
 import classNames from 'classnames/bind';
 
@@ -90,18 +91,16 @@ class Tooltip extends Component {
     const style = this.calculateStyle();
     const color = this.props.light ? 'ink' : 'white';
 
-    const classes = cx(
+    const classTooltip = cx({
+      active: this.props.active || this.state.active,
+      light: this.props.light},
       this.props.className,
       this.props.position,
       styles.tooltip,
-      {
-        active: this.props.active || this.state.active,
-        light: this.props.light,
-      }
     );
 
     return (
-      <div className={classes}>
+      <div className={classTooltip}>
         <span
           className={styles.content}
           ref='child'

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './ComponentViewer.css';
+import './ComponentViewer.css';
+import styles from './ComponentViewer.styles';
 import ComponentViewerRow from './ComponentViewerRow';
 
 

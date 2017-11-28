@@ -44,7 +44,7 @@ describe('Checkbox', () => {
         name='Foo'
         error
       />).find('div').at(1);
-      expect(checkbox.hasClass('error')).toBe(true);
+      expect(checkbox.hasClass('kit-Checkbox--error')).toBe(true);
     });
   });
 
@@ -90,7 +90,7 @@ describe('Checkbox', () => {
         name='Foo'
         type='radio'
       />).find('div').at(1);
-      expect(checkbox.hasClass('radioInput')).toBe(true);
+      expect(checkbox.hasClass('kit-Checkbox__radioInput')).toBe(true);
     });
   });
 });

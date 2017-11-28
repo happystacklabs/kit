@@ -1,4 +1,4 @@
-.navigationBar {
+.kit-Navigation__navigationBar {
   background: #FAFAFA;
   width: 250px;
   position: fixed;
@@ -9,9 +9,7 @@
   border-right: 1px solid rgba(196,205,213,0.60);
   overflow-y: scroll;
   padding-top: 70px;
-}
 
-.navigationBar {
   ul {
     list-style-type: none;
     margin: 0;
@@ -38,15 +36,22 @@
   a:hover span {
     color: #5C6AC4;
   }
+}
 
-  a.active {
-    background: #5C6AC4;
-    padding: 8px 0 8px 10px;
-    box-sizing: border-box;
-    border-radius: 3px;
+a.kit-Navigation__navigationBar--active {
+  background: #5C6AC4;
+  padding: 8px 0 8px 10px;
+  box-sizing: border-box;
+  border-radius: 3px;
 
-    span {
-      color: white;
-    }
+  :hover,
+  span {
+    color: white;
+  }
+}
+
+a.kit-Navigation__navigationBar--active:hover {
+  span {
+    color: white;
   }
 }

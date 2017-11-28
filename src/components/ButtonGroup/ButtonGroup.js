@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './ButtonGroup.css';
+import './ButtonGroup.css';
+import styles from './ButtonGroup.styles';
 import classNames from 'classnames/bind';
 
 
@@ -13,16 +14,14 @@ class ButtonGroup extends Component {
   };
 
   render() {
-    const classes = cx(
+    const classButtonGroup = cx({
+      segmented: this.props.segmented},
       this.props.className,
       styles.buttonGroup,
-      {
-        segmented: this.props.segmented,
-      }
     );
 
     return (
-      <div className={classes}>
+      <div className={classButtonGroup}>
         {this.props.children}
       </div>
     );

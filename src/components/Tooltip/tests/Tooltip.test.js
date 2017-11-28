@@ -18,7 +18,7 @@ describe('Tooltip', () => {
       const tooltip = mount(
         <Tooltip content='Foo'></Tooltip>
       );
-      expect(tooltip.find('.box').first().text()).toBe('Foo');
+      expect(tooltip.find('.kit-Tooltip__box').first().text()).toBe('Foo');
     });
   });
 
@@ -27,7 +27,7 @@ describe('Tooltip', () => {
       const tooltip = mount(
         <Tooltip active></Tooltip>
       );
-      expect(tooltip.find('div').first().hasClass('active')).toBe(true);
+      expect(tooltip.find('div').first().hasClass('kit-Tooltip--active')).toBe(true);
     });
   });
 
@@ -37,7 +37,7 @@ describe('Tooltip', () => {
         <Tooltip>Foo</Tooltip>
       );
       tooltip.find('span').first().simulate('mouseEnter');
-      expect(tooltip.find('div').first().hasClass('active')).toBe(true);
+      expect(tooltip.find('div').first().hasClass('kit-Tooltip--active')).toBe(true);
     });
   });
 
@@ -47,9 +47,9 @@ describe('Tooltip', () => {
         <Tooltip>Foo</Tooltip>
       );
       tooltip.find('span').first().simulate('mouseEnter');
-      expect(tooltip.find('div').first().hasClass('active')).toBe(true);
+      expect(tooltip.find('div').first().hasClass('kit-Tooltip--active')).toBe(true);
       tooltip.find('span').first().simulate('mouseLeave');
-      expect(tooltip.find('div').first().hasClass('active')).toBe(false);
+      expect(tooltip.find('div').first().hasClass('kit-Tooltip--active')).toBe(false);
     });
   });
 
@@ -58,28 +58,28 @@ describe('Tooltip', () => {
       const tooltip = shallow(
         <Tooltip></Tooltip>
       );
-      expect(tooltip.find('div').first().hasClass('bottom')).toBe(true);
+      expect(tooltip.find('div').first().hasClass('kit-Tooltip__tooltip--bottom')).toBe(true);
     });
 
     it('add the top position style when given by props', () => {
       const tooltip = shallow(
         <Tooltip position='top'></Tooltip>
       );
-      expect(tooltip.find('div').first().hasClass('top')).toBe(true);
+      expect(tooltip.find('div').first().hasClass('kit-Tooltip__tooltip--top')).toBe(true);
     });
 
     it('add the left position style when given by props', () => {
       const tooltip = shallow(
         <Tooltip position='left'></Tooltip>
       );
-      expect(tooltip.find('div').first().hasClass('left')).toBe(true);
+      expect(tooltip.find('div').first().hasClass('kit-Tooltip__tooltip--left')).toBe(true);
     });
 
     it('add the right position style when given by props', () => {
       const tooltip = shallow(
         <Tooltip position='right'></Tooltip>
       );
-      expect(tooltip.find('div').first().hasClass('right')).toBe(true);
+      expect(tooltip.find('div').first().hasClass('kit-Tooltip__tooltip--right')).toBe(true);
     });
   });
 
@@ -88,7 +88,7 @@ describe('Tooltip', () => {
       const tooltip = shallow(
         <Tooltip light></Tooltip>
       );
-      expect(tooltip.find('div').first().hasClass('light')).toBe(true);
+      expect(tooltip.find('div').first().hasClass('kit-Tooltip__tooltip--light')).toBe(true);
     });
   });
 });

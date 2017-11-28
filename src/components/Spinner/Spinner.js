@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './Spinner.css';
+import './Spinner.css';
+import styles from './Spinner.styles';
 import classNames from 'classnames';
 
 
@@ -20,7 +21,7 @@ export const colors = {
 
 export const sizes = {
   'small': styles.small,
-  'regular': styles.regular,
+  'medium': styles.medium,
   'large': styles.large,
 };
 
@@ -40,11 +41,11 @@ class Spinner extends Component {
   static defaultProps = {
     type: 'loader1',
     color: 'ink',
-    size: 'regular',
+    size: 'medium',
    };
 
   render() {
-    const classes = classNames(
+    const classSpinner = classNames(
       this.props.className,
       styles.spinner,
       types[this.props.type],
@@ -53,7 +54,7 @@ class Spinner extends Component {
     );
 
     return (
-      <div className={classes}>Loading...</div>
+      <div className={classSpinner}>Loading...</div>
     );
   }
 }

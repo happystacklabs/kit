@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './Avatar.css';
+import './Avatar.css';
+import styles from './Avatar.styles';
 import Text from '../Text';
 import classNames from 'classnames';
 
@@ -44,13 +45,13 @@ class Avatar extends Component {
    }
 
   render() {
-    const classes = classNames(
-      styles.avatar,
+    const classAvatar = classNames(
       this.props.className,
+      styles.avatar,
       sizes[this.props.size],
     );
     return (
-      <span className={classes}>
+      <span className={classAvatar}>
         {this.renderAvatar()}
       </span>
     );

@@ -1,30 +1,26 @@
-.progressBar {
+.kit-Progress__progressBar {
   background: rgba(196, 205, 213, 0.4);
   border-radius: 3px;
   width: 100%;
   height: 15px; }
 
-.inside {
+.kit-Progress__inside {
   width: 50%;
   height: 15px;
   background-image: linear-gradient(90deg, #98A6E4 0%, #5F6DC5 100%);
   border-radius: 2px 0 0 2px;
   animation: animation 1.0s linear infinite alternate;
   transition: width 0.18s ease-in-out; }
+  .kit-Progress__inside--max {
+    border-radius: 2px; }
 
-.max {
-  border-radius: 2px; }
-
-.progressBar.small,
-.small .inside {
+.kit-Progress--small {
   height: 8px; }
 
-.progressBar.medium,
-.medium .inside {
+.kit-Progress--medium {
   height: 15px; }
 
-.progressBar.large,
-.large .inside {
+.kit-Progress--large {
   height: 25px; }
 
 @keyframes animation {

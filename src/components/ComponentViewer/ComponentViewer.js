@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import styles from './ComponentViewer.css';
+import './ComponentViewer.css';
+import styles from './ComponentViewer.styles';
 import Text from '../Text';
 import ComponentViewerList from './ComponentViewerList';
 import ComponentViewerCode from './ComponentViewerCode';
