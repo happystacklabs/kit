@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ComponentViewer from './components/ComponentViewer/ComponentViewer';
+import ComponentViewer from './appComponents/ComponentViewer/ComponentViewer';
 import './App.css';
 import styles from './App.styles';
 import {

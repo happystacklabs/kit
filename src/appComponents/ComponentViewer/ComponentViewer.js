@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './ComponentViewer.css';
 import styles from './ComponentViewer.styles';
-import Text from '../Text';
+import Text from '../../components/Text';
 import ComponentViewerList from './ComponentViewerList';
 import ComponentViewerCode from './ComponentViewerCode';
 

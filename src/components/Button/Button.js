@@ -65,7 +65,7 @@ class Button extends Component {
       plain: this.props.plain,
       fullWidth: this.props.fullWidth,
       square: this.props.square},
-      this.props.classNames,
+      this.props.className,
       styles.button,
       colors[this.props.color],
       sizes[this.props.size],

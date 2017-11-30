@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './ComponentViewer.css';
 import styles from './ComponentViewer.styles';
-import Text from '../Text';
-import TextInput from '../TextInput';
-import Select from '../Select';
-import Switch from '../Switch';
+import Text from '../../components/Text';
+import TextInput from '../../components/TextInput';
+import Select from '../../components/Select';
+import Switch from '../../components/Switch';
 
 
 

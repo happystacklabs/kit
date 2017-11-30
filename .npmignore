@@ -1,0 +1,6 @@
+/src/
+/node_modules
+/build/
+viewerOptions.js
+**/*.test.js
+**/*.scss

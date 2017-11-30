@@ -39,7 +39,8 @@
 .kit-TextInput__label {
   display: inline-block;
   margin-bottom: 5px;
-  text-align: left; }
+  text-align: left;
+  float: left; }
 
 .kit-TextInput__errorMessage,
 .kit-TextInput__helpText {

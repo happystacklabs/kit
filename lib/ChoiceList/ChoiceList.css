@@ -1,15 +1,15 @@
-.choiceList fieldset {
+.kit-ChoiceList__choiceList fieldset {
   margin: 0;
   padding: 0;
   border: none; }
 
-.choiceList legend {
+.kit-ChoiceList__choiceList legend {
   margin-bottom: 10px; }
 
-.choiceList ul {
+.kit-ChoiceList__choiceList ul {
   margin: 0;
   padding: 0;
   list-style: none; }
 
-.choiceList li {
+.kit-ChoiceList__choiceList li {
   margin-bottom: 10px; }

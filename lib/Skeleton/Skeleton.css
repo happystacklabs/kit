@@ -1,14 +1,14 @@
-.line {
+.kit-Skeleton__line {
   background: rgba(196, 205, 213, 0.4);
   border-radius: 3px;
   width: 100%;
   height: 8px;
   margin-bottom: 10px;
   animation: animation 1.0s linear infinite alternate; }
-  .line:last-child:not(:first-child) {
+  .kit-Skeleton__line:last-child:not(:first-child) {
     width: 90%; }
 
-.display {
+.kit-Skeleton__display {
   background: rgba(196, 205, 213, 0.4);
   border-radius: 3px;
   width: 110px;

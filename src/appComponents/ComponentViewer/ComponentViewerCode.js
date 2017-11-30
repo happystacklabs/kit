@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './ComponentViewer.css';
 import styles from './ComponentViewer.styles';
-import Icon from '../Icon';
-import Button from '../Button';
-import Text from '../Text';
+import Icon from '../../components/Icon';
+import Button from '../../components/Button';
+import Text from '../../components/Text';
 import copy from 'copy-to-clipboard';
 
 
