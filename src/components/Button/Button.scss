@@ -47,7 +47,7 @@
     min-height: 28px;
     min-width: 28px;
 
-    &.kit-Button__button--spinner {
+    .kit-Button__button--spinner {
       margin-top: rem(-5px);
       margin-left: rem(-2px);
     }
@@ -57,7 +57,7 @@
     min-height: 35px;
     min-width: 35px;
 
-    &.kit-Button__button--spinner {
+    .kit-Button__button--spinner {
       margin-top: 0;
       margin-left: rem(-3px)/2;
     }
@@ -68,7 +68,7 @@
     min-width: 44px;
     font-size: rem(16px);
 
-    &.kit-Button__button--spinner {
+    .kit-Button__button--spinner {
       margin-top: 0;
       margin-left: rem(-3px)/2;
     }
