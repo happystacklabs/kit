@@ -1,6 +1,6 @@
 {
   "name": "@happystack/kit",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "private": false,
   "author": "Heinrich Tremblay",
   "homepage": "https://kit.happystack.io",
@@ -44,9 +44,11 @@
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "copy-index": "cpx \"./src/components/index.js\" ./lib/",
-    "precompile": "cpx \"./src/components/**!(tests)/!(*.scss|viewerOptions.js)\" ./lib/",
-    "lib": "npm run build-css && npm run precompile && npm run copy-index"
+    "remove-lib": "rm -r ./lib && rm -r ./templib",
+    "copy-index": "cpx \"./src/components/index.js\" ./templib/",
+    "copy-files": "cpx \"./src/components/**!(tests)/!(*.scss|viewerOptions.js)\" ./templib/",
+    "transpile": "babel ./templib --out-dir lib --copy-files",
+    "lib": "npm run build-css && npm run remove-lib && npm run copy-files && npm run copy-index && npm transpile"
   },
   "files": [
     "/lib"
