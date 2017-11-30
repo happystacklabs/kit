@@ -29,20 +29,20 @@
   .kit-Button__button--slim {
     min-height: 28px;
     min-width: 28px; }
-    .kit-Button__button--slim.kit-Button__button--spinner {
+    .kit-Button__button--slim .kit-Button__button--spinner {
       margin-top: -0.3125rem;
       margin-left: -0.125rem; }
   .kit-Button__button--regular {
     min-height: 35px;
     min-width: 35px; }
-    .kit-Button__button--regular.kit-Button__button--spinner {
+    .kit-Button__button--regular .kit-Button__button--spinner {
       margin-top: 0;
       margin-left: -0.09375rem; }
   .kit-Button__button--large {
     min-height: 44px;
     min-width: 44px;
     font-size: 1rem; }
-    .kit-Button__button--large.kit-Button__button--spinner {
+    .kit-Button__button--large .kit-Button__button--spinner {
       margin-top: 0;
       margin-left: -0.09375rem; }
   .kit-Button__button--square {

@@ -44,8 +44,9 @@
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "copy-index": "cpx \"./src/components/index.js\" ./lib/",
     "precompile": "cpx \"./src/components/**!(tests)/!(*.scss|viewerOptions.js)\" ./lib/",
-    "lib": "npm run build-css && npm run precompile"
+    "lib": "npm run build-css && npm run precompile && npm run copy-index"
   },
   "files": [
     "/lib"
