@@ -22,14 +22,23 @@
 
 .kit-Progress--small {
   height: 8px;
+  .kit-Progress__inside {
+    height: 8px;
+  }
 }
 
 .kit-Progress--medium {
   height: 15px;
+  .kit-Progress__inside {
+    height: 15px;
+  }
 }
 
 .kit-Progress--large {
   height: 25px;
+  .kit-Progress__inside {
+    height: 25px;
+  }
 }
 
 @keyframes animation {

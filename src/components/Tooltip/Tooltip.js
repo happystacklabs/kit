@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './Tooltip.css';
 import styles from './Tooltip.styles';
@@ -15,19 +15,19 @@ export const position = [
   'right',
 ];
 
-class Tooltip extends Component {
-  static propTypes = {
-    children: PropTypes.node,
-    content: PropTypes.string,
-    active: PropTypes.bool,
-    position: PropTypes.oneOf(position),
-    light: PropTypes.bool,
-  };
+const propTypes = {
+  children: PropTypes.node,
+  content: PropTypes.string,
+  active: PropTypes.bool,
+  position: PropTypes.oneOf(position),
+  light: PropTypes.bool,
+};
 
-  static defaultProps = {
-    position: 'bottom',
-  };
+const defaultProps = {
+  position: 'bottom',
+};
 
+class Tooltip extends React.Component {
   state = {
     childPosition: {},
     position: {},
@@ -116,5 +116,8 @@ class Tooltip extends Component {
     );
   }
 }
+
+Tooltip.propTypes = propTypes;
+Tooltip.defaultProps = defaultProps;
 
 export default Tooltip;

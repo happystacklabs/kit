@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './ComponentViewer.css';
 import styles from './ComponentViewer.styles';
@@ -7,16 +7,13 @@ import ComponentViewerList from './ComponentViewerList';
 import ComponentViewerCode from './ComponentViewerCode';
 
 
-class ComponentViewer extends Component {
-  static propTypes = {
-    children: PropTypes.element,
-    options: PropTypes.array,
-    name: PropTypes.string,
-  };
+const propTypes = {
+  children: PropTypes.element,
+  options: PropTypes.array,
+  name: PropTypes.string,
+};
 
-  static defaultProps = {
-   };
-
+class ComponentViewer extends React.Component {
    state = {
      options: this.props.options,
    }
@@ -109,4 +106,7 @@ class ComponentViewer extends Component {
     );
   }
 }
+
+ComponentViewer.propTypes = propTypes;
+
 export default ComponentViewer;

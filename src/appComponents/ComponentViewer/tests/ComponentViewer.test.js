@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
 import ComponentViewer from "../ComponentViewer";
-import Button from '../../Button';
+import Button from '../../../components/Button';
 
 
 

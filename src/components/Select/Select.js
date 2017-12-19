@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './Select.css';
 import styles from './Select.styles';
@@ -9,7 +9,58 @@ import classNames from 'classnames/bind';
 
 let cx = classNames.bind(styles);
 
-const renderOptions = (options) => {
+const propTypes = {
+  name: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  options: PropTypes.arrayOf(PropTypes.shape({
+    label: PropTypes.string,
+    value: PropTypes.string,
+  })).isRequired,
+  error: PropTypes.bool,
+  helpText: PropTypes.string,
+  label: PropTypes.string,
+  disabled: PropTypes.bool,
+};
+
+function Select(props) {
+  function handleChange(event) {
+    if (props.onChange === null) { return; }
+    props.onChange({value: event.target.value, name: props.name});
+  };
+
+  const classSelect = cx({
+    error: props.error},
+    styles.input
+  );
+
+  return (
+    <div className={props.className}>
+      {renderLabel(props.name, props.label)}
+      <div className={styles.wrapper}>
+        <select
+          name={props.name}
+          value={props.value}
+          disabled={props.disabled}
+          onChange={handleChange}
+          className={classSelect}
+        >
+        {renderPlaceholder(props.placeholder)}
+        {renderOptions(props.options)}
+        </select>
+        <div className={styles.arrow}>
+          <Icon
+            name='angle-down'
+            color='inkLight'
+          />
+        </div>
+      </div>
+      {renderHelpText(props.helpText)}
+    </div>
+  );
+}
+
+function renderOptions(options) {
   if (options) {
     return (
       options.map(option =>
@@ -19,7 +70,7 @@ const renderOptions = (options) => {
   }
 };
 
-const renderPlaceholder = (placeholder, value) => {
+function renderPlaceholder(placeholder, value) {
   if (placeholder) {
     return (
       <option value='' disabled hidden>{placeholder}</option>
@@ -27,7 +78,7 @@ const renderPlaceholder = (placeholder, value) => {
   }
 }
 
-const renderHelpText = (helpText) => {
+function renderHelpText(helpText) {
   if (helpText) {
     return (
       <div className={styles.helpText}>
@@ -37,7 +88,7 @@ const renderHelpText = (helpText) => {
   }
 };
 
-const renderLabel = (name, labelText) => {
+function renderLabel(name, labelText) {
   if (labelText) {
     return (
       <div className={styles.label}>
@@ -49,57 +100,6 @@ const renderLabel = (name, labelText) => {
   }
 };
 
-class Select extends Component {
-  static propTypes = {
-    name: PropTypes.string.isRequired,
-    placeholder: PropTypes.string,
-    value: PropTypes.string.isRequired,
-    options: PropTypes.arrayOf(PropTypes.shape({
-      label: PropTypes.string,
-      value: PropTypes.string,
-    })).isRequired,
-    error: PropTypes.bool,
-    helpText: PropTypes.string,
-    label: PropTypes.string,
-    disabled: PropTypes.bool,
-  };
-
-  handleChange = (event) => {
-    if (this.props.onChange === null) { return; }
-    this.props.onChange({value: event.target.value, name: this.props.name});
-  };
-
-  render() {
-    const classSelect = cx({
-      error: this.props.error},
-      styles.input
-    );
-
-    return (
-      <div className={this.props.className}>
-        {renderLabel(this.props.name, this.props.label)}
-        <div className={styles.wrapper}>
-          <select
-            name={this.props.name}
-            value={this.props.value}
-            disabled={this.props.disabled}
-            onChange={this.handleChange}
-            className={classSelect}
-          >
-          {renderPlaceholder(this.props.placeholder)}
-          {renderOptions(this.props.options)}
-          </select>
-          <div className={styles.arrow}>
-            <Icon
-              name='angle-down'
-              color='inkLight'
-            />
-          </div>
-        </div>
-        {renderHelpText(this.props.helpText)}
-      </div>
-    );
-  }
-}
+Select.propTypes = propTypes;
 
 export default Select;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './Button.css';
 import styles from './Button.styles';
@@ -20,70 +20,69 @@ const colors = {
   'purple': styles.purple,
 };
 
-const renderContent = (props) => {
-  if (props.loading) {
-    const size = props.size === 'large' ? 'medium' : 'small';
-    const type = props.size === 'slim' ? 'loader2' : 'loader1';
-
-    return (
-      <div className={styles.loading}>
-        <span className={styles.spinner}>
-          <Spinner color='inkLight' size={size} type={type}></Spinner>
-        </span>
-        <span className={styles.hidden}>{props.children}</span>
-      </div>
-    );
-  } else {
-    return (
-      <span>{props.children}</span>
-    );
-  }
+const propTypes = {
+  children: PropTypes.node,
+  disabled: PropTypes.bool,
+  size: PropTypes.oneOf(Object.keys(sizes)),
+  color: PropTypes.oneOf(Object.keys(colors)),
+  square: PropTypes.bool,
+  fullWidth: PropTypes.bool,
+  plain: PropTypes.bool,
+  outline: PropTypes.bool,
+  loading: PropTypes.bool,
 };
 
-class Button extends Component {
-  static propTypes = {
-    children: PropTypes.node,
-    disabled: PropTypes.bool,
-    size: PropTypes.oneOf(Object.keys(sizes)),
-    color: PropTypes.oneOf(Object.keys(colors)),
-    square: PropTypes.bool,
-    fullWidth: PropTypes.bool,
-    plain: PropTypes.bool,
-    outline: PropTypes.bool,
-    loading: PropTypes.bool,
-  };
+const defaultProps = {
+  size: 'regular',
+ };
 
-  static defaultProps = {
-    size: 'regular',
-   };
+function Button(props) {
+  const classButton = cx({
+    loading: props.loading,
+    outline: props.outline,
+    plain: props.plain,
+    fullWidth: props.fullWidth,
+    square: props.square},
+    props.className,
+    styles.button,
+    colors[props.color],
+    sizes[props.size],
+  );
 
-  render() {
+  const disabled = props.loading ? true : props.disabled;
 
-    const classButton = cx({
-      loading: this.props.loading,
-      outline: this.props.outline,
-      plain: this.props.plain,
-      fullWidth: this.props.fullWidth,
-      square: this.props.square},
-      this.props.className,
-      styles.button,
-      colors[this.props.color],
-      sizes[this.props.size],
-    );
-
-    const disabled = this.props.loading ? true : this.props.disabled;
-
-    return (
-      <button
-        onClick={this.props.onClick}
-        disabled={disabled}
-        className={classButton}
-        size={this.props.size}
-      >
-        {renderContent(this.props)}
-      </button>
-    );
-  }
+  return (
+    <button
+      onClick={props.onClick}
+      disabled={disabled}
+      className={classButton}
+    >
+      {renderContent(props)}
+    </button>
+  );
 }
+
+function renderContent(props) {
+ if (props.loading) {
+   const size = props.size === 'large' ? 'medium' : 'small';
+   const type = props.size === 'slim' ? 'loader2' : 'loader1';
+
+   return (
+     <div className={styles.loading}>
+       <span className={styles.spinner}>
+         <Spinner color='inkLight' size={size} type={type}></Spinner>
+       </span>
+       <span className={styles.hidden}>{props.children}</span>
+     </div>
+   );
+ } else {
+   return (
+     <span>{props.children}</span>
+   );
+ }
+};
+
+Button.propTypes = propTypes;
+Button.defaultProps = defaultProps;
 
 export default Button;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './Spinner.css';
 import styles from './Spinner.styles';
@@ -31,32 +31,33 @@ export const types = {
   'loader2': styles.loader2,
 }
 
-class Spinner extends Component {
-  static propTypes = {
-    type: PropTypes.oneOf(names),
-    color: PropTypes.oneOf(Object.keys(colors)),
-    size: PropTypes.oneOf(Object.keys(sizes)),
-  };
+const propTypes = {
+  type: PropTypes.oneOf(names),
+  color: PropTypes.oneOf(Object.keys(colors)),
+  size: PropTypes.oneOf(Object.keys(sizes)),
+};
 
-  static defaultProps = {
-    type: 'loader1',
-    color: 'ink',
-    size: 'medium',
-   };
+const defaultProps = {
+  type: 'loader1',
+  color: 'ink',
+  size: 'medium',
+ };
 
-  render() {
-    const classSpinner = classNames(
-      this.props.className,
-      styles.spinner,
-      types[this.props.type],
-      colors[this.props.color],
-      sizes[this.props.size],
-    );
+function Spinner(props) {
+  const classSpinner = classNames(
+    props.className,
+    styles.spinner,
+    types[props.type],
+    colors[props.color],
+    sizes[props.size],
+  );
 
-    return (
-      <div className={classSpinner}>Loading...</div>
-    );
-  }
+  return (
+    <div className={classSpinner}>Loading...</div>
+  );
 }
+
+Spinner.propTypes = propTypes;
+Spinner.defaultProps = defaultProps;
 
 export default Spinner;

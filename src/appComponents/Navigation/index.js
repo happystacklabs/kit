@@ -7,8 +7,9 @@ import { NavLink } from 'react-router-dom';
 
 
 
-const Navigation = ({routes}) => {
+function Navigation({routes}) {
   routes.sort((a, b) => a.name.localeCompare(b.name));
+
   return (
     <nav className={styles.navigationBar}>
       <Branding name='Kit' url='https://github.com/happystacklabs/kit'/>

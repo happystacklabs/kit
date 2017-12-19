@@ -1,0 +1,80 @@
+.kit-Tooltip__box {
+  position: absolute;
+  transform: translateX(-50%);
+  background: #4A4A4A;
+  border-radius: 4px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.18s ease-out 0.18s;
+  opacity: 0;
+  text-align: left; }
+  .kit-Tooltip__box:after {
+    content: " ";
+    position: absolute;
+    transition: all 0.18s ease-out 0.18s;
+    left: 50%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #4A4A4A transparent; }
+
+.kit-Tooltip--active .kit-Tooltip__box {
+  opacity: 1; }
+
+.kit-Tooltip__content {
+  display: inline-block; }
+
+.kit-Tooltip__tooltip {
+  display: inline-block;
+  position: relative; }
+
+.kit-Tooltip__tooltip--bottom .kit-Tooltip__box:after {
+  bottom: 100%; }
+
+.kit-Tooltip__tooltip--top .kit-Tooltip__box {
+  bottom: 0; }
+
+.kit-Tooltip__tooltip--top .kit-Tooltip__box:after {
+  top: 100%;
+  border-color: #4A4A4A transparent transparent transparent; }
+
+.kit-Tooltip__tooltip--left .kit-Tooltip__box {
+  transform: translateX(-100%); }
+
+.kit-Tooltip__tooltip--left .kit-Tooltip__box:after {
+  top: 50%;
+  left: 100%;
+  margin-left: 0;
+  margin-top: -8px;
+  border-color: transparent transparent transparent #4A4A4A; }
+
+.kit-Tooltip__tooltip--right .kit-Tooltip__box {
+  transform: translateX(0); }
+
+.kit-Tooltip__tooltip--right .kit-Tooltip__box:after {
+  left: -8px;
+  top: 50%;
+  margin-left: -8px;
+  margin-top: -8px;
+  border-color: transparent #4A4A4A transparent transparent; }
+
+.kit-Tooltip__tooltip--light .kit-Tooltip__box {
+  background: #FFFFFF;
+  border: 1px solid #DFE2E3;
+  box-shadow: 0 1px 1px 0 rgba(217, 218, 220, 0.5); }
+
+.kit-Tooltip__tooltip--light .kit-Tooltip__box:after {
+  filter: drop-shadow(-1px 0 0 #DFE2E3);
+  border-color: transparent #FFFFFF transparent transparent; }
+
+.kit-Tooltip__tooltip--left.kit-Tooltip__tooltip--light .kit-Tooltip__box:after {
+  filter: drop-shadow(1px 0 0 #DFE2E3);
+  border-color: transparent transparent transparent #FFFFFF; }
+
+.kit-Tooltip__tooltip--top.kit-Tooltip__tooltip--light .kit-Tooltip__box:after {
+  filter: drop-shadow(0 1px 0 #DFE2E3);
+  border-color: #FFFFFF transparent transparent transparent; }
+
+.kit-Tooltip__tooltip--bottom.kit-Tooltip__tooltip--light .kit-Tooltip__box:after {
+  filter: drop-shadow(0 -1px 0 #DFE2E3);
+  border-color: transparent transparent #FFFFFF transparent; }

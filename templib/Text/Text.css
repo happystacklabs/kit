@@ -1,0 +1,30 @@
+.kit-Text__text {
+  font-family: -apple-system,BlinkMacSystemFont,San Francisco,Roboto,Segoe UI,Helvetica Neue,sans-serif; }
+  .kit-Text__text--normalWeight {
+    font-weight: 400; }
+  .kit-Text__text--boldWeight {
+    font-weight: 700; }
+  .kit-Text__text--extraSmall {
+    font-size: 0.625rem; }
+  .kit-Text__text--small {
+    font-size: 0.8125rem; }
+  .kit-Text__text--regular {
+    font-size: 1rem; }
+  .kit-Text__text--medium {
+    font-size: 1.25rem; }
+  .kit-Text__text--large {
+    font-size: 1.75rem; }
+  .kit-Text__text--extraLarge {
+    font-size: 2.625rem; }
+  .kit-Text__text--ink {
+    color: #222C35; }
+  .kit-Text__text--inkLight {
+    color: #797D80; }
+  .kit-Text__text--positive {
+    color: #58BE8C; }
+  .kit-Text__text--negative {
+    color: #E03E30; }
+  .kit-Text__text--purple {
+    color: #5C6AC4; }
+  .kit-Text__text--white {
+    color: white; }

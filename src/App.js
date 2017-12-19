@@ -5,7 +5,6 @@ import styles from './App.styles';
 import {
   BrowserRouter as Router,
   Route,
-  Link
 } from 'react-router-dom';
 import Navigation from './appComponents/Navigation';
 import Home from './appComponents/Home';

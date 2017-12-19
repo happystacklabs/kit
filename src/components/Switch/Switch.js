@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './Switch.css';
 import styles from './Switch.styles';
@@ -19,50 +19,51 @@ export const sizes = {
   'large': styles.large,
 };
 
-class Switch extends Component {
-  static propTypes = {
-    on: PropTypes.bool.isRequired,
-    round: PropTypes.bool,
-    color: PropTypes.oneOf(Object.keys(colors)),
-    size: PropTypes.oneOf(Object.keys(sizes)),
+const propTypes = {
+  on: PropTypes.bool.isRequired,
+  round: PropTypes.bool,
+  color: PropTypes.oneOf(Object.keys(colors)),
+  size: PropTypes.oneOf(Object.keys(sizes)),
+};
+
+const defaultProps = {
+  on: false,
+};
+
+function Switch(props) {
+  function handleClick(event) {
+    if (props.onClick === null) { return; }
+    props.onClick({value: !props.on, name: props.name});
   };
 
-  static defaultProps = {
-    on: false,
-   };
+  const classSwitch = cx({
+    on: props.on,
+    round: props.round },
+    styles.switch,
+    sizes[props.size],
+    colors[props.color]
+  );
 
-   handleClick = (event) => {
-     if (this.props.onClick === null) { return; }
-     this.props.onClick({value: !this.props.on, name: this.props.name});
-   };
+  const classToggle = cx({
+    on: props.on,
+    round: props.round },
+    styles.toggle,
+    sizes[props.size],
+  );
 
-  render() {
-    const classSwitch = cx({
-      on: this.props.on,
-      round: this.props.round },
-      styles.switch,
-      sizes[this.props.size],
-      colors[this.props.color]
-    );
-
-    const classToggle = cx({
-      on: this.props.on,
-      round: this.props.round },
-      styles.toggle,
-      sizes[this.props.size],
-    );
-
-    return (
-      <div className={this.props.className}>
-        <div
-          className={classSwitch}
-          onClick={this.handleClick}
+  return (
+    <div className={props.className}>
+      <div
+        className={classSwitch}
+        onClick={handleClick}
         >
           <div className={classToggle}></div>
         </div>
       </div>
     );
   }
-}
 
-export default Switch;
+  Switch.propTypes = propTypes;
+  Switch.defaultProps = defaultProps;
+
+  export default Switch;

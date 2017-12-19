@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './Thumbnail.css';
 import styles from './Thumbnail.styles';
@@ -11,43 +11,43 @@ export const sizes = {
   'large': styles.large,
 };
 
-class Thumbnail extends Component {
-  static propTypes = {
-    source: PropTypes.string,
-    alt: PropTypes.string.isRequired,
-    size: PropTypes.oneOf(Object.keys(sizes)),
-  };
+const propTypes = {
+  source: PropTypes.string,
+  alt: PropTypes.string.isRequired,
+  size: PropTypes.oneOf(Object.keys(sizes)),
+};
 
-  static defaultProps = {
-    size: 'medium',
-  };
+const defaultProps = {
+  size: 'medium',
+};
 
-  renderThumbnail = () => {
-    if (this.props.source) {
-      return (
-        <img src={this.props.source} alt={this.props.alt}/>
-      );
-    } else {
-      return (
-        <div className={styles.placeholder}></div>
-      );
-    }
-  }
+function Thumbnail(props) {
+  const classThumbnail = classNames(
+    props.className,
+    styles.thumbnail,
+    sizes[props.size],
+  );
 
+  return (
+    <span className={classThumbnail}>
+      {renderThumbnail(props)}
+    </span>
+  );
+}
 
-  render() {
-    const classThumbnail = classNames(
-      this.props.className,
-      styles.thumbnail,
-      sizes[this.props.size],
-    );
-
+function renderThumbnail(props) {
+  if (props.source) {
     return (
-      <span className={classThumbnail}>
-        {this.renderThumbnail()}
-      </span>
+      <img src={props.source} alt={props.alt}/>
+    );
+  } else {
+    return (
+      <div className={styles.placeholder}></div>
     );
   }
 }
+
+Thumbnail.propTypes = propTypes;
+Thumbnail.defaultProps = defaultProps;
 
 export default Thumbnail;

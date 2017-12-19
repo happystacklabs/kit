@@ -1,0 +1,23 @@
+.kit-Avatar__placeholder {
+  border: 1px solid #C4CDD5; }
+
+.kit-Avatar__avatar {
+  display: inline-block; }
+  .kit-Avatar__avatar--small {
+    width: 32px;
+    height: 32px;
+    line-height: 32px; }
+  .kit-Avatar__avatar--medium {
+    width: 40px;
+    height: 40px;
+    line-height: 40px; }
+  .kit-Avatar__avatar--large {
+    width: 60px;
+    height: 60px;
+    line-height: 60px; }
+
+.kit-Avatar__avatar img,
+.kit-Avatar__placeholder {
+  border-radius: 50%;
+  background: #FAFAFA;
+  text-align: center; }

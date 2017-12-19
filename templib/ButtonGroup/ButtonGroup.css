@@ -1,0 +1,15 @@
+.kit-ButtonGroup__buttonGroup button {
+  margin-right: 10px; }
+
+.kit-ButtonGroup__buttonGroup--segmented button {
+  margin: 0;
+  border-radius: 0; }
+
+.kit-ButtonGroup__buttonGroup--segmented button:first-child {
+  border-radius: 3px 0 0 3px; }
+
+.kit-ButtonGroup__buttonGroup--segmented button:last-child {
+  border-radius: 0 3px 3px 0; }
+
+.kit-ButtonGroup__buttonGroup--segmented button:not(:first-child) {
+  margin-left: -1px; }

@@ -16,12 +16,18 @@
 
 .kit-Progress--small {
   height: 8px; }
+  .kit-Progress--small .kit-Progress__inside {
+    height: 8px; }
 
 .kit-Progress--medium {
   height: 15px; }
+  .kit-Progress--medium .kit-Progress__inside {
+    height: 15px; }
 
 .kit-Progress--large {
   height: 25px; }
+  .kit-Progress--large .kit-Progress__inside {
+    height: 25px; }
 
 @keyframes animation {
   0% {

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './TextInput.css';
 import styles from './TextInput.styles';
@@ -10,7 +10,77 @@ import classNames from 'classnames/bind';
 
 let cx = classNames.bind(styles);
 
-const renderError = (error) => {
+export const type = [
+  'email',
+  'text',
+  'number',
+  'password',
+  'search',
+  'url',
+];
+
+const propTypes = {
+  name: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
+  placeholder: PropTypes.string,
+  readOnly: PropTypes.bool,
+  disabled: PropTypes.bool,
+  maxLength: PropTypes.number,
+  shake: PropTypes.bool,
+  error: PropTypes.string,
+  type: PropTypes.oneOf(type),
+  label: PropTypes.string,
+  helpText: PropTypes.string,
+  action: PropTypes.shape({
+    title: PropTypes.string,
+    onAction: PropTypes.func,
+  }),
+  onChange: PropTypes.func,
+};
+
+const defaultProps = {
+  type: 'text',
+};
+
+function TextInput(props) {
+  function handleChange(event) {
+    if (props.onChange === null) { return; }
+    props.onChange({name: props.name, value: event.target.value});
+  };
+
+  const readOnly = !props.readOnly && props.onChange ? false : true;
+
+  const classInput = cx({
+    shake: props.shake || (props.maxLength && props.value.length >= props.maxLength),
+    error: props.error },
+    styles.input
+  );
+
+  return (
+    <div className={props.className}>
+      {renderLabel(props.name, props.label)}
+      {renderAction(props.action)}
+      <input
+        name={props.name}
+        value={props.value}
+        placeholder={props.placeholder}
+        onChange={handleChange}
+        readOnly={readOnly}
+        disabled={props.disabled}
+        className={classInput}
+        maxLength={props.maxLength}
+        type={props.type}
+      />
+      {renderError(props.error)}
+      {renderHelpText(props.helpText)}
+    </div>
+  );
+}
+
+function renderError(error) {
   if (error) {
     return (
       <div className={styles.errorMessage}>
@@ -19,9 +89,9 @@ const renderError = (error) => {
       </div>
     );
   }
-};
+}
 
-const renderHelpText = (helpText) => {
+function renderHelpText(helpText) {
   if (helpText) {
     return (
       <div className={styles.helpText}>
@@ -29,9 +99,9 @@ const renderHelpText = (helpText) => {
       </div>
     );
   }
-};
+}
 
-const renderLabel = (name, labelText) => {
+function renderLabel(name, labelText) {
   if (labelText) {
     return (
       <div className={styles.label}>
@@ -41,9 +111,9 @@ const renderLabel = (name, labelText) => {
       </div>
     );
   }
-};
+}
 
-const renderAction = (action) => {
+function renderAction(action) {
   if (action) {
     return (
       <Button
@@ -55,77 +125,9 @@ const renderAction = (action) => {
       </Button>
     );
   }
-};
-
-export const type = [
-  'email',
-  'text',
-  'number',
-  'password',
-  'search',
-  'url',
-];
-
-class TextInput extends Component {
-  static propTypes = {
-    name: PropTypes.string.isRequired,
-    value: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-    ]),
-    placeholder: PropTypes.string,
-    readOnly: PropTypes.bool,
-    disabled: PropTypes.bool,
-    maxLength: PropTypes.number,
-    shake: PropTypes.bool,
-    error: PropTypes.string,
-    type: PropTypes.oneOf(type),
-    label: PropTypes.string,
-    helpText: PropTypes.string,
-    action: PropTypes.shape({
-      title: PropTypes.string,
-      onAction: PropTypes.function,
-    }),
-  };
-
-  static defaultProps = {
-    type: 'text',
-  };
-
-  handleChange = (event) => {
-    if (this.props.onChange === null) { return; }
-    this.props.onChange({name: this.props.name, value: event.target.value});
-  };
-
-  render() {
-    const readOnly = !this.props.readOnly && this.props.onChange ? false : true;
-
-    const classInput = cx({
-      shake: this.props.shake || (this.props.maxLength && this.props.value.length >= this.props.maxLength),
-      error: this.props.error },
-      styles.input
-    );
-
-    return (
-      <div className={this.props.className}>
-        {renderLabel(this.props.name, this.props.label)}
-        {renderAction(this.props.action)}
-        <input
-          name={this.props.name}
-          value={this.props.value}
-          placeholder={this.props.placeholder}
-          onChange={this.handleChange}
-          readOnly={readOnly}
-          disabled={this.props.disabled}
-          className={classInput}
-          maxLength={this.props.maxLength}
-          type={this.props.type}
-        />
-        {renderError(this.props.error)}
-        {renderHelpText(this.props.helpText)}
-      </div>
-    );
-  }
 }
+
+TextInput.propTypes = propTypes;
+TextInput.defaultProps = defaultProps;
 
 export default TextInput;

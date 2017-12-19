@@ -1,0 +1,22 @@
+.kit-Thumbnail__thumbnail img,
+.kit-Thumbnail__placeholder {
+  border-radius: 3px;
+  background: #FAFAFA; }
+
+.kit-Thumbnail__placeholder {
+  border: 1px solid #C4CDD5; }
+
+.kit-Thumbnail--small img,
+.kit-Thumbnail--small .kit-Thumbnail__placeholder {
+  width: 40px;
+  height: 40px; }
+
+.kit-Thumbnail--medium img,
+.medium .kit-Thumbnail__placeholder {
+  width: 60px;
+  height: 60px; }
+
+.kit-Thumbnail--large img,
+.kit-Thumbnail--large .kit-Thumbnail__placeholder {
+  width: 80px;
+  height: 80px; }
