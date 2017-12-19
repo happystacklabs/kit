@@ -38,7 +38,7 @@ function ChoiceList(props) {
   return (
     <div className={classNames(props.className, styles.choiceList)}>
       <fieldset>
-        <legend><Text size='regular'>{props.title}</Text></legend>
+        <legend><Text size="regular">{props.title}</Text></legend>
         <ul>
           {renderInputs(props, handleChange)}
         </ul>
@@ -51,23 +51,21 @@ function renderInputs(props, handleChange) {
   if (props.choices) {
     const type = props.multiple ? 'checkbox' : 'radio';
 
-    return (
-      props.choices.map(choice =>
-        <li key={choice['value']}>
-          <Checkbox
-            name={props.name}
-            value={choice['value']}
-            id={choice['value']}
-            label={choice['label']}
-            helpText={choice['helpText']}
-            type={type}
-            checked={props.selected.includes(choice['value'])}
-            onChange={handleChange}
-            disabled={props.disabled}
-          />
-        </li>
-      )
-    );
+    return props.choices.map(choice => (
+      <li key={choice['value']}>
+        <Checkbox
+          name={props.name}
+          value={choice['value']}
+          id={choice['value']}
+          label={choice['label']}
+          helpText={choice['helpText']}
+          type={type}
+          checked={props.selected.includes(choice['value'])}
+          onChange={handleChange}
+          disabled={props.disabled}
+        />
+      </li>
+    ));
   }
 };
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import Button from ".."
+import Button from "..";
+import { shallow } from 'enzyme';
 
 
 describe('Button', () => {
@@ -30,21 +31,21 @@ describe('Button', () => {
   describe('size', () => {
     it('show regular by default', () => {
       const text = shallow(
-        <Button size='regular'>foo</Button>
+        <Button size="regular">foo</Button>
       );
       expect(text.hasClass('kit-Button__button--regular')).toBe(true);
     });
 
     it('show slim when given by props', () => {
       const text = shallow(
-        <Button size='slim'>foo</Button>
+        <Button size="slim">foo</Button>
       );
       expect(text.hasClass('kit-Button__button--slim')).toBe(true);
     });
 
     it('show large when given by props', () => {
       const text = shallow(
-        <Button size='large'>foo</Button>
+        <Button size="large">foo</Button>
       );
       expect(text.hasClass('kit-Button__button--large')).toBe(true);
     });
@@ -53,7 +54,7 @@ describe('Button', () => {
   describe('square', () => {
     it('show square when given by props', () => {
       const text = shallow(
-        <Button square></Button>
+        <Button square />
       );
       expect(text.hasClass('kit-Button__button--square')).toBe(true);
     });
@@ -62,21 +63,21 @@ describe('Button', () => {
   describe('color', () => {
     it('is positive when given by props', () => {
       const button = shallow(
-        <Button color='positive'></Button>
+        <Button color="positive" />
       );
       expect(button.find('button').hasClass('kit-Button__button--positive')).toBe(true);
     });
 
     it('is negative when given by props', () => {
       const button = shallow(
-        <Button color='negative'></Button>
+        <Button color="negative" />
       );
       expect(button.find('button').hasClass('kit-Button__button--negative')).toBe(true);
     });
 
     it('is purple when given by props', () => {
       const button = shallow(
-        <Button color='purple'></Button>
+        <Button color="purple" />
       );
       expect(button.find('button').hasClass('kit-Button__button--purple')).toBe(true);
     });
@@ -85,7 +86,7 @@ describe('Button', () => {
   describe('fullWidth', () => {
     it('add fullWidth css selector when given by props', () => {
       const button = shallow(
-        <Button fullWidth></Button>
+        <Button fullWidth />
       );
       expect(button.find('button').hasClass('kit-Button__button--fullWidth')).toBe(true);
     });
@@ -94,7 +95,7 @@ describe('Button', () => {
   describe('plain', () => {
     it('add buttonPlain css selector when given by props', () => {
       const button = shallow(
-        <Button plain></Button>
+        <Button plain />
       );
       expect(button.find('button').hasClass('kit-Button__button--plain')).toBe(true);
     });
@@ -103,7 +104,7 @@ describe('Button', () => {
   describe('outline', () => {
     it('add buttonOutline css selector when given by props', () => {
       const button = shallow(
-        <Button outline></Button>
+        <Button outline />
       );
       expect(button.find('button').hasClass('kit-Button__button--outline')).toBe(true);
     });
@@ -111,14 +112,14 @@ describe('Button', () => {
   describe('loading', () => {
     it('render spinner when given by props', () => {
       const button = shallow(
-        <Button loading></Button>
+        <Button loading />
       );
       expect(button.find('div').first().hasClass('kit-Button__button--loading')).toBe(true);
     });
 
     it('disable the button', () => {
       const button = shallow(
-        <Button loading></Button>
+        <Button loading />
       );
       expect(button.find('button').prop('disabled')).toBe(true);
     });

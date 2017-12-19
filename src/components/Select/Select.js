@@ -50,8 +50,8 @@ function Select(props) {
         </select>
         <div className={styles.arrow}>
           <Icon
-            name='angle-down'
-            color='inkLight'
+            name="angle-down"
+            color="inkLight"
           />
         </div>
       </div>
@@ -73,7 +73,7 @@ function renderOptions(options) {
 function renderPlaceholder(placeholder, value) {
   if (placeholder) {
     return (
-      <option value='' disabled hidden>{placeholder}</option>
+      <option value="" disabled hidden>{placeholder}</option>
     );
   }
 }
@@ -82,7 +82,7 @@ function renderHelpText(helpText) {
   if (helpText) {
     return (
       <div className={styles.helpText}>
-        <Text color='inkLight' element='span' size='small'>{ helpText }</Text>
+        <Text color="inkLight" element="span" size="small">{ helpText }</Text>
       </div>
     );
   }
@@ -93,7 +93,7 @@ function renderLabel(name, labelText) {
     return (
       <div className={styles.label}>
         <label htmlFor={name}>
-          <Text size='regular'>{ labelText }</Text>
+          <Text size="regular">{ labelText }</Text>
         </label>
       </div>
     );

@@ -36,8 +36,9 @@ class Tooltip extends React.Component {
 
   componentDidMount() {
     const newState = Object.assign({}, this.state);
-    newState['childPosition'] = this.refs.child ? this.refs.child.getBoundingClientRect() : null;
-    newState['position'] = this.refs.tooltip ? this.refs.tooltip.getBoundingClientRect() : null;
+
+    newState['childPosition'] = this.childRef ? this.childRef.getBoundingClientRect() : null;
+    newState['position'] = this.tooltipRef ? this.tooltipRef.getBoundingClientRect() : null;
     this.setState(newState);
   }
 
@@ -103,14 +104,14 @@ class Tooltip extends React.Component {
       <div className={classTooltip}>
         <span
           className={styles.content}
-          ref='child'
+          ref={(ref) => { this.childRef = ref; }}
           onMouseEnter={this.handleOnMouseEnter}
           onMouseLeave={this.handleOnMouseLeave}
         >
           {this.props.children}
         </span>
-        <div className={styles.box} style={style} ref='tooltip'>
-          <Text color={color} size='small'>{this.props.content}</Text>
+        <div className={styles.box} style={style} ref={(ref) => { this.tooltipRef = ref; }}>
+          <Text color={color} size="small">{this.props.content}</Text>
         </div>
       </div>
     );

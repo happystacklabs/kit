@@ -70,7 +70,7 @@ function renderContent(props) {
    return (
      <div className={styles.loading}>
        <span className={styles.spinner}>
-         <Spinner color='inkLight' size={size} type={type}></Spinner>
+         <Spinner color="inkLight" size={size} type={type} />
        </span>
        <span className={styles.hidden}>{props.children}</span>
      </div>

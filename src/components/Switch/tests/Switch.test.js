@@ -1,11 +1,12 @@
 import React from 'react';
-import Switch from ".."
+import Switch from "..";
+import {shallow} from 'enzyme';
 
 
 describe('Switch', () => {
   it('render the toggle div', () => {
     const switchInput = shallow(
-      <Switch/>
+      <Switch />
     );
     expect(switchInput.find('div').at(1).hasClass('kit-Switch__switch')).toBe(true);
   });
@@ -14,7 +15,7 @@ describe('Switch', () => {
   describe('on', () => {
     it('add the on css selector when on is given by props', () => {
       const switchInput = shallow(
-        <Switch on/>
+        <Switch on />
       );
       expect(switchInput.find('div').at(1).hasClass('kit-Switch--on')).toBe(true);
     });
@@ -23,7 +24,7 @@ describe('Switch', () => {
   describe('onClick()', () => {
     it('is called when the switch is clicked', () => {
       const spy = jest.fn();
-      shallow(<Switch onClick={spy}/>).find('div').at(1).simulate('click');
+      shallow(<Switch onClick={spy} />).find('div').at(1).simulate('click');
       expect(spy).toHaveBeenCalled();
     });
   });
@@ -31,7 +32,7 @@ describe('Switch', () => {
   describe('round', () => {
     it('add the round css selector when is given by props', () => {
       const switchInput = shallow(
-        <Switch round/>
+        <Switch round />
       );
       expect(switchInput.find('div').at(1).hasClass('kit-Switch--round')).toBe(true);
     });
@@ -40,21 +41,21 @@ describe('Switch', () => {
   describe('color', () => {
     it('is positive when given by props', () => {
       const switchInput = shallow(
-        <Switch color='positive'/>
+        <Switch color="positive" />
       );
       expect(switchInput.find('div').at(1).hasClass('kit-Switch--positive')).toBe(true);
     });
 
     it('is negative when given by props', () => {
       const switchInput = shallow(
-        <Switch color='negative'/>
+        <Switch color="negative" />
       );
       expect(switchInput.find('div').at(1).hasClass('kit-Switch--negative')).toBe(true);
     });
 
     it('is purple when given by props', () => {
       const switchInput = shallow(
-        <Switch color='purple'/>
+        <Switch color="purple" />
       );
       expect(switchInput.find('div').at(1).hasClass('kit-Switch--purple')).toBe(true);
     });
@@ -63,21 +64,21 @@ describe('Switch', () => {
   describe('size', () => {
     it('show slim when given by props', () => {
       const switchInput = shallow(
-        <Switch size='slim'/>
+        <Switch size="slim" />
       );
       expect(switchInput.find('div').at(1).hasClass('kit-Switch--slim')).toBe(true);
     });
 
     it('show regular when given by props', () => {
       const switchInput = shallow(
-        <Switch size='regular'/>
+        <Switch size="regular" />
       );
       expect(switchInput.find('div').at(1).hasClass('kit-Switch--regular')).toBe(true);
     });
 
     it('show large when given by props', () => {
       const switchInput = shallow(
-        <Switch size='large'/>
+        <Switch size="large" />
       );
       expect(switchInput.find('div').at(1).hasClass('kit-Switch--large')).toBe(true);
     });

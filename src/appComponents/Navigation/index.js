@@ -12,13 +12,13 @@ function Navigation({routes}) {
 
   return (
     <nav className={styles.navigationBar}>
-      <Branding name='Kit' url='https://github.com/happystacklabs/kit'/>
+      <Branding name="Kit" url="https://github.com/happystacklabs/kit" />
       <div>
         <ul>
           {routes.map((route) => (
             <li key={route.path}>
               <NavLink to={route.path} activeClassName={styles.active}>
-                <Text color='inkLight'>{route.name}</Text>
+                <Text color="inkLight">{route.name}</Text>
               </NavLink>
             </li>
           ))}

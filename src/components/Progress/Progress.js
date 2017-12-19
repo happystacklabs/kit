@@ -39,7 +39,7 @@ function Progress(props) {
 
   return (
     <div className={classProgress}>
-      <div className={classInside} style={{width: width}}></div>
+      <div className={classInside} style={{width: width}} />
     </div>
   );
 }

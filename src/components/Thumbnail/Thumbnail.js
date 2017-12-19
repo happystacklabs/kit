@@ -38,11 +38,11 @@ function Thumbnail(props) {
 function renderThumbnail(props) {
   if (props.source) {
     return (
-      <img src={props.source} alt={props.alt}/>
+      <img src={props.source} alt={props.alt} />
     );
   } else {
     return (
-      <div className={styles.placeholder}></div>
+      <div className={styles.placeholder} />
     );
   }
 }

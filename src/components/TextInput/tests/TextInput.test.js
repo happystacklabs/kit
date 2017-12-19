@@ -8,9 +8,9 @@ describe('TextInput', () => {
   it('set all props', () => {
     const textInput = shallow(
       <TextInput
-        name='Foo'
-        value='Bar'
-        placeholder='Baz'
+        name="Foo"
+        value="Bar"
+        placeholder="Baz"
         readOnly
         disabled
         maxLength={2}
@@ -41,7 +41,7 @@ describe('TextInput', () => {
 
     it('add shake on max lenght', () => {
       const input = shallow(
-        <TextInput name="Foo" value="Foo Bar" maxLength={2}/>
+        <TextInput name="Foo" value="Foo Bar" maxLength={2} />
       );
       expect(input.find('input').hasClass('kit-TextInput__input--shake')).toBe(true);
     });
@@ -50,7 +50,7 @@ describe('TextInput', () => {
   describe('shake', () => {
     it('add shake style tag', () => {
       const input = shallow(
-        <TextInput name="Foo" shake/>
+        <TextInput name="Foo" shake />
       );
       expect(input.find('input').hasClass('kit-TextInput__input--shake')).toBe(true);
     });
@@ -59,14 +59,14 @@ describe('TextInput', () => {
   describe('error', () => {
     it('add error style tag', () => {
       const input = shallow(
-        <TextInput name="Foo" error="Foo"/>
+        <TextInput name="Foo" error="Foo" />
       );
       expect(input.find('input').hasClass('kit-TextInput__input--error')).toBe(true);
     });
 
     it('show an error message', () => {
       const input = mount(
-        <TextInput name="Foo" error="Foo"/>
+        <TextInput name="Foo" error="Foo" />
       );
       expect(input.find('span').first().text()).toBe('Foo');
     });
@@ -75,35 +75,35 @@ describe('TextInput', () => {
   describe('type', () => {
     it('give an email field when given in props', () => {
       const input = mount(
-        <TextInput name="Foo" type="email"/>
+        <TextInput name="Foo" type="email" />
       );
       expect(input.find('input').first().props().type).toBe('email');
     });
 
     it('give a number field when given in props', () => {
       const input = mount(
-        <TextInput name="Foo" type="number"/>
+        <TextInput name="Foo" type="number" />
       );
       expect(input.find('input').first().props().type).toBe('number');
     });
 
     it('give a password field when given in props', () => {
       const input = mount(
-        <TextInput name="Foo" type="password"/>
+        <TextInput name="Foo" type="password" />
       );
       expect(input.find('input').first().props().type).toBe('password');
     });
 
     it('give a search field when given in props', () => {
       const input = mount(
-        <TextInput name="Foo" type="search"/>
+        <TextInput name="Foo" type="search" />
       );
       expect(input.find('input').first().props().type).toBe('search');
     });
 
     it('give a url field when given in props', () => {
       const input = mount(
-        <TextInput name="Foo" type="url"/>
+        <TextInput name="Foo" type="url" />
       );
       expect(input.find('input').first().props().type).toBe('url');
     });
@@ -112,7 +112,7 @@ describe('TextInput', () => {
   describe('helpText', () => {
     it('add a helpText when given by props', () => {
       const input = mount(
-        <TextInput name="Foo" helpText="Foo"/>
+        <TextInput name="Foo" helpText="Foo" />
       );
       expect(input.find('span').first().text()).toBe('Foo');
     });
@@ -121,7 +121,7 @@ describe('TextInput', () => {
   describe('label', () => {
     it('add a label when given by props', () => {
       const input = mount(
-        <TextInput name="Foo" label="Foo"/>
+        <TextInput name="Foo" label="Foo" />
       );
       expect(input.find('label').first().text()).toBe('Foo');
     });
@@ -131,7 +131,7 @@ describe('TextInput', () => {
     it('render an action link when given by props', () => {
       const action = { title: 'Bar' };
       const input = mount(
-        <TextInput name='Foo' action={action}/>
+        <TextInput name="Foo" action={action} />
       );
       expect(input.containsMatchingElement(Button)).toBe(true);
       expect(input.find(Button).text()).toBe('Bar');
@@ -141,7 +141,7 @@ describe('TextInput', () => {
       const spy = jest.fn();
       const action = { title: 'Bar', onAction:spy };
       const input = mount(
-        <TextInput name="Foo" action={action}/>
+        <TextInput name="Foo" action={action} />
       );
       input.find('button').simulate('click');
       expect(spy).toHaveBeenCalled();

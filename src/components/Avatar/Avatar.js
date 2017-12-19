@@ -41,18 +41,18 @@ function renderAvatar(props) {
    const initial = props.initial.toUpperCase().substring(0,2);
    return (
      <div className={classNames(styles.placeholder, sizes[props.size])}>
-      <Text weight='bold'>{initial}</Text>
+      <Text weight="bold">{initial}</Text>
      </div>
    );
  }
 
  if (props.source) {
    return (
-     <img className={sizes[props.size]} alt={props.source} src={props.source}/>
+     <img className={sizes[props.size]} alt={props.source} src={props.source} />
    );
  } else {
    return (
-     <div className={classNames(styles.placeholder, sizes[props.size])}></div>
+     <div className={classNames(styles.placeholder, sizes[props.size])} />
    );
  }
 }

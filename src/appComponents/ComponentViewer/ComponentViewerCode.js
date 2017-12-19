@@ -22,19 +22,19 @@ function ComponentViewerCode(props) {
   return (
     <div className={styles.code}>
       <div className={styles.codeMenu}>
-        <Text size='small' color='inkLight' className={styles.item}>React</Text>
+        <Text size="small" color="inkLight" className={styles.item}>React</Text>
         <Button
           onClick={onClickCopy}
-          size='slim'
+          size="slim"
           square
         >
-          <Icon name='clone'/>
+          <Icon name="clone" />
         </Button>
       </div>
       <Text
-        element='span'
-        size='regular'
-        color='white'
+        element="span"
+        size="regular"
+        color="white"
         className={styles.codeText}
       >
         {renderCode(props)}
@@ -124,7 +124,7 @@ function renderProps(props) {
     if (typeof prop.value === 'boolean') {
       arr.push((
         <span key={prop.name}>
-          <span className='codeColorGreen'> {prop.name}</span>
+          <span className="codeColorGreen"> {prop.name}</span>
         </span>
       ))
     } else if (Array.isArray(prop.value)) {
@@ -144,10 +144,12 @@ function renderProps(props) {
             } else {
               return (
                 <span key={i}>
-                  <pre>{'{'}
-                  label: <span className={styles.yellow}>'{row.label}'</span>,
-                  value: <span className={styles.yellow}>'{row.value}'</span>
-                  {'}'},</pre>
+                  <pre>
+                    {'{'}
+                    label: <span className={styles.yellow}>'{row.label}'</span>,
+                    value: <span className={styles.yellow}>'{row.value}'</span>
+                    {'}'},
+                  </pre>
                 </span>
               );
             }

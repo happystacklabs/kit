@@ -56,12 +56,12 @@ function Switch(props) {
       <div
         className={classSwitch}
         onClick={handleClick}
-        >
-          <div className={classToggle}></div>
-        </div>
+      >
+        <div className={classToggle} />
       </div>
-    );
-  }
+    </div>
+  );
+}
 
   Switch.propTypes = propTypes;
   Switch.defaultProps = defaultProps;

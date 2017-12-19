@@ -19,27 +19,27 @@ function Paginator(props) {
     <nav className={props.className}>
       <div className={styles.left}>
         <Button
-          size='large'
+          size="large"
           disabled={props.disablePrevious}
           onClick={props.onPrevious}
           plain={props.plain}
         >
           <Icon
-            name='chevron-left'
-            color='purple'
+            name="chevron-left"
+            color="purple"
           />
-          </Button>
+        </Button>
       </div>
       <div className={styles.right}>
         <Button
-          size='large'
+          size="large"
           disabled={props.disableNext}
           onClick={props.onNext}
           plain={props.plain}
         >
           <Icon
-            name='chevron-right'
-            color='purple'
+            name="chevron-right"
+            color="purple"
           />
         </Button>
       </div>

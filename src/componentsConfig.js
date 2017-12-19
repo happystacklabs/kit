@@ -49,7 +49,7 @@ const components = [
     name: 'Action List',
     options: actionListViewerOptions,
     code: (
-      <ActionList/>
+      <ActionList />
     ),
   },
   {
@@ -57,7 +57,7 @@ const components = [
     name: 'Progress',
     options: progressViewerOptions,
     code: (
-      <Progress/>
+      <Progress />
     ),
   },
   {
@@ -65,7 +65,7 @@ const components = [
     name: 'Skeleton',
     options: skeletonViewerOptions,
     code: (
-      <Skeleton/>
+      <Skeleton />
     ),
   },
   {
@@ -85,7 +85,7 @@ const components = [
     name: 'Thumbnail',
     options: thumbnailViewerOptions,
     code: (
-      <Thumbnail alt=''/>
+      <Thumbnail alt="" />
     ),
   },
   {
@@ -93,7 +93,7 @@ const components = [
     name: 'Avatar',
     options: avatarViewerOptions,
     code: (
-      <Avatar/>
+      <Avatar />
     ),
   },
   {
@@ -111,7 +111,7 @@ const components = [
     name: 'Paginator',
     options: paginatorViewerOptions,
     code: (
-      <Paginator/>
+      <Paginator />
     ),
   },
   {
@@ -119,7 +119,7 @@ const components = [
     name: 'Spinner',
     options: spinnerViewerOptions,
     code: (
-      <Spinner/>
+      <Spinner />
     ),
   },
   {
@@ -128,7 +128,7 @@ const components = [
     options: choiceListViewerOptions,
     code: (
       <ChoiceList
-        name=''
+        name=""
         choices={[]}
       />
     ),
@@ -138,7 +138,7 @@ const components = [
     name: 'Checkbox',
     options: checkboxViewerOptions,
     code: (
-      <Checkbox name=''/>
+      <Checkbox name="" />
     ),
   },
   {
@@ -146,7 +146,7 @@ const components = [
     name: 'Button',
     options: buttonViewerOptions,
     code: (
-      <Button/>
+      <Button />
     ),
   },
   {
@@ -154,7 +154,7 @@ const components = [
     name: 'Icon',
     options: iconViewerOptions,
     code: (
-      <Icon/>
+      <Icon />
     ),
   },
   {
@@ -164,8 +164,8 @@ const components = [
     code: (
       <Select
         options={[]}
-        name=''
-        value=''
+        name=""
+        value=""
       />
     ),
   },
@@ -174,7 +174,7 @@ const components = [
     name: 'Switch',
     options: switchViewerOptions,
     code: (
-      <Switch/>
+      <Switch />
     ),
   },
   {
@@ -182,7 +182,7 @@ const components = [
     name: 'Text',
     options: textViewerOptions,
     code: (
-      <Text/>
+      <Text />
     ),
   },
   {
@@ -190,7 +190,7 @@ const components = [
     name: 'Text Input',
     options: textInputViewerOptions,
     code: (
-      <TextInput name=''/>
+      <TextInput name="" />
     ),
   },
 ];

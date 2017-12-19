@@ -17,7 +17,7 @@ describe('ChoiceList', () => {
   it('renders a fieldset', () => {
     const choiceList = shallow(
       <ChoiceList
-        name='Foo'
+        name="Foo"
         choices={choices}
       />
     );
@@ -28,8 +28,8 @@ describe('ChoiceList', () => {
     it('show a title legend for the fieldset', () => {
       const choiceList = mount(
         <ChoiceList
-          name='Foo'
-          title='Foo'
+          name="Foo"
+          title="Foo"
           choices={choices}
         />
       );
@@ -41,8 +41,8 @@ describe('ChoiceList', () => {
     it('it renders a choice with the label', () => {
       const choiceList = mount(
         <ChoiceList
-          name='Foo'
-          title='Foo'
+          name="Foo"
+          title="Foo"
           choices={choices}
         />
       );
@@ -53,8 +53,8 @@ describe('ChoiceList', () => {
       choices[0]['helpText'] = 'Bar';
       const choiceList = mount(
         <ChoiceList
-          name='Foo'
-          title='Foo'
+          name="Foo"
+          title="Foo"
           choices={choices}
         />
       );
@@ -66,8 +66,8 @@ describe('ChoiceList', () => {
     it('change the input type to checkbox', () => {
       const choiceList = mount(
         <ChoiceList
-          name='Foo'
-          title='Foo'
+          name="Foo"
+          title="Foo"
           choices={choices}
           multiple
         />
@@ -80,8 +80,8 @@ describe('ChoiceList', () => {
     it('select the appropriate choice', () => {
       const choiceList = mount(
         <ChoiceList
-          name='Foo'
-          title='Foo'
+          name="Foo"
+          title="Foo"
           choices={choices}
           selected={['one']}
         />
@@ -96,8 +96,8 @@ describe('ChoiceList', () => {
       });
       const choiceList = mount(
         <ChoiceList
-          name='Foo'
-          title='Foo'
+          name="Foo"
+          title="Foo"
           choices={choices}
           selected={['one']}
           multiple
@@ -117,8 +117,8 @@ describe('ChoiceList', () => {
     it('disabled all inputs', () => {
       const choiceList = mount(
         <ChoiceList
-          name='Foo'
-          title='Foo'
+          name="Foo"
+          title="Foo"
           choices={choices}
           disabled
         />

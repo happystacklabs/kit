@@ -1,5 +1,6 @@
 import React from 'react';
-import Text from ".."
+import Text from "..";
+import {shallow} from 'enzyme';
 
 
 describe('Text', () => {
@@ -13,7 +14,7 @@ describe('Text', () => {
 
     it('can be optional', () => {
       const text = shallow(
-        <Text></Text>
+        <Text />
       );
       expect(text.text()).toBe('');
     });
@@ -140,42 +141,42 @@ describe('Text', () => {
   describe('color', () => {
     it('should be ink by default', () => {
       const text = shallow(
-        <Text></Text>
+        <Text />
       );
       expect(text.find('span').hasClass('kit-Text__text--ink')).toBe(true);
     });
 
     it('is inkLight when given by props', () => {
       const text = shallow(
-        <Text color='inkLight'></Text>
+        <Text color="inkLight" />
       );
       expect(text.find('span').hasClass('kit-Text__text--inkLight')).toBe(true);
     });
 
     it('is positive when given by props', () => {
       const text = shallow(
-        <Text color='positive'></Text>
+        <Text color="positive" />
       );
       expect(text.find('span').hasClass('kit-Text__text--positive')).toBe(true);
     });
 
     it('is negative when given by props', () => {
       const text = shallow(
-        <Text color='negative'></Text>
+        <Text color="negative" />
       );
       expect(text.find('span').hasClass('kit-Text__text--negative')).toBe(true);
     });
 
     it('is white when given by props', () => {
       const text = shallow(
-        <Text color='white'></Text>
+        <Text color="white" />
       );
       expect(text.find('span').hasClass('kit-Text__text--white')).toBe(true);
     });
 
     it('is purple when given by props', () => {
       const text = shallow(
-        <Text color='purple'></Text>
+        <Text color="purple" />
       );
       expect(text.find('span').hasClass('kit-Text__text--purple')).toBe(true);
     });

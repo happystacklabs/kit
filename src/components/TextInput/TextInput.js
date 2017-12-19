@@ -84,8 +84,8 @@ function renderError(error) {
   if (error) {
     return (
       <div className={styles.errorMessage}>
-        <Icon name='exclamation' color='negative' className={styles.errorIcon}/>
-        <Text color='negative' element='span' size='small'>{error}</Text>
+        <Icon name="exclamation" color="negative" className={styles.errorIcon} />
+        <Text color="negative" element="span" size="small">{error}</Text>
       </div>
     );
   }
@@ -95,7 +95,7 @@ function renderHelpText(helpText) {
   if (helpText) {
     return (
       <div className={styles.helpText}>
-        <Text color='inkLight' element='span' size='small'>{helpText}</Text>
+        <Text color="inkLight" element="span" size="small">{helpText}</Text>
       </div>
     );
   }
@@ -106,7 +106,7 @@ function renderLabel(name, labelText) {
     return (
       <div className={styles.label}>
         <label htmlFor={name}>
-          <Text size='regular'>{labelText}</Text>
+          <Text size="regular">{labelText}</Text>
         </label>
       </div>
     );

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import './ActionList.css';
 
 
-const propTypes = {
-};
-
-const defaultProps = {
- };
+// const propTypes = {
+// };
+//
+// const defaultProps = {
+//  };
 
 class ActionList extends Component {
   render() {
@@ -17,7 +17,7 @@ class ActionList extends Component {
   }
 }
 
-ActionList.propTypes = propTypes;
-ActionList.defaultProps = defaultProps;
+// ActionList.propTypes = propTypes;
+// ActionList.defaultProps = defaultProps;
 
 export default ActionList;

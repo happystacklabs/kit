@@ -7,8 +7,8 @@ describe('Select', () => {
   it('set all props', () => {
     const selectInput = shallow(
       <Select
-        name='Foo'
-        value='Bar'
+        name="Foo"
+        value="Bar"
         options={[]}
         disabled
       />
@@ -26,8 +26,8 @@ describe('Select', () => {
       ];
       const selectInput = shallow(
         <Select
-          name='Foo'
-          value=''
+          name="Foo"
+          value=""
           options={options}
         />
       );
@@ -46,8 +46,8 @@ describe('Select', () => {
       const spy = jest.fn();
       const wrapper = mount(
         <Select
-          name='foo'
-          value=''
+          name="foo"
+          value=""
           options={[]}
           onChange={spy}
         />
@@ -63,9 +63,9 @@ describe('Select', () => {
     it('add a placeholder when given by props', () => {
       const selectInput = shallow(
         <Select
-          name='Foo'
-          value=''
-          placeholder='Select'
+          name="Foo"
+          value=""
+          placeholder="Select"
           options={[]}
         />
       ).find('select');
@@ -80,8 +80,8 @@ describe('Select', () => {
     it('add error style tag', () => {
       const selectInput = shallow(
         <Select
-          name='Foo'
-          value=''
+          name="Foo"
+          value=""
           options={[]}
           error
         />
@@ -94,10 +94,10 @@ describe('Select', () => {
     it('add a helpText when given by props', () => {
       const selectInput = mount(
         <Select
-          name='Foo'
-          value=''
+          name="Foo"
+          value=""
           options={[]}
-          helpText='Foo'
+          helpText="Foo"
         />
       ).find('div');
       expect(selectInput.find('span').first().text()).toBe('Foo');
@@ -108,10 +108,10 @@ describe('Select', () => {
     it('add a label when given by props', () => {
       const selectInput = mount(
         <Select
-          name='Foo'
-          value=''
+          name="Foo"
+          value=""
           options={[]}
-          label='Foo'
+          label="Foo"
         />
       ).find('div');
       expect(selectInput.find('label').first().text()).toBe('Foo');

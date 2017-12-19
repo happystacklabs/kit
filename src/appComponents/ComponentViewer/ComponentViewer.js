@@ -86,9 +86,9 @@ class ComponentViewer extends React.Component {
 
     return (
       <div className={this.props.className}>
-        <Text element='h1' className={styles.h1} size='extraLarge'>{this.props.name}</Text>
+        <Text element="h1" className={styles.h1} size="extraLarge">{this.props.name}</Text>
         <div>
-          <Text size='medium' element='h2'>Example</Text>
+          <Text size="medium" element="h2">Example</Text>
           <div className={styles.element}>
             {React.cloneElement(this.props.children, newProps)}
           </div>

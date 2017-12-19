@@ -22,12 +22,12 @@ function Skeleton(props) {
 function renderSkeleton(props) {
   if (props.display) {
     return (
-      <div className={styles.display}></div>
+      <div className={styles.display} />
     );
   } else {
     const lines = [];
     for (var i = 0; i < props.lines; i++) {
-      lines.push(<div className={styles.line} key={i}></div>);
+      lines.push(<div className={styles.line} key={i} />);
     }
     return (
       <span>

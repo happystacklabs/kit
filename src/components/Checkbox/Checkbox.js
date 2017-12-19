@@ -69,7 +69,7 @@ function renderLabel(name, labelText) {
   if (labelText) {
     return (
       <label htmlFor={name} className={styles.label}>
-        <Text size='regular'>{ labelText }</Text>
+        <Text size="regular">{ labelText }</Text>
       </label>
     );
   }
@@ -79,7 +79,7 @@ function renderHelpText(helpText) {
   if (helpText) {
     return (
       <div className={styles.helpText}>
-        <Text color='inkLight' element='span' size='small'>{ helpText }</Text>
+        <Text color="inkLight" element="span" size="small">{ helpText }</Text>
       </div>
     );
   }
@@ -88,11 +88,11 @@ function renderHelpText(helpText) {
 function renderCheckmark(type) {
   if (type === 'checkbox') {
     return (
-      <Icon name='check' color='white' className={styles.checkmark}/>
+      <Icon name="check" color="white" className={styles.checkmark} />
     );
   } else {
     return (
-      <div className={styles.radioMiddle}></div>
+      <div className={styles.radioMiddle} />
     );
   }
 }

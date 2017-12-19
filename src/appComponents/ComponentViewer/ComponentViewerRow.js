@@ -29,8 +29,8 @@ const propTypes = {
 function ComponentViewerRow(props) {
   return (
     <tr key={props.name}>
-      <td className={styles.bottomLine}><Text color='purple' size='small'>{props.name}</Text></td>
-      <td className={styles.bottomLine}><Text color='inkLight' size='small'>{getType(props)}</Text></td>
+      <td className={styles.bottomLine}><Text color="purple" size="small">{props.name}</Text></td>
+      <td className={styles.bottomLine}><Text color="inkLight" size="small">{getType(props)}</Text></td>
       <td className={styles.bottomLine}><Text>{props.description}</Text></td>
       <td>
         {renderInput(props)}
@@ -100,7 +100,7 @@ function renderInput(props) {
        name={props.name}
        onChange={props.onChange}
        value={props.value}
-       type='number'
+       type="number"
       />
     );
   }

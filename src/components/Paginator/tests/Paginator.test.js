@@ -6,7 +6,7 @@ import {shallow, mount} from 'enzyme';
 describe('Paginator', () => {
   it('render two buttons', () => {
     const paginator = shallow(
-      <Paginator/>
+      <Paginator />
     );
     expect(paginator.find('button').at(0).exists()).toBe(true);
     expect(paginator.find('button').at(1).exists()).toBe(true);
@@ -15,7 +15,7 @@ describe('Paginator', () => {
   describe('disableNext', () => {
     it('change state of right button to disabled', () => {
       const paginator = mount(
-        <Paginator disableNext/>
+        <Paginator disableNext />
       );
       expect(paginator.find('button').at(1).prop('disabled')).toBe(true);
     });
@@ -24,7 +24,7 @@ describe('Paginator', () => {
   describe('disablePrevious', () => {
     it('change state of left button to disabled', () => {
       const paginator = mount(
-        <Paginator disablePrevious/>
+        <Paginator disablePrevious />
       );
       expect(paginator.find('button').at(0).prop('disabled')).toBe(true);
     });
@@ -33,7 +33,7 @@ describe('Paginator', () => {
   describe('onNext()', () => {
     it('is called when the next button is clicked', () => {
       const spy = jest.fn();
-      mount(<Paginator onNext={spy}/>).find('button').at(1).simulate('click');
+      mount(<Paginator onNext={spy} />).find('button').at(1).simulate('click');
       expect(spy).toHaveBeenCalled();
     });
   });
@@ -41,7 +41,7 @@ describe('Paginator', () => {
   describe('onPrevious()', () => {
     it('is called when the previous button is clicked', () => {
       const spy = jest.fn();
-      mount(<Paginator onPrevious={spy}/>).find('button').at(0).simulate('click');
+      mount(<Paginator onPrevious={spy} />).find('button').at(0).simulate('click');
       expect(spy).toHaveBeenCalled();
     });
   });
@@ -49,7 +49,7 @@ describe('Paginator', () => {
   describe('plain', () => {
     it('change the state of buttons to plain', () => {
       const paginator = mount(
-        <Paginator plain/>
+        <Paginator plain />
       );
       expect(paginator.find('button').at(0).hasClass('kit-Button__button--plain')).toBe(true);
     });

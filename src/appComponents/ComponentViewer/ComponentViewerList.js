@@ -28,19 +28,17 @@ function ComponentViewerList(props) {
 
 function renderOptions(props) {
   if (props.options) {
-    return (
-      props.options.map(option =>
-        <ComponentViewerRow
-          key={option.name}
-          name={option.name}
-          type={option.type}
-          value={option.value}
-          description={option.description}
-          onChange={props.onChange}
-          onClick={props.onClick}
-        />
-      )
-    );
+    return props.options.map(option => (
+      <ComponentViewerRow
+        key={option.name}
+        name={option.name}
+        type={option.type}
+        value={option.value}
+        description={option.description}
+        onChange={props.onChange}
+        onClick={props.onClick}
+      />
+    ));
   }
 };
 

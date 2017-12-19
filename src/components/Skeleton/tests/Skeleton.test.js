@@ -1,13 +1,13 @@
 import React from 'react';
 import Skeleton from ".."
-import {shallow, mount} from 'enzyme';
+import {shallow} from 'enzyme';
 
 
 describe('Skeleton', () => {
   describe('lines', () => {
     it('render 3 lines by default', () => {
       const skeleton = shallow(
-        <Skeleton/>
+        <Skeleton />
       );
       expect(skeleton.find('div').at(1).hasClass('kit-Skeleton__line')).toBe(true);
       expect(skeleton.find('div').at(2).hasClass('kit-Skeleton__line')).toBe(true);
@@ -16,7 +16,7 @@ describe('Skeleton', () => {
 
     it('add the number of lines given by props', () => {
       const skeleton = shallow(
-        <Skeleton lines={5}/>
+        <Skeleton lines={5} />
       );
       expect(skeleton.find('div').at(5).hasClass('kit-Skeleton__line')).toBe(true);
     });
@@ -25,7 +25,7 @@ describe('Skeleton', () => {
   describe('display', () => {
     it('change the lines for a display div', () => {
       const skeleton = shallow(
-        <Skeleton display/>
+        <Skeleton display />
       );
       expect(skeleton.find('div').at(1).hasClass('kit-Skeleton__display')).toBe(true);
     });

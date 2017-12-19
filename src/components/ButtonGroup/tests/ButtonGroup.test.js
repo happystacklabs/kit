@@ -21,8 +21,7 @@ describe('ButtonGroup', () => {
   describe('segmented', () => {
     it('add the segmented class when given by props', () => {
       const buttonGroup = mount(
-        <ButtonGroup segmented>
-        </ButtonGroup>
+        <ButtonGroup segmented />
       );
       expect(buttonGroup.find('div').hasClass('kit-ButtonGroup__buttonGroup--segmented')).toBe(true);
     });
