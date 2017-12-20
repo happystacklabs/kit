@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './Checkbox.css';
 import styles from './Checkbox.styles';
@@ -9,94 +9,95 @@ import Text from '../Text';
 
 let cx = classNames.bind(styles);
 
-const renderLabel = (name, labelText) => {
-  if (labelText) {
-    return (
-      <label htmlFor={name} className={styles.label}>
-        <Text size='regular'>{ labelText }</Text>
-      </label>
-    );
-  }
-};
-
-const renderHelpText = (helpText) => {
-  if (helpText) {
-    return (
-      <div className={styles.helpText}>
-        <Text color='inkLight' element='span' size='small'>{ helpText }</Text>
-      </div>
-    );
-  }
-};
-
-const renderCheckmark = (type) => {
-  if (type === 'checkbox') {
-    return (
-      <Icon name='check' color='white' className={styles.checkmark}/>
-    );
-  } else {
-    return (
-      <div className={styles.radioMiddle}></div>
-    );
-  }
-}
-
 export const type = [
   'checkbox',
   'radio',
 ];
 
-class Checkbox extends Component {
-  static propTypes = {
-    name: PropTypes.string.isRequired,
-    checked: PropTypes.bool,
-    disabled: PropTypes.bool,
-    error: PropTypes.bool,
-    label: PropTypes.string,
-    value: PropTypes.string,
-    id: PropTypes.string,
-    helpText: PropTypes.string,
-    type: PropTypes.oneOf(type),
+const propTypes = {
+  name: PropTypes.string.isRequired,
+  checked: PropTypes.bool,
+  disabled: PropTypes.bool,
+  error: PropTypes.bool,
+  label: PropTypes.string,
+  value: PropTypes.string,
+  id: PropTypes.string,
+  helpText: PropTypes.string,
+  type: PropTypes.oneOf(type),
+};
+
+const defaultProps = {
+  type: 'checkbox',
+  checked: false,
+ };
+
+function Checkbox(props) {
+  function handleChange(event) {
+    if (props.onChange === null) { return; }
+    props.onChange({value: !props.checked, id: props.id});
   };
 
-  static defaultProps = {
-    type: 'checkbox',
-    checked: false,
-   };
+  const classes = cx({
+    radioInput: props.type === 'radio',
+    error: props.error,
+    checked: props.checked},
+    styles.innerWrapper,
+  );
 
-   handleChange = (event) => {
-     if (this.props.onChange === null) { return; }
-     this.props.onChange({value: !this.props.checked, id: this.props.id});
-   };
+  return (
+    <div className={classNames(props.className, styles.wrapper)}>
+      {renderLabel(props.id, props.label)}
+      <div className={classes}>
+        <input
+          name={props.name}
+          type={props.type}
+          id={props.id}
+          value={props.value}
+          checked={props.checked}
+          onChange={handleChange}
+          disabled={props.disabled}
+          className={styles.input}
+        />
+        {renderCheckmark(props.type)}
+      </div>
+      {renderHelpText(props.helpText)}
+    </div>
+  );
+}
 
-  render() {
-    const classes = cx({
-      radioInput: this.props.type === 'radio',
-      error: this.props.error,
-      checked: this.props.checked},
-      styles.innerWrapper,
-    );
-
+function renderLabel(name, labelText) {
+  if (labelText) {
     return (
-      <div className={classNames(this.props.className, styles.wrapper)}>
-        {renderLabel(this.props.id, this.props.label)}
-        <div className={classes}>
-          <input
-            name={this.props.name}
-            type={this.props.type}
-            id={this.props.id}
-            value={this.props.value}
-            checked={this.props.checked}
-            onChange={this.handleChange}
-            disabled={this.props.disabled}
-            className={styles.input}
-          />
-          {renderCheckmark(this.props.type)}
-        </div>
-        {renderHelpText(this.props.helpText)}
+      <label htmlFor={name} className={styles.label}>
+        <Text size="regular">{ labelText }</Text>
+      </label>
+    );
+  }
+};
+
+function renderHelpText(helpText) {
+  if (helpText) {
+    return (
+      <div className={styles.helpText}>
+        <Text color="inkLight" element="span" size="small">{ helpText }</Text>
       </div>
     );
   }
+};
+
+function renderCheckmark(type) {
+  if (type === 'checkbox') {
+    return (
+      <Icon name="check" color="white" className={styles.checkmark} />
+    );
+  } else {
+    return (
+      <div className={styles.radioMiddle} />
+    );
+  }
 }
+
+Checkbox.propTypes = propTypes;
+Checkbox.defaultProps = defaultProps;
 
 export default Checkbox;

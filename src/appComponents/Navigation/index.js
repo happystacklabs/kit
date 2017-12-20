@@ -8,6 +8,7 @@ import { NavLink } from 'react-router-dom';
 
 
 function Navigation({routes}) {
+  // sort the routes prop in alphabetic order
   routes.sort((a, b) => a.name.localeCompare(b.name));
 
   return (

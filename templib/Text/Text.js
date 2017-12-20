@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './Text.css';
 import styles from './Text.styles';
@@ -39,37 +39,38 @@ export const colors = {
   'purple': styles.purple,
 }
 
-class Text extends Component {
-  static propTypes = {
-    children: PropTypes.node,
-    element: PropTypes.oneOf(elements),
-    size: PropTypes.oneOf(Object.keys(sizes)),
-    weight: PropTypes.oneOf(Object.keys(weights)),
-    color: PropTypes.oneOf(Object.keys(colors)),
-  };
+const propTypes = {
+  children: PropTypes.node,
+  element: PropTypes.oneOf(elements),
+  size: PropTypes.oneOf(Object.keys(sizes)),
+  weight: PropTypes.oneOf(Object.keys(weights)),
+  color: PropTypes.oneOf(Object.keys(colors)),
+};
 
-  static defaultProps = {
-      element: 'span',
-      size: 'regular',
-      weight: 'normal',
-      color: 'ink',
-   };
+const defaultProps = {
+    element: 'span',
+    size: 'regular',
+    weight: 'normal',
+    color: 'ink',
+ };
 
-  render() {
-    const Element = `${this.props.element}`;
+function Text(props) {
+  const Element = `${props.element}`;
 
-    const classText = classNames(
-      this.props.className,
-      styles.text,
-      sizes[this.props.size],
-      weights[this.props.weight],
-      colors[this.props.color],
-    );
+  const classText = classNames(
+    props.className,
+    styles.text,
+    sizes[props.size],
+    weights[props.weight],
+    colors[props.color],
+  );
 
-    return (
-      <Element className={classText}>{this.props.children}</Element>
-    );
-  }
+  return (
+    <Element className={classText}>{props.children}</Element>
+  );
 }
+
+Text.propTypes = propTypes;
+Text.defaultProps = defaultProps;
 
 export default Text;

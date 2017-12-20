@@ -1,23 +1,11 @@
-import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import React from 'react';
 import './ActionList.css';
 
 
-// const propTypes = {
-// };
-//
-// const defaultProps = {
-//  };
-
-class ActionList extends Component {
-  render() {
-    return (
-      <div></div>
-    );
-  }
+function ActionList() {
+  return (
+    <div>Hello</div>
+  );
 }
-
-// ActionList.propTypes = propTypes;
-// ActionList.defaultProps = defaultProps;
 
 export default ActionList;

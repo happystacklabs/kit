@@ -19,70 +19,48 @@ class ComponentViewer extends React.Component {
    }
 
    onInputChange = (event) => {
-     // Make a clone of state
+     // clone state
      const newState = Object.assign({}, this.state);
-     // Find the index of the onChange option
+     // find the index of the onChange option
      const index = newState['options'].findIndex(x => x.name === event.name);
      newState['options'][index]['value'] = event.value;
      this.setState(newState);
    };
 
    onChildrenChange = (event) => {
-     // Make a clone of state
+     // make a clone of state
      const newState = Object.assign({}, this.state);
-     // Find the index of the onChange option
+     // find the index of the onChange option
      const indexOnChange = newState['options'].findIndex(x => x.name === 'onChange');
-     // Get the value of the Onchange option, it contains the name of the option to update
+     // get the value of the Onchange option, it contains the name of the option to update
      const fieldValue = newState['options'][indexOnChange]['value'];
-     // Find the index of the option to update
+     // find the index of the option to update
      const indexValue = newState['options'].findIndex(x => x.name === fieldValue);
-     // Update the option value with the event value
+     // update the option value with the event value
      newState['options'][indexValue]['value'] = event.value;
-     // Update the state
+     // update the state
      this.setState(newState);
    };
 
    onChildrenClick = (event) => {
-     // Make a clone of state
+     // make a clone of state
      const newState = Object.assign({}, this.state);
-     // Find the index of the onClick option
+     // find the index of the onClick option
      const indexOnClick = newState['options'].findIndex(x => x.name === 'onClick');
-     // Get the value of the Onclick option, it contains the name of the option to update
+     // get the value of the Onclick option, it contains the name of the option to update
      const fieldValue = newState['options'][indexOnClick]['value'];
-     // Fail Safe
+     // fail safe
      if (fieldValue === false) { return; }
-     // Find the index of the option to update
+     // find the index of the option to update
      const indexValue = newState['options'].findIndex(x => x.name === fieldValue);
-     // Update the option value with the event value
+     // update the option value with the event value
      newState['options'][indexValue]['value'] = event.value;
-     // Update the state
+     // update the state
      this.setState(newState);
    };
 
   render() {
-    const onChildrenChange = this.onChildrenChange;
-    const onChildrenClick = this.onChildrenClick;
-    // When cloning the element passed by children we want to init the props from options
-    const newProps = this.state.options.reduce(function(object, item) {
-      if (item['name'] === 'onChange') {
-        object[item['name']] = onChildrenChange;
-        return object;
-
-      } else if (item['value'] === '' && Array.isArray(item['type'])) {
-        return object;
-
-      } else if (item['name'] === 'onClick') {
-        object[item['name']] = onChildrenClick;
-        return object;
-
-      } else if (item['type'] === 'node') {
-        return object;
-
-      } else {
-        object[item['name']] = item['value'];
-        return object;
-      }
-    }, {});
+    const newProps = getNewProps(this, this.state.options);
 
     return (
       <div className={this.props.className}>
@@ -105,6 +83,30 @@ class ComponentViewer extends React.Component {
       </div>
     );
   }
+}
+
+function getNewProps(_this) {
+  // when cloning the element passed by children we want to init the props from options
+  return _this.state.options.reduce(function(object, item) {
+    if (item['name'] === 'onChange') {
+      object[item['name']] = _this.onChildrenChange;
+      return object;
+
+    } else if (item['value'] === '' && Array.isArray(item['type'])) {
+      return object;
+
+    } else if (item['name'] === 'onClick') {
+      object[item['name']] = _this.onChildrenClick;
+      return object;
+
+    } else if (item['type'] === 'node') {
+      return object;
+
+    } else {
+      object[item['name']] = item['value'];
+      return object;
+    }
+  }, {});
 }
 
 ComponentViewer.propTypes = propTypes;

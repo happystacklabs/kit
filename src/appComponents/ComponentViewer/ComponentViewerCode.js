@@ -43,6 +43,7 @@ function ComponentViewerCode(props) {
   );
 }
 
+// build and return a string with the code of the component
 function getCode(props) {
   const newProps = [];
   var children = '';
@@ -51,11 +52,13 @@ function getCode(props) {
     if (item['name'] === 'children') {
       children = item['value'];
     }
+    // generate the new props array with props that are not the children or a function
     if (item['value'] && item['type'] !== 'function' && item['name'] !== 'children') {
       newProps.push({name: item['name'], value: item['value']});
     }
   })
 
+  // build the array of caracters needed to create the code string
   const stringArray = [];
   stringArray.push('<');
   stringArray.push(props.element);
@@ -88,17 +91,20 @@ function getCode(props) {
   stringArray.push('</');
   stringArray.push(props.element);
   stringArray.push('>');
+
   return stringArray.join('');
 }
 
+// build and return the html of components code
 function renderCode(props) {
   const newProps = [];
-  var children = '';
+  let children = '';
 
   props.options.forEach((item) => {
     if (item['name'] === 'children') {
       children = item['value'];
     }
+    // generate the new props array with props that are not the children or a function
     if (item['value'] && item['type'] !== 'function' && item['name'] !== 'children') {
       newProps.push({name: item['name'], value: item['value']});
     }
@@ -120,6 +126,7 @@ function renderCode(props) {
 
 function renderProps(props) {
   const arr = [];
+
   props.forEach((prop) => {
     if (typeof prop.value === 'boolean') {
       arr.push((

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './Tooltip.css';
 import styles from './Tooltip.styles';
@@ -15,19 +15,19 @@ export const position = [
   'right',
 ];
 
-class Tooltip extends Component {
-  static propTypes = {
-    children: PropTypes.node,
-    content: PropTypes.string,
-    active: PropTypes.bool,
-    position: PropTypes.oneOf(position),
-    light: PropTypes.bool,
-  };
+const propTypes = {
+  children: PropTypes.node,
+  content: PropTypes.string,
+  active: PropTypes.bool,
+  position: PropTypes.oneOf(position),
+  light: PropTypes.bool,
+};
 
-  static defaultProps = {
-    position: 'bottom',
-  };
+const defaultProps = {
+  position: 'bottom',
+};
 
+class Tooltip extends React.Component {
   state = {
     childPosition: {},
     position: {},
@@ -36,8 +36,9 @@ class Tooltip extends Component {
 
   componentDidMount() {
     const newState = Object.assign({}, this.state);
-    newState['childPosition'] = this.refs.child ? this.refs.child.getBoundingClientRect() : null;
-    newState['position'] = this.refs.tooltip ? this.refs.tooltip.getBoundingClientRect() : null;
+
+    newState['childPosition'] = this.childRef ? this.childRef.getBoundingClientRect() : null;
+    newState['position'] = this.tooltipRef ? this.tooltipRef.getBoundingClientRect() : null;
     this.setState(newState);
   }
 
@@ -103,18 +104,21 @@ class Tooltip extends Component {
       <div className={classTooltip}>
         <span
           className={styles.content}
-          ref='child'
+          ref={(ref) => { this.childRef = ref; }}
           onMouseEnter={this.handleOnMouseEnter}
           onMouseLeave={this.handleOnMouseLeave}
         >
           {this.props.children}
         </span>
-        <div className={styles.box} style={style} ref='tooltip'>
-          <Text color={color} size='small'>{this.props.content}</Text>
+        <div className={styles.box} style={style} ref={(ref) => { this.tooltipRef = ref; }}>
+          <Text color={color} size="small">{this.props.content}</Text>
         </div>
       </div>
     );
   }
 }
+
+Tooltip.propTypes = propTypes;
+Tooltip.defaultProps = defaultProps;
 
 export default Tooltip;

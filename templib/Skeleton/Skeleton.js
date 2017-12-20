@@ -1,42 +1,43 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './Skeleton.css';
 import styles from './Skeleton.styles';
 
 
-class Skeleton extends Component {
-  static propTypes = {
-    lines: PropTypes.number,
-    display: PropTypes.bool,
-  };
+const propTypes = {
+  lines: PropTypes.number,
+  display: PropTypes.bool,
+};
 
-  static defaultProps = {
-    lines: 3,
-  };
+const defaultProps = {
+  lines: 3,
+};
 
-  renderSkeleton = () => {
-    if (this.props.display) {
-      return (
-        <div className={styles.display}></div>
-      );
-    } else {
-      const lines = [];
-      for (var i = 0; i < this.props.lines; i++) {
-        lines.push(<div className={styles.line} key={i}></div>);
-      }
-      return (
-        <span>
-          {lines}
-        </span>
-      );
-    }
-  };
+function Skeleton(props) {
+  return (
+    <div className={props.className}>{renderSkeleton(props)}</div>
+  );
+}
 
-  render() {
+function renderSkeleton(props) {
+  if (props.display) {
     return (
-      <div className={this.props.className}>{this.renderSkeleton()}</div>
+      <div className={styles.display} />
+    );
+  } else {
+    const lines = [];
+    for (var i = 0; i < props.lines; i++) {
+      lines.push(<div className={styles.line} key={i} />);
+    }
+    return (
+      <span>
+        {lines}
+      </span>
     );
   }
-}
+};
+
+Skeleton.propTypes = propTypes;
+Skeleton.defaultProps = defaultProps;
 
 export default Skeleton;

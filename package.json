@@ -29,6 +29,9 @@
     "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "concurrently": "^3.5.0",
     "cpx": "^1.5.0",
     "enzyme": "^3.1.4",
@@ -46,10 +49,10 @@
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "remove-lib": "rm -rf ./lib && rm -rf ./templib",
+    "remove-lib": "rm -rf ./lib && rm -rf ./templib && mkdir ./lib",
     "copy-index": "cpx \"./src/components/index.js\" ./templib/",
     "copy-files": "cpx \"./src/components/**!(tests)/!(*.scss|viewerOptions.js)\" ./templib/",
-    "transpile": "babel ./templib --out-dir lib --copy-files",
+    "transpile": "babel templib --out-dir lib --copy-files",
     "lib": "npm run build-css && npm run remove-lib && npm run copy-files && npm run copy-index && npm run transpile"
   },
   "files": [

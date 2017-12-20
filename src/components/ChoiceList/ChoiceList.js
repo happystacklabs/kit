@@ -28,10 +28,13 @@ const defaultProps = {
 function ChoiceList(props) {
   function handleChange(event) {
     if (props.onChange === null) { return; }
-    var selectedArray = props.multiple ? [...props.selected, event.id] : [event.id];
+
+    let selectedArray = props.multiple ? [...props.selected, event.id] : [event.id];
+
     if (props.multiple && !event.value) {
       selectedArray = selectedArray.filter(item => item !== event.id);
     }
+
     props.onChange({value: selectedArray, name: props.name});
   };
 

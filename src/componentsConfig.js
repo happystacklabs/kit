@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Components import
+// components import
 import {
   Text,
   Button,
@@ -21,7 +21,7 @@ import {
   ActionList,
 } from './components';
 
-// Components options import
+// options import
 import {
   buttonViewerOptions,
   iconViewerOptions,
@@ -42,7 +42,22 @@ import {
   actionListViewerOptions,
 } from './components/viewerOptions';
 
-// Components configuration
+
+/*
+* configuration
+* -------------
+* To add a component in the viewer settings, add a row in the components array:
+*
+* {
+*   path: 'the path of the component',
+*   name: 'the name of the component',
+*   options: pass the option object,
+*   code: (
+*     // code of the component
+*   )
+* }
+*/
+
 const components = [
   {
     path: '/actionlist',

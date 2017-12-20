@@ -9,6 +9,7 @@
 # production
 /build
 /lib
+/templib
 
 # misc
 .DS_Store

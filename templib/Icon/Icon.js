@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import 'font-awesome/css/font-awesome.min.css';
 import './Icon.css';
@@ -60,29 +60,29 @@ export const colors = {
   'white': styles.white,
 }
 
+const propTypes = {
+  name: PropTypes.oneOf(Object.keys(names)),
+  color: PropTypes.oneOf(Object.keys(colors)),
+};
 
-class Icon extends Component {
-  static propTypes = {
-    name: PropTypes.oneOf(Object.keys(names)),
-    color: PropTypes.oneOf(Object.keys(colors)),
-  };
+const defaultProps = {
+  color: 'ink',
+ };
 
-  static defaultProps = {
-    color: 'ink',
-   };
+function Icon(props) {
+  const classIcon = cx(
+    props.className,
+    'fa',
+    names[props.name],
+    colors[props.color],
+  );
 
-  render() {
-    const classIcon = cx(
-      this.props.className,
-      'fa',
-      names[this.props.name],
-      colors[this.props.color],
-    );
-
-    return (
-      <i className={classIcon} aria-hidden='true'></i>
-    );
-  }
+  return (
+    <i className={classIcon} aria-hidden="true" />
+  );
 }
+
+Icon.propTypes = propTypes;
+Icon.defaultProps = defaultProps;
 
 export default Icon;

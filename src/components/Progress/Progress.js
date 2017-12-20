@@ -20,6 +20,7 @@ const defaultProps = {
 function Progress(props) {
   let progress = props.progress;
 
+  // cap the progress value between 0 - 100
   if (progress >= 100) {
     progress = 100;
   } else if (progress < 0) {
