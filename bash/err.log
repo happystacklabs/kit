@@ -1,3 +1,6 @@
- PASS  src/App.test.js
- PASS  src/components/ChoiceList/tests/ChoiceList.test.js
- PASS  src/components/TextInput/tests/TextInput.test.js
+npm ERR! publish Failed PUT 403
+npm ERR! code E403
+npm ERR! You cannot publish over the previously published version 0.3.1. : @happystack/kit
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /Users/heinrich/.npm/_logs/2017-12-20T08_15_59_395Z-debug.log

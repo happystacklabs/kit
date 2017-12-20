@@ -35,6 +35,8 @@ welcome() {
   # deploy npm package
   startPackage &
   finishPackage
+  kill "$!"
+  wait $! 2>/dev/null
   # success
   success
   exit 0
@@ -256,8 +258,6 @@ finishPackage() {
     printf " ✅  \e[32m200.html......................... \e[32m[Done]\e[39m\n"
     printf " ✅  \e[32mDeploy Surge..................... \e[32m[Done]\e[39m\n"
     printf " ✅  \e[32mDeploy package................... \e[32m[Done]\e[39m\n"
-    kill "$!"
-    wait $! 2>/dev/null
   else
     ereaseLine 8
     printf " ✅  \e[32mTest suite....................... \e[32m[Done]\e[39m\n"
@@ -361,8 +361,8 @@ function bumpVersion {
   # replace README.md
   search="Version-${currentVersion}-"
 	replace="Version-${newVersion}-"
-  sed -i ".tmp" -E "s/${search}/${replace}/g" ./README.md
-	rm "./README.md.tmp"
+  sed -i ".tmp" -E "s/${search}/${replace}/g" README.md
+	rm "README.md.tmp"
 }
 
 
