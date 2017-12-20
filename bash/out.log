@@ -1,0 +1,4 @@
+
+> @happystack/kit@0.3.0 test /Users/heinrich/Dropbox/Projects/happystack/kit/happystack-kit
+> react-scripts test --env=jsdom
+
