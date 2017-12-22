@@ -22,6 +22,10 @@
     margin-bottom: 10px;
   }
 
+  span {
+    transition: all 0.2s ease-in-out;
+  }
+
   a,
   a:active,
   a:focus,
@@ -31,10 +35,15 @@
     width: 100%;
     display: inline-block;
     outline: none;
+    transition: all 0.2s ease-in-out;
   }
 
   a:hover span {
     color: #5C6AC4;
+  }
+
+  a:hover {
+    margin-left: 10px;
   }
 }
 
@@ -51,7 +60,10 @@ a.kit-Navigation__navigationBar--active {
 }
 
 a.kit-Navigation__navigationBar--active:hover {
+  margin-left: 0;
   span {
     color: white;
+    padding-left: 10px;
+    transition: all 0.2s ease-in-out;
   }
 }

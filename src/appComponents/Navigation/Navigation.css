@@ -17,6 +17,8 @@
     display: block;
     width: 100%;
     margin-bottom: 10px; }
+  .kit-Navigation__navigationBar span {
+    transition: all 0.2s ease-in-out; }
   .kit-Navigation__navigationBar a,
   .kit-Navigation__navigationBar a:active,
   .kit-Navigation__navigationBar a:focus,
@@ -25,9 +27,12 @@
     text-decoration: none;
     width: 100%;
     display: inline-block;
-    outline: none; }
+    outline: none;
+    transition: all 0.2s ease-in-out; }
   .kit-Navigation__navigationBar a:hover span {
     color: #5C6AC4; }
+  .kit-Navigation__navigationBar a:hover {
+    margin-left: 10px; }
 
 a.kit-Navigation__navigationBar--active {
   background: #5C6AC4;
@@ -38,5 +43,9 @@ a.kit-Navigation__navigationBar--active {
   a.kit-Navigation__navigationBar--active span {
     color: white; }
 
-a.kit-Navigation__navigationBar--active:hover span {
-  color: white; }
+a.kit-Navigation__navigationBar--active:hover {
+  margin-left: 0; }
+  a.kit-Navigation__navigationBar--active:hover span {
+    color: white;
+    padding-left: 10px;
+    transition: all 0.2s ease-in-out; }
