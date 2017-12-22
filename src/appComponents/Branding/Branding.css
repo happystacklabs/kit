@@ -14,7 +14,9 @@
   .kit-Branding__branding a:hover,
   .kit-Branding__branding a:visited {
     width: inherit;
-    display: inline; }
+    display: inline;
+    transition: none;
+    margin-left: 0; }
   .kit-Branding__branding a.logo,
   .kit-Branding__branding a.logo:hover,
   .kit-Branding__branding a.logo:focus,
