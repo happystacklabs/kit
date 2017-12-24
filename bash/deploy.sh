@@ -1,349 +1,87 @@
 #!/bin/sh
 
 
-welcome() {
-  clear
-  header
-  # test
-  startTests &
-  finishTests
-  kill "$!"
-  wait $! 2>/dev/null
-  # bump Version
-  startBump
-  finishBump
-  # npm run build
-  clear
-  header
-  startBuild &
-  finishBuild
-  kill "$!"
-  wait $! 2>/dev/null
-  # npm run lib
-  startLib &
-  finishLib
-  kill "$!"
-  wait $! 2>/dev/null
-  # 200.html
-  start200
-  finish200
-  # deploy surge
-  startSurge &
-  finishSurge
-  kill "$!"
-  wait $! 2>/dev/null
-  # deploy npm package
-  startPackage &
-  finishPackage
-  kill "$!"
-  wait $! 2>/dev/null
-  # success
-  success
-  exit 0
-}
+#imports
+source bash/BashKitLibrary.sh
+source bash/helpers.sh
 
-startTests() {
-  local i sp n
-  sp='🕐🕑🕒🕓🕔🕕🕖🕗🕘🕙🕚🕛'
-  n=${#sp}
-  printf '\n\n\n\n\n'
+
+
+
+# icons
+arrowIcon='➡️'
+timeIcon='🕐'
+timeSequence='🕐🕑🕒🕓🕔🕕🕖🕗🕘🕙🕚🕛'
+errorIcon='❌'
+successIcon='✅'
+
+
+
+
+
+# steps
+steps[0]='Test suite'
+steps[1]='Bump version'
+steps[2]='Run build'
+steps[3]='Run lib'
+steps[4]='Run 200.html'
+steps[5]='Deploy to Surge'
+steps[6]='Deploy package to NPM'
+
+
+
+
+
+# vars
+currentVersion=`npm view @happystack/kit version`
+currentStep=0
+name='Kit deployment script'
+start=`date +%s`
+
+
+
+
+# in progress animation
+inProgress() {
+  stepsLength=${#steps[@]}
+  totalLength=$(( ( $stepsLength * 2 ) + 2 - ( 2 * $currentStep ) ))
+  nudgeDown 2
   while sleep 0.2; do
-    ereaseLine 8
-    printf " ${sp:i++%${#sp}:1}  Test suite............... \e[38;5;105m[In progress]\e[39m\n"
-    printf " ➡️  Bump version                                \n"
-    printf " ➡️  Run build                                   \n"
-    printf " ➡️  Run lib                                     \n"
-    printf " ➡️  200.html                                    \n"
-    printf " ➡️  Deploy Surge                                \n"
-    printf " ➡️  Deploy package                            \n\n"
+    nudgeUp "$totalLength"
+    clearLine
+    nudgeUp 1
+    content="${steps[$currentStep]}"
+    inProgressStepAnimated "${timeSequence:i++%${#timeSequence}:1}" "$content"
+    nudgeDown "$totalLength"
   done
 }
 
-finishTests() {
-  if CI=true npm test > ./bash/out.log 2> ./bash/err.log ; then
-    ereaseLine 5
-  else
-    ereaseLine 8
-    printf " ❌  \e[31mTest suite.................... [Failed]\e[39m\n"
-    printf " ➡️  Bump version                                \n"
-    printf " ➡️  Run build                                   \n"
-    printf " ➡️  Run lib                                     \n"
-    printf " ➡️  200.html                                    \n"
-    printf " ➡️  Deploy Surge                                \n"
-    printf " ➡️  Deploy package                              \n"
-    kill "$!"
-    wait $! 2>/dev/null
-    exited
-    exit 1
-  fi
-}
 
-startBump() {
-  ereaseLine 3
-  printf " ✅  \e[32mTest suite...................... \e[32m[Done]\e[39m\n"
-  printf " 🕐  Bump version............. \e[38;5;105m[In progress]\e[39m \n"
-  printf " ➡️  Run build                                   \n"
-  printf " ➡️  Run lib                                     \n"
-  printf " ➡️  200.html                                    \n"
-  printf " ➡️  Deploy Surge                                \n"
-  printf " ➡️  Deploy package                            \n\n"
-  line
-  bumpVersion
-}
 
-finishBump() {
-  ereaseLine 8
-}
 
-startBuild() {
-  local i sp n
-  sp='🕐🕑🕒🕓🕔🕕🕖🕗🕘🕙🕚🕛'
-  n=${#sp}
-  printf '\n\n\n\n\n'
-  while sleep 0.2; do
-    ereaseLine 8
-    printf " ✅  \e[32mTest suite....................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mBump version..................... \e[32m[Done]\e[39m\n"
-    printf " ${sp:i++%${#sp}:1}  Run build................. \e[38;5;105m[In progress]\e[39m \n"
-    printf " ➡️  Run lib                                     \n"
-    printf " ➡️  200.html                                    \n"
-    printf " ➡️  Deploy Surge                                \n"
-    printf " ➡️  Deploy package                            \n\n"
-  done
-}
-
-finishBuild() {
-  if npm run build > ./bash/out.log 2> ./bash/err.log ; then
-    ereaseLine 5
-  else
-    ereaseLine 8
-    printf " ✅  \e[32mTest suite....................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mBump version..................... \e[32m[Done]\e[39m\n"
-    printf " ❌  \e[31mRun build...................... [Failed]\e[39m\n"
-    printf " ➡️  Run lib                                     \n"
-    printf " ➡️  200.html                                    \n"
-    printf " ➡️  Deploy Surge                                \n"
-    printf " ➡️  Deploy package                              \n"
-    kill "$!"
-    wait $! 2>/dev/null
-    exited
-    exit 1
-  fi
-}
-
-startLib() {
-  local i sp n
-  sp='🕐🕑🕒🕓🕔🕕🕖🕗🕘🕙🕚🕛'
-  n=${#sp}
-  printf '\n\n\n\n\n'
-  while sleep 0.2; do
-    ereaseLine 8
-    printf " ✅  \e[32mTest suite....................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mBump version..................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mRun build........................ \e[32m[Done]\e[39m\n"
-    printf " ${sp:i++%${#sp}:1}  Run lib................... \e[38;5;105m[In progress]\e[39m \n"
-    printf " ➡️  200.html                                    \n"
-    printf " ➡️  Deploy Surge                                \n"
-    printf " ➡️  Deploy package                            \n\n"
-  done
-}
-
-finishLib() {
-  if npm run lib > ./bash/out.log 2> ./bash/err.log ; then
-    ereaseLine 5
-  else
-    ereaseLine 8
-    printf " ✅  \e[32mTest suite....................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mBump version..................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mRun build........................ \e[32m[Done]\e[39m\n"
-    printf " ❌  \e[31mRun lib........................ [Failed]\e[39m\n"
-    printf " ➡️  200.html                                    \n"
-    printf " ➡️  Deploy Surge                                \n"
-    printf " ➡️  Deploy package                              \n"
-    kill "$!"
-    wait $! 2>/dev/null
-    exited
-    exit 1
-  fi
-}
-
-start200() {
-  ereaseLine 3
-  printf " ✅  \e[32mTest suite....................... \e[32m[Done]\e[39m\n"
-  printf " ✅  \e[32mBump version..................... \e[32m[Done]\e[39m\n"
-  printf " ✅  \e[32mRun build........................ \e[32m[Done]\e[39m\n"
-  printf " ✅  \e[32mRun lib.......................... \e[32m[Done]\e[39m\n"
-  printf " 🕐  200.html.................. \e[38;5;105m[In progress]\e[39m \n"
-  printf " ➡️  Deploy Surge                                \n"
-  printf " ➡️  Deploy package                            \n\n"
-}
-
-finish200() {
-  if cp -rf ./build/index.html ./build/200.html > ./bash/out.log 2> ./bash/err.log ; then
-    ereaseLine 5
-  else
-    ereaseLine 8
-    printf " ✅  \e[32mTest suite....................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mBump version..................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mRun build........................ \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mRun lib.......................... \e[32m[Done]\e[39m\n"
-    printf " ❌  \e[31m200.html....................... [Failed]\e[39m\n"
-    printf " ➡️  Deploy Surge                                \n"
-    printf " ➡️  Deploy package                              \n"
-    exited
-    exit 1
-  fi
-}
-
-startSurge() {
-  local i sp n
-  sp='🕐🕑🕒🕓🕔🕕🕖🕗🕘🕙🕚🕛'
-  n=${#sp}
-  printf '\n\n\n\n\n'
-  while sleep 0.2; do
-    ereaseLine 8
-    printf " ✅  \e[32mTest suite....................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mBump version..................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mRun build........................ \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mRun lib.......................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32m200.html......................... \e[32m[Done]\e[39m\n"
-    printf " ${sp:i++%${#sp}:1}  Deploy Surge.............. \e[38;5;105m[In progress]\e[39m \n"
-    printf " ➡️  Deploy package                            \n\n"
-  done
-}
-
-finishSurge() {
-  if surge ./build  kit.happystack.io > ./bash/out.log 2> ./bash/err.log ; then
-    ereaseLine 5
-  else
-    ereaseLine 8
-    printf " ✅  \e[32mTest suite....................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mBump version..................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mRun build........................ \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mRun lib.......................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32m200.html......................... \e[32m[Done]\e[39m\n"
-    printf " ❌  \e[31mDeploy Surge................... [Failed]\e[39m\n"
-    printf " ➡️  Deploy package                              \n"
-    kill "$!"
-    wait $! 2>/dev/null
-    exited
-    exit 1
-  fi
-}
-
-startPackage() {
-  local i sp n
-  sp='🕐🕑🕒🕓🕔🕕🕖🕗🕘🕙🕚🕛'
-  n=${#sp}
-  printf '\n\n\n\n\n'
-  while sleep 0.2; do
-    ereaseLine 8
-    printf " ✅  \e[32mTest suite....................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mBump version..................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mRun build........................ \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mRun lib.......................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32m200.html......................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mDeploy Surge..................... \e[32m[Done]\e[39m\n"
-    printf " ${sp:i++%${#sp}:1}  Deploy package............ \e[38;5;105m[In progress]\e[39m \n\n"
-  done
-}
-
-finishPackage() {
-  if npm publish > ./bash/out.log 2> ./bash/err.log ; then
-    ereaseLine 8
-    printf " ✅  \e[32mTest suite....................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mBump version..................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mRun build........................ \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mRun lib.......................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32m200.html......................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mDeploy Surge..................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mDeploy package................... \e[32m[Done]\e[39m\n"
-  else
-    ereaseLine 8
-    printf " ✅  \e[32mTest suite....................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mBump version..................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mRun build........................ \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mRun lib.......................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32m200.html......................... \e[32m[Done]\e[39m\n"
-    printf " ✅  \e[32mDeploy Surge..................... \e[32m[Done]\e[39m\n"
-    printf " ❌  \e[31mDeploy package................. [Failed]\e[39m\n"
-    kill "$!"
-    wait $! 2>/dev/null
-    exited
-    exit 1
-  fi
+# run tests
+runTests() {
+  runTask 'CI=true npm test'
 }
 
 
 
-# HELPERS
 
-line() {
-  printf "\e[38;5;240m-----------------------------------------\e[39m\n"
-}
-
-clear() {
-  echo "\033c"
-}
-
-ereaseLine() {
-  COUNTER=0
-  while [  $COUNTER -lt $1 ]; do
-    printf "\033[1A"
-    let COUNTER=COUNTER+1
-  done
-}
-
-header() {
-printf "
-   /\=========\™
- ./__\______/__\.
- |    |         |   \e[38;5;105mHAPPYSTACK KIT\e[39m
- |    |  \___/  |   Deploy Script
- |____|_________|
-
-\e[38;5;240m===========================================\e[39m
-\n\n\n
-"
-}
-
-exited() {
-printf "
-\e[38;5;240m
-.__________________________________________.
-|                                          |
-|                   ⚠️                      |
-|          \e[31mDeploy script exited.\e[38;5;240m           |
-|       Error log: cat bash/err.log        |
-|                                          |
-|__________________________________________|
-\e[39m
-"
-}
-
-success() {
-  currentVersion=`npm view @happystack/kit version`
-printf "
-\n\n\n
-.__________________________________________.
-|                                          |
-|      🎉_ Deployed to version \e[32m$currentVersion\e[39m!       |
-|__________________________________________|
-\n
-"
-}
-
-# Operations
-function bumpVersion {
-  currentVersion=`npm view @happystack/kit version`
+# bumb version
+bumbVersion() {
+  # draw box
+  drawBox "$currentStep" "$steps"
 
   # capture bumping version
+  emptyLine 2
+  unhideCursor
   while ! [[ $newVersion =~ ^[0-9]+\.[0-9]+ ]] || [[ $newVersion == '' ]]
   do
-    printf "Current version is \e[38;5;105m$currentVersion\e[39m.\n\n"
-    printf "Bump version to : "
-    read newVersion
-    ereaseLine 3
+    printf " ⚠️  Current version is \e[38;5;105m$currentVersion\e[39m"
+    emptyLine 1
+    drawTextInput "Bump version to" newVersion
+    hideCursor
+    ereaseLine 5
   done
 
   # replace package.json
@@ -363,9 +101,179 @@ function bumpVersion {
 	replace="Version-${newVersion}-"
   sed -i ".tmp" -E "s/${search}/${replace}/g" README.md
 	rm "README.md.tmp"
+
+  # increment currentStep
+  currentStep=$(( $currentStep + 1 ))
+
+  #
+  hideCursor
+  clear
+  hideCursor
+  drawHeader "$name"
 }
 
 
 
-# launch script
-welcome
+
+# run build
+runBuild() {
+  runTask 'npm run build'
+}
+
+
+
+
+# run lib
+runLib() {
+  runTask 'npm run lib'
+}
+
+
+
+
+# run 200.html
+run200() {
+  runTask 'cp -rf ./build/index.html ./build/200.html'
+}
+
+
+
+
+# deploy to surge
+deploySurge() {
+  runTask 'surge ./build  kit.happystack.io'
+}
+
+
+
+
+# deploy package
+deployPackage() {
+  runTask 'npm publish'
+}
+
+
+
+
+runTask() {
+  # draw box
+  drawBox "$currentStep" "$steps"
+
+  # start animation
+  inProgress &
+
+  # run command
+  if eval $1 > ./bash/out.log 2> ./bash/err.log; then
+    #place prompt
+    nudgeDown 2
+    clearLine
+
+    # increment currentStep
+    currentStep=$(( $currentStep + 1 ))
+
+    # kill animation
+    stopAnimation
+
+    # clear previous box
+    stepsLength=${#steps[@]}
+    totalLength=$(( ( $stepsLength * 2 ) + ( 3 * 2 ) + 2 + 2 ))
+    clearLine
+    ereaseLine $totalLength
+  else
+    # kill animation
+    stopAnimation
+
+    # render error box
+    stepsLength=${#steps[@]}
+    totalLength=$(( ( $stepsLength * 2 ) + 3 ))
+    clearLine
+    ereaseLine $totalLength
+    renderLines "$currentStep" "$steps" "--error"
+    errorBox
+
+    # place prompt
+    nudgeDown 2
+    clearLine
+
+    # exit program
+    exit 1
+  fi
+}
+
+
+
+
+# success box
+successBox() {
+  message="🎉  Deployed to version $currentVersion in $1 seconds!"
+  clearLine
+  nudgeUp "2"
+  drawLine
+  drawSeparator
+  drawLine
+  drawLineWith "$message"
+  drawLine
+  drawBottom
+}
+
+
+
+
+# error box
+errorBox() {
+  clearLine
+  nudgeUp "1"
+  drawLine
+  drawSeparator
+  drawLine
+  drawLineWith "💩  Error log: cat bash/err.log"
+  drawLine
+  drawBottom
+}
+
+
+
+
+run() {
+  # init
+  hideCursor
+  clear
+  hideCursor
+  drawHeader "$name"
+
+  # step 1: run tests
+  runTests
+
+  # step 2: bumb version
+  bumbVersion
+
+  # step 3: run build
+  runBuild
+
+  # step 4: run lib
+  runLib
+
+  # step 5: run 200
+  run200
+
+  # step 6: deploy to Surge
+  deploySurge
+
+  # step 7: deploy package
+  deployPackage
+
+  # deploy succeed
+  currentStep=$(( $currentStep + 1 ))
+  drawBox "$currentStep" "$steps"
+  end=`date +%s`
+  runtime=$((end-start))
+  successBox $runtime
+
+  # end: exit program
+  nudgeDown 5
+  clearLine
+  unhideCursor
+  exit 0
+}
+
+run
