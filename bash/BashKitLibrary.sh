@@ -306,4 +306,6 @@ drawTextInput() {
   emptyLine 2
 
   eval $__result="'$newVersion'"
+
+  printf "\a"
 }

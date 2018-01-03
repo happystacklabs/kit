@@ -5,16 +5,20 @@
 ![Version](https://img.shields.io/badge/Version-0.3.1-green.svg?style=flat)
 ![license](https://img.shields.io/github/license/mashape/apistatus.svg)
 
+
 #### Kit is a React component library created by Happystack to help streamline your development. Visit the [playground](http://kit.happystack.io) to learn more.
 
-### Installation:
+
+### 🔧 Installation:
 You'll need npm to install Kit [npm](https://www.npmjs.com/):
+
 
 ```bash
 npm install @happystack/kit --save
 ```
 
-### Usage
+
+### 🕹 Usage
 Import the component you want from Kit:
 ```javascript
 import { Text } from '@happystack/kit';
@@ -25,9 +29,11 @@ You can now use this component inside your React application:
 <Text>Happystack is awesome!</Text>
 ```
 
-## Licenses
+
+## 📄 Licenses
 * Source code is licensed under [MIT](https://opensource.org/licenses/MIT)
 * Icons from FontAwesome [Creative Commons Attribution-NoDerivatives 4.0](http://creativecommons.org/licenses/by-nd/4.0/)
 
-## Feedback
+
+## 💡 Feedback
 [Create an issue or feature request](https://github.com/happystacklabs/kit/issues/new).

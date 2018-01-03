@@ -53,7 +53,8 @@
     "copy-index": "cpx \"./src/components/index.js\" ./templib/",
     "copy-files": "cpx \"./src/components/**!(tests)/!(*.scss|viewerOptions.js)\" ./templib/",
     "transpile": "babel templib --out-dir lib --copy-files",
-    "lib": "npm run build-css && npm run remove-lib && npm run copy-files && npm run copy-index && npm run transpile"
+    "lib": "npm run build-css && npm run remove-lib && npm run copy-files && npm run copy-index && npm run transpile",
+    "deploy": "runner deploy.sh 0.3.1"
   },
   "files": [
     "/lib"

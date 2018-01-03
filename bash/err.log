@@ -1,6 +1,25 @@
-npm ERR! publish Failed PUT 403
-npm ERR! code E403
-npm ERR! You cannot publish over the previously published version 0.3.1. : @happystack/kit
+ PASS  src/components/TextInput/tests/TextInput.test.js
+ PASS  src/App.test.js
+ PASS  src/components/ChoiceList/tests/ChoiceList.test.js
+ PASS  src/components/Icon/tests/Icon.test.js
+ PASS  src/components/Select/tests/Select.test.js
+ PASS  src/components/Button/tests/Button.test.js
+ PASS  src/components/Tooltip/tests/Tooltip.test.js
+ PASS  src/components/Paginator/tests/Paginator.test.js
+ PASS  src/components/Checkbox/tests/Checkbox.test.js
+ PASS  src/components/Text/tests/Text.test.js
+ PASS  src/components/Switch/tests/Switch.test.js
+ PASS  src/components/Avatar/tests/Avatar.test.js
+ PASS  src/components/ButtonGroup/tests/ButtonGroup.test.js
+ PASS  src/components/Skeleton/tests/Skeleton.test.js
+ PASS  src/components/Progress/tests/Progress.test.js
+ PASS  src/components/Spinner/tests/Spinner.test.js
+ PASS  src/components/Thumbnail/tests/Thumbnail.test.js
+ PASS  src/appComponents/ComponentViewer/tests/ComponentViewer.test.js
+ PASS  src/components/ActionList/tests/ActionList.test.js
 
-npm ERR! A complete log of this run can be found in:
-npm ERR!     /Users/heinrich/.npm/_logs/2017-12-24T05_41_23_006Z-debug.log
+Test Suites: 19 passed, 19 total
+Tests:       191 passed, 191 total
+Snapshots:   0 total
+Time:        4.411s
+Ran all test suites.

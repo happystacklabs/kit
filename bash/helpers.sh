@@ -2,19 +2,19 @@
 
 
 # draw the header
-drawHeader() {
-  name='Bot script'
-  if [[ $# -eq 1 ]] ; then
-    name=$1
-  fi
-printf "
-    /\═════════\™
-   /__\‸_____/__\‸   \e[38;5;105mHAPPYSTACK\e[39m
-  │    │         │   $name
-  │    │  \___/  │
-  ╰────┴─────────╯
-"
-}
+# drawHeader() {
+#   name='Bot script'
+#   if [[ $# -eq 1 ]] ; then
+#     name=$1
+#   fi
+# printf "
+#     /\═════════\™
+#    /__\‸_____/__\‸   \e[38;5;105mHAPPYSTACK\e[39m
+#   │    │         │   $name
+#   │    │  \___/  │
+#   ╰────┴─────────╯
+# "
+# }
 
 
 
@@ -60,7 +60,7 @@ doneStep() {
 # error step
 errorStep() {
   printf "\e[38;5;240m│\e[39m"
-  drawBetween "$errorIcon  \e[31m$1" " \e[31m[Done]\e[39m"
+  drawBetween "$errorIcon  \e[31m$1" " \e[31m[Failed]\e[39m"
   printf "\e[38;5;240m│\e[39m"
 }
 
@@ -105,21 +105,21 @@ renderLines() {
 
 
 # erease N lines
-ereaseLine() {
-  COUNTER=0
-  while [  $COUNTER -lt $1 ]; do
-    printf "\033[1A"
-    let COUNTER=COUNTER+1
-  done
-}
+# ereaseLine() {
+#   COUNTER=0
+#   while [  $COUNTER -lt $1 ]; do
+#     printf "\033[1A"
+#     let COUNTER=COUNTER+1
+#   done
+# }
 
 
 
 
 # clear all screen
-clear() {
-  echo "\033c"
-}
+# clear() {
+#   echo "\033c"
+# }
 
 
 
@@ -227,23 +227,23 @@ drawBox() {
 
 
 # stop animation
-stopAnimation() {
-  kill "$!"
-  wait $! 2>/dev/null
-}
+# stopAnimation() {
+#   kill "$!"
+#   wait $! 2>/dev/null
+# }
 
 
 
 
-# make cursor invisible
-hideCursor() {
-  tput civis
-}
+# # make cursor invisible
+# hideCursor() {
+#   tput civis
+# }
 
 
 
 
-# make cursor visible
-unhideCursor() {
-  tput cvvis
-}
+# # make cursor visible
+# unhideCursor() {
+#   tput cvvis
+# }
