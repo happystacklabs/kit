@@ -67,7 +67,7 @@ const buttonViewerOptions = [
     name: 'onClick',
     type: 'function',
     description: 'call the parent when clicked',
-  }
+  },
 ];
 
 export default buttonViewerOptions;

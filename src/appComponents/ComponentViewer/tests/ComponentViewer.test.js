@@ -1,8 +1,7 @@
 import React from 'react';
-import {shallow, mount} from 'enzyme';
-import ComponentViewer from "../ComponentViewer";
-import Button from '../../../components/Button';
-
+import { shallow } from 'enzyme';
+import ComponentViewer from '../ComponentViewer';
+import Button from '../../../components/Button/Button';
 
 
 describe('ComponentViewerRow', () => {
@@ -21,11 +20,11 @@ describe('ComponentViewer', () => {
   describe('example', () => {
     it('show the component passed by children', () => {
       const options = [{ name: 'size', value: 'large' }];
-      const viewer = shallow(
-        <ComponentViewer options={options} name='Button'>
+      const viewer = shallow((
+        <ComponentViewer options={options} name="Button">
           <Button>bar</Button>
         </ComponentViewer>
-      );
+      ));
       expect(viewer.find('Button').first().prop('children')).toBe('bar');
     });
   });

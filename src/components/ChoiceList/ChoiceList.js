@@ -1,10 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import './ChoiceList.css';
 import styles from './ChoiceList.styles';
-import Text from '../Text';
-import Checkbox from '../Checkbox';
-import classNames from 'classnames';
+import Text from '../Text/Text';
+import Checkbox from '../Checkbox/Checkbox';
+
+
+function renderInputs(name, choices, multiple, disabled, selected, handleChange) {
+  if (!choices) { return undefined; }
+  const type = multiple ? 'checkbox' : 'radio';
+
+  return choices.map(choice => (
+    <li key={choice.value}>
+      <Checkbox
+        name={name}
+        value={choice.value}
+        id={choice.value}
+        label={choice.label}
+        helpText={choice.helpText}
+        type={type}
+        checked={selected.includes(choice.value)}
+        onChange={handleChange}
+        disabled={disabled}
+      />
+    </li>
+  ));
+}
 
 
 const propTypes = {
@@ -16,14 +38,22 @@ const propTypes = {
     helpText: PropTypes.string,
   })).isRequired,
   multiple: PropTypes.bool,
-  selected: PropTypes.arrayOf(PropTypes.string).isRequired,
+  selected: PropTypes.arrayOf(PropTypes.string),
   onChange: PropTypes.func,
   disabled: PropTypes.bool,
+  className: PropTypes.string,
 };
 
+
 const defaultProps = {
+  title: undefined,
+  multiple: false,
   selected: [],
+  onChange: undefined,
+  disabled: false,
+  className: undefined,
 };
+
 
 function ChoiceList(props) {
   function handleChange(event) {
@@ -35,44 +65,31 @@ function ChoiceList(props) {
       selectedArray = selectedArray.filter(item => item !== event.id);
     }
 
-    props.onChange({value: selectedArray, name: props.name});
-  };
+    props.onChange({ value: selectedArray, name: props.name });
+  }
 
   return (
     <div className={classNames(props.className, styles.choiceList)}>
       <fieldset>
         <legend><Text size="regular">{props.title}</Text></legend>
         <ul>
-          {renderInputs(props, handleChange)}
+          {renderInputs(
+            props.name,
+            props.choices,
+            props.multiple,
+            props.disabled,
+            props.selected,
+            handleChange,
+          )}
         </ul>
       </fieldset>
     </div>
   );
 }
 
-function renderInputs(props, handleChange) {
-  if (props.choices) {
-    const type = props.multiple ? 'checkbox' : 'radio';
-
-    return props.choices.map(choice => (
-      <li key={choice['value']}>
-        <Checkbox
-          name={props.name}
-          value={choice['value']}
-          id={choice['value']}
-          label={choice['label']}
-          helpText={choice['helpText']}
-          type={type}
-          checked={props.selected.includes(choice['value'])}
-          onChange={handleChange}
-          disabled={props.disabled}
-        />
-      </li>
-    ));
-  }
-};
 
 ChoiceList.propTypes = propTypes;
 ChoiceList.defaultProps = defaultProps;
+
 
 export default ChoiceList;

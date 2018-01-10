@@ -1,13 +1,18 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import './Navigation.css';
 import styles from './Navigation.styles';
-import Text from '../../components/Text';
+import Text from '../../components/Text/Text';
 import Branding from '../Branding';
-import { NavLink } from 'react-router-dom';
 
 
+const propTypes = {
+  routes: PropTypes.array.isRequired, // eslint-disable-line react/forbid-prop-types
+};
 
-function Navigation({routes}) {
+
+function Navigation({ routes }) {
   // sort the routes prop in alphabetic order
   routes.sort((a, b) => a.name.localeCompare(b.name));
 
@@ -16,7 +21,7 @@ function Navigation({routes}) {
       <Branding name="Kit" url="https://github.com/happystacklabs/kit" />
       <div>
         <ul>
-          {routes.map((route) => (
+          {routes.map(route => (
             <li key={route.path}>
               <NavLink to={route.path} activeClassName={styles.active}>
                 <Text color="inkLight">{route.name}</Text>
@@ -27,6 +32,10 @@ function Navigation({routes}) {
       </div>
     </nav>
   );
-};
+}
+
+
+Navigation.propTypes = propTypes;
+
 
 export default Navigation;

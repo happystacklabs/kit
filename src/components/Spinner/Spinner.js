@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import './Spinner.css';
 import styles from './Spinner.styles';
-import classNames from 'classnames';
 
 
 export const names = [
@@ -11,37 +11,43 @@ export const names = [
 ];
 
 export const colors = {
-  'ink': styles.ink,
-  'inkLight': styles.inkLight,
-  'positive': styles.positive,
-  'negative': styles.negative,
-  'purple': styles.purple,
-  'white': styles.white,
-}
+  ink: styles.ink,
+  inkLight: styles.inkLight,
+  positive: styles.positive,
+  negative: styles.negative,
+  purple: styles.purple,
+  white: styles.white,
+};
+
 
 export const sizes = {
-  'small': styles.small,
-  'medium': styles.medium,
-  'large': styles.large,
+  small: styles.small,
+  medium: styles.medium,
+  large: styles.large,
 };
 
 
 export const types = {
-  'loader1': styles.loader1,
-  'loader2': styles.loader2,
-}
+  loader1: styles.loader1,
+  loader2: styles.loader2,
+};
+
 
 const propTypes = {
   type: PropTypes.oneOf(names),
   color: PropTypes.oneOf(Object.keys(colors)),
   size: PropTypes.oneOf(Object.keys(sizes)),
+  className: PropTypes.string,
 };
+
 
 const defaultProps = {
   type: 'loader1',
   color: 'ink',
   size: 'medium',
- };
+  className: undefined,
+};
+
 
 function Spinner(props) {
   const classSpinner = classNames(
@@ -57,7 +63,9 @@ function Spinner(props) {
   );
 }
 
+
 Spinner.propTypes = propTypes;
 Spinner.defaultProps = defaultProps;
+
 
 export default Spinner;

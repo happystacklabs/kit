@@ -1,15 +1,22 @@
 import React from 'react';
-import './Branding.css';
-import styles from './Branding.styles';
-import Text from '../../components/Text';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import './Branding.css';
+import styles from './Branding.styles';
+import Text from '../../components/Text/Text';
 
 
 const propTypes = {
   name: PropTypes.string,
-  url: PropTypes.string
+  url: PropTypes.string,
 };
+
+
+const defaultProps = {
+  name: undefined,
+  url: undefined,
+};
+
 
 function Branding({ name, url }) {
   return (
@@ -21,8 +28,11 @@ function Branding({ name, url }) {
       <div className={styles.clear} />
     </div>
   );
-};
+}
+
 
 Branding.propTypes = propTypes;
+Branding.defaultProps = defaultProps;
+
 
 export default Branding;

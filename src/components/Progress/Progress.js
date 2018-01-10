@@ -1,24 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 import './Progress.css';
 import styles from './Progress.styles';
-import classNames from 'classnames/bind';
 
 
-let cx = classNames.bind(styles);
+const cx = classNames.bind(styles);
+
 
 const propTypes = {
-    progress: PropTypes.number,
-    size: PropTypes.string,
+  progress: PropTypes.number,
+  size: PropTypes.string,
 };
 
+
 const defaultProps = {
-    progress: 0,
-    size: 'medium',
- };
+  progress: 0,
+  size: 'medium',
+};
+
 
 function Progress(props) {
-  let progress = props.progress;
+  let { progress } = props;
 
   // cap the progress value between 0 - 100
   if (progress >= 100) {
@@ -27,20 +30,22 @@ function Progress(props) {
     progress = 0;
   }
 
-  const width = progress + '%';
+  const width = `${progress}%`;
 
-  const classProgress = cx({
-    small: props.size === 'small',
-    medium: props.size === 'medium',
-    large: props.size === 'large'},
+  const classProgress = cx(
+    {
+      small: props.size === 'small',
+      medium: props.size === 'medium',
+      large: props.size === 'large',
+    },
     styles.progressBar,
   );
 
-  const classInside = cx({max: progress >= 100}, styles.inside);
+  const classInside = cx({ max: progress >= 100 }, styles.inside);
 
   return (
     <div className={classProgress}>
-      <div className={classInside} style={{width: width}} />
+      <div className={classInside} style={{ width }} />
     </div>
   );
 }

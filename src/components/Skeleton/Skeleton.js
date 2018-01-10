@@ -4,40 +4,45 @@ import './Skeleton.css';
 import styles from './Skeleton.styles';
 
 
-const propTypes = {
-  lines: PropTypes.number,
-  display: PropTypes.bool,
-};
-
-const defaultProps = {
-  lines: 3,
-};
-
-function Skeleton(props) {
+function renderSkeleton(display, lines) {
+  if (display) {
+    return (<div className={styles.display} />);
+  }
+  const linesArray = [];
+  for (let i = 0; i < lines; i += 1) {
+    linesArray.push(<div className={styles.line} key={i} />);
+  }
   return (
-    <div className={props.className}>{renderSkeleton(props)}</div>
+    <span>
+      {linesArray}
+    </span>
   );
 }
 
-function renderSkeleton(props) {
-  if (props.display) {
-    return (
-      <div className={styles.display} />
-    );
-  } else {
-    const lines = [];
-    for (var i = 0; i < props.lines; i++) {
-      lines.push(<div className={styles.line} key={i} />);
-    }
-    return (
-      <span>
-        {lines}
-      </span>
-    );
-  }
+
+const propTypes = {
+  lines: PropTypes.number,
+  display: PropTypes.bool,
+  className: PropTypes.string,
 };
+
+
+const defaultProps = {
+  lines: 3,
+  display: false,
+  className: undefined,
+};
+
+
+function Skeleton(props) {
+  return (
+    <div className={props.className}>{renderSkeleton(props.display, props.lines)}</div>
+  );
+}
+
 
 Skeleton.propTypes = propTypes;
 Skeleton.defaultProps = defaultProps;
+
 
 export default Skeleton;

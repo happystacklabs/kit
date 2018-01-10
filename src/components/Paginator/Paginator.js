@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Paginator.css';
 import styles from './Paginator.styles';
-import Button from '../Button';
-import Icon from '../Icon';
+import Button from '../Button/Button';
+import Icon from '../Icon/Icon';
 
 
 const propTypes = {
@@ -12,7 +12,19 @@ const propTypes = {
   plain: PropTypes.bool,
   onNext: PropTypes.func,
   onPrevious: PropTypes.func,
+  className: PropTypes.string,
 };
+
+
+const defaultProps = {
+  disableNext: false,
+  disablePrevious: false,
+  plain: false,
+  onNext: undefined,
+  onPrevious: undefined,
+  className: undefined,
+};
+
 
 function Paginator(props) {
   return (
@@ -47,6 +59,9 @@ function Paginator(props) {
   );
 }
 
+
 Paginator.propTypes = propTypes;
+Paginator.defaultProps = defaultProps;
+
 
 export default Paginator;

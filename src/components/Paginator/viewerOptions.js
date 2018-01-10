@@ -19,13 +19,13 @@ const paginatorViewerOptions = [
   },
   {
     name: 'onPrevious',
-    value: ()=>{},
+    value: () => {},
     type: 'function',
     description: 'called when previous button is cliked',
   },
   {
     name: 'onNext',
-    value: ()=>{},
+    value: () => {},
     type: 'function',
     description: 'called when next button is cliked',
   },

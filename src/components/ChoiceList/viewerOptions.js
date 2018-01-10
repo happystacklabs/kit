@@ -14,9 +14,9 @@ const choiceListViewerOptions = [
   {
     name: 'choices',
     value: [
-      {label: 'Alipay', value: 'alipay', helpText: 'Reccomended'},
-      {label: 'Wechat', value: 'wechat'},
-      {label: 'Paypal', value: 'paypal'},
+      { label: 'Alipay', value: 'alipay', helpText: 'Reccomended' },
+      { label: 'Wechat', value: 'wechat' },
+      { label: 'Paypal', value: 'paypal' },
     ],
     type: 'array',
     description: 'Choices of the list',

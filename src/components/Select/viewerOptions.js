@@ -44,9 +44,9 @@ const selectViewerOptions = [
   {
     name: 'options',
     value: [
-      {label: 'wechat', value: 'wechat'},
-      {label: 'alipay', value: 'alipay'},
-      {label: 'paypal', value: 'paypal'},
+      { label: 'wechat', value: 'wechat' },
+      { label: 'alipay', value: 'alipay' },
+      { label: 'paypal', value: 'paypal' },
     ],
     type: 'array',
     description: 'The options of the select input',
@@ -56,7 +56,7 @@ const selectViewerOptions = [
     value: 'value',
     type: 'function',
     description: 'Function to be called on change',
-  }
+  },
 ];
 
 export default selectViewerOptions;

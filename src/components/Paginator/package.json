@@ -1,5 +1,0 @@
-{
- "private": true,
- "name": "Paginator",
- "main": "./Paginator.js"
-}

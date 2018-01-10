@@ -1,12 +1,13 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 import './Tooltip.css';
 import styles from './Tooltip.styles';
-import Text from '../Text';
-import classNames from 'classnames/bind';
+import Text from '../Text/Text';
 
 
-let cx = classNames.bind(styles);
+const cx = classNames.bind(styles);
+
 
 export const position = [
   'top',
@@ -15,17 +16,26 @@ export const position = [
   'right',
 ];
 
+
 const propTypes = {
   children: PropTypes.node,
   content: PropTypes.string,
   active: PropTypes.bool,
   position: PropTypes.oneOf(position),
   light: PropTypes.bool,
+  className: PropTypes.string,
 };
 
+
 const defaultProps = {
+  children: undefined,
+  content: undefined,
+  active: false,
   position: 'bottom',
+  light: false,
+  className: undefined,
 };
+
 
 class Tooltip extends React.Component {
   state = {
@@ -36,54 +46,51 @@ class Tooltip extends React.Component {
 
   componentDidMount() {
     const newState = Object.assign({}, this.state);
-
-    newState['childPosition'] = this.childRef ? this.childRef.getBoundingClientRect() : null;
-    newState['position'] = this.tooltipRef ? this.tooltipRef.getBoundingClientRect() : null;
-    this.setState(newState);
+    newState.childPosition = this.childRef ? this.childRef.getBoundingClientRect() : null;
+    newState.position = this.tooltipRef ? this.tooltipRef.getBoundingClientRect() : null;
+    this.setState(newState); // eslint-disable-line react/no-did-mount-set-state
   }
 
   handleOnMouseEnter = () => {
     const newState = Object.assign({}, this.state);
-    newState['active'] = true;
+    newState.active = true;
     this.setState(newState);
   }
 
   handleOnMouseLeave = () => {
     const newState = Object.assign({}, this.state);
-    newState['active'] = false;
+    newState.active = false;
     this.setState(newState);
   }
 
   calculateStyle = () => {
     // child dimension
-    const childWidth = this.state['childPosition'] ? Math.round(this.state['childPosition'].width) : null;
-    const childHeight = this.state['childPosition'] ? Math.round(this.state['childPosition'].height) : null;
+    const childWidth = this.state.childPosition ?
+      Math.round(this.state.childPosition.width) : null;
+    const childHeight = this.state.childPosition ?
+      Math.round(this.state.childPosition.height) : null;
     // tooltip dimension
-    const height = this.state['position'] ? Math.round(this.state['position'].height) : null;
+    const height = this.state.position ? Math.round(this.state.position.height) : null;
     // set margin bottom
-    const marginBottom = this.props.position === 'top' ? childHeight+8 : 0;
+    const marginBottom = this.props.position === 'top' ? childHeight + 8 : 0;
     // set margin top
-    var marginTop = 0;
+    let marginTop = 0;
     if (this.props.position === 'left' || this.props.position === 'right') {
-      marginTop = childHeight ? -Math.round(height/2)-Math.round(childHeight/2) : 0;
+      marginTop = childHeight ? -Math.round(height / 2) - Math.round(childHeight / 2) : 0;
     } else if (this.props.position === 'bottom') {
       marginTop = childHeight ? 8 : 0;
     }
     // set margin left
-    var marginLeft = 0;
+    let marginLeft = 0;
     if (this.props.position === 'left') {
       marginLeft = childWidth ? -8 : 0;
     } else if (this.props.position === 'right') {
-      marginLeft = childWidth ? childWidth+8 : 0;
+      marginLeft = childWidth ? childWidth + 8 : 0;
     } else {
-      marginLeft = childWidth ? Math.round(childWidth/2) : 0;
+      marginLeft = childWidth ? Math.round(childWidth / 2) : 0;
     }
     // tooltip style
-    const style = {
-      'marginLeft': marginLeft,
-      'marginBottom': marginBottom,
-      'marginTop': marginTop,
-    }
+    const style = { marginLeft, marginBottom, marginTop };
 
     return style;
   };
@@ -92,9 +99,11 @@ class Tooltip extends React.Component {
     const style = this.calculateStyle();
     const color = this.props.light ? 'ink' : 'white';
 
-    const classTooltip = cx({
-      active: this.props.active || this.state.active,
-      light: this.props.light},
+    const classTooltip = cx(
+      {
+        active: this.props.active || this.state.active,
+        light: this.props.light,
+      },
       this.props.className,
       this.props.position,
       styles.tooltip,
@@ -118,7 +127,9 @@ class Tooltip extends React.Component {
   }
 }
 
+
 Tooltip.propTypes = propTypes;
 Tooltip.defaultProps = defaultProps;
+
 
 export default Tooltip;

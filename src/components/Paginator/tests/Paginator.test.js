@@ -1,31 +1,25 @@
 import React from 'react';
-import Paginator from "..";
-import {shallow, mount} from 'enzyme';
+import { shallow, mount } from 'enzyme';
+import Paginator from '../Paginator';
 
 
 describe('Paginator', () => {
   it('render two buttons', () => {
-    const paginator = shallow(
-      <Paginator />
-    );
+    const paginator = shallow(<Paginator />);
     expect(paginator.find('button').at(0).exists()).toBe(true);
     expect(paginator.find('button').at(1).exists()).toBe(true);
   });
 
   describe('disableNext', () => {
     it('change state of right button to disabled', () => {
-      const paginator = mount(
-        <Paginator disableNext />
-      );
+      const paginator = mount(<Paginator disableNext />);
       expect(paginator.find('button').at(1).prop('disabled')).toBe(true);
     });
   });
 
   describe('disablePrevious', () => {
     it('change state of left button to disabled', () => {
-      const paginator = mount(
-        <Paginator disablePrevious />
-      );
+      const paginator = mount(<Paginator disablePrevious />);
       expect(paginator.find('button').at(0).prop('disabled')).toBe(true);
     });
   });
@@ -48,9 +42,7 @@ describe('Paginator', () => {
 
   describe('plain', () => {
     it('change the state of buttons to plain', () => {
-      const paginator = mount(
-        <Paginator plain />
-      );
+      const paginator = mount(<Paginator plain />);
       expect(paginator.find('button').at(0).hasClass('kit-Button__button--plain')).toBe(true);
     });
   });

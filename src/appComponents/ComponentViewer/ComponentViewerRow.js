@@ -2,10 +2,81 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './ComponentViewer.css';
 import styles from './ComponentViewer.styles';
-import Text from '../../components/Text';
-import TextInput from '../../components/TextInput';
-import Select from '../../components/Select';
-import Switch from '../../components/Switch';
+import Text from '../../components/Text/Text';
+import TextInput from '../../components/TextInput/TextInput';
+import Select from '../../components/Select/Select';
+import Switch from '../../components/Switch/Switch';
+
+
+function getOptions(type) {
+  const options = type.map(option => ({ label: option, value: option }));
+  return options;
+}
+
+
+function renderInput(type, name, onChange, onClick, value) {
+  if (type === 'string') {
+    return (
+      <TextInput
+        name={name}
+        onChange={onChange}
+        value={value}
+      />
+    );
+  } else if (Array.isArray(type)) {
+    return (
+      <Select
+        name={name}
+        onChange={onChange}
+        value={value}
+        options={getOptions(type)}
+      />
+    );
+  } else if (type === 'bool') {
+    return (
+      <Switch
+        name={name}
+        onClick={onClick}
+        on={value}
+      />
+    );
+  } else if (type === 'function') {
+    return undefined;
+  } else if (type === 'node') {
+    return undefined;
+  } else if (type === 'number') {
+    return (
+      <TextInput
+        name={name}
+        onChange={onChange}
+        value={value}
+        type="number"
+      />
+    );
+  }
+
+  return undefined;
+}
+
+
+function getType(props) {
+  if (props.type === 'string') {
+    return 'string';
+  } else if (Array.isArray(props.type) || props.type === 'array') {
+    return 'array';
+  } else if (props.type === 'bool') {
+    return 'bool';
+  } else if (props.type === 'function') {
+    return 'function';
+  } else if (props.type === 'number') {
+    return 'number';
+  } else if (props.type === 'object') {
+    return 'object';
+  } else if (props.type === 'node') {
+    return 'node';
+  }
+  return undefined;
+}
 
 
 const propTypes = {
@@ -24,7 +95,19 @@ const propTypes = {
     PropTypes.bool,
     PropTypes.func,
   ]).isRequired,
+  onChange: PropTypes.func,
+  onClick: PropTypes.func,
 };
+
+
+const defaultProps = {
+  value: undefined,
+  description: undefined,
+  type: undefined,
+  onChange: undefined,
+  onClick: undefined,
+};
+
 
 function ComponentViewerRow(props) {
   return (
@@ -33,79 +116,15 @@ function ComponentViewerRow(props) {
       <td className={styles.bottomLine}><Text color="inkLight" size="small">{getType(props)}</Text></td>
       <td className={styles.bottomLine}><Text>{props.description}</Text></td>
       <td>
-        {renderInput(props)}
+        {renderInput(props.type, props.name, props.onChange, props.onClick, props.value)}
       </td>
     </tr>
   );
 }
 
-function getOptions(props) {
-  const options = props.type.map((option, index) => {
-    return {label: option, value: option};
-  });
-  return options;
-}
-
-function getType(props) {
-  if (props.type === 'string') {
-    return 'string';
-  } else if (Array.isArray(props.type) || props.type === 'array') {
-    return 'array';
-  } else if (props.type === 'bool') {
-    return 'bool';
-  } else if (props.type === 'function') {
-    return 'function';
-  } else if (props.type === 'number') {
-    return 'number';
-  } else if (props.type === 'object') {
-    return 'object';
-  } else if (props.type === 'node') {
-    return 'node';
-  }
-}
-
-function renderInput(props) {
-  if (props.type === 'string') {
-    return (
-      <TextInput
-       name={props.name}
-       onChange={props.onChange}
-       value={props.value}
-      />
-    );
-  } else if (Array.isArray(props.type)) {
-    return (
-      <Select
-       name={props.name}
-       onChange={props.onChange}
-       value={props.value}
-       options={getOptions(props)}
-      />
-    );
-  } else if (props.type === 'bool') {
-    return (
-      <Switch
-        name={props.name}
-        onClick={props.onClick}
-        on={props.value}
-      />
-    );
-  } else if (props.type === 'function') {
-    return;
-  } else if (props.type === 'node') {
-    return;
-  } else if (props.type === 'number') {
-    return (
-      <TextInput
-       name={props.name}
-       onChange={props.onChange}
-       value={props.value}
-       type="number"
-      />
-    );
-  }
-};
 
 ComponentViewerRow.propTypes = propTypes;
+ComponentViewerRow.defaultProps = defaultProps;
+
 
 export default ComponentViewerRow;

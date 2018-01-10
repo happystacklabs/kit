@@ -1,6 +1,6 @@
 {
   "name": "@happystack/kit",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "private": false,
   "author": "Heinrich Tremblay",
   "homepage": "https://kit.happystack.io",
@@ -36,7 +36,10 @@
     "cpx": "^1.5.0",
     "enzyme": "^3.1.4",
     "enzyme-adapter-react-16": "^1.0.2",
-    "eslint": "^4.13.1",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
     "jest": "20.0.4",
     "jest-enzyme": "^4.0.1",
@@ -54,7 +57,8 @@
     "copy-files": "cpx \"./src/components/**!(tests)/!(*.scss|viewerOptions.js)\" ./templib/",
     "transpile": "babel templib --out-dir lib --copy-files",
     "lib": "npm run build-css && npm run remove-lib && npm run copy-files && npm run copy-index && npm run transpile",
-    "deploy": "runner deploy.sh 0.3.1"
+    "deploy": "runner deploy.sh",
+    "lint": "eslint src"
   },
   "files": [
     "/lib"

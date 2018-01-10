@@ -10,41 +10,93 @@ tasksCommand=()
 
 
 ################################################################################
+# Your custom content for the display, title and subtitle
+################################################################################
+currentVersion=$(grep -m1 version package.json | awk -F: '{ print $2 }' | sed 's/[", ]//g')
+display="Current Version: ${currentVersion}"
+title='Happystack Kit'
+subtitle='Deploy'
+
+
+################################################################################
 # Task 1
 ################################################################################
+task1() {
+  CI=true npm test
+}
 tasks[0]='Test suite'
-tasksCommand[0]='CI=true npm test'
+tasksCommand[0]="task1"
+
 
 ################################################################################
 # Task 2
 ################################################################################
-tasks[1]='Bump version'
-tasksCommand[1]='sleep 5.0'
+tasks[1]='Linter'
+tasksCommand[1]='npm run lint'
 
 
 ################################################################################
 # Task 3
 ################################################################################
-tasks[2]='Run build'
-tasksCommand[2]='npm run build'
+tasks[2]='Snyk security audit'
+tasksCommand[2]='snyk test'
+
 
 ################################################################################
 # Task 4
 ################################################################################
-tasks[3]='Run 200.html'
-tasksCommand[3]='cp -rf ./build/index.html ./build/200.html'
+
+task4() {
+  # get the user input
+  getInput " ⚠️  Current version is ${currentVersion}" "Bumb to version"
+  local newVersion="${inputResponse}"
+
+  # replace package.json
+  search='("version":[[:space:]]*").+(")'
+	replace="\1${newVersion}\2"
+  sed -i ".tmp" -E "s/${search}/${replace}/g" package.json
+	rm "package.json.tmp"
+
+  # replace home index.js
+  search="Version-${currentVersion}-"
+	replace="Version-${newVersion}-"
+  sed -i ".tmp" -E "s/${search}/${replace}/g" ./src/appComponents/Home/index.js
+	rm "./src/appComponents/Home/index.js.tmp"
+
+  # replace README.md
+  search="Version-${currentVersion}-"
+	replace="Version-${newVersion}-"
+  sed -i ".tmp" -E "s/${search}/${replace}/g" README.md
+	rm "README.md.tmp"
+
+}
+tasks[3]='Bump version'
+tasksCommand[3]="task2"
 
 
 ################################################################################
 # Task 5
 ################################################################################
-tasks[4]='Deploy to Surge'
-tasksCommand[4]='surge ./build  kit.happystack.io'
-
+tasks[4]='Run build'
+tasksCommand[4]='npm run build'
 
 ################################################################################
 # Task 6
 ################################################################################
-tasks[5]='Deploy package to NPM'
+tasks[5]='Run 200.html'
+tasksCommand[5]='cp -rf ./build/index.html ./build/200.html'
+
+
+################################################################################
+# Task 7
+################################################################################
+tasks[6]='Deploy to Surge'
+tasksCommand[6]='surge ./build  kit.happystack.io'
+
+
+################################################################################
+# Task 8
+################################################################################
+tasks[7]='Deploy package to NPM'
 # tasksCommand[2]='npm publish'
-tasksCommand[5]='sleep 2.0'
+tasksCommand[7]='npm publish'
