@@ -2,6 +2,8 @@
 
 # Happystack Kit
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/happystacklabs/kit.svg)](https://greenkeeper.io/)
+
 ![Version](https://img.shields.io/badge/Version-0.3.2-green.svg?style=flat)
 ![license](https://img.shields.io/github/license/mashape/apistatus.svg)
 
