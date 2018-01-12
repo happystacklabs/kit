@@ -4,77 +4,9 @@
 /*----------------------------------------------------------------------------*
  * Font
  *----------------------------------------------------------------------------*/
-.kit-TextInput__input {
+.kit-textinput__input {
   background: #fff;
   border: 1px solid #c4cdd5;
-  border-radius: 3px;
-  font-size: rem(14px);
-  font-weight: 400;
-  color: #585c60;
-  padding-left: 10px;
-  appearance: none;
-  min-height: 35px;
-  box-sizing: border-box;
-  width: 100%; }
-  .kit-TextInput__input:focus {
-    border: 2px solid #5c6ac4;
-    outline: 0;
-    margin-left: -1px; }
-  .kit-TextInput__input:disabled {
-    background: #fafafa;
-    color: #c4cdd5; }
-  .kit-TextInput__input--shake {
-    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000px; }
-  .kit-TextInput__input--error {
-    margin-left: -1px;
-    border: 2px solid #e03e30 !important;
-    background: #f9d8d6 !important; }
-
-.kit-TextInput__action {
-  display: inline;
-  float: right;
-  min-height: 0 !important;
-  min-width: 0 !important;
-  padding: 0;
-  margin-right: -8px;
-  margin-bottom: 5px; }
-
-.kit-TextInput__label {
-  display: inline-block;
-  margin-bottom: 5px;
-  text-align: left;
-  float: left; }
-
-.kit-TextInput__errorMessage,
-.kit-TextInput__helpText {
-  margin-top: 5px;
-  text-align: left; }
-
-.kit-TextInput__errorIcon {
-  margin-right: 5px;
-  text-align: left; }
-
-@keyframes shake {
-  10%,
-  90% {
-    transform: translate3d(-1px, 0, 0); }
-  20%,
-  80% {
-    transform: translate3d(2px, 0, 0); }
-  30%,
-  50%,
-  70% {
-    transform: translate3d(-4px, 0, 0); }
-  40%,
-  60% {
-    transform: translate3d(4px, 0, 0); } }
-
-.kit-textinput {
-  background: #fff;
-  border: 1px solid #5c6ac4;
   border-radius: 3px;
   font-size: 14px;
   font-weight: 400;
@@ -86,7 +18,16 @@
   width: 100%; }
 
 .kit-textinput__action {
-  float: right; }
+  float: right;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: color 0.25s; }
+
+.kit-textinput__action:hover {
+  color: #949dd8; }
+
+.kit-textinput__action:active {
+  color: #5c6ac4; }
 
 .kit-textinput__label {
   display: inline-block;
@@ -102,3 +43,44 @@
 .kit-textinput__error-icon {
   margin-right: 5px;
   text-align: left; }
+
+.kit-textinput__input--error {
+  border: 1px solid #e03e30;
+  background: #f7cfcb; }
+
+.kit-textinput__input:focus,
+.kit-textinput__input--error:focus {
+  outline: 0;
+  margin-left: -1px; }
+
+.kit-textinput__input:focus {
+  border: 2px solid #5c6ac4; }
+
+.kit-textinput__input:disabled {
+  background: #fafafa;
+  color: #c4cdd5;
+  border: 1px solid #c4cdd5; }
+
+.kit-textinput__input--shake {
+  animation: kit-animation-textinput-shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px; }
+
+.kit-textinput__input--error:focus {
+  border: 2px solid #e03e30; }
+
+@keyframes kit-animation-textinput-shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0); }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0); }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0); }
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0); } }

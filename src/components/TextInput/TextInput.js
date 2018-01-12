@@ -103,16 +103,16 @@ function TextInput(props) {
     props.onChange({ name: props.name, value: event.target.value });
   }
 
-  const input = classNames(
+  const inputClassName = classNames(
     {
-      shake: props.shake || (props.maxLength && props.value.length >= props.maxLength),
-      error: props.error,
+      'kit-textinput__input--shake': props.shake || (props.maxLength && props.value.length >= props.maxLength),
+      'kit-textinput__input--error': props.error,
     },
-    styles.input,
+    'kit-textinput__input',
   );
 
   return (
-    <div className={props.className}>
+    <div className={classNames(props.className, 'kit-textinput')}>
       {renderLabel(props.name, props.label)}
       {renderAction(props.action)}
       <input
@@ -122,7 +122,7 @@ function TextInput(props) {
         onChange={handleChange}
         readOnly={props.readOnly}
         disabled={props.disabled}
-        className={classInput}
+        className={inputClassName}
         maxLength={props.maxLength}
         type={props.type}
       />
