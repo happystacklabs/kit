@@ -1,3 +1,5 @@
+@import '../variables';
+
 .kit-progress {
   background: rgba(196, 205, 213, 0.4);
   border-radius: 3px;
@@ -8,9 +10,9 @@
 .kit-progress__bar {
   width: 50%;
   height: 15px;
-  background-image: linear-gradient(90deg, #98a6e4 0%, #5f6dc5 100%);
+  background-image: linear-gradient(90deg, lighten($main, 15%) 0%, $main 100%);
   border-radius: 2px 0 0 2px;
-  animation: kit-progress-animatio 1s linear infinite alternate;
+  animation: kit-progress-animation 1s linear infinite alternate;
   transition: width 0.18s ease-in-out;
 }
 
