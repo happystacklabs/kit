@@ -1,5 +1,5 @@
 const styles = {
-  branding: 'kit-Branding__branding',
+  brandingComponent: 'kit-Branding__brandingComponent',
   clear: 'kit-Branding__clear',
 };
 

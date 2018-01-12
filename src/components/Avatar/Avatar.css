@@ -1,5 +1,5 @@
 .kit-Avatar__placeholder {
-  border: 1px solid #C4CDD5; }
+  border: 1px solid #c4cdd5; }
 
 .kit-Avatar__avatar {
   display: inline-block; }
@@ -19,5 +19,5 @@
 .kit-Avatar__avatar img,
 .kit-Avatar__placeholder {
   border-radius: 50%;
-  background: #FAFAFA;
+  background: #fafafa;
   text-align: center; }

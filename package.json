@@ -1,6 +1,6 @@
 {
   "name": "@happystack/kit",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "private": false,
   "author": "Heinrich Tremblay",
   "homepage": "https://kit.happystack.io",
@@ -43,7 +43,11 @@
     "eslint-plugin-react": "^7.5.1",
     "jest": "20.0.4",
     "jest-enzyme": "^4.0.1",
-    "node-sass-chokidar": "0.0.3"
+    "node-sass-chokidar": "0.0.3",
+    "stylelint": "^8.4.0",
+    "stylelint-config-recommended-scss": "^3.0.0",
+    "stylelint-config-standard": "^18.0.0",
+    "stylelint-scss": "^2.2.0"
   },
   "scripts": {
     "start": "concurrently \"npm run watch-css\" \"react-scripts start\"",
@@ -58,7 +62,8 @@
     "transpile": "babel templib --out-dir lib --copy-files",
     "lib": "npm run build-css && npm run remove-lib && npm run copy-files && npm run copy-index && npm run transpile",
     "deploy": "runner deploy.sh",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "stylelint": "stylelint src/**/*scss"
   },
   "files": [
     "/lib"

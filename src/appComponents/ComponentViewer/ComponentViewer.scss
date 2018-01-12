@@ -1,7 +1,7 @@
 @import '../../components/utilities';
 
 .kit-ComponentViewer__h1 {
-  border-bottom: 1px solid #DFE2E3;
+  border-bottom: 1px solid #dfe2e3;
   margin-bottom: 30px;
 }
 
@@ -14,30 +14,30 @@
   border-radius: 3px 3px 0 0;
   word-break: break-word;
   color: white;
-  font-family: -apple-system,BlinkMacSystemFont,San Francisco,Roboto,Segoe UI,Helvetica Neue,sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Helvetica Neue, sans-serif;
 
   &--red {
-    color: #FC1E70;
+    color: #fc1e70;
   }
 
   &--yellow {
-    color: #E6DC6D;
+    color: #e6dc6d;
   }
 
   &--green {
-    color: #A4E406;
+    color: #a4e406;
   }
 }
 
 .kit-ComponentViewer__list {
-  background: #FFFFFF;
-  border: 1px solid #DFE2E3;
-  box-shadow: 0 1px 1px 0 #D9DADC;
+  background: #fff;
+  border: 1px solid #dfe2e3;
+  box-shadow: 0 1px 1px 0 #d9dadc;
   border-radius: 0 0 3px 3px;
   padding: 30px 0 30px 25px;
   margin-bottom: 45px;
   overflow-x: auto;
-  font-family: -apple-system,BlinkMacSystemFont,San Francisco,Roboto,Segoe UI,Helvetica Neue,sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Helvetica Neue, sans-serif;
 
   table {
     width: 100%;
@@ -64,13 +64,13 @@
 }
 
 td.kit-ComponentViewer__list--bottomLine {
-  border-bottom: 1px solid #C4CDD5;
+  border-bottom: 1px solid #c4cdd5;
   padding-right: 0;
 }
 
 .kit-ComponentViewer__codeMenu {
   text-align: right;
-  padding:20px 20px 0 20px;
+  padding: 20px 20px 0 20px;
 }
 
 .kit-ComponentViewer__item {

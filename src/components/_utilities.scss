@@ -1,5 +1,43 @@
-$base-font-size: 16px;
+/*----------------------------------------------------------------------------*
+ * Color
+ *----------------------------------------------------------------------------*/
+$ink: #222c35;
+$ink-light: #797d80;
+$positive: #58be8c;
+$negative: #e03e30;
+$main: #5c6ac4;
+$white: #fff;
 
-@function rem($value) {
-  @return $value / $base-font-size * 1rem;
-}
+/*----------------------------------------------------------------------------*
+ * Font
+ *----------------------------------------------------------------------------*/
+// font-size
+$display-xlarge-size: 42px;
+$display-large-size: 28px;
+$display-medium-size: 26px;
+$display-small-size: 20px;
+$heading-size: 16px;
+$sub-heading-size: 12px;
+$body-size: 14px;
+$caption-size: 12px;
+
+// line-height
+$display-xlarge-lh: 44px;
+$display-large-lh: 32px;
+$display-medium-lh: 32px;
+$display-small-lh: 28px;
+$heading-lh: 24px;
+$sub-heading-lh: 16px;
+$body-lh: 20px;
+$caption-lh: 16px;
+
+// font-weight
+$black-weight: 900;
+$heavy-weight: 800;
+$bold-weight: 700;
+$semi-bold-weight: 600;
+$medium-weight: 500;
+$regular-weight: 400;
+$thin-weight: 300;
+$light-weight: 200;
+$ultra-light-weight: 100;

@@ -1,24 +1,24 @@
 @import '../utilities';
 
 .kit-Button__button {
-  background: #FAFAFA;
-  border: 1px solid #C4CDD5;
-  box-shadow: 0 2px 0 0 rgba(0,0,0,0.04);
+  background: #fafafa;
+  border: 1px solid #c4cdd5;
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
   border-radius: 3px;
-  color: #585C60;
+  color: #585c60;
   padding: 2px 20px 3px;
   font-size: rem(14px);
   appearance: none;
   transition-property: background, border, box-shadow;
-  transition-duration: .2s;
+  transition-duration: 0.2s;
   cursor: pointer;
 
   &:hover {
-    background: #F4F4F4;
+    background: #f4f4f4;
   }
 
   &:active {
-    box-shadow: 0 2px 0 0 rgba(0,0,0,0.04), inset 0 2px 4px 0 rgba(0,0,0,0.10);
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04), inset 0 2px 4px 0 rgba(0, 0, 0, 0.1);
   }
 
   &:focus {
@@ -26,20 +26,20 @@
   }
 
   &:disabled {
-    color: #C4CDD5;
-    border: 1px solid #C4CDD5;
-    background: #FAFAFA;
+    color: #c4cdd5;
+    border: 1px solid #c4cdd5;
+    background: #fafafa;
 
     i {
-      color: #C4CDD5;
+      color: #c4cdd5;
     }
 
     &:active {
-      box-shadow: 0 2px 0 0 rgba(0,0,0,0.04);
+      box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
     }
 
     &:hover {
-      background: #FAFAFA;
+      background: #fafafa;
     }
   }
 
@@ -59,7 +59,7 @@
 
     .kit-Button__button--spinner {
       margin-top: 0;
-      margin-left: rem(-3px)/2;
+      margin-left: rem(-3px) / 2;
     }
   }
 
@@ -70,7 +70,7 @@
 
     .kit-Button__button--spinner {
       margin-top: 0;
-      margin-left: rem(-3px)/2;
+      margin-left: rem(-3px) / 2;
     }
   }
 
@@ -96,7 +96,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    color: #C4CDD5;
+    color: #c4cdd5;
   }
 
   &--hidden {
@@ -107,21 +107,21 @@
     background: none;
     border: none;
     box-shadow: none;
-    color: #5F6DC5;
+    color: #5f6dc5;
     padding: 3px 8px;
     transition-property: color;
-    transition-duration: .2s;
+    transition-duration: 0.2s;
 
     &:hover {
       background: none;
-      color: #404EAE;
+      color: #404eae;
     }
 
     &:active {
       box-shadow: none;
 
       span {
-        background: #FAFAFA;
+        background: #fafafa;
         border-radius: 3px;
       }
     }
@@ -130,7 +130,7 @@
     &:disabled:hover {
       background: none;
       border: none;
-      color: #C4CDD5;
+      color: #c4cdd5;
       box-shadow: none;
     }
 
@@ -141,40 +141,43 @@
 
   &--purple {
     color: white;
-    background: #5F6DC5;
-    border: 1px solid #404EAE;
+    background: #5f6dc5;
+    border: 1px solid #404eae;
 
     i {
       color: white;
     }
+
     &:hover {
-      background: #5561B0;
+      background: #5561b0;
     }
   }
 
   &--negative {
     color: white;
-    background: #E03E30;
-    border: 1px solid #BF2A1E;
+    background: #e03e30;
+    border: 1px solid #bf2a1e;
 
     i {
       color: white;
     }
+
     &:hover {
-      background: #C9372B;
+      background: #c9372b;
     }
   }
 
   &--positive {
     color: white;
-    background: #58BE8C;
-    border: 1px solid #3FA372;
+    background: #58be8c;
+    border: 1px solid #3fa372;
 
     i {
       color: white;
     }
+
     &:hover {
-      background: #4FAA7D;
+      background: #4faa7d;
     }
   }
 }

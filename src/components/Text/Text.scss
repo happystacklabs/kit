@@ -1,61 +1,79 @@
 @import '../utilities';
 
-.kit-Text__text {
-  font-family: -apple-system,BlinkMacSystemFont,San Francisco,Roboto,Segoe UI,Helvetica Neue,sans-serif;
+.kit-text {
+  font-family: -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Helvetica Neue, sans-serif;
+  color: $ink;
+}
 
-  &--normalWeight {
-    font-weight: 400;
-  }
+.kit-text--display-xlarge {
+  font-size: $display-xlarge-size;
+  line-height: $display-xlarge-lh;
+  font-weight: $semi-bold-weight;
+}
 
-  &--boldWeight {
-    font-weight: 700;
-  }
+.kit-text--display-large {
+  font-size: $display-large-size;
+  line-height: $display-large-lh;
+  font-weight: $semi-bold-weight;
+}
 
-  &--extraSmall {
-    font-size: rem(10px);
-  }
+.kit-text--display-medium {
+  font-size: $display-medium-size;
+  line-height: $display-medium-lh;
+  font-weight: $regular-weight;
+}
 
-  &--small {
-    font-size: rem(13px);
-  }
+.kit-text--display-small {
+  font-size: $display-small-size;
+  line-height: $display-small-lh;
+  font-weight: $regular-weight;
+}
 
-  &--regular {
-    font-size: rem(16px);
-  }
+.kit-text--heading {
+  font-size: $heading-size;
+  line-height: $heading-lh;
+  font-weight: $semi-bold-weight;
+}
 
-  &--medium {
-    font-size: rem(20px);
-  }
+.kit-text--sub-heading {
+  font-size: $sub-heading-size;
+  line-height: $sub-heading-lh;
+  font-weight: $semi-bold-weight;
+  text-transform: uppercase;
+}
 
-  &--large {
-    font-size: rem(28px),;
-  }
+.kit-text--body {
+  font-size: $body-size;
+  line-height: $body-lh;
+  font-weight: $regular-weight;
+}
 
-  &--extraLarge {
-    font-size: rem(42px);
-  }
+.kit-text--caption {
+  font-size: $caption-size;
+  line-height: $caption-lh;
+  font-weight: $regular-weight;
+}
 
-  &--ink {
-    color: #222C35;
-  }
+.kit-text--ink {
+  color: $ink;
+}
 
-  &--inkLight {
-    color: #797D80;
-  }
+.kit-text--ink-light {
+  color: $ink-light;
+}
 
-  &--positive {
-    color: #58BE8C;
-  }
+.kit-text--positive {
+  color: $positive;
+}
 
-  &--negative {
-    color: #E03E30;
-  }
+.kit-text--negative {
+  color: $negative;
+}
 
-  &--purple {
-    color: #5C6AC4;
-  }
+.kit-text--main {
+  color: $main;
+}
 
-  &--white {
-    color: white;
-  }
+.kit-text--white {
+  color: $white;
 }

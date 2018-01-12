@@ -1,22 +1,28 @@
+/*----------------------------------------------------------------------------*
+ * Color
+ *----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*
+ * Font
+ *----------------------------------------------------------------------------*/
 .kit-TextInput__input {
-  background: #FFFFFF;
-  border: 1px solid #C4CDD5;
+  background: #fff;
+  border: 1px solid #c4cdd5;
   border-radius: 3px;
-  font-size: 0.875rem;
+  font-size: rem(14px);
   font-weight: 400;
-  color: #585C60;
+  color: #585c60;
   padding-left: 10px;
   appearance: none;
   min-height: 35px;
   box-sizing: border-box;
   width: 100%; }
   .kit-TextInput__input:focus {
-    border: 2px solid #5C6AC4;
+    border: 2px solid #5c6ac4;
     outline: 0;
     margin-left: -1px; }
   .kit-TextInput__input:disabled {
-    background: #FAFAFA;
-    color: #C4CDD5; }
+    background: #fafafa;
+    color: #c4cdd5; }
   .kit-TextInput__input--shake {
     animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
     transform: translate3d(0, 0, 0);
@@ -24,8 +30,8 @@
     perspective: 1000px; }
   .kit-TextInput__input--error {
     margin-left: -1px;
-    border: 2px solid #E03E30 !important;
-    background: #F9D8D6 !important; }
+    border: 2px solid #e03e30 !important;
+    background: #f9d8d6 !important; }
 
 .kit-TextInput__action {
   display: inline;
@@ -52,11 +58,16 @@
   text-align: left; }
 
 @keyframes shake {
-  10%, 90% {
+  10%,
+  90% {
     transform: translate3d(-1px, 0, 0); }
-  20%, 80% {
+  20%,
+  80% {
     transform: translate3d(2px, 0, 0); }
-  30%, 50%, 70% {
+  30%,
+  50%,
+  70% {
     transform: translate3d(-4px, 0, 0); }
-  40%, 60% {
+  40%,
+  60% {
     transform: translate3d(4px, 0, 0); } }

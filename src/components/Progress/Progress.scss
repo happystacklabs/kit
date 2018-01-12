@@ -1,6 +1,6 @@
 
 .kit-Progress__progressBar {
-  background: rgba(196,205,213,0.40);
+  background: rgba(196, 205, 213, 0.4);
   border-radius: 3px;
   width: 100%;
   height: 15px;
@@ -9,9 +9,9 @@
 .kit-Progress__inside {
   width: 50%;
   height: 15px;
-  background-image: linear-gradient(90deg, #98A6E4 0%, #5F6DC5 100%);
+  background-image: linear-gradient(90deg, #98a6e4 0%, #5f6dc5 100%);
   border-radius: 2px 0 0 2px;
-  animation: animation 1.0s linear infinite alternate;
+  animation: animation 1s linear infinite alternate;
   transition: width 0.18s ease-in-out;
 
   &--max {
@@ -19,9 +19,9 @@
   }
 }
 
-
 .kit-Progress--small {
   height: 8px;
+
   .kit-Progress__inside {
     height: 8px;
   }
@@ -29,6 +29,7 @@
 
 .kit-Progress--medium {
   height: 15px;
+
   .kit-Progress__inside {
     height: 15px;
   }
@@ -36,6 +37,7 @@
 
 .kit-Progress--large {
   height: 25px;
+
   .kit-Progress__inside {
     height: 25px;
   }

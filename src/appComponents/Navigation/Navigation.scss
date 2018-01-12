@@ -1,12 +1,12 @@
 .kit-Navigation__navigationBar {
-  background: #FAFAFA;
+  background: #fafafa;
   width: 250px;
   position: fixed;
   border-radius: 0;
   height: 100%;
   padding: 15px;
   box-sizing: border-box;
-  border-right: 1px solid rgba(196,205,213,0.60);
+  border-right: 1px solid rgba(196, 205, 213, 0.6);
   overflow-y: scroll;
   padding-top: 70px;
 
@@ -30,7 +30,7 @@
   a:active,
   a:focus,
   a:visited {
-    color: #222C35;
+    color: #222c35;
     text-decoration: none;
     width: 100%;
     display: inline-block;
@@ -39,25 +39,26 @@
   }
 
   a:hover span {
-    color: #5C6AC4;
+    color: #5c6ac4;
   }
 
   a:hover {
     margin-left: 10px;
   }
-}
 
-a.kit-Navigation__navigationBar--active {
-  background: #5C6AC4;
-  padding: 8px 0 8px 10px;
-  box-sizing: border-box;
-  border-radius: 3px;
+  &--active {
+    background: #5c6ac4;
+    padding: 8px 0 8px 10px;
+    box-sizing: border-box;
+    border-radius: 3px;
 
-  :hover,
-  span {
-    color: white;
+    span,
+    :hover {
+      color: white;
+    }
   }
 }
+
 
 a.kit-Navigation__navigationBar--active:hover {
   margin-left: 0;

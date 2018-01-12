@@ -3,12 +3,12 @@
   display: inline-block;
   width: 249px;
   position: fixed;
-  background: #FAFAFA;
+  background: #fafafa;
   top: 0;
   left: 0;
   padding: 0 15px;
   box-sizing: border-box;
-  box-shadow: 0 12px 12px -3px #FAFAFA; }
+  box-shadow: 0 12px 12px -3px #fafafa; }
   .kit-Branding__branding a,
   .kit-Branding__branding a:focus,
   .kit-Branding__branding a:hover,
@@ -34,7 +34,6 @@
     display: inline-block;
     padding-top: 16px; }
   .kit-Branding__branding h1 {
-    margin: 0;
     display: inline-block;
     margin: 0 5px 0 10px;
     line-height: 56px; }

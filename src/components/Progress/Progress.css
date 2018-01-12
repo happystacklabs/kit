@@ -7,9 +7,9 @@
 .kit-Progress__inside {
   width: 50%;
   height: 15px;
-  background-image: linear-gradient(90deg, #98A6E4 0%, #5F6DC5 100%);
+  background-image: linear-gradient(90deg, #98a6e4 0%, #5f6dc5 100%);
   border-radius: 2px 0 0 2px;
-  animation: animation 1.0s linear infinite alternate;
+  animation: animation 1s linear infinite alternate;
   transition: width 0.18s ease-in-out; }
   .kit-Progress__inside--max {
     border-radius: 2px; }

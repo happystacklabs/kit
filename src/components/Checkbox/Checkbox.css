@@ -7,28 +7,28 @@
   margin: 0;
   padding: 0;
   float: left; }
-  .kit-Checkbox__input:disabled:after {
-    border: 1px solid #E3E6EA; }
-  .kit-Checkbox__input:checked:disabled:after {
-    background: #FAFAFA; }
+  .kit-Checkbox__input:disabled::after {
+    border: 1px solid #e3e6ea; }
+  .kit-Checkbox__input:checked:disabled::after {
+    background: #fafafa; }
   .kit-Checkbox__input:checked:disabled + .checkmark {
-    color: #E3E6EA; }
+    color: #e3e6ea; }
   .kit-Checkbox__input:checked:disabled + .radioMiddle {
-    background: #E3E6EA; }
-  .kit-Checkbox__input:after {
+    background: #e3e6ea; }
+  .kit-Checkbox__input::after {
     display: inline-block;
     content: '';
     width: 20px;
     height: 20px;
     line-height: 20px;
-    background: #FAFAFA;
-    border: 1px solid #C4CDD5;
+    background: #fafafa;
+    border: 1px solid #c4cdd5;
     box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
     border-radius: 3px;
-    transition: background .2s ease-in-out;
+    transition: background 0.2s ease-in-out;
     box-sizing: border-box; }
-  .kit-Checkbox__input:checked:after {
-    background: #5C6AC4; }
+  .kit-Checkbox__input:checked::after {
+    background: #5c6ac4; }
   .kit-Checkbox__input:checked ~ .kit-Checkbox__checkmark {
     transform: translate(-50%, -50%) scale(1); }
 
@@ -51,7 +51,7 @@
   transform: translate(-50%, -50%) scale(0);
   left: 50%;
   top: 50%;
-  transition: transform .2s ease-in-out; }
+  transition: transform 0.2s ease-in-out; }
 
 .kit-Checkbox__helpText {
   clear: both;
@@ -68,14 +68,14 @@
   transform: translate(-50%, -50%) scale(0);
   left: 50%;
   top: 50%;
-  transition: transform .2s ease-in-out; }
+  transition: transform 0.2s ease-in-out; }
 
-.kit-Checkbox--error .kit-Checkbox__input:after,
-.kit-Checkbox--error .kit-Checkbox__input:checked:after {
-  background: #F9D8D6;
-  border: 2px solid #E03E30; }
+.kit-Checkbox--error .kit-Checkbox__input::after,
+.kit-Checkbox--error .kit-Checkbox__input:checked::after {
+  background: #f9d8d6;
+  border: 2px solid #e03e30; }
 
-.kit-Checkbox__radioInput .kit-Checkbox__input:after {
+.kit-Checkbox__radioInput .kit-Checkbox__input::after {
   border-radius: 20px; }
 
 .kit-Checkbox__radioInput .kit-Checkbox__input:checked ~ .kit-Checkbox__radioMiddle {

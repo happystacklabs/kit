@@ -1,10 +1,16 @@
+/*----------------------------------------------------------------------------*
+ * Color
+ *----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*
+ * Font
+ *----------------------------------------------------------------------------*/
 .kit-Select__input {
-  background: #FFFFFF;
-  border: 1px solid #C4CDD5;
+  background: #fff;
+  border: 1px solid #c4cdd5;
   border-radius: 3px;
-  font-size: 0.875rem;
+  font-size: rem(14px);
   font-weight: 400;
-  color: #585C60;
+  color: #585c60;
   padding-left: 10px;
   appearance: none;
   min-height: 35px;
@@ -13,16 +19,16 @@
   box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
   cursor: pointer; }
   .kit-Select__input:disabled {
-    background: #FAFAFA;
-    color: #C4CDD5; }
+    background: #fafafa;
+    color: #c4cdd5; }
   .kit-Select__input:focus {
-    border: 2px solid #5C6AC4;
+    border: 2px solid #5c6ac4;
     outline: 0;
     margin-left: -1px; }
   .kit-Select__input--error {
     margin-left: -1px;
-    border: 2px solid #E03E30 !important;
-    background: #F9D8D6 !important; }
+    border: 2px solid #e03e30 !important;
+    background: #f9d8d6 !important; }
 
 .kit-Select__wrapper {
   position: relative;

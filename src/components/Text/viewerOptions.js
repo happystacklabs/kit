@@ -22,25 +22,18 @@ const textViewerOptions = [
   },
   {
     name: 'size',
-    value: 'regular',
+    value: 'body',
     type: [
-      'extraSmall',
-      'small',
-      'regular',
-      'medium',
-      'large',
-      'extraLarge',
+      'display-xlarge',
+      'display-large',
+      'display-medium',
+      'display-small',
+      'heading',
+      'sub-heading',
+      'body',
+      'caption',
     ],
     description: 'Change the size of the text',
-  },
-  {
-    name: 'weight',
-    value: 'normal',
-    type: [
-      'normal': 'normalWeight',
-      'bold': 'boldWeight',
-    ],
-    description: 'Change the weight of the text',
   },
   {
     name: 'color',
@@ -48,12 +41,18 @@ const textViewerOptions = [
     type: [
       'white',
       'ink',
-      'inkLight',
+      'ink-light',
       'positive',
       'negative',
-      'purple',
+      'main',
     ],
     description: 'Change the color of the text',
+  },
+  {
+    name: 'bold',
+    value: false,
+    type: 'bool',
+    description: 'Make the text bold',
   },
 ];
 

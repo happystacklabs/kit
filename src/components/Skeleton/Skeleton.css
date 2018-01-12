@@ -4,7 +4,7 @@
   width: 100%;
   height: 8px;
   margin-bottom: 10px;
-  animation: animation 1.0s linear infinite alternate; }
+  animation: animation 1s linear infinite alternate; }
   .kit-Skeleton__line:last-child:not(:first-child) {
     width: 90%; }
 
@@ -14,7 +14,7 @@
   width: 110px;
   height: 30px;
   margin-bottom: 10px;
-  animation: animation 1.0s linear infinite alternate; }
+  animation: animation 1s linear infinite alternate; }
 
 @keyframes animation {
   0% {

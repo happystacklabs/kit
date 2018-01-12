@@ -2,35 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './Text.css';
-import styles from './Text.styles';
 
 
 export const elements = ['span', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 
 
 export const sizes = {
-  extraSmall: styles.extraSmall,
-  small: styles.small,
-  regular: styles.regular,
-  medium: styles.medium,
-  large: styles.large,
-  extraLarge: styles.extraLarge,
-};
-
-
-export const weights = {
-  normal: styles.normalWeight,
-  bold: styles.boldWeight,
+  'display-xlarge': 'kit-text--display-xlarge',
+  'display-large': 'kit-text--display-large',
+  'display-medium': 'kit-text--display-medium',
+  'display-small': 'kit-text--display-small',
+  heading: 'kit-text--heading',
+  'sub-heading': 'kit-text--sub-heading',
+  body: 'kit-text--body',
+  caption: 'kit-text--caption',
 };
 
 
 export const colors = {
-  white: styles.white,
-  ink: styles.ink,
-  inkLight: styles.inkLight,
-  positive: styles.positive,
-  negative: styles.negative,
-  purple: styles.purple,
+  white: 'kit-text--white',
+  ink: 'kit-text--ink',
+  'ink-light': 'kit-text--ink-light',
+  positive: 'kit-text--positive',
+  negative: 'kit-text--negative',
+  main: 'kit-text--main',
 };
 
 
@@ -38,19 +33,19 @@ const propTypes = {
   children: PropTypes.node,
   element: PropTypes.oneOf(elements),
   size: PropTypes.oneOf(Object.keys(sizes)),
-  weight: PropTypes.oneOf(Object.keys(weights)),
   color: PropTypes.oneOf(Object.keys(colors)),
   className: PropTypes.string,
+  bold: PropTypes.bool,
 };
 
 
 const defaultProps = {
   children: undefined,
   element: 'span',
-  size: 'regular',
-  weight: 'normal',
+  size: 'body',
   color: 'ink',
   className: undefined,
+  bold: false,
 };
 
 
@@ -59,15 +54,15 @@ function Text(props) {
 
   const classText = classNames(
     props.className,
-    styles.text,
+    'kit-text',
     sizes[props.size],
-    weights[props.weight],
     colors[props.color],
   );
 
-  return (
-    <Element className={classText}>{props.children}</Element>
-  );
+  return props.bold ?
+    (<Element className={classText}><b>{props.children}</b></Element>)
+    :
+    (<Element className={classText}>{props.children}</Element>);
 }
 
 

@@ -1,30 +1,68 @@
-.kit-Text__text {
-  font-family: -apple-system,BlinkMacSystemFont,San Francisco,Roboto,Segoe UI,Helvetica Neue,sans-serif; }
-  .kit-Text__text--normalWeight {
-    font-weight: 400; }
-  .kit-Text__text--boldWeight {
-    font-weight: 700; }
-  .kit-Text__text--extraSmall {
-    font-size: 0.625rem; }
-  .kit-Text__text--small {
-    font-size: 0.8125rem; }
-  .kit-Text__text--regular {
-    font-size: 1rem; }
-  .kit-Text__text--medium {
-    font-size: 1.25rem; }
-  .kit-Text__text--large {
-    font-size: 1.75rem; }
-  .kit-Text__text--extraLarge {
-    font-size: 2.625rem; }
-  .kit-Text__text--ink {
-    color: #222C35; }
-  .kit-Text__text--inkLight {
-    color: #797D80; }
-  .kit-Text__text--positive {
-    color: #58BE8C; }
-  .kit-Text__text--negative {
-    color: #E03E30; }
-  .kit-Text__text--purple {
-    color: #5C6AC4; }
-  .kit-Text__text--white {
-    color: white; }
+/*----------------------------------------------------------------------------*
+ * Color
+ *----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*
+ * Font
+ *----------------------------------------------------------------------------*/
+.kit-text {
+  font-family: -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Helvetica Neue, sans-serif;
+  color: #222c35; }
+
+.kit-text--display-xlarge {
+  font-size: 42px;
+  line-height: 44px;
+  font-weight: 600; }
+
+.kit-text--display-large {
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: 600; }
+
+.kit-text--display-medium {
+  font-size: 26px;
+  line-height: 32px;
+  font-weight: 400; }
+
+.kit-text--display-small {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400; }
+
+.kit-text--heading {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600; }
+
+.kit-text--sub-heading {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  text-transform: uppercase; }
+
+.kit-text--body {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400; }
+
+.kit-text--caption {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400; }
+
+.kit-text--ink {
+  color: #222c35; }
+
+.kit-text--ink-light {
+  color: #797d80; }
+
+.kit-text--positive {
+  color: #58be8c; }
+
+.kit-text--negative {
+  color: #e03e30; }
+
+.kit-text--main {
+  color: #5c6ac4; }
+
+.kit-text--white {
+  color: #fff; }
