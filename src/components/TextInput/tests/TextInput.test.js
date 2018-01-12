@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import TextInput from '../TextInput';
-import Button from '../../Button/Button';
 
 
 describe('TextInput', () => {
@@ -41,21 +40,21 @@ describe('TextInput', () => {
 
     it('add shake on max lenght', () => {
       const input = shallow(<TextInput name="Foo" value="Foo Bar" maxLength={2} />);
-      expect(input.find('input').hasClass('kit-TextInput__input--shake')).toBe(true);
+      expect(input.find('input').hasClass('kit-textinput__input--shake')).toBe(true);
     });
   });
 
   describe('shake', () => {
     it('add shake style tag', () => {
       const input = shallow(<TextInput name="Foo" shake />);
-      expect(input.find('input').hasClass('kit-TextInput__input--shake')).toBe(true);
+      expect(input.find('input').hasClass('kit-textinput__input--shake')).toBe(true);
     });
   });
 
   describe('error', () => {
     it('add error style tag', () => {
       const input = shallow(<TextInput name="Foo" error="Foo" />);
-      expect(input.find('input').hasClass('kit-TextInput__input--error')).toBe(true);
+      expect(input.find('input').hasClass('kit-textinput__input--error')).toBe(true);
     });
 
     it('show an error message', () => {
@@ -109,15 +108,14 @@ describe('TextInput', () => {
     it('render an action link when given by props', () => {
       const action = { title: 'Bar' };
       const input = mount(<TextInput name="Foo" action={action} />);
-      expect(input.containsMatchingElement(Button)).toBe(true);
-      expect(input.find(Button).text()).toBe('Bar');
+      expect(input.containsMatchingElement('Bar')).toBe(true);
     });
 
     it('call onAction() when cliked', () => {
       const spy = jest.fn();
       const action = { title: 'Bar', onAction: spy };
       const input = mount(<TextInput name="Foo" action={action} />);
-      input.find('button').simulate('click');
+      input.find('.kit-textinput__action').simulate('click');
       expect(spy).toHaveBeenCalled();
     });
   });

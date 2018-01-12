@@ -1,20 +1,20 @@
 const switchViewerOptions = [
   {
     name: 'color',
-    value: 'purple',
+    value: 'main',
     type: [
       'positive',
       'negative',
-      'purple',
+      'main',
     ],
     description: 'Change the color',
   },
   {
     name: 'size',
-    value: 'regular',
+    value: 'medium',
     type: [
-      'slim',
-      'regular',
+      'small',
+      'medium',
       'large',
     ],
     description: 'Change the color',

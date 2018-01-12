@@ -1,24 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
 import './Switch.css';
-import styles from './Switch.styles';
-
-
-const cx = classNames.bind(styles);
 
 
 export const colors = {
-  positive: styles.positive,
-  negative: styles.negative,
-  purple: styles.purple,
+  positive: 'kit-switch--positive',
+  negative: 'kit-switch--negative',
+  main: 'kit-switch--main',
 };
 
 
 export const sizes = {
-  slim: styles.slim,
-  regular: styles.regular,
-  large: styles.large,
+  small: 'kit-switch--small',
+  medium: 'kit-switch--medium',
+  large: 'kit-switch--large',
 };
 
 
@@ -36,8 +32,8 @@ const propTypes = {
 const defaultProps = {
   on: false,
   round: false,
-  color: 'purple',
-  size: 'regular',
+  color: 'main',
+  size: 'medium',
   onClick: undefined,
   name: undefined,
   className: undefined,
@@ -50,37 +46,34 @@ function Switch(props) {
     props.onClick({ value: !props.on, name: props.name });
   }
 
-  const classSwitch = cx(
+  const switchClassName = classNames(
     {
-      on: props.on,
-      round: props.round,
+      'kit-switch--on': props.on,
+      'kit-switch--round': props.round,
     },
-    styles.switch,
+    props.className,
+    'kit-switch',
     sizes[props.size],
     colors[props.color],
   );
 
-  const classToggle = cx(
+  const toggleClassName = classNames(
     {
-      on: props.on,
-      round: props.round,
+      'kit-switch__toggle--on': props.on,
     },
-    styles.toggle,
-    sizes[props.size],
+    'kit-switch__toggle',
   );
 
   return (
-    <div className={props.className}>
-      <div // eslint-disable-line no-static-element-interactions
-        role="switch"
-        tabIndex="0"
-        className={classSwitch}
-        onClick={handleClick}
-        onKeyPress={handleClick}
-        aria-checked={props.on}
-      >
-        <div className={classToggle} />
-      </div>
+    <div // eslint-disable-line no-static-element-interactions
+      role="switch"
+      tabIndex="0"
+      className={switchClassName}
+      onClick={handleClick}
+      onKeyPress={handleClick}
+      aria-checked={props.on}
+    >
+      <div className={toggleClassName} />
     </div>
   );
 }
