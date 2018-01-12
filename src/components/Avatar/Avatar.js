@@ -21,13 +21,12 @@ function renderAvatar(initial, size, source) {
       </div>
     );
   }
-
-  if (source) {
-    return <img className="kit-avatar__image" alt={source} src={source} />;
-  }
-
-  return <div className="kit-avatar__placeholder" />;
+  return source ?
+    <img className="kit-avatar__image" alt={source} src={source} />
+    :
+    <div className="kit-avatar__placeholder" />;
 }
+
 
 const propTypes = {
   source: PropTypes.string,

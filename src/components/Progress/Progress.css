@@ -1,35 +1,33 @@
-.kit-Progress__progressBar {
+.kit-progress {
   background: rgba(196, 205, 213, 0.4);
   border-radius: 3px;
   width: 100%;
   height: 15px; }
 
-.kit-Progress__inside {
+.kit-progress__bar {
   width: 50%;
   height: 15px;
   background-image: linear-gradient(90deg, #98a6e4 0%, #5f6dc5 100%);
   border-radius: 2px 0 0 2px;
-  animation: animation 1s linear infinite alternate;
+  animation: kit-progress-animatio 1s linear infinite alternate;
   transition: width 0.18s ease-in-out; }
-  .kit-Progress__inside--max {
-    border-radius: 2px; }
 
-.kit-Progress--small {
+.kit-progress--small,
+.kit-progress--small .kit-progress__bar {
   height: 8px; }
-  .kit-Progress--small .kit-Progress__inside {
-    height: 8px; }
 
-.kit-Progress--medium {
+.kit-progress--medium,
+.kit-progress--medium .kit-progress__bar {
   height: 15px; }
-  .kit-Progress--medium .kit-Progress__inside {
-    height: 15px; }
 
-.kit-Progress--large {
+.kit-progress--large,
+.kit-progress--large .kit-progress__bar {
   height: 25px; }
-  .kit-Progress--large .kit-Progress__inside {
-    height: 25px; }
 
-@keyframes animation {
+.kit-progress__bar--max {
+  border-radius: 2px; }
+
+@keyframes kit-progress-animation {
   0% {
     opacity: 0.6; }
   100% {
