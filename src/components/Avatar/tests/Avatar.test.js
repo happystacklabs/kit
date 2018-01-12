@@ -12,24 +12,24 @@ describe('Avatar', () => {
 
     it('change the img for a div when empty', () => {
       const avatar = shallow(<Avatar />);
-      expect(avatar.find('div').first().hasClass('kit-Avatar__placeholder')).toBe(true);
+      expect(avatar.find('div').first().hasClass('kit-avatar__placeholder')).toBe(true);
     });
   });
 
   describe('size', () => {
     it('show medium by default', () => {
       const avatar = shallow(<Avatar />);
-      expect(avatar.find('span').first().hasClass('kit-Avatar__avatar--medium')).toBe(true);
+      expect(avatar.find('span').first().hasClass('kit-avatar--medium')).toBe(true);
     });
 
     it('add small class when given by prop', () => {
       const avatar = shallow(<Avatar size="small" />);
-      expect(avatar.find('span').first().hasClass('kit-Avatar__avatar--small')).toBe(true);
+      expect(avatar.find('span').first().hasClass('kit-avatar--small')).toBe(true);
     });
 
     it('add large class when given by prop', () => {
       const avatar = shallow(<Avatar size="large" />);
-      expect(avatar.find('span').first().hasClass('kit-Avatar__avatar--large')).toBe(true);
+      expect(avatar.find('span').first().hasClass('kit-avatar--large')).toBe(true);
     });
   });
 

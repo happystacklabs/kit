@@ -2,14 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './Avatar.css';
-import styles from './Avatar.styles';
 import Text from '../Text/Text';
 
 
 export const sizes = {
-  small: styles.small,
-  medium: styles.medium,
-  large: styles.large,
+  small: 'kit-avatar--small',
+  medium: 'kit-avatar--medium',
+  large: 'kit-avatar--large',
 };
 
 
@@ -17,17 +16,17 @@ function renderAvatar(initial, size, source) {
   if (initial) {
     const initialValue = initial.toUpperCase().substring(0, 2);
     return (
-      <div className={classNames(styles.placeholder, sizes[size])}>
-        <Text weight="bold">{initialValue}</Text>
+      <div className="kit-avatar__placeholder">
+        <Text bold>{initialValue}</Text>
       </div>
     );
   }
 
   if (source) {
-    return <img className={sizes[size]} alt={source} src={source} />;
+    return <img className="kit-avatar__image" alt={source} src={source} />;
   }
 
-  return <div className={classNames(styles.placeholder, sizes[size])} />;
+  return <div className="kit-avatar__placeholder" />;
 }
 
 const propTypes = {
@@ -47,14 +46,14 @@ const defaultProps = {
 
 
 function Avatar(props) {
-  const classAvatar = classNames(
+  const avatarClassName = classNames(
     props.className,
-    styles.avatar,
+    'kit-avatar',
     sizes[props.size],
   );
 
   return (
-    <span className={classAvatar}>
+    <span className={avatarClassName}>
       {renderAvatar(props.initial, props.size, props.source)}
     </span>
   );
