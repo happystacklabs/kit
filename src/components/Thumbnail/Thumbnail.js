@@ -2,25 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './Thumbnail.css';
-import styles from './Thumbnail.styles';
-
-
-function renderThumbnail(source, alt) {
-  if (source) {
-    return (
-      <img src={source} alt={alt} />
-    );
-  }
-  return (
-    <div className={styles.placeholder} />
-  );
-}
 
 
 export const sizes = {
-  small: styles.small,
-  medium: styles.medium,
-  large: styles.large,
+  small: 'kit-thumbnail--small',
+  medium: 'kit-thumbnail--medium',
+  large: 'kit-thumbnail--large',
 };
 
 
@@ -40,15 +27,19 @@ const defaultProps = {
 
 
 function Thumbnail(props) {
-  const classThumbnail = classNames(
+  const thumbnailclassName = classNames(
     props.className,
-    styles.thumbnail,
+    'kit-thumbnail',
     sizes[props.size],
   );
 
-  return (
-    <span className={classThumbnail}>
-      {renderThumbnail(props.source, props.alt)}
+  return props.source ? (
+    <span className={thumbnailclassName}>
+      <img className="kit-thumbnail__image" src={props.source} alt={props.alt} />
+    </span>
+  ) : (
+    <span className={thumbnailclassName}>
+      <div className="kit-thumbnail__placeholder" />
     </span>
   );
 }

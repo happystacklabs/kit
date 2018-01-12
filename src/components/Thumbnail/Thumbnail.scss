@@ -1,27 +1,27 @@
-.kit-Thumbnail__thumbnail img,
+.kit-thumbnail__image,
 .kit-Thumbnail__placeholder {
   border-radius: 3px;
   background: #fafafa;
 }
 
-.kit-Thumbnail__placeholder {
+.kit-thumbnail__placeholder {
   border: 1px solid #c4cdd5;
 }
 
-.kit-Thumbnail--small img,
-.kit-Thumbnail--small .kit-Thumbnail__placeholder {
+.kit-thumbnail--small .kit-thumbnail__image,
+.kit-thumbnail--small .kit-Thumbnail__placeholder {
   width: 40px;
   height: 40px;
 }
 
-.kit-Thumbnail--medium img,
-.kit-Thumbnail--medium .kit-Thumbnail__placeholder {
+.kit-thumbnail--medium .kit-thumbnail__image,
+.kit-thumbnail--medium .kit-Thumbnail__placeholder {
   width: 60px;
   height: 60px;
 }
 
-.kit-Thumbnail--large img,
-.kit-Thumbnail--large .kit-Thumbnail__placeholder {
+.kit-thumbnail--large .kit-thumbnail__image,
+.kit-thumbnail--large .kit-Thumbnail__placeholder {
   width: 80px;
   height: 80px;
 }

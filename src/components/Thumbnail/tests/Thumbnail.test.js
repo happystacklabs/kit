@@ -14,24 +14,24 @@ describe('Thumbnail', () => {
 
     it('change the img for a div when empty', () => {
       const thumbnail = shallow(<Thumbnail alt="Foo" />);
-      expect(thumbnail.find('div').first().hasClass('kit-Thumbnail__placeholder')).toBe(true);
+      expect(thumbnail.find('div').first().hasClass('kit-thumbnail__placeholder')).toBe(true);
     });
   });
 
   describe('size', () => {
     it('show medium by default', () => {
       const thumbnail = shallow(<Thumbnail alt="Foo" />);
-      expect(thumbnail.find('span').first().hasClass('kit-Thumbnail--medium')).toBe(true);
+      expect(thumbnail.find('span').first().hasClass('kit-thumbnail--medium')).toBe(true);
     });
 
     it('add small class when given by prop', () => {
       const thumbnail = shallow(<Thumbnail size="small" alt="Foo" />);
-      expect(thumbnail.find('span').first().hasClass('kit-Thumbnail--small')).toBe(true);
+      expect(thumbnail.find('span').first().hasClass('kit-thumbnail--small')).toBe(true);
     });
 
     it('add large class when given by prop', () => {
       const thumbnail = shallow(<Thumbnail size="large" alt="Foo" />);
-      expect(thumbnail.find('span').first().hasClass('kit-Thumbnail--large')).toBe(true);
+      expect(thumbnail.find('span').first().hasClass('kit-thumbnail--large')).toBe(true);
     });
   });
 
