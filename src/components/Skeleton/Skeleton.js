@@ -1,22 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Skeleton.css';
-import styles from './Skeleton.styles';
 
 
 function renderSkeleton(display, lines) {
-  if (display) {
-    return (<div className={styles.display} />);
-  }
+  if (display) { return (<div className="kit-skeleton__display" />); }
+
   const linesArray = [];
   for (let i = 0; i < lines; i += 1) {
-    linesArray.push(<div className={styles.line} key={i} />);
+    linesArray.push(<div className="kit-skeleton__line" key={i} />);
   }
-  return (
-    <span>
-      {linesArray}
-    </span>
-  );
+
+  return (<span>{linesArray}</span>);
 }
 
 
@@ -36,7 +31,9 @@ const defaultProps = {
 
 function Skeleton(props) {
   return (
-    <div className={props.className}>{renderSkeleton(props.display, props.lines)}</div>
+    <div className={props.className}>
+      {renderSkeleton(props.display, props.lines)}
+    </div>
   );
 }
 
