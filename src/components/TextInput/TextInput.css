@@ -71,3 +71,34 @@
   40%,
   60% {
     transform: translate3d(4px, 0, 0); } }
+
+.kit-textinput {
+  background: #fff;
+  border: 1px solid #5c6ac4;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #222c35;
+  padding-left: 10px;
+  appearance: none;
+  min-height: 35px;
+  box-sizing: border-box;
+  width: 100%; }
+
+.kit-textinput__action {
+  float: right; }
+
+.kit-textinput__label {
+  display: inline-block;
+  margin-bottom: 5px;
+  text-align: left;
+  float: left; }
+
+.kit-textinput__error-message,
+.kit-textinput__help-text {
+  margin-top: 5px;
+  text-align: left; }
+
+.kit-textinput__error-icon {
+  margin-right: 5px;
+  text-align: left; }

@@ -1,14 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
 import './TextInput.css';
-import styles from './TextInput.styles';
 import Text from '../Text/Text';
 import Icon from '../Icon/Icon';
-import Button from '../Button/Button';
-
-
-const cx = classNames.bind(styles);
 
 
 export const type = ['email', 'text', 'number', 'password', 'search', 'url'];
@@ -17,9 +12,9 @@ export const type = ['email', 'text', 'number', 'password', 'search', 'url'];
 function renderError(error) {
   if (!error) { return undefined; }
   return (
-    <div className={styles.errorMessage}>
-      <Icon name="exclamation" color="negative" className={styles.errorIcon} />
-      <Text color="negative" element="span" size="small">{error}</Text>
+    <div className="kit-textinput__error-message">
+      <Icon name="exclamation" color="negative" className="kit-textinput__error-icon" />
+      <Text color="negative" element="span" size="caption">{error}</Text>
     </div>
   );
 }
@@ -28,8 +23,8 @@ function renderError(error) {
 function renderHelpText(helpText) {
   if (!helpText) { return undefined; }
   return (
-    <div className={styles.helpText}>
-      <Text color="inkLight" element="span" size="small">{helpText}</Text>
+    <div className="kit-textinput__help-text">
+      <Text color="ink-light" element="span" size="caption">{helpText}</Text>
     </div>
   );
 }
@@ -38,9 +33,9 @@ function renderHelpText(helpText) {
 function renderLabel(name, labelText) {
   if (!labelText) { return undefined; }
   return (
-    <div className={styles.label}>
+    <div className="kit-textinput__label">
       <label htmlFor={name}>
-        <Text size="regular">{labelText}</Text>
+        <Text size="body">{labelText}</Text>
       </label>
     </div>
   );
@@ -50,13 +45,13 @@ function renderLabel(name, labelText) {
 function renderAction(action) {
   if (!action) { return undefined; }
   return (
-    <Button
-      plain
-      className={styles.action}
+    <Text
+      className="kit-textinput__action"
+      size="body"
       onClick={action.onAction}
     >
       {action.title}
-    </Button>
+    </Text>
   );
 }
 
@@ -108,7 +103,7 @@ function TextInput(props) {
     props.onChange({ name: props.name, value: event.target.value });
   }
 
-  const classInput = cx(
+  const input = classNames(
     {
       shake: props.shake || (props.maxLength && props.value.length >= props.maxLength),
       error: props.error,
