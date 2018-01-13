@@ -12,7 +12,7 @@ export const icons = Object.keys(solid).map(icon => solid[icon].iconName);
 
 export const colors = {
   ink: 'kit-icon--ink',
-  inkLight: 'kit-icon--ink-light',
+  'ink-light': 'kit-icon--ink-light',
   positive: 'kit-icon--positive',
   negative: 'kit-icon--negative',
   main: 'kit-icon--main',

@@ -1,12 +1,15 @@
 @import '../variables';
 
-.kit-Select__input {
+/*----------------------------------------------------------------------------*
+ * select
+ *----------------------------------------------------------------------------*/
+.kit-select {
   background: #fff;
-  border: 1px solid #c4cdd5;
+  border: 1px solid $grey-light;
   border-radius: 3px;
-  font-size: rem(14px);
+  font-size: 14px;
   font-weight: 400;
-  color: #585c60;
+  color: $ink;
   padding-left: 10px;
   appearance: none;
   min-height: 35px;
@@ -14,31 +17,52 @@
   width: 100%;
   box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
   cursor: pointer;
-
-  &:disabled {
-    background: #fafafa;
-    color: #c4cdd5;
-  }
-
-  &:focus {
-    border: 2px solid #5c6ac4;
-    outline: 0;
-    margin-left: -1px;
-  }
-
-  &--error {
-    margin-left: -1px;
-    border: 2px solid #e03e30 !important;
-    background: #f9d8d6 !important;
-  }
 }
 
-.kit-Select__wrapper {
-  position: relative;
-  width: 100%;
+.kit-select:disabled {
+  background: #fafafa;
+  color: #c4cdd5;
+  border: 1px solid $grey-light;
 }
 
-.kit-Select__arrow {
+.kit-select:focus {
+  border: 2px solid $main;
+  outline: 0;
+  margin-left: -1px;
+}
+
+/*----------------------------------------------------------------------------*
+ * error
+ *----------------------------------------------------------------------------*/
+.kit-select--error {
+  margin-left: -1px;
+  border: 1px solid $negative;
+  background: lighten($negative, 35%);
+}
+
+.kit-select--error:focus {
+  border: 2px solid $negative;
+}
+
+/*----------------------------------------------------------------------------*
+ * help-text
+ *----------------------------------------------------------------------------*/
+.kit-select__help-text {
+  margin-top: 5px;
+}
+
+/*----------------------------------------------------------------------------*
+ * label
+ *----------------------------------------------------------------------------*/
+.kit-select__label {
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+/*----------------------------------------------------------------------------*
+ * arrow
+ *----------------------------------------------------------------------------*/
+.kit-select__arrow {
   position: absolute;
   top: 0;
   right: 10px;
@@ -46,11 +70,10 @@
   line-height: 35px;
 }
 
-.kit-Select__helpText {
-  margin-top: 5px;
-}
-
-.kit-Select__label {
-  margin-bottom: 5px;
-  text-align: left;
+/*----------------------------------------------------------------------------*
+ * wrapper
+ *----------------------------------------------------------------------------*/
+.kit-select__wrapper {
+  position: relative;
+  width: 100%;
 }
