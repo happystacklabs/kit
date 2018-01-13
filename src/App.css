@@ -12,5 +12,8 @@ body {
   margin: 0;
   padding: 0; }
 
+html {
+  -webkit-tap-highlight-color: transparent; }
+
 .kit-App__padding {
   padding: 0 15px; }

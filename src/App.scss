@@ -15,6 +15,10 @@ body {
   padding: 0;
 }
 
+html {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
 .kit-App__padding {
   padding: 0 15px;
 }

@@ -1,5 +1,8 @@
 @import '../variables';
 
+/*----------------------------------------------------------------------------*
+ * progress
+ *----------------------------------------------------------------------------*/
 .kit-progress {
   background: rgba(196, 205, 213, 0.4);
   border-radius: 3px;
@@ -7,6 +10,9 @@
   height: 15px;
 }
 
+/*----------------------------------------------------------------------------*
+ * bar
+ *----------------------------------------------------------------------------*/
 .kit-progress__bar {
   width: 50%;
   height: 15px;
@@ -16,25 +22,34 @@
   transition: width 0.18s ease-in-out;
 }
 
+.kit-progress__bar--max {
+  border-radius: 2px;
+}
+
+/*----------------------------------------------------------------------------*
+ * size
+ *----------------------------------------------------------------------------*/
+// small
 .kit-progress--small,
 .kit-progress--small .kit-progress__bar {
   height: 8px;
 }
 
+// medium
 .kit-progress--medium,
 .kit-progress--medium .kit-progress__bar {
   height: 15px;
 }
 
+// large
 .kit-progress--large,
 .kit-progress--large .kit-progress__bar {
   height: 25px;
 }
 
-.kit-progress__bar--max {
-  border-radius: 2px;
-}
-
+/*----------------------------------------------------------------------------*
+ * animation
+ *----------------------------------------------------------------------------*/
 @keyframes kit-progress-animation {
   0% {
     opacity: 0.6;

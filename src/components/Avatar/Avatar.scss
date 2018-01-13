@@ -1,7 +1,13 @@
+/*----------------------------------------------------------------------------*
+ * avatar
+ *----------------------------------------------------------------------------*/
 .kit-avatar {
   display: inline-block;
 }
 
+/*----------------------------------------------------------------------------*
+ * placeholder & image
+ *----------------------------------------------------------------------------*/
 .kit-avatar__placeholder {
   border: 1px solid #c4cdd5;
 }
@@ -13,6 +19,10 @@
   text-align: center;
 }
 
+/*----------------------------------------------------------------------------*
+ * size
+ *----------------------------------------------------------------------------*/
+// small
 .kit-avatar--small .kit-avatar__image,
 .kit-avatar--small .kit-avatar__placeholder {
   width: 32px;
@@ -20,6 +30,7 @@
   line-height: 32px;
 }
 
+// medium
 .kit-avatar--medium .kit-avatar__image,
 .kit-avatar--medium .kit-avatar__placeholder {
   width: 40px;
@@ -27,6 +38,7 @@
   line-height: 40px;
 }
 
+// large
 .kit-avatar--large .kit-avatar__image,
 .kit-avatar--large .kit-avatar__placeholder {
   width: 60px;

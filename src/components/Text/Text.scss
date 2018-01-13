@@ -1,40 +1,52 @@
 @import '../variables';
 
+/*----------------------------------------------------------------------------*
+ * text
+ *----------------------------------------------------------------------------*/
 .kit-text {
   font-family: -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Helvetica Neue, sans-serif;
   color: $ink;
 }
 
+/*----------------------------------------------------------------------------*
+ * size
+ *----------------------------------------------------------------------------*/
+// display xlarge
 .kit-text--display-xlarge {
   font-size: $display-xlarge-size;
   line-height: $display-xlarge-lh;
   font-weight: $semi-bold-weight;
 }
 
+// display large
 .kit-text--display-large {
   font-size: $display-large-size;
   line-height: $display-large-lh;
   font-weight: $semi-bold-weight;
 }
 
+// display medium
 .kit-text--display-medium {
   font-size: $display-medium-size;
   line-height: $display-medium-lh;
   font-weight: $regular-weight;
 }
 
+// display small
 .kit-text--display-small {
   font-size: $display-small-size;
   line-height: $display-small-lh;
   font-weight: $regular-weight;
 }
 
+// heading
 .kit-text--heading {
   font-size: $heading-size;
   line-height: $heading-lh;
   font-weight: $semi-bold-weight;
 }
 
+// sub heading
 .kit-text--sub-heading {
   font-size: $sub-heading-size;
   line-height: $sub-heading-lh;
@@ -42,38 +54,49 @@
   text-transform: uppercase;
 }
 
+// body
 .kit-text--body {
   font-size: $body-size;
   line-height: $body-lh;
   font-weight: $regular-weight;
 }
 
+// caption
 .kit-text--caption {
   font-size: $caption-size;
   line-height: $caption-lh;
   font-weight: $regular-weight;
 }
 
+/*----------------------------------------------------------------------------*
+ * color
+ *----------------------------------------------------------------------------*/
+// ink
 .kit-text--ink {
   color: $ink;
 }
 
+// ink light
 .kit-text--ink-light {
   color: $ink-light;
 }
 
+// positive
 .kit-text--positive {
   color: $positive;
 }
 
+// negative
 .kit-text--negative {
   color: $negative;
 }
 
+// main
 .kit-text--main {
   color: $main;
 }
 
+// white
 .kit-text--white {
   color: $white;
 }

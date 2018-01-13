@@ -1,5 +1,8 @@
 @import '../variables';
 
+/*----------------------------------------------------------------------------*
+ * switch
+ *----------------------------------------------------------------------------*/
 .kit-switch {
   background: #f4f4f4;
   border: 1px solid $grey-light;
@@ -17,6 +20,9 @@
   outline: 0;
 }
 
+/*----------------------------------------------------------------------------*
+ * toggle
+ *----------------------------------------------------------------------------*/
 .kit-switch__toggle {
   background: #fff;
   box-sizing: border-box;
@@ -35,33 +41,60 @@
   background: #f4f4f4;
 }
 
-.kit-switch--on,
-.kit-switch--on.kit-switch--main {
-  background: $main;
+/*----------------------------------------------------------------------------*
+ * size
+ *----------------------------------------------------------------------------*/
+// large
+.kit-switch--large {
+  height: 44px;
+  width: 44px * 2 - 1;
 }
 
-.kit-switch--on.kit-switch--negative {
-  background: $negative;
-}
-
-.kit-switch--on.kit-switch--positive {
-  background: $positive;
-}
-
-.kit-switch__toggle--on {
-  left: 34px;
-}
-
-.kit-switch--round,
-.kit-switch--round .kit-switch__toggle {
-  border-radius: 100px;
-}
-
+// small
 .kit-switch--small {
   height: 28px;
   width: 28px * 2 - 1;
 }
 
+// medium
+.kit-switch--medium {
+  height: 35px;
+  width: 35px * 2 - 1;
+}
+
+/*----------------------------------------------------------------------------*
+ * on
+ *----------------------------------------------------------------------------*/
+// main color
+.kit-switch--on,
+.kit-switch--on.kit-switch--main {
+  background: $main;
+}
+
+// negative color
+.kit-switch--on.kit-switch--negative {
+  background: $negative;
+}
+
+// positive color
+.kit-switch--on.kit-switch--positive {
+  background: $positive;
+}
+
+// toggle
+.kit-switch__toggle--on {
+  left: 34px;
+}
+
+/*----------------------------------------------------------------------------*
+ * round
+ *----------------------------------------------------------------------------*/
+.kit-switch--round,
+.kit-switch--round .kit-switch__toggle {
+  border-radius: 100px;
+}
+
+// small size
 .kit-switch--small .kit-switch__toggle {
   height: 24px;
   width: 24px;
@@ -71,11 +104,7 @@
   left: 27px;
 }
 
-.kit-switch--medium {
-  height: 35px;
-  width: 35px * 2 - 1;
-}
-
+// medium size
 .kit-switch--medium .kit-switch__toggle {
   height: 31px;
   width: 31px;
@@ -85,11 +114,7 @@
   left: 34px;
 }
 
-.kit-switch--large {
-  height: 44px;
-  width: 44px * 2 - 1;
-}
-
+// large size
 .kit-switch--large .kit-switch__toggle {
   height: 40px;
   width: 40px;

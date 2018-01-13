@@ -7,6 +7,9 @@
 /*----------------------------------------------------------------------------*
  * Size
  *----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*
+ * switch
+ *----------------------------------------------------------------------------*/
 .kit-switch {
   background: #f4f4f4;
   border: 1px solid #c4cdd5;
@@ -22,6 +25,9 @@
 .kit-switch:focus {
   outline: 0; }
 
+/*----------------------------------------------------------------------------*
+ * toggle
+ *----------------------------------------------------------------------------*/
 .kit-switch__toggle {
   background: #fff;
   box-sizing: border-box;
@@ -38,6 +44,24 @@
 .kit-switch__toggle:hover {
   background: #f4f4f4; }
 
+/*----------------------------------------------------------------------------*
+ * size
+ *----------------------------------------------------------------------------*/
+.kit-switch--large {
+  height: 44px;
+  width: 87px; }
+
+.kit-switch--small {
+  height: 28px;
+  width: 55px; }
+
+.kit-switch--medium {
+  height: 35px;
+  width: 69px; }
+
+/*----------------------------------------------------------------------------*
+ * on
+ *----------------------------------------------------------------------------*/
 .kit-switch--on,
 .kit-switch--on.kit-switch--main {
   background: #5c6ac4; }
@@ -51,13 +75,12 @@
 .kit-switch__toggle--on {
   left: 34px; }
 
+/*----------------------------------------------------------------------------*
+ * round
+ *----------------------------------------------------------------------------*/
 .kit-switch--round,
 .kit-switch--round .kit-switch__toggle {
   border-radius: 100px; }
-
-.kit-switch--small {
-  height: 28px;
-  width: 55px; }
 
 .kit-switch--small .kit-switch__toggle {
   height: 24px;
@@ -66,20 +89,12 @@
 .kit-switch--small .kit-switch__toggle--on {
   left: 27px; }
 
-.kit-switch--medium {
-  height: 35px;
-  width: 69px; }
-
 .kit-switch--medium .kit-switch__toggle {
   height: 31px;
   width: 31px; }
 
 .kit-switch--medium .kit-switch__toggle--on {
   left: 34px; }
-
-.kit-switch--large {
-  height: 44px;
-  width: 87px; }
 
 .kit-switch--large .kit-switch__toggle {
   height: 40px;
