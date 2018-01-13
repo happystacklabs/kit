@@ -1,39 +1,34 @@
 import React from 'react';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import './Button.css';
-import styles from './Button.styles';
 import Spinner from '../Spinner/Spinner';
 
 
-const cx = classNames.bind(styles);
-
-
 const sizes = {
-  slim: styles.slim,
-  regular: styles.regular,
-  large: styles.large,
+  small: 'kit-button--small',
+  medium: 'kit-button--medium',
+  large: 'kit-button--large',
 };
 
 
 const colors = {
-  positive: styles.positive,
-  negative: styles.negative,
-  purple: styles.purple,
+  positive: 'kit-button--positive',
+  negative: 'kit-button--negative',
+  main: 'kit-button--main',
+  default: 'kit-button--default',
 };
 
 
-function renderContent(propSize, loading, children) {
+function renderContent(propSize, loading, plain, children) {
   if (loading) {
     const size = propSize === 'large' ? 'medium' : 'small';
-    const type = propSize === 'slim' ? 'loader2' : 'loader1';
-
+    let type = propSize === 'small' ? 'loader2' : 'loader1';
+    type = plain ? 'loader2' : type;
     return (
-      <div className={styles.loading}>
-        <span className={styles.spinner}>
-          <Spinner color="inkLight" size={size} type={type} />
-        </span>
-        <span className={styles.hidden}>{children}</span>
+      <div className="kit-button__loading-container">
+        <Spinner className="kit-button__spinner" color="ink-light" size={size} type={type} />
+        <span className="kit-button__content--hidden">{children}</span>
       </div>
     );
   }
@@ -61,8 +56,8 @@ const propTypes = {
 const defaultProps = {
   children: undefined,
   disabled: false,
-  size: 'regular',
-  color: undefined,
+  size: 'medium',
+  color: 'default',
   square: false,
   fullWidth: false,
   plain: false,
@@ -74,16 +69,17 @@ const defaultProps = {
 
 
 function Button(props) {
-  const classButton = cx(
+  const buttonClassNames = classNames(
     {
-      loading: props.loading,
-      outline: props.outline,
-      plain: props.plain,
-      fullWidth: props.fullWidth,
-      square: props.square,
+      'kit-button--loading kit-button--disabled': props.loading ,
+      'kit-button--outline': props.outline,
+      'kit-button--plain': props.plain,
+      'kit-button--full-width': props.fullWidth,
+      'kit-button--square': props.square,
+      'kit-button--disabled': props.disabled,
     },
     props.className,
-    styles.button,
+    'kit-button',
     colors[props.color],
     sizes[props.size],
   );
@@ -94,9 +90,9 @@ function Button(props) {
     <button
       onClick={props.onClick}
       disabled={disabled}
-      className={classButton}
+      className={buttonClassNames}
     >
-      {renderContent(props.size, props.loading, props.children)}
+      {renderContent(props.size, props.loading, props.plain, props.children)}
     </button>
   );
 }

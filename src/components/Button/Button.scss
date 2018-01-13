@@ -1,183 +1,383 @@
 @import '../variables';
 
-.kit-Button__button {
-  background: #fafafa;
-  border: 1px solid #c4cdd5;
+/*----------------------------------------------------------------------------*
+ * button
+ *----------------------------------------------------------------------------*/
+.kit-button {
   box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
   border-radius: 3px;
-  color: #585c60;
   padding: 2px 20px 3px;
-  font-size: rem(14px);
+  font-size: 15px;
   appearance: none;
-  transition-property: background, border, box-shadow;
-  transition-duration: 0.2s;
+  transition: box-shadow 0.2s;
   cursor: pointer;
+}
 
-  &:hover {
-    background: #f4f4f4;
-  }
+.kit-button:focus {
+  outline: 0;
+}
 
-  &:active {
-    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04), inset 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-  }
+.kit-button:active {
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+}
 
-  &:focus {
-    outline: 0;
-  }
+/*----------------------------------------------------------------------------*
+ * size
+ *----------------------------------------------------------------------------*/
+.kit-button--large {
+  min-height: $button-size-large;
+  min-width: $button-size-large;
+}
 
-  &:disabled {
-    color: #c4cdd5;
-    border: 1px solid #c4cdd5;
-    background: #fafafa;
+.kit-button--medium {
+  min-height: $button-size-medium;
+  min-width: $button-size-medium;
+}
 
-    i {
-      color: #c4cdd5;
-    }
+.kit-button--small {
+  min-height: $button-size-small;
+  min-width: $button-size-small;
+}
 
-    &:active {
-      box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
-    }
+/*----------------------------------------------------------------------------*
+ * square
+ *----------------------------------------------------------------------------*/
+.kit-button--square {
+  padding: 2px 0 3px;
+}
 
-    &:hover {
-      background: #fafafa;
-    }
-  }
+/*----------------------------------------------------------------------------*
+ * full-width
+ *----------------------------------------------------------------------------*/
+.kit-button--full-width {
+  width: 100%;
+}
 
-  &--slim {
-    min-height: 28px;
-    min-width: 28px;
+/*----------------------------------------------------------------------------*
+ * color
+ *----------------------------------------------------------------------------*/
+ .kit-button--default {
+   color: $ink;
+   background: #fafafa;
+   border: 1px solid $grey-light;
+ }
 
-    .kit-Button__button--spinner {
-      margin-top: rem(-5px);
-      margin-left: rem(-2px);
-    }
-  }
+.kit-button--main {
+  color: white;
+  background: $main;
+  border: 1px solid darken($main, 15%);
+}
 
-  &--regular {
-    min-height: 35px;
-    min-width: 35px;
+.kit-button--negative {
+  color: white;
+  background: $negative;
+  border: 1px solid darken($negative, 15%);
+}
 
-    .kit-Button__button--spinner {
-      margin-top: 0;
-      margin-left: rem(-3px) / 2;
-    }
-  }
+.kit-button--positive {
+  color: white;
+  background: $positive;
+  border: 1px solid darken($positive, 15%);
+}
 
-  &--large {
-    min-height: 44px;
-    min-width: 44px;
-    font-size: rem(16px);
+/*----------------------------------------------------------------------------*
+ * hover
+ *----------------------------------------------------------------------------*/
+.kit-button--default:hover {
+  background: linear-gradient(0deg, darken(#fafafa, 5%) 0%, lighten(#fafafa, 3%) 100%);
+}
 
-    .kit-Button__button--spinner {
-      margin-top: 0;
-      margin-left: rem(-3px) / 2;
-    }
-  }
+.kit-button--main:hover {
+  background: linear-gradient(0deg, darken($main, 5%) 0%, lighten($main, 3%) 100%);
+}
 
-  &--square {
-    padding: 2px 0 3px;
-  }
+.kit-button--positive:hover {
+  background: linear-gradient(0deg, darken($positive, 5%) 0%, lighten($positive, 3%) 100%);
+}
 
-  &--fullWidth {
-    width: 100%;
-  }
+.kit-button--negative:hover {
+  background: linear-gradient(0deg, darken($negative, 5%) 0%, lighten($negative, 3%) 100%);
+}
 
-  &--outline {
-    background: none;
-  }
+/*----------------------------------------------------------------------------*
+ * active
+ *----------------------------------------------------------------------------*/
+.kit-button--main:active,
+.kit-button--negative:active,
+.kit-button--positive:active {
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+}
 
-  &--loading {
-    position: relative;
-    margin-top: -3px;
-    height: 1em;
-  }
+/*----------------------------------------------------------------------------*
+ * disabled
+ *----------------------------------------------------------------------------*/
+.kit-button--disabled,
+.kit-button--disabled:active,
+.kit-button--disabled:hover,
+.kit-button--default.kit-button--disabled,
+.kit-button--default.kit-button--disabled:active,
+.kit-button--default.kit-button--disabled:hover {
+  color: $grey-light;
+  border: 1px solid $grey-light;
+  background: #fafafa;
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
+}
 
-  &--spinner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    color: #c4cdd5;
-  }
+.kit-button--main.kit-button--disabled,
+.kit-button--main.kit-button--disabled:active,
+.kit-button--main.kit-button--disabled:hover {
+  color: $white;
+  background: lighten($main, 15%);
+  border: 1px solid lighten($main, 10%);
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
+}
 
-  &--hidden {
-    color: transparent;
-  }
+.kit-button--negative.kit-button--disabled,
+.kit-button--negative.kit-button--disabled:active,
+.kit-button--negative.kit-button--disabled:hover {
+  color: $white;
+  background: lighten($negative, 15%);
+  border: 1px solid lighten($negative, 10%);
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
+}
 
-  &--plain {
-    background: none;
-    border: none;
-    box-shadow: none;
-    color: #5f6dc5;
-    padding: 3px 8px;
-    transition-property: color;
-    transition-duration: 0.2s;
+.kit-button--positive.kit-button--disabled,
+.kit-button--positive.kit-button--disabled:active,
+.kit-button--positive.kit-button--disabled:hover {
+  color: $white;
+  background: lighten($positive, 15%);
+  border: 1px solid lighten($positive, 10%);
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
+}
 
-    &:hover {
-      background: none;
-      color: #404eae;
-    }
+/*----------------------------------------------------------------------------*
+ * loading
+ *----------------------------------------------------------------------------*/
+ .kit-button__content--hidden {
+   color: transparent;
+ }
 
-    &:active {
-      box-shadow: none;
+.kit-button__loading-container {
+  position: relative;
+}
 
-      span {
-        background: #fafafa;
-        border-radius: 3px;
-      }
-    }
+.kit-button__spinner {
+  position: absolute !important;
+  left: 50%;
+  height: 50%;
+}
 
-    &:disabled,
-    &:disabled:hover {
-      background: none;
-      border: none;
-      color: #c4cdd5;
-      box-shadow: none;
-    }
+.kit-button--large .kit-button__spinner {
+  margin: 7px 0 0 -1px;
+}
 
-    span {
-      padding: 3px 8px;
-    }
-  }
+.kit-button--medium .kit-button__spinner {
+  margin: 9px 0 0 -1px;
+}
 
-  &--purple {
-    color: white;
-    background: #5f6dc5;
-    border: 1px solid #404eae;
+.kit-button--small .kit-button__spinner {
+  margin: 2px 0 0 -2px;
+}
 
-    i {
-      color: white;
-    }
+/*----------------------------------------------------------------------------*
+ * plain
+ *----------------------------------------------------------------------------*/
+.kit-button--plain {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 3px 8px;
+  min-width: inherit;
+  min-height: inherit;
+}
 
-    &:hover {
-      background: #5561b0;
-    }
-  }
+.kit-button--plain
+.kit-button--plain.kit-button--default {
+  color: #585c60;
+}
 
-  &--negative {
-    color: white;
-    background: #e03e30;
-    border: 1px solid #bf2a1e;
+.kit-button--plain.kit-button--main {
+  color: $main;
+}
 
-    i {
-      color: white;
-    }
+.kit-button--plain.kit-button--negative {
+  color: $negative;
+}
 
-    &:hover {
-      background: #c9372b;
-    }
-  }
+.kit-button--plain.kit-button--positive {
+  color: $positive;
+}
 
-  &--positive {
-    color: white;
-    background: #58be8c;
-    border: 1px solid #3fa372;
+.kit-button--plain:hover {
+  background: none;
+}
 
-    i {
-      color: white;
-    }
+.kit-button--plain:active {
+  box-shadow: none;
+}
 
-    &:hover {
-      background: #4faa7d;
-    }
-  }
+.kit-button--plain:hover,
+.kit-button--plain.kit-button--default:hover {
+  color: lighten(#585c60, 15%);
+}
+
+.kit-button--plain:active,
+.kit-button--plain.kit-button--default:active {
+  color: darken(#585c60, 15%);
+}
+
+.kit-button--plain.kit-button--main:hover {
+  color: lighten($main, 15%);
+}
+
+.kit-button--plain.kit-button--main:active, {
+  color: darken($main, 15%);
+}
+
+.kit-button--plain.kit-button--negative:hover {
+  color: lighten($negative, 15%);
+}
+
+.kit-button--plain.kit-button--negative:active, {
+  color: darken($negative, 15%);
+}
+
+.kit-button--plain.kit-button--positive:hover {
+  color: lighten($positive, 15%);
+}
+
+.kit-button--plain.kit-button--positive:active, {
+  color: darken($positive, 15%);
+}
+
+.kit-button--plain.kit-button--loading {
+  background: none;
+  box-shadow: none;
+  border: none;
+}
+
+.kit-button--plain .kit-button__spinner {
+  font-size: 2px;
+  color: $grey-light;
+  margin: 3px 0;
+}
+
+.kit-button--plain.kit-button--disabled,
+.kit-button--plain.kit-button--disabled:hover,
+.kit-button--plain.kit-button--disabled:active {
+  color: $grey-light;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.kit-button--plain.kit-button--main.kit-button--disabled {
+  color: lighten($main, 15%);
+}
+
+.kit-button--plain.kit-button--negative.kit-button--disabled {
+  color: lighten($negative, 15%);
+}
+
+.kit-button--plain.kit-button--positive.kit-button--disabled {
+  color: lighten($positive, 15%);
+}
+
+/*----------------------------------------------------------------------------*
+ * outline
+ *----------------------------------------------------------------------------*/
+.kit-button--outline.kit-button--default {
+  color: lighten($ink, 15%);
+  border: 1px solid lighten($ink, 15%);
+}
+
+.kit-button--outline,
+.kit-button--outline:hover,
+.kit-button--outline:active {
+  background: none;
+  box-shadow: none;
+}
+
+.kit-button--outline:hover,
+.kit-button--outline.kit-button--default:hover {
+  color: lighten($ink, 40%);
+  border: 1px solid lighten($ink, 40%);
+}
+
+.kit-button--outline:active,
+.kit-button--outline.kit-button--default:active {
+  color: $ink;
+  border: 1px solid $ink;
+}
+
+// main color
+.kit-button--outline.kit-button--main {
+  color: $main;
+}
+
+.kit-button--outline.kit-button--main:hover {
+  color: lighten($main, 15%);
+  border: 1px solid lighten($main, 15%);
+}
+
+.kit-button--outline.kit-button--main:active {
+  color: darken($main, 15%);
+  border: 1px solid darken($main, 15%);
+}
+
+// negative color
+.kit-button--outline.kit-button--negative {
+  color: $negative;
+  border: 1px solid $negative;
+}
+
+.kit-button--outline.kit-button--negative:hover {
+  color: lighten($negative, 15%);
+  border: 1px solid lighten($negative, 15%);
+}
+
+.kit-button--outline.kit-button--negative:active {
+  color: darken($negative, 15%);
+  border: 1px solid darken($negative, 15%);
+}
+
+// positive color
+.kit-button--outline.kit-button--positive {
+  color: $positive;
+  border: 1px solid $positive;
+}
+
+.kit-button--outline.kit-button--positive:hover {
+  color: lighten($positive, 15%);
+  border: 1px solid lighten($positive, 15%);
+}
+
+.kit-button--outline.kit-button--positive:active {
+  color: darken($positive, 15%);
+  border: 1px solid darken($positive, 15%);
+}
+
+// disabled
+.kit-button--outline.kit-button--disabled,
+.kit-button--outline.kit-button--disabled:hover,
+.kit-button--outline.kit-button--disabled:active {
+  color: $grey-light;
+  background: none;
+  border: 1px solid $grey-light;
+  box-shadow: none;
+}
+
+.kit-button--outline.kit-button--main.kit-button--disabled {
+  color: lighten($main, 15%);
+  border: 1px solid lighten($main, 15%);
+}
+
+.kit-button--outline.kit-button--negative.kit-button--disabled {
+  color: lighten($negative, 15%);
+  border: 1px solid lighten($negative, 15%);
+}
+
+.kit-button--outline.kit-button--positive.kit-button--disabled {
+  color: lighten($positive, 15%);
+  border: 1px solid lighten($positive, 15%);
 }

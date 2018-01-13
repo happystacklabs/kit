@@ -60,6 +60,7 @@
 
 .kit-textinput__input:focus {
   border: 2px solid $main;
+  outline: 0;
 }
 
 .kit-textinput__input:disabled {

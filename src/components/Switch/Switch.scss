@@ -13,6 +13,10 @@
   box-sizing: border-box;
 }
 
+.kit-switch:focus {
+  outline: 0;
+}
+
 .kit-switch__toggle {
   background: #fff;
   box-sizing: border-box;
