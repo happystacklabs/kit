@@ -1,24 +1,26 @@
-.kit-ButtonGroup__buttonGroup {
-  button {
-    margin-right: 10px;
-  }
+/*----------------------------------------------------------------------------*
+ * button
+ *----------------------------------------------------------------------------*/
+.kit-button-group .kit-button {
+  margin-right: 10px;
+}
 
-  &--segmented {
-    button {
-      margin: 0;
-      border-radius: 0;
-    }
+/*----------------------------------------------------------------------------*
+ * segmented
+ *----------------------------------------------------------------------------*/
+.kit-button-group--segmented .kit-button {
+  margin: 0;
+  border-radius: 0;
+}
 
-    button:first-child {
-      border-radius: 3px 0 0 3px;
-    }
+.kit-button-group--segmented .kit-button:first-child {
+  border-radius: 3px 0 0 3px;
+}
 
-    button:last-child {
-      border-radius: 0 3px 3px 0;
-    }
+.kit-button-group--segmented .kit-button:last-child {
+  border-radius: 0 3px 3px 0;
+}
 
-    button:not(:first-child) {
-      margin-left: -1px;
-    }
-  }
+.kit-button-group--segmented .kit-button:not(:first-child) {
+  margin-left: -1px;
 }

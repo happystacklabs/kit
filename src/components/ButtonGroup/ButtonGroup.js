@@ -1,11 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
 import './ButtonGroup.css';
-import styles from './ButtonGroup.styles';
-
-
-const cx = classNames.bind(styles);
 
 
 const propTypes = {
@@ -23,16 +19,14 @@ const defaultProps = {
 
 
 function ButtonGroup(props) {
-  const classButtonGroup = cx(
-    {
-      segmented: props.segmented,
-    },
+  const buttonGroupClassName = classNames(
+    { 'kit-button-group--segmented': props.segmented },
+    'kit-button-group',
     props.className,
-    styles.buttonGroup,
   );
 
   return (
-    <div className={classButtonGroup}>
+    <div className={buttonGroupClassName}>
       {props.children}
     </div>
   );
