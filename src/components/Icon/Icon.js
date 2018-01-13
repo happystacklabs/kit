@@ -1,71 +1,35 @@
 import React from 'react';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import 'font-awesome/css/font-awesome.min.css';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import solid from '@fortawesome/fontawesome-free-solid';
+import '@fortawesome/fontawesome-free-regular';
 import './Icon.css';
-import styles from './Icon.styles';
 
 
-const cx = classNames.bind(styles);
-
-
-export const names = {
-  plus: 'fa-plus',
-  exclamation: 'fa-exclamation',
-  'exclamation-triangle': 'fa-exclamation-triangle',
-  'arrow-down': 'fa-arrow-down',
-  'arrow-left': 'fa-arrow-left',
-  'arrow-right': 'fa-arrow-right',
-  'arrow-up': 'fa-arrow-up',
-  sort: 'fa-sort',
-  calendar: 'fa-calendar',
-  times: 'fa-times',
-  'caret-down': 'fa-caret-down',
-  'caret-up': 'fa-caret-up',
-  check: 'fa-check',
-  'chevron-down': 'fa-chevron-down',
-  'chevron-left': 'fa-chevron-left',
-  'chevron-right': 'fa-chevron-right',
-  'chevron-up': 'fa-chevron-up',
-  'times-circle': 'fa-times-circle',
-  'chevron-circle-down': 'fa-chevron-circle-down',
-  'chevron-circle-left': 'fa-chevron-circle-left',
-  'chevron-circle-right': 'fa-chevron-circle-right',
-  'chevron-circle-up': 'fa-chevron-circle-up',
-  'plus-circle': 'fa-plus-circle',
-  commenting: 'fa-commenting',
-  trash: 'fa-trash',
-  ban: 'fa-ban',
-  clone: 'fa-clone',
-  code: 'fa-code',
-  download: 'fa-download',
-  upload: 'fa-upload',
-  'external-link': 'fa-external-link',
-  'question-circle': 'fa-question-circle',
-  'ellipsis-h': 'fa-ellipsis-h',
-  'file-text': 'fa-file-text',
-  print: 'fa-print',
-  retweet: 'fa-retweet',
-  search: 'fa-search',
-  minus: 'fa-minus',
-  eye: 'fa-eye',
-  'angle-down': 'fa-angle-down',
-};
+export const icons = Object.keys(solid).map(icon => solid[icon].iconName);
 
 
 export const colors = {
-  ink: styles.ink,
-  inkLight: styles.inkLight,
-  positive: styles.positive,
-  negative: styles.negative,
-  purple: styles.purple,
-  white: styles.white,
+  ink: 'kit-icon--ink',
+  inkLight: 'kit-icon--ink-light',
+  positive: 'kit-icon--positive',
+  negative: 'kit-icon--negative',
+  main: 'kit-icon--main',
+  white: 'kit-icon--white',
 };
 
 
+export const sizes = ['xs', 'sm', 'lg', '2x', '3x', '5x', '7x', '10x'];
+
+
 const propTypes = {
-  name: PropTypes.oneOf(Object.keys(names)),
+  name: PropTypes.oneOf(icons),
   color: PropTypes.oneOf(Object.keys(colors)),
+  size: PropTypes.oneOf(sizes),
+  regular: PropTypes.bool,
+  spin: PropTypes.bool,
+  fixedWidth: PropTypes.bool,
   className: PropTypes.string,
 };
 
@@ -73,20 +37,30 @@ const propTypes = {
 const defaultProps = {
   name: undefined,
   color: 'ink',
+  size: 'sm',
+  regular: false,
+  spin: false,
+  fixedWidth: false,
   className: undefined,
 };
 
 
 function Icon(props) {
-  const classIcon = cx(
+  const iconClassName = classNames(
     props.className,
-    'fa',
-    names[props.name],
     colors[props.color],
   );
 
+  const iconType = props.regular ? 'far' : 'fas';
+
   return (
-    <i className={classIcon} aria-hidden="true" />
+    <FontAwesomeIcon
+      className={iconClassName}
+      icon={[iconType, props.name]}
+      spin={props.spin}
+      size={props.size}
+      fixedWidth={props.fixedWidth}
+    />
   );
 }
 

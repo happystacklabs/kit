@@ -1,23 +1,29 @@
-i.kit-Icon--ink {
-  color: #222c35;
+@import '../variables';
+
+/*----------------------------------------------------------------------------*
+ * color
+ *----------------------------------------------------------------------------*/
+
+.kit-icon--ink {
+  color: #$ink;
 }
 
-i.kit-Icon--inkLight {
-  color: #797d80;
+.kit-icon--ink-light {
+  color: $ink-light;
 }
 
-i.kit-Icon--positive {
-  color: #58be8c;
+.kit-icon--positive {
+  color: #$positive;
 }
 
-i.kit-Icon--negative {
-  color: #e03e30;
+.kit-icon--negative {
+  color: #$negative;
 }
 
-i.kit-Icon--purple {
-  color: #5c6ac4;
+.kit-icon--main {
+  color: #$main;
 }
 
-i.kit-Icon--white {
-  color: white;
+.kit-icon--white {
+  color: $white;
 }
