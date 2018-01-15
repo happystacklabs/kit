@@ -1,23 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
 import './Checkbox.css';
-import styles from './Checkbox.styles';
-import Icon from '../Icon/Icon';
 import Text from '../Text/Text';
-
-
-const cx = classNames.bind(styles);
 
 
 export const types = ['checkbox', 'radio'];
 
 
-function renderLabel(name, labelText) {
-  if (!labelText) { return undefined; }
+function renderLabel(id, labelText) {
   return (
-    <label htmlFor={name} className={styles.label}>
-      <Text size="regular">{ labelText }</Text>
+    <label htmlFor={id} className="kit-checkbox__label">
+      <Text size="body">{ labelText }</Text>
     </label>
   );
 }
@@ -26,18 +20,10 @@ function renderLabel(name, labelText) {
 function renderHelpText(helpText) {
   if (!helpText) { return undefined; }
   return (
-    <div className={styles.helpText}>
-      <Text color="inkLight" element="span" size="small">{ helpText }</Text>
+    <div className="kit-checkbox__help-text">
+      <Text color="ink-light" element="span" size="caption">{ helpText }</Text>
     </div>
   );
-}
-
-
-function renderCheckmark(type) {
-  if (type === 'checkbox') {
-    return (<Icon name="check" color="white" className={styles.checkmark} />);
-  }
-  return (<div className={styles.radioMiddle} />);
 }
 
 
@@ -76,31 +62,28 @@ function Checkbox(props) {
     props.onChange({ value: !props.checked, id: props.id });
   }
 
-  const classes = cx(
+  const checkboxClassName = classNames(
     {
-      radioInput: props.type === 'radio',
-      error: props.error,
-      checked: props.checked,
+      'kit-checkbox--radio': props.type === 'radio',
+      'kit-checkbox--error': props.error,
     },
-    styles.innerWrapper,
+    props.className,
+    'kit-checkbox',
   );
 
   return (
-    <div className={classNames(props.className, styles.wrapper)}>
+    <div className={checkboxClassName}>
+      <input
+        name={props.name}
+        type={props.type}
+        id={props.id}
+        value={props.value}
+        checked={props.checked}
+        onChange={handleChange}
+        disabled={props.disabled}
+        className="kit-checkbox__input"
+      />
       {renderLabel(props.id, props.label)}
-      <div className={classes}>
-        <input
-          name={props.name}
-          type={props.type}
-          id={props.id}
-          value={props.value}
-          checked={props.checked}
-          onChange={handleChange}
-          disabled={props.disabled}
-          className={styles.input}
-        />
-        {renderCheckmark(props.type)}
-      </div>
       {renderHelpText(props.helpText)}
     </div>
   );

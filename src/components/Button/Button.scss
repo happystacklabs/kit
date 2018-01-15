@@ -119,6 +119,7 @@
 /*----------------------------------------------------------------------------*
  * disabled
  *----------------------------------------------------------------------------*/
+// default color
 .kit-button--disabled,
 .kit-button--disabled:active,
 .kit-button--disabled:hover,
@@ -131,6 +132,7 @@
   box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
 }
 
+// main color
 .kit-button--main.kit-button--disabled,
 .kit-button--main.kit-button--disabled:active,
 .kit-button--main.kit-button--disabled:hover {
@@ -140,6 +142,7 @@
   box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
 }
 
+// negative color
 .kit-button--negative.kit-button--disabled,
 .kit-button--negative.kit-button--disabled:active,
 .kit-button--negative.kit-button--disabled:hover {
@@ -149,6 +152,7 @@
   box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
 }
 
+// positive color
 .kit-button--positive.kit-button--disabled,
 .kit-button--positive.kit-button--disabled:active,
 .kit-button--positive.kit-button--disabled:hover {

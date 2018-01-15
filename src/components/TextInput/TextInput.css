@@ -17,7 +17,7 @@
   font-size: 14px;
   font-weight: 400;
   color: #222c35;
-  padding-left: 10px;
+  padding: 0 2px 0 10px;
   appearance: none;
   min-height: 35px;
   box-sizing: border-box;
@@ -25,7 +25,8 @@
 
 .kit-textinput__input:focus {
   border: 2px solid #5c6ac4;
-  outline: 0; }
+  outline: 0;
+  padding: 0 1px 0 9px; }
 
 .kit-textinput__input:disabled {
   background: #fafafa;
@@ -84,8 +85,7 @@
  *----------------------------------------------------------------------------*/
 .kit-textinput__input:focus,
 .kit-textinput__input--error:focus {
-  outline: 0;
-  margin-left: -1px; }
+  outline: 0; }
 
 .kit-textinput__error-message,
 .kit-textinput__help-text {

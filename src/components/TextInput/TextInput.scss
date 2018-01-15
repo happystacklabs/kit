@@ -10,7 +10,7 @@
   font-size: 14px;
   font-weight: $regular-weight;
   color: $ink;
-  padding-left: 10px;
+  padding: 0 2px 0 10px;
   appearance: none;
   min-height: 35px;
   box-sizing: border-box;
@@ -20,6 +20,7 @@
 .kit-textinput__input:focus {
   border: 2px solid $main;
   outline: 0;
+  padding: 0 1px 0 9px;
 }
 
 .kit-textinput__input:disabled {
@@ -89,7 +90,6 @@
 .kit-textinput__input:focus,
 .kit-textinput__input--error:focus {
   outline: 0;
-  margin-left: -1px;
 }
 
 .kit-textinput__error-message,

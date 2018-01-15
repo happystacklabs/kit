@@ -6,6 +6,12 @@ const checkboxViewerOptions = [
     description: 'Name of the checkbox',
   },
   {
+    value: 'emailNotification',
+    name: 'id',
+    type: 'string',
+    description: 'Id of the checkbox',
+  },
+  {
     value: '',
     name: 'label',
     type: 'string',

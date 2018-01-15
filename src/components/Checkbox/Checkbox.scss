@@ -1,106 +1,172 @@
-.kit-Checkbox__wrapper {
-  min-height: 20px;
+@import '../variables';
+
+/*----------------------------------------------------------------------------*
+ * input
+ *----------------------------------------------------------------------------*/
+.kit-checkbox__input {
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
 }
 
-.kit-Checkbox__input {
-  appearance: none;
-  outline: 0;
-  margin: 0;
-  padding: 0;
-  float: left;
+/*----------------------------------------------------------------------------*
+ * mixed
+ *----------------------------------------------------------------------------*/
+.kit-checkbox__label {
+    position: relative;
+    padding-left: $checkbox-size + 6px;
+    user-select: none;
+}
 
-  &:disabled::after {
-    border: 1px solid #e3e6ea;
-  }
-
-  &:checked:disabled::after {
-    background: #fafafa;
-  }
-
-  &:checked:disabled + .checkmark {
-    color: #e3e6ea;
-  }
-
-  &:checked:disabled + .radioMiddle {
-    background: #e3e6ea;
-  }
-
-  &::after {
+.kit-checkbox__label::before,
+.kit-checkbox__label::after {
+    position: absolute;
+    content: "";
     display: inline-block;
-    content: '';
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    background: #fafafa;
-    border: 1px solid #c4cdd5;
-    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
-    border-radius: 3px;
-    transition: background 0.2s ease-in-out;
-    box-sizing: border-box;
-  }
-
-  &:checked::after {
-    background: #5c6ac4;
-  }
-
-  &:checked ~ .kit-Checkbox__checkmark {
-    transform: translate(-50%, -50%) scale(1);
-  }
 }
 
-.kit-Checkbox__label {
-  margin-left: 5px;
+/*----------------------------------------------------------------------------*
+ * checkbox
+ *----------------------------------------------------------------------------*/
+.kit-checkbox__label::before {
+  top: 0;
+  left: 0;
+  height: $checkbox-size;
+  width: $checkbox-size;
+  background: #fafafa;
+  border: 1px solid #c4cdd5;
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+  transition: background 0.2s ease-in-out;
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
-.kit-Checkbox__innerWrapper {
-  position: relative;
-  height: 20px;
-  float: left;
-  width: 20px;
-  display: inline-block;
+// radio
+.kit-checkbox--radio .kit-checkbox__label::before {
+  border-radius: 100px;
 }
 
-.kit-Checkbox__checkmark {
-  pointer-events: none;
-  width: 13px;
-  height: 13px;
-  position: absolute;
-  font-size: 13px;
-  transform: translate(-50%, -50%) scale(0);
-  left: 50%;
-  top: 50%;
-  transition: transform 0.2s ease-in-out;
+// checkbox error
+.kit-checkbox--error + .kit-checkbox__label::before {
+  color: $negative;
+  border: 1px solid $negative;
+  background: lighten($negative, 35%);
 }
 
-.kit-Checkbox__helpText {
-  clear: both;
-  margin-left: 27px;
+// checked
+.kit-checkbox__input:checked + .kit-checkbox__label::before {
+  background: $main;
 }
 
-.kit-Checkbox__radioMiddle {
-  pointer-events: none;
-  display: block;
-  width: 5px;
-  border-radius: 5px;
-  height: 5px;
-  background: white;
-  position: absolute;
-  transform: translate(-50%, -50%) scale(0);
-  left: 50%;
-  top: 50%;
-  transition: transform 0.2s ease-in-out;
+
+// focus
+.kit-checkbox__input:focus + .kit-checkbox__label::before {
+    outline: 0;
 }
 
-.kit-Checkbox--error .kit-Checkbox__input::after,
-.kit-Checkbox--error .kit-Checkbox__input:checked::after {
-  background: #f9d8d6;
-  border: 2px solid #e03e30;
+// active
+.kit-checkbox__input:active + .kit-checkbox__label::before {
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.3);
 }
 
-.kit-Checkbox__radioInput .kit-Checkbox__input::after {
-  border-radius: 20px;
+// checkbox unchecked + disabled
+.kit-checkbox__input:disabled + .kit-checkbox__label::before {
+  background: darken(#fafafa, 3%);
+  border: 1px solid $grey-light;
+}
+// checkbox checked + disabled
+.kit-checkbox__input:checked:disabled + .kit-checkbox__label::before {
+  color: $white;
+  background: lighten($main, 15%);
+  border: 1px solid $grey-light;
 }
 
-.kit-Checkbox__radioInput .kit-Checkbox__input:checked ~ .kit-Checkbox__radioMiddle {
-  transform: translate(-50%, -50%) scale(1);
+// checkbox active + disabled
+.kit-checkbox__input:active:disabled + .kit-checkbox__label::before {
+  box-shadow: none;
+}
+
+// checkbox error + checked
+.kit-checkbox--error .kit-checkbox__input:checked + .kit-checkbox__label::before {
+  color: $negative;
+  border: 1px solid $negative;
+  background: lighten($negative, 35%);
+}
+
+// checkbox error checked + disabled
+.kit-checkbox--error .kit-checkbox__input:checked:disabled + .kit-checkbox__label::before {
+  background: lighten($negative, 30%);
+  border: 1px solid lighten($negative, 20%);
+}
+
+// radio error checked + disabled
+.kit-checkbox--radio.kit-checkbox--error .kit-checkbox__input:checked:disabled + .kit-checkbox__label::before {
+  background: lighten($negative, 30%);
+  border: 1px solid lighten($negative, 20%);
+}
+
+
+/*----------------------------------------------------------------------------*
+ * checkmark
+ *----------------------------------------------------------------------------*/
+.kit-checkbox__label::after {
+  top: 4px;
+  left: 5px;
+  height: 6px;
+  width: 9px;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  transform: rotate(-45deg);
+  cursor: pointer;
+}
+
+// radio
+.kit-checkbox--radio .kit-checkbox__label::after {
+  top: 7px;
+  left: 7px;
+  height: 6px;
+  width: 6px;
+  background: $white;
+  border-radius: 100px;
+  transform: none;
+  border: none;
+}
+
+// uncheckmark
+.kit-checkbox__input + .kit-checkbox__label::after {
+  content: none;
+}
+
+// checked
+.kit-checkbox__input:checked + .kit-checkbox__label::after {
+  content: "";
+  color: $white;
+}
+
+// radio error
+.kit-checkbox--error.kit-checkbox--radio .kit-checkbox__label::after {
+  background: $negative;
+}
+
+// checkmark error
+.kit-checkbox--error .kit-checkbox__input:checked + .kit-checkbox__label::after {
+  color: $negative;
+}
+
+// checkmark error + disabled
+.kit-checkbox--error .kit-checkbox__input:checked:disabled + .kit-checkbox__label::after {
+  color: lighten($negative, 20%);
+}
+
+// radio error + disabled
+.kit-checkbox--error.kit-checkbox--radio .kit-checkbox__input:checked:disabled + .kit-checkbox__label::after {
+  background: lighten($negative, 20%);
+}
+
+/*----------------------------------------------------------------------------*
+ * helptext
+ *----------------------------------------------------------------------------*/
+.kit-checkbox__help-text {
+  padding-left: 27px;
 }
