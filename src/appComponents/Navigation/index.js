@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './Navigation.css';
-import styles from './Navigation.styles';
 import Text from '../../components/Text/Text';
 import Branding from '../Branding';
 
@@ -17,13 +16,13 @@ function Navigation({ routes }) {
   routes.sort((a, b) => a.name.localeCompare(b.name));
 
   return (
-    <nav className={styles.navigationBar}>
+    <nav className="navigation">
       <Branding name="Kit" url="https://github.com/happystacklabs/kit" />
       <div>
-        <ul>
+        <ul className="navigation__ul">
           {routes.map(route => (
-            <li key={route.path}>
-              <NavLink to={route.path} activeClassName={styles.active}>
+            <li className="navigation__li" key={route.path}>
+              <NavLink className="navigation__link" to={route.path} activeClassName="navigation__link--active">
                 <Text color="inkLight">{route.name}</Text>
               </NavLink>
             </li>

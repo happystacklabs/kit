@@ -14,4 +14,3 @@ export { default as thumbnailViewerOptions } from './Thumbnail/viewerOptions';
 export { default as buttonGroupViewerOptions } from './ButtonGroup/viewerOptions';
 export { default as skeletonViewerOptions } from './Skeleton/viewerOptions';
 export { default as progressViewerOptions } from './Progress/viewerOptions';
-export { default as actionListViewerOptions } from './ActionList/viewerOptions';

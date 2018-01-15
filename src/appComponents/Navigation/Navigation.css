@@ -1,4 +1,7 @@
-.kit-Navigation__navigationBar {
+/*----------------------------------------------------------------------------*
+ * navigation
+ *----------------------------------------------------------------------------*/
+.navigation {
   background: #fafafa;
   width: 250px;
   position: fixed;
@@ -9,42 +12,63 @@
   border-right: 1px solid rgba(196, 205, 213, 0.6);
   overflow-y: scroll;
   padding-top: 70px; }
-  .kit-Navigation__navigationBar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0; }
-  .kit-Navigation__navigationBar li {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px; }
-  .kit-Navigation__navigationBar span {
-    transition: all 0.2s ease-in-out; }
-  .kit-Navigation__navigationBar a,
-  .kit-Navigation__navigationBar a:active,
-  .kit-Navigation__navigationBar a:focus,
-  .kit-Navigation__navigationBar a:visited {
-    color: #222c35;
-    text-decoration: none;
-    width: 100%;
-    display: inline-block;
-    outline: none;
-    transition: all 0.2s ease-in-out; }
-  .kit-Navigation__navigationBar a:hover span {
-    color: #5c6ac4; }
-  .kit-Navigation__navigationBar a:hover {
-    margin-left: 10px; }
-  .kit-Navigation__navigationBar--active {
-    background: #5c6ac4;
-    padding: 8px 0 8px 10px;
-    box-sizing: border-box;
-    border-radius: 3px; }
-    .kit-Navigation__navigationBar--active span,
-    .kit-Navigation__navigationBar--active :hover {
-      color: white; }
 
-a.kit-Navigation__navigationBar--active:hover {
+/*----------------------------------------------------------------------------*
+ * ul
+ *----------------------------------------------------------------------------*/
+.navigation__ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+/*----------------------------------------------------------------------------*
+ * li
+ *----------------------------------------------------------------------------*/
+.navigation__li {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px; }
+
+/*----------------------------------------------------------------------------*
+ * text
+ *----------------------------------------------------------------------------*/
+.navigation span {
+  transition: all 0.2s ease-in-out; }
+
+/*----------------------------------------------------------------------------*
+ * link
+ *----------------------------------------------------------------------------*/
+.navigation__link,
+.navigation__link:active,
+.navigation__link:focus,
+.navigation__link:visited {
+  color: #222c35;
+  text-decoration: none;
+  width: 100%;
+  display: inline-block;
+  outline: none;
+  transition: all 0.2s ease-in-out; }
+
+.navigation__link:hover {
+  color: #5c6ac4;
+  margin-left: 10px; }
+
+/*----------------------------------------------------------------------------*
+ * active
+ *----------------------------------------------------------------------------*/
+.navigation__link--active {
+  background: #5c6ac4;
+  padding: 8px 0 8px 10px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  color: white; }
+
+.navigation__link--active span {
+  color: white; }
+
+.navigation__link--active:hover {
   margin-left: 0; }
-  a.kit-Navigation__navigationBar--active:hover span {
-    color: white;
-    padding-left: 10px;
-    transition: all 0.2s ease-in-out; }
+
+.navigation__link--active:hover span {
+  padding-left: 10px;
+  transition: all 0.2s ease-in-out; }

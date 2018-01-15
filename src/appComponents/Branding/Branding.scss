@@ -1,4 +1,7 @@
-.kit-Branding__branding {
+/*----------------------------------------------------------------------------*
+ * branding
+ *----------------------------------------------------------------------------*/
+.branding {
   height: 56px;
   display: inline-block;
   width: 250px - 1px;
@@ -9,51 +12,65 @@
   padding: 0 15px;
   box-sizing: border-box;
   box-shadow: 0 12px 12px -3px #fafafa;
-
-  a,
-  a:focus,
-  a:hover,
-  a:visited {
-    width: inherit;
-    display: inline;
-    transition: none;
-    margin-left: 0;
-  }
-
-  a.logo,
-  a.logo:hover,
-  a.logo:focus,
-  a.logo:visited {
-    height: 56px;
-    width: 36px;
-    display: inline-block;
-    float: left;
-  }
-
-  a:hover {
-    opacity: 0.7;
-  }
-
-  img {
-    height: 24px;
-    width: 36px;
-    margin: 0;
-    display: inline-block;
-    padding-top: (56px - 24px)/2;
-  }
-
-  h1 {
-    display: inline-block;
-    margin: 0 5px 0 10px;
-    line-height: 56px;
-  }
-
-  span {
-    margin: 0;
-    line-height: 56px;
-  }
 }
 
-.kit-Branding__clear {
+.branding h1 {
+  display: inline-block;
+  margin: 0 5px 0 10px;
+  line-height: 56px;
+}
+
+.branding span {
+  margin: 0;
+  line-height: 56px;
+}
+
+
+/*----------------------------------------------------------------------------*
+ * link
+ *----------------------------------------------------------------------------*/
+.branding__link,
+.branding__link:focus,
+.branding__link:hover,
+.branding__link:visited {
+  width: inherit;
+  display: inline;
+  transition: none;
+  margin-left: 0;
+  text-decoration: none;
+}
+
+.branding__link:hover {
+  opacity: 0.7;
+}
+
+/*----------------------------------------------------------------------------*
+ * logo
+ *----------------------------------------------------------------------------*/
+.branding__logo,
+.branding__logo:hover,
+.branding__logo:focus,
+.branding__logo:visited {
+  height: 56px;
+  width: 36px;
+  display: inline-block;
+  float: left;
+}
+
+/*----------------------------------------------------------------------------*
+ * logo-image
+ *----------------------------------------------------------------------------*/
+.branding__logo-image {
+  height: 24px;
+  width: 36px;
+  margin: 0;
+  display: inline-block;
+  padding-top: (56px - 24px)/2;
+}
+
+/*----------------------------------------------------------------------------*
+ * clear
+ *----------------------------------------------------------------------------*/
+.clear {
   clear: both;
 }

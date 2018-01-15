@@ -18,7 +18,6 @@ import {
   ButtonGroup,
   Skeleton,
   Progress,
-  ActionList,
 } from './components';
 
 // options import
@@ -39,7 +38,6 @@ import {
   buttonGroupViewerOptions,
   skeletonViewerOptions,
   progressViewerOptions,
-  actionListViewerOptions,
 } from './components/viewerOptions';
 
 
@@ -59,14 +57,6 @@ import {
 */
 
 const components = [
-  {
-    path: '/actionlist',
-    name: 'Action List',
-    options: actionListViewerOptions,
-    code: (
-      <ActionList />
-    ),
-  },
   {
     path: '/progress',
     name: 'Progress',
