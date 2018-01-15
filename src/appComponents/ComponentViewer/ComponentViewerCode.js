@@ -34,13 +34,13 @@ function getCode(props) {
       stringArray.push('{[');
       prop.value.forEach((row) => {
         if (typeof row === 'string') {
-          stringArray.push('""');
+          stringArray.push("'");
           stringArray.push(row);
-          stringArray.push('", ');
+          stringArray.push("', ");
         } else {
-          stringArray.push('{label: "');
+          stringArray.push("{label: '");
           stringArray.push(row.label);
-          stringArray.push('", value: "');
+          stringArray.push("', value: '");
           stringArray.push(row.value);
           stringArray.push("'}, ");
         }
@@ -90,8 +90,8 @@ function renderProps(newProps) {
               <span key={prop.name}>
                 <pre>
                   {'{'}
-                  label: <span className="component-viewer___code--yellow">&quot;{row.label}&quot;</span>,
-                  value: <span className="component-viewer___code--yellow">&quot;{row.value}&quot;</span>
+                  label: <span className="component-viewer___code--yellow">&apos;{row.label}&apos;</span>,
+                  value: <span className="component-viewer___code--yellow">&apos;{row.value}&apos;</span>
                   {'}'},
                 </pre>
               </span>
