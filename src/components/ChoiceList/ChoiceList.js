@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import './ChoiceList.css';
-import styles from './ChoiceList.styles';
 import Text from '../Text/Text';
 import Checkbox from '../Checkbox/Checkbox';
 
@@ -12,7 +11,7 @@ function renderInputs(name, choices, multiple, disabled, selected, handleChange)
   const type = multiple ? 'checkbox' : 'radio';
 
   return choices.map(choice => (
-    <li key={choice.value}>
+    <li className="kit-choicelist__li" key={choice.value}>
       <Checkbox
         name={name}
         value={choice.value}
@@ -69,10 +68,10 @@ function ChoiceList(props) {
   }
 
   return (
-    <div className={classNames(props.className, styles.choiceList)}>
-      <fieldset>
-        <legend><Text size="regular">{props.title}</Text></legend>
-        <ul>
+    <div className={classNames(props.className, 'kit-choicelist')}>
+      <fieldset className="kit-choicelist__fieldset">
+        <legend className="kit-choicelist__legend"><Text size="regular">{props.title}</Text></legend>
+        <ul className="kit-choicelist__ul">
           {renderInputs(
             props.name,
             props.choices,
