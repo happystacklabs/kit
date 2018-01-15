@@ -27,8 +27,8 @@
 .kit-spinner--loader2::before,
 .kit-spinner--loader2::after {
   border-radius: 50%;
-  width: 2.5em;
-  height: 2.5em;
+  width: 3em;
+  height: 3em;
   animation: kit-animation-load2 1s infinite ease-in-out normal both;
 }
 
@@ -47,12 +47,12 @@
 }
 
 .kit-spinner--loader2::before {
-  left: -3.5em;
+  left: -4em;
   animation-delay: -0.32s;
 }
 
 .kit-spinner--loader2::after {
-  left: 3.5em;
+  left: 4em;
 }
 
 /*----------------------------------------------------------------------------*
@@ -150,10 +150,10 @@
   0%,
   80%,
   100% {
-    box-shadow: 0 2.5em 0 -1.3em;
+    box-shadow: 0 4em 0 -2em;
   }
 
   40% {
-    box-shadow: 0 2.5em 0 0;
+    box-shadow: 0 4em 0 0;
   }
 }

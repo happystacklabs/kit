@@ -23,7 +23,7 @@ function Navigation({ routes }) {
           {routes.map(route => (
             <li className="navigation__li" key={route.path}>
               <NavLink className="navigation__link" to={route.path} activeClassName="navigation__link--active">
-                <Text color="inkLight">{route.name}</Text>
+                <Text color="ink-light">{route.name}</Text>
               </NavLink>
             </li>
           ))}

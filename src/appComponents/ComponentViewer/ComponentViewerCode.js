@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import copy from 'copy-to-clipboard';
 import './ComponentViewer.css';
-import styles from './ComponentViewer.styles';
 import Icon from '../../components/Icon/Icon';
 import Button from '../../components/Button/Button';
 import Text from '../../components/Text/Text';
@@ -73,14 +72,14 @@ function renderProps(newProps) {
     } else if (Array.isArray(prop.value)) {
       arr.push((
         <span key={prop.name}>
-          <span className={styles.green}> {prop.name}</span>
+          <span className="component-viewer___code--green"> {prop.name}</span>
           {'={['}<br />
           {prop.value.map((row) => {
             if (typeof row === 'string') {
               return (
                 <span key={prop.name}>
                   <pre>
-                    <span className={styles.yellow}>&apos;{row}&apos;</span>,
+                    <span className="component-viewer___code--yellow">&apos;{row}&apos;</span>,
                   </pre>
                 </span>
               );
@@ -89,8 +88,8 @@ function renderProps(newProps) {
               <span key={prop.name}>
                 <pre>
                   {'{'}
-                  label: <span className={styles.yellow}>&apos;{row.label}&apos;</span>,
-                  value: <span className={styles.yellow}>&apos;{row.value}&apos;</span>
+                  label: <span className="component-viewer___code--yellow">&apos;{row.label}&apos;</span>,
+                  value: <span className="component-viewer___code--yellow">&apos;{row.value}&apos;</span>
                   {'}'},
                 </pre>
               </span>
@@ -102,8 +101,8 @@ function renderProps(newProps) {
     } else {
       arr.push((
         <span key={prop.name}>
-          <span className={styles.green}> {prop.name}</span>
-          =<span className={styles.yellow}>&apos;{prop.value}&apos;</span>
+          <span className="component-viewer___code--green"> {prop.name}</span>
+          =<span className="component-viewer___code--yellow">&apos;{prop.value}&apos;</span>
         </span>
       ));
     }
@@ -135,12 +134,12 @@ function renderCode(options, element) {
   return (
     <div>
       <span>&lt;</span>
-      <span className={styles.red}>{element} </span>
+      <span className="component-viewer___code--red">{element} </span>
       {renderProps(newProps)}
       <span>&gt;</span>
       {children}
       <span>&lt;/</span>
-      <span className={styles.red}>{element}</span>
+      <span className="component-viewer___code--red">{element}</span>
       <span>&gt;</span>
     </div>
   );
@@ -159,14 +158,14 @@ function ComponentViewerCode(props) {
   }
 
   return (
-    <div className={styles.code}>
-      <div className={styles.codeMenu}>
-        <Text size="small" color="inkLight" className={styles.item}>React</Text>
-        <Button onClick={onClickCopy} size="slim" square >
-          <Icon name="clone" />
+    <div className="component-viewer___code">
+      <div className="component-viewer__code-menu">
+        <Text size="small" color="inkLight" className="component-viewer__item">React</Text>
+        <Button onClick={onClickCopy} size="small" square >
+          <Icon name="clone" regular fixedWidth size="sm" />
         </Button>
       </div>
-      <Text element="span" size="regular" color="white" className={styles.codeText} >
+      <Text element="span" size="regular" color="white" className="component-viewer__code-text" >
         {renderCode(props.options, props.element)}
       </Text>
     </div>

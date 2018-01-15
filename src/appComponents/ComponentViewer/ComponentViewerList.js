@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './ComponentViewer.css';
-import styles from './ComponentViewer.styles';
 import ComponentViewerRow from './ComponentViewerRow';
 
 
@@ -36,13 +35,13 @@ const defaultProps = {
 
 function ComponentViewerList(props) {
   return (
-    <div className={styles.list}>
-      <table>
+    <div className="component-viewer__list">
+      <table className="component-viewer__table">
         <tbody>
-          <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
+          <tr className="component-viewer__tr">
+            <th className="component-viewer__th">Name</th>
+            <th className="component-viewer__th">Type</th>
+            <th className="component-viewer__th">Description</th>
           </tr>
           {renderOptions(props.options, props.onChange, props.onClick)}
         </tbody>

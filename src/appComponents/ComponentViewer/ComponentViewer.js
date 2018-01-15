@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './ComponentViewer.css';
-import styles from './ComponentViewer.styles';
 import Text from '../../components/Text/Text';
 import ComponentViewerList from './ComponentViewerList';
 import ComponentViewerCode from './ComponentViewerCode';
@@ -94,10 +93,10 @@ class ComponentViewer extends React.Component {
 
     return (
       <div className={this.props.className}>
-        <Text element="h1" className={styles.h1} size="extraLarge">{this.props.name}</Text>
+        <Text element="h1" className="component-viewer__h1" size="display-xlarge">{this.props.name}</Text>
         <div>
-          <Text size="medium" element="h2">Example</Text>
-          <div className={styles.element}>
+          <Text size="display-small" element="h2">Example</Text>
+          <div className="component-viewer__element">
             {React.cloneElement(this.props.children, newProps)}
           </div>
         </div>

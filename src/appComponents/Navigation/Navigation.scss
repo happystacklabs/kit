@@ -54,6 +54,10 @@
   transition: all 0.2s ease-in-out;
 }
 
+.navigation__link .kit-text {
+  font-size: 16px;
+}
+
 .navigation__link:hover {
   color: #5c6ac4;
   margin-left: 10px;

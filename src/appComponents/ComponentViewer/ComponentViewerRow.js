@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './ComponentViewer.css';
-import styles from './ComponentViewer.styles';
 import Text from '../../components/Text/Text';
 import TextInput from '../../components/TextInput/TextInput';
 import Select from '../../components/Select/Select';
@@ -111,11 +110,17 @@ const defaultProps = {
 
 function ComponentViewerRow(props) {
   return (
-    <tr key={props.name}>
-      <td className={styles.bottomLine}><Text color="purple" size="small">{props.name}</Text></td>
-      <td className={styles.bottomLine}><Text color="inkLight" size="small">{getType(props)}</Text></td>
-      <td className={styles.bottomLine}><Text>{props.description}</Text></td>
-      <td>
+    <tr className="component-viewer__tr" key={props.name}>
+      <td className="component-viewer__td component-viewer__td--bottom-line">
+        <Text color="main" size="caption">{props.name}</Text>
+      </td>
+      <td className="component-viewer__td component-viewer__td--bottom-line">
+        <Text color="ink-light" size="caption">{getType(props)}</Text>
+      </td>
+      <td className="component-viewer__td component-viewer__td--bottom-line">
+        <Text>{props.description}</Text>
+      </td>
+      <td className="component-viewer__td">
         {renderInput(props.type, props.name, props.onChange, props.onClick, props.value)}
       </td>
     </tr>

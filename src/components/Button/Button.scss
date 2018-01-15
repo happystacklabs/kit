@@ -11,6 +11,8 @@
   appearance: none;
   transition: box-shadow 0.2s;
   cursor: pointer;
+  min-height: $button-size-medium;
+  min-width: $button-size-medium;
 }
 
 .kit-button:focus {
@@ -173,6 +175,11 @@
   position: relative;
 }
 
+.kit-button--small .kit-button__loading-container {
+  height: 1px;
+  top: -10px;
+}
+
 .kit-button__spinner {
   position: absolute !important;
   left: 50%;
@@ -188,8 +195,9 @@
 }
 
 .kit-button--small .kit-button__spinner {
-  margin: 2px 0 0 -2px;
+  margin: 0 0 0 -2px;
 }
+
 
 /*----------------------------------------------------------------------------*
  * plain

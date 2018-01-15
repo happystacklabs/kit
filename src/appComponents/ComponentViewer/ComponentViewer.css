@@ -7,27 +7,42 @@
 /*----------------------------------------------------------------------------*
  * Size
  *----------------------------------------------------------------------------*/
-.kit-ComponentViewer__h1 {
+/*----------------------------------------------------------------------------*
+ * h1
+ *----------------------------------------------------------------------------*/
+.component-viewer__h1 {
   border-bottom: 1px solid #dfe2e3;
   margin-bottom: 30px; }
 
-.kit-ComponentViewer__element {
+/*----------------------------------------------------------------------------*
+ * element
+ *----------------------------------------------------------------------------*/
+.component-viewer__element {
   margin: 45px 0; }
 
-.kit-ComponentViewer__code {
+/*----------------------------------------------------------------------------*
+ * code
+ *----------------------------------------------------------------------------*/
+.component-viewer___code {
   background: #282828;
   border-radius: 3px 3px 0 0;
   word-break: break-word;
   color: white;
   font-family: -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Helvetica Neue, sans-serif; }
-  .kit-ComponentViewer__code--red {
-    color: #fc1e70; }
-  .kit-ComponentViewer__code--yellow {
-    color: #e6dc6d; }
-  .kit-ComponentViewer__code--green {
-    color: #a4e406; }
 
-.kit-ComponentViewer__list {
+.component-viewer___code--red {
+  color: #fc1e70; }
+
+.component-viewer___code--yellow {
+  color: #e6dc6d; }
+
+.component-viewer___code--green {
+  color: #a4e406; }
+
+/*----------------------------------------------------------------------------*
+ * list
+ *----------------------------------------------------------------------------*/
+.component-viewer__list {
   background: #fff;
   border: 1px solid #dfe2e3;
   box-shadow: 0 1px 1px 0 #d9dadc;
@@ -36,31 +51,51 @@
   margin-bottom: 45px;
   overflow-x: auto;
   font-family: -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Helvetica Neue, sans-serif; }
-  .kit-ComponentViewer__list table {
-    width: 100%;
-    border-collapse: collapse; }
-  .kit-ComponentViewer__list td {
-    padding: 15px 25px 15px 15px; }
-  .kit-ComponentViewer__list th {
-    font-weight: 600;
-    font-size: rem(12px);
-    text-transform: uppercase; }
-  .kit-ComponentViewer__list tr:last-child .kit-ComponentViewer__list--bottomLine {
-    border-bottom: none; }
-  .kit-ComponentViewer__list input {
-    min-width: 120px; }
 
-td.kit-ComponentViewer__list--bottomLine {
+/*----------------------------------------------------------------------------*
+ * table
+ *----------------------------------------------------------------------------*/
+.component-viewer__table {
+  width: 100%;
+  border-collapse: collapse; }
+
+.component-viewer__td {
+  padding: 15px 25px 15px 15px; }
+
+.component-viewer__th {
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase; }
+
+.component-viewer__td--bottom-line {
   border-bottom: 1px solid #c4cdd5;
   padding-right: 0; }
 
-.kit-ComponentViewer__codeMenu {
+.component-viewer__tr:last-child .component-viewer__td--bottom-line {
+  border-bottom: none; }
+
+/*----------------------------------------------------------------------------*
+ * input
+ *----------------------------------------------------------------------------*/
+.component-viewer__input {
+  min-width: 120px; }
+
+/*----------------------------------------------------------------------------*
+ * code-menu
+ *----------------------------------------------------------------------------*/
+.component-viewer__code-menu {
   text-align: right;
   padding: 20px 20px 0 20px; }
 
-.kit-ComponentViewer__item {
+/*----------------------------------------------------------------------------*
+ * item
+ *----------------------------------------------------------------------------*/
+.component-viewer__item {
   margin-right: 15px; }
 
-.kit-ComponentViewer__codeText {
+/*----------------------------------------------------------------------------*
+ * code-text
+ *----------------------------------------------------------------------------*/
+.component-viewer__code-text {
   padding: 20px 25px;
   display: inline-block; }
