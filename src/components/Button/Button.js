@@ -71,7 +71,7 @@ const defaultProps = {
 function Button(props) {
   const buttonClassNames = classNames(
     {
-      'kit-button--loading kit-button--disabled': props.loading ,
+      'kit-button--loading kit-button--disabled': props.loading,
       'kit-button--outline': props.outline,
       'kit-button--plain': props.plain,
       'kit-button--full-width': props.fullWidth,

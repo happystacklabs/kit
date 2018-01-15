@@ -1,27 +1,23 @@
 import React from 'react';
-import classNames from 'classnames/bind';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import './Tooltip.css';
-import styles from './Tooltip.styles';
 import Text from '../Text/Text';
 
 
-const cx = classNames.bind(styles);
-
-
-export const position = [
-  'top',
-  'bottom',
-  'left',
-  'right',
-];
+export const position = {
+  top: 'kit-tooltip--top',
+  bottom: 'kit-tooltip--bottom',
+  left: 'kit-tooltip--left',
+  right: 'kit-tooltip--right',
+};
 
 
 const propTypes = {
   children: PropTypes.node,
   content: PropTypes.string,
   active: PropTypes.bool,
-  position: PropTypes.oneOf(position),
+  position: PropTypes.oneOf(Object.keys(position)),
   light: PropTypes.bool,
   className: PropTypes.string,
 };
@@ -99,28 +95,28 @@ class Tooltip extends React.Component {
     const style = this.calculateStyle();
     const color = this.props.light ? 'ink' : 'white';
 
-    const classTooltip = cx(
+    const tooltipClassName = classNames(
       {
-        active: this.props.active || this.state.active,
-        light: this.props.light,
+        'kit-tooltip--active': this.props.active || this.state.active,
+        'kit-tooltip--light': this.props.light,
       },
       this.props.className,
-      this.props.position,
-      styles.tooltip,
+      position[this.props.position],
+      'kit-tooltip',
     );
 
     return (
-      <div className={classTooltip}>
+      <div className={tooltipClassName}>
         <span
-          className={styles.content}
+          className="kit-tooltip__content"
           ref={(ref) => { this.childRef = ref; }}
           onMouseEnter={this.handleOnMouseEnter}
           onMouseLeave={this.handleOnMouseLeave}
         >
           {this.props.children}
         </span>
-        <div className={styles.box} style={style} ref={(ref) => { this.tooltipRef = ref; }}>
-          <Text color={color} size="small">{this.props.content}</Text>
+        <div className="kit-tooltip__box" style={style} ref={(ref) => { this.tooltipRef = ref; }}>
+          <Text color={color} size="caption">{this.props.content}</Text>
         </div>
       </div>
     );
