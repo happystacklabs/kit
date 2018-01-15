@@ -35,7 +35,7 @@ describe('ChoiceList', () => {
     it('passed the helptext', () => {
       choices[0].helpText = 'Bar';
       const choiceList = mount(<ChoiceList name="Foo" title="Foo" choices={choices} />);
-      expect(choiceList.find('.kit-Checkbox__helpText').text()).toBe('Bar');
+      expect(choiceList.find('.kit-checkbox__help-text').text()).toBe('Bar');
     });
   });
 

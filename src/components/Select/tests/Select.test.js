@@ -57,7 +57,7 @@ describe('Select', () => {
       const selectInput = shallow((
         <Select name="Foo" value="" options={[]} error />
       )).find('select');
-      expect(selectInput.hasClass('kit-Select__input--error')).toBe(true);
+      expect(selectInput.hasClass('kit-select--error')).toBe(true);
     });
   });
 

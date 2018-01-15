@@ -43,7 +43,7 @@ describe('Paginator', () => {
   describe('plain', () => {
     it('change the state of buttons to plain', () => {
       const paginator = mount(<Paginator plain />);
-      expect(paginator.find('button').at(0).hasClass('kit-Button__button--plain')).toBe(true);
+      expect(paginator.find('button').at(0).hasClass('kit-button--plain')).toBe(true);
     });
   });
 });

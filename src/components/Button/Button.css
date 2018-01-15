@@ -145,10 +145,10 @@
 .kit-button__content--hidden {
   color: transparent; }
 
-.kit-button__loading-container {
+.kit-button__loading {
   position: relative; }
 
-.kit-button--small .kit-button__loading-container {
+.kit-button--small .kit-button__loading {
   height: 1px;
   top: -10px; }
 

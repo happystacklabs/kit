@@ -10,13 +10,13 @@ function Home() {
       <Text element="h1" size="display-xlarge">Happystack Kit</Text>
       <img className="home__badge" alt="version" src="https://img.shields.io/badge/Version-0.3.3-green.svg?style=flat" />
       <img className="home__badge" alt="license" src="https://img.shields.io/github/license/mashape/apistatus.svg" />
-      <Text element="h4" size="displaySmall">Kit is a React component library created by Happystack to help streamline your development.</Text>
-      <Text element="h3" size="displayMedium">Installation:</Text>
+      <Text element="h4" size="display-small">Kit is a React component library created by Happystack to help streamline your development.</Text>
+      <Text element="h3" size="display-medium">Installation:</Text>
       <Text element="p">You&apos;ll need npm to install Kit <a href="https://www.npmjs.com/" target="blank">npm</a>:</Text>
       <pre>
         <Text color="ink-light">npm install @happystack/kit --save</Text>
       </pre>
-      <Text element="h3" size="displayMedium">Usage:</Text>
+      <Text element="h3" size="display-medium">Usage:</Text>
       <Text element="p">Import the component you want from Kit:</Text>
       <pre>
         <Text color="ink-light">import { Text } from &apos;@happystack/kit&apos;;</Text>

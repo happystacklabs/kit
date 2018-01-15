@@ -32,8 +32,8 @@ describe('Checkbox', () => {
 
   describe('error', () => {
     it('add error style', () => {
-      const checkbox = shallow(<Checkbox name="Foo" error />).find('div').at(1);
-      expect(checkbox.hasClass('kit-Checkbox--error')).toBe(true);
+      const checkbox = shallow(<Checkbox name="Foo" error />).find('div').at(0);
+      expect(checkbox.hasClass('kit-checkbox--error')).toBe(true);
     });
   });
 
@@ -47,7 +47,7 @@ describe('Checkbox', () => {
   describe('helpText', () => {
     it('add a helpText when given by props', () => {
       const checkbox = mount(<Checkbox name="Foo" helpText="Bar" />);
-      expect(checkbox.find('span').first().text()).toBe('Bar');
+      expect(checkbox.containsMatchingElement('Bar')).toBe(true);
     });
   });
 
@@ -63,8 +63,8 @@ describe('Checkbox', () => {
     });
 
     it('add the radio style selector', () => {
-      const checkbox = shallow(<Checkbox name="Foo" type="radio" />).find('div').at(1);
-      expect(checkbox.hasClass('kit-Checkbox__radioInput')).toBe(true);
+      const checkbox = shallow(<Checkbox name="Foo" type="radio" />);
+      expect(checkbox.hasClass('kit-checkbox--radio')).toBe(true);
     });
   });
 });

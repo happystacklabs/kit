@@ -5,7 +5,6 @@ import {
 } from 'react-router-dom';
 import ComponentViewer from './appComponents/ComponentViewer/ComponentViewer';
 import './App.css';
-import styles from './App.styles';
 import Navigation from './appComponents/Navigation';
 import Home from './appComponents/Home';
 import components from './componentsConfig';
@@ -19,16 +18,16 @@ function App() {
 
   return (
     <Router>
-      <div className={styles.app}>
+      <div className="app">
         <Navigation routes={routes} />
-        <div className={styles.container}>
+        <div className="app__container">
           {components.map(component => ((
             <Route
               key={component.name}
               exact
               path={component.path}
               render={() => (
-                <div className={styles.padding}>
+                <div className="app__padding">
                   <ComponentViewer options={component.options} name={component.name}>
                     {component.code}
                   </ComponentViewer>

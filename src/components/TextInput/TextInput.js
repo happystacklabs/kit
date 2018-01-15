@@ -45,13 +45,15 @@ function renderLabel(name, labelText) {
 function renderAction(action) {
   if (!action) { return undefined; }
   return (
-    <Text
-      className="kit-textinput__action"
-      size="body"
+    <div
       onClick={action.onAction}
+      onKeyPress={action.onAction}
+      role="button"
+      tabIndex="0"
+      className="kit-textinput__action"
     >
-      {action.title}
-    </Text>
+      <Text size="body">{action.title}</Text>
+    </div>
   );
 }
 

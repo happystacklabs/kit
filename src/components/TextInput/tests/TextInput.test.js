@@ -115,7 +115,7 @@ describe('TextInput', () => {
       const spy = jest.fn();
       const action = { title: 'Bar', onAction: spy };
       const input = mount(<TextInput name="Foo" action={action} />);
-      input.find('.kit-textinput__action').simulate('click');
+      input.find('.kit-textinput__action').first().simulate('click');
       expect(spy).toHaveBeenCalled();
     });
   });

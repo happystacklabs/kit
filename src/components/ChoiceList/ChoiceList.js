@@ -70,7 +70,7 @@ function ChoiceList(props) {
   return (
     <div className={classNames(props.className, 'kit-choicelist')}>
       <fieldset className="kit-choicelist__fieldset">
-        <legend className="kit-choicelist__legend"><Text size="regular">{props.title}</Text></legend>
+        <legend className="kit-choicelist__legend"><Text size="display-small">{props.title}</Text></legend>
         <ul className="kit-choicelist__ul">
           {renderInputs(
             props.name,
