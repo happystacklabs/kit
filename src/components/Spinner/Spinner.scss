@@ -1,88 +1,116 @@
 @import '../variables';
 
-.kit-Spinner__spinner {
+/*----------------------------------------------------------------------------*
+ * spinner
+ *----------------------------------------------------------------------------*/
+.kit-spinner {
   margin: auto;
-
-  &--loader1 {
-    width: 1em;
-    height: 1em;
-    border-radius: 50%;
-    position: relative;
-    text-indent: -9999em;
-    animation: load1 1s infinite linear;
-    transform: translateZ(0);
-  }
-
-  &--loader2,
-  &--loader2::before,
-  &--loader2::after {
-    border-radius: 50%;
-    width: 2.5em;
-    height: 2.5em;
-    animation: load2 1s infinite ease-in-out normal both;
-  }
-
-  &--loader2 {
-    position: relative;
-    text-indent: -9999em;
-    transform: translateZ(0);
-    animation-delay: -0.16s;
-  }
-
-  &--loader2::before,
-  &--loader2::after {
-    content: '';
-    position: absolute;
-    top: 0;
-  }
-
-  &--loader2::before {
-    left: -3.5em;
-    animation-delay: -0.32s;
-  }
-
-  &--loader2::after {
-    left: 3.5em;
-  }
-
-  &--ink {
-    color: #222c35;
-  }
-
-  &--inkLight {
-    color: #797d80;
-  }
-
-  &--positive {
-    color: #58be8c;
-  }
-
-  &--negative {
-    color: #e03e30;
-  }
-
-  &--purple {
-    color: #5c6ac4;
-  }
-
-  &--white {
-    color: white;
-  }
-
-  &--small {
-    font-size: 2px;
-  }
-
-  &--medium {
-    font-size: 4px;
-  }
-
-  &--large {
-    font-size: 6px;
-  }
 }
 
-@-webkit-keyframes load1 {
+/*----------------------------------------------------------------------------*
+ * loader1
+ *----------------------------------------------------------------------------*/
+.kit-spinner--loader1 {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  animation: kit-animation-load1 1s infinite linear;
+  transform: translateZ(0);
+}
+
+/*----------------------------------------------------------------------------*
+ * loader2
+ *----------------------------------------------------------------------------*/
+.kit-spinner--loader2,
+.kit-spinner--loader2::before,
+.kit-spinner--loader2::after {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  animation: kit-animation-load2 1s infinite ease-in-out normal both;
+}
+
+.kit-spinner--loader2 {
+  position: relative;
+  text-indent: -9999em;
+  transform: translateZ(0);
+  animation-delay: -0.16s;
+}
+
+.kit-spinner--loader2::before,
+.kit-spinner--loader2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+
+.kit-spinner--loader2::before {
+  left: -3.5em;
+  animation-delay: -0.32s;
+}
+
+.kit-spinner--loader2::after {
+  left: 3.5em;
+}
+
+/*----------------------------------------------------------------------------*
+ * color
+ *----------------------------------------------------------------------------*/
+// ink
+.kit-spinner--ink {
+  color: $ink;
+}
+
+// ink
+.kit-spinner--ink-light {
+  color: $ink-light;
+}
+
+// positive
+.kit-spinner--positive {
+  color: $positive;
+}
+
+// negative
+.kit-spinner--negative {
+  color: $negative;
+}
+
+// main
+.kit-spinner--main {
+  color: $main;
+}
+
+// white
+.kit-spinner--white {
+  color: $white;
+}
+
+/*----------------------------------------------------------------------------*
+ * size
+ *----------------------------------------------------------------------------*/
+// small
+.kit-spinner--small {
+  font-size: 2px;
+}
+
+// medium
+.kit-spinner--medium {
+  font-size: 4px;
+}
+
+// large
+.kit-spinner--large {
+  font-size: 6px;
+}
+
+/*----------------------------------------------------------------------------*
+ * animation
+ *----------------------------------------------------------------------------*/
+// kit-animation-load1
+@keyframes kit-animation-load1 {
   0%,
   100% {
     box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
@@ -117,54 +145,8 @@
   }
 }
 
-@keyframes load1 {
-  0%,
-  100% {
-    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
-  }
-
-  12.5% {
-    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-  }
-
-  25% {
-    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-  }
-
-  37.5% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 0, 2em 2em 0 0.2em, 0 3em 0 0, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
-  }
-
-  50% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0 0 -1em, -2em -2em 0 -1em;
-  }
-
-  62.5% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
-  }
-
-  75% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0 0 0.2em, -2em -2em 0 0;
-  }
-
-  87.5% {
-    box-shadow: 0 -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0 0 0, -2em -2em 0 0.2em;
-  }
-}
-
-@-webkit-keyframes load2 {
-  0%,
-  80%,
-  100% {
-    box-shadow: 0 2.5em 0 -1.3em;
-  }
-
-  40% {
-    box-shadow: 0 2.5em 0 0;
-  }
-}
-
-@keyframes load2 {
+// kit-animation-load2
+@keyframes kit-animation-load2 {
   0%,
   80%,
   100% {

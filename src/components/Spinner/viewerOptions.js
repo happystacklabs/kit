@@ -13,10 +13,10 @@ const spinnerViewerOptions = [
     value: 'ink',
     type: [
       'ink',
-      'inkLight',
+      'ink-light',
       'negative',
       'positive',
-      'purple',
+      'main',
       'white',
     ],
     description: 'Change the color',
