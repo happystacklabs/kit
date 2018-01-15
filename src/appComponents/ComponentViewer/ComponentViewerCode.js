@@ -34,20 +34,22 @@ function getCode(props) {
       stringArray.push('{[');
       prop.value.forEach((row) => {
         if (typeof row === 'string') {
-          stringArray.push("'");
+          stringArray.push('""');
           stringArray.push(row);
-          stringArray.push("', ");
+          stringArray.push('", ');
         } else {
-          stringArray.push("{label: '");
+          stringArray.push('{label: "');
           stringArray.push(row.label);
-          stringArray.push("', value: '");
+          stringArray.push('", value: "');
           stringArray.push(row.value);
           stringArray.push("'}, ");
         }
       });
       stringArray.push(']}');
     } else {
+      stringArray.push('"');
       stringArray.push(prop.value);
+      stringArray.push('"');
     }
   });
   stringArray.push('>');
@@ -79,7 +81,7 @@ function renderProps(newProps) {
               return (
                 <span key={prop.name}>
                   <pre>
-                    <span className="component-viewer___code--yellow">&apos;{row}&apos;</span>,
+                    <span className="component-viewer___code--yellow">&quot;{row}&quot;</span>,
                   </pre>
                 </span>
               );
@@ -88,8 +90,8 @@ function renderProps(newProps) {
               <span key={prop.name}>
                 <pre>
                   {'{'}
-                  label: <span className="component-viewer___code--yellow">&apos;{row.label}&apos;</span>,
-                  value: <span className="component-viewer___code--yellow">&apos;{row.value}&apos;</span>
+                  label: <span className="component-viewer___code--yellow">&quot;{row.label}&quot;</span>,
+                  value: <span className="component-viewer___code--yellow">&quot;{row.value}&quot;</span>
                   {'}'},
                 </pre>
               </span>
@@ -102,7 +104,7 @@ function renderProps(newProps) {
       arr.push((
         <span key={prop.name}>
           <span className="component-viewer___code--green"> {prop.name}</span>
-          =<span className="component-viewer___code--yellow">&apos;{prop.value}&apos;</span>
+          =<span className="component-viewer___code--yellow">&quot;{prop.value}&quot;</span>
         </span>
       ));
     }
