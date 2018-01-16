@@ -11,7 +11,8 @@
   box-sizing: border-box;
   border-right: 1px solid rgba(196, 205, 213, 0.6);
   overflow-y: scroll;
-  padding-top: 70px; }
+  padding-top: 70px;
+  z-index: 100; }
 
 /*----------------------------------------------------------------------------*
  * ul
@@ -75,3 +76,34 @@
 .navigation__link--active:hover span {
   padding-left: 10px;
   transition: all 0.2s ease-in-out; }
+
+/*----------------------------------------------------------------------------*
+ * mobile
+ *----------------------------------------------------------------------------*/
+.navigation__mobile-menu {
+  display: none; }
+
+.navigation__mobile-button {
+  position: fixed;
+  right: 10px;
+  top: 8px; }
+
+@media only screen and (max-width: 960px) {
+  .navigation {
+    width: 100%;
+    height: 45px;
+    padding: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(196, 205, 213, 0.6);
+    transition: height 0.5s; }
+  .navigation__mobile-menu {
+    display: block; }
+  .navigation__content {
+    display: none;
+    padding: 80px 25px; } }
+
+.navigation--mobile-open {
+  height: 100%; }
+
+.navigation--mobile-open .navigation__content {
+  display: block; }
