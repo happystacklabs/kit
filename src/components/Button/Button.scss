@@ -7,12 +7,12 @@
   box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
   border-radius: 3px;
   padding: 2px 20px 3px;
-  font-size: 15px;
+  font-size: $button-font-size;
   appearance: none;
   transition: box-shadow 0.2s;
   cursor: pointer;
-  min-height: $button-size-medium;
-  min-width: $button-size-medium;
+  min-height: $button-height-medium;
+  min-width: $button-height-medium;
 }
 
 .kit-button:focus {
@@ -29,20 +29,20 @@
  *----------------------------------------------------------------------------*/
 // large
 .kit-button--large {
-  min-height: $button-size-large;
-  min-width: $button-size-large;
+  min-height: $button-height-large;
+  min-width: $button-height-large;
 }
 
 // medium
 .kit-button--medium {
-  min-height: $button-size-medium;
-  min-width: $button-size-medium;
+  min-height: $button-height-medium;
+  min-width: $button-height-medium;
 }
 
 // small
 .kit-button--small {
-  min-height: $button-size-small;
-  min-width: $button-size-small;
+  min-height: $button-height-small;
+  min-width: $button-height-small;
 }
 
 /*----------------------------------------------------------------------------*
@@ -400,4 +400,13 @@
 .kit-button--outline.kit-button--positive.kit-button--disabled {
   color: lighten($positive, 15%);
   border: 1px solid lighten($positive, 15%);
+}
+
+/*----------------------------------------------------------------------------*
+ * mobile
+ *----------------------------------------------------------------------------*/
+@media only screen and (max-width: 960px) {
+  .kit-button {
+    font-size: $button-font-size-mobile;
+  }
 }

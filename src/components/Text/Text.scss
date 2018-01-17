@@ -100,3 +100,56 @@
 .kit-text--white {
   color: $white;
 }
+
+/*----------------------------------------------------------------------------*
+ * mobile
+ *----------------------------------------------------------------------------*/
+@media only screen and (max-width: $breakpoint) {
+  // display xlarge
+  .kit-text--display-xlarge {
+    font-size: $display-xlarge-size-mobile;
+    line-height: $display-xlarge-lh-mobile;
+  }
+
+  // display large
+  .kit-text--display-large {
+    font-size: $display-large-size-mobile;
+    line-height: $display-large-lh-mobile;
+  }
+
+  // display medium
+  .kit-text--display-medium {
+    font-size: $display-medium-size-mobile;
+    line-height: $display-medium-lh-mobile;
+  }
+
+  // display small
+  .kit-text--display-small {
+    font-size: $display-small-size-mobile;
+    line-height: $display-small-lh-mobile;
+  }
+
+  // heading
+  .kit-text--heading {
+    font-size: $heading-size-mobile;
+    line-height: $heading-lh-mobile;
+  }
+
+  // sub heading
+  .kit-text--sub-heading {
+    font-size: $sub-heading-size-mobile;
+    line-height: $sub-heading-lh-mobile;
+  }
+
+  // body
+  .kit-text--body {
+    font-size: $body-size-mobile;
+    line-height: $body-lh-mobile;
+  }
+
+  // caption
+  .kit-text--caption {
+    font-size: $caption-size-mobile;
+    line-height: $caption-lh-mobile;
+  }
+}

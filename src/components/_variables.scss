@@ -1,4 +1,10 @@
 /*----------------------------------------------------------------------------*
+ * General
+ *----------------------------------------------------------------------------*/
+// mobile break point
+$breakpoint: 960px;
+
+/*----------------------------------------------------------------------------*
  * Color
  *----------------------------------------------------------------------------*/
 $ink: #222c35;
@@ -10,7 +16,7 @@ $main: #5c6ac4;
 $white: #fff;
 
 /*----------------------------------------------------------------------------*
- * Font
+ * Text
  *----------------------------------------------------------------------------*/
 // font-size
 $display-xlarge-size: 42px;
@@ -22,6 +28,16 @@ $sub-heading-size: 12px;
 $body-size: 14px;
 $caption-size: 12px;
 
+// mobile font-size
+$display-xlarge-size-mobile: 27px;
+$display-large-size-mobile: 24px;
+$display-medium-size-mobile: 21px;
+$display-small-size-mobile: 16px;
+$heading-size-mobile: 17px;
+$sub-heading-size-mobile: 13px;
+$body-size-mobile: 15px;
+$caption-size-mobile: 13px;
+
 // line-height
 $display-xlarge-lh: 44px;
 $display-large-lh: 32px;
@@ -31,6 +47,16 @@ $heading-lh: 24px;
 $sub-heading-lh: 16px;
 $body-lh: 20px;
 $caption-lh: 16px;
+
+// mobile line-height
+$display-xlarge-lh-mobile: 36px;
+$display-large-lh-mobile: 28px;
+$display-medium-lh-mobile: 28px;
+$display-small-lh-mobile: 24px;
+$heading-lh-mobile: 24px;
+$sub-heading-lh-mobile: 16px;
+$body-lh-mobile: 20px;
+$caption-lh-mobile: 16px;
 
 // font-weight
 $black-weight: 900;
@@ -45,15 +71,20 @@ $ultra-light-weight: 100;
 
 
 /*----------------------------------------------------------------------------*
- * Size
+ * Button
  *----------------------------------------------------------------------------*/
-// buttom
-$button-size-large: 44px;
-$button-size-medium: 35px;
-$button-size-small: 28px;
+// height
+$button-height-large: 44px;
+$button-height-medium: 35px;
+$button-height-small: 28px;
 
-// checkbox
+// font-size
+$button-font-size: 14px;
+$button-font-size-mobile: 15px;
+
+
+/*----------------------------------------------------------------------------*
+ * Checkbox
+ *----------------------------------------------------------------------------*/
+// width and height
 $checkbox-size: 20px;
-
-// mobile break point
-$breakpoint: 960px;

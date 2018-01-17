@@ -18,6 +18,12 @@ const paginatorViewerOptions = [
     description: 'Change the state of the paginator to plain',
   },
   {
+    name: 'fullWidth',
+    value: false,
+    type: 'bool',
+    description: 'Make the paginator full width',
+  },
+  {
     name: 'onPrevious',
     value: () => {},
     type: 'function',

@@ -10,6 +10,7 @@ const propTypes = {
   disableNext: PropTypes.bool,
   disablePrevious: PropTypes.bool,
   plain: PropTypes.bool,
+  fullWidth: PropTypes.bool,
   onNext: PropTypes.func,
   onPrevious: PropTypes.func,
   className: PropTypes.string,
@@ -20,6 +21,7 @@ const defaultProps = {
   disableNext: false,
   disablePrevious: false,
   plain: false,
+  fullWidth: false,
   onNext: undefined,
   onPrevious: undefined,
   className: undefined,
@@ -37,7 +39,7 @@ function Paginator(props) {
     'kit-paginator__right',
   );
   return (
-    <nav className={props.className}>
+    <nav className={classNames({ 'kit-paginator--full-width': props.fullWidth }, props.className)}>
       <div className={previousClassName}>
         <Button
           size="large"

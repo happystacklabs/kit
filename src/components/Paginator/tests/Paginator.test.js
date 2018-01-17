@@ -46,4 +46,11 @@ describe('Paginator', () => {
       expect(paginator.find('button').at(0).hasClass('kit-button--plain')).toBe(true);
     });
   });
+
+  describe('fullWidth', () => {
+    it('add the fullWidth class name', () => {
+      const paginator = mount(<Paginator fullWidth />);
+      expect(paginator.find('nav').at(0).hasClass('kit-paginator--full-width')).toBe(true);
+    });
+  });
 });
