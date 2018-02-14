@@ -20,48 +20,6 @@
   margin: auto; }
 
 /*----------------------------------------------------------------------------*
- * loader1
- *----------------------------------------------------------------------------*/
-.kit-spinner--loader1 {
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  position: relative;
-  text-indent: -9999em;
-  animation: kit-animation-load1 1s infinite linear;
-  transform: translateZ(0); }
-
-/*----------------------------------------------------------------------------*
- * loader2
- *----------------------------------------------------------------------------*/
-.kit-spinner--loader2,
-.kit-spinner--loader2::before,
-.kit-spinner--loader2::after {
-  border-radius: 50%;
-  width: 3em;
-  height: 3em;
-  animation: kit-animation-load2 1s infinite ease-in-out normal both; }
-
-.kit-spinner--loader2 {
-  position: relative;
-  text-indent: -9999em;
-  transform: translateZ(0);
-  animation-delay: -0.16s; }
-
-.kit-spinner--loader2::before,
-.kit-spinner--loader2::after {
-  content: '';
-  position: absolute;
-  top: 0; }
-
-.kit-spinner--loader2::before {
-  left: -4em;
-  animation-delay: -0.32s; }
-
-.kit-spinner--loader2::after {
-  left: 4em; }
-
-/*----------------------------------------------------------------------------*
  * color
  *----------------------------------------------------------------------------*/
 .kit-spinner--ink {
@@ -86,40 +44,10 @@
  * size
  *----------------------------------------------------------------------------*/
 .kit-spinner--small {
-  font-size: 2px; }
+  font-size: 12px; }
 
 .kit-spinner--medium {
-  font-size: 4px; }
+  font-size: 16px; }
 
 .kit-spinner--large {
-  font-size: 6px; }
-
-/*----------------------------------------------------------------------------*
- * animation
- *----------------------------------------------------------------------------*/
-@keyframes kit-animation-load1 {
-  0%,
-  100% {
-    box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0; }
-  12.5% {
-    box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em; }
-  25% {
-    box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em; }
-  37.5% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 0, 2em 2em 0 0.2em, 0 3em 0 0, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em; }
-  50% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0 0 -1em, -2em -2em 0 -1em; }
-  62.5% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em; }
-  75% {
-    box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0 0 0.2em, -2em -2em 0 0; }
-  87.5% {
-    box-shadow: 0 -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0 0 0, -2em -2em 0 0.2em; } }
-
-@keyframes kit-animation-load2 {
-  0%,
-  80%,
-  100% {
-    box-shadow: 0 4em 0 -2em; }
-  40% {
-    box-shadow: 0 4em 0 0; } }
+  font-size: 20px; }

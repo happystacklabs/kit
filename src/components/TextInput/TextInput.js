@@ -57,6 +57,15 @@ function renderAction(action) {
   );
 }
 
+function renderSearch(inputType) {
+  if (inputType !== 'search') { return undefined; }
+  return (
+    <div className="kit-textinput__search" >
+      <Icon name="search" color="ink-light" size="sm" />
+    </div>
+  );
+}
+
 
 const propTypes = {
   name: PropTypes.string.isRequired,
@@ -113,8 +122,15 @@ function TextInput(props) {
     'kit-textinput__input',
   );
 
+  const textInputClassName = classNames(
+    {
+      'kit-textinput--search': props.type === 'search',
+    },
+    props.className, 'kit-textinput',
+  );
+
   return (
-    <div className={classNames(props.className, 'kit-textinput')}>
+    <div className={textInputClassName}>
       {renderLabel(props.name, props.label)}
       {renderAction(props.action)}
       <input
@@ -126,8 +142,9 @@ function TextInput(props) {
         disabled={props.disabled}
         className={inputClassName}
         maxLength={props.maxLength}
-        type={props.type}
+        type={props.type !== 'search' ? props.type : undefined}
       />
+      {renderSearch(props.type)}
       {renderError(props.error)}
       {renderHelpText(props.helpText)}
     </div>

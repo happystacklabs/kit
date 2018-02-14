@@ -5,31 +5,31 @@ ignore:
   'npm:debug:20170905':
     - react-scripts > fsevents > node-pre-gyp > tar-pack > debug:
         reason: 'eyond reach, waiting for CRA team to update.'
-        expires: '2018-02-07T11:50:35.012Z'
+        expires: '2018-03-16T06:25:30.534Z'
     - react-scripts > webpack-dev-server > chokidar > fsevents > node-pre-gyp > tar-pack > debug:
         reason: 'eyond reach, waiting for CRA team to update.'
-        expires: '2018-02-07T11:50:35.012Z'
+        expires: '2018-03-16T06:25:30.534Z'
     - react-scripts > webpack > watchpack > chokidar > fsevents > node-pre-gyp > tar-pack > debug:
         reason: 'eyond reach, waiting for CRA team to update.'
-        expires: '2018-02-07T11:50:35.012Z'
+        expires: '2018-03-16T06:25:30.535Z'
   'npm:tough-cookie:20170905':
     - react-scripts > fsevents > node-pre-gyp > request > tough-cookie:
         reason: 'beyond reach, waiting for CRA team to update.'
-        expires: '2018-02-07T11:50:35.012Z'
+        expires: '2018-03-16T06:25:30.535Z'
     - react-scripts > webpack-dev-server > chokidar > fsevents > node-pre-gyp > request > tough-cookie:
         reason: 'beyond reach, waiting for CRA team to update.'
-        expires: '2018-02-07T11:50:35.012Z'
+        expires: '2018-03-16T06:25:30.535Z'
     - react-scripts > webpack > watchpack > chokidar > fsevents > node-pre-gyp > request > tough-cookie:
         reason: 'beyond reach, waiting for CRA team to update.'
-        expires: '2018-02-07T11:50:35.012Z'
+        expires: '2018-03-16T06:25:30.535Z'
   'npm:content-type-parser:20170905':
     - react-scripts > jest > jest-cli > jest-environment-jsdom > jsdom > content-type-parser:
         reason: 'beyond reach, waiting for CRA team to update.'
-        expires: '2018-02-07T11:50:35.012Z'
+        expires: '2018-03-16T06:25:30.535Z'
     - react-scripts > jest > jest-cli > jest-config > jest-environment-jsdom > jsdom > content-type-parser:
         reason: 'beyond reach, waiting for CRA team to update.'
-        expires: '2018-02-07T11:50:35.012Z'
+        expires: '2018-03-16T06:25:30.535Z'
     - react-scripts > jest > jest-cli > jest-runtime > jest-config > jest-environment-jsdom > jsdom > content-type-parser:
         reason: 'beyond reach, waiting for CRA team to update.'
-        expires: '2018-02-07T11:50:35.012Z'
+        expires: '2018-03-16T06:25:30.535Z'
 patch: {}

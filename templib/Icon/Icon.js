@@ -3,11 +3,14 @@ import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import solid from '@fortawesome/fontawesome-free-solid';
+import brands from '@fortawesome/fontawesome-free-brands';
 import '@fortawesome/fontawesome-free-regular';
 import './Icon.css';
 
 
-export const icons = Object.keys(solid).map(icon => solid[icon].iconName);
+const brandIcons = Object.keys(brands).map(icon => brands[icon].iconName);
+const solidIcons = Object.keys(solid).map(icon => solid[icon].iconName);
+export const icons = [...solidIcons, ...brandIcons];
 
 
 export const colors = {
@@ -51,7 +54,9 @@ function Icon(props) {
     colors[props.color],
   );
 
-  const iconType = props.regular ? 'far' : 'fas';
+
+  let iconType = props.regular ? 'far' : 'fas';
+  iconType = brandIcons.includes(props.name) ? 'fab' : iconType;
 
   return (
     <FontAwesomeIcon

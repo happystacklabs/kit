@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import TextInput from '../TextInput';
+import Icon from '../../Icon/Icon';
 
 
 describe('TextInput', () => {
@@ -79,14 +80,19 @@ describe('TextInput', () => {
       expect(input.find('input').first().props().type).toBe('password');
     });
 
-    it('give a search field when given in props', () => {
-      const input = mount(<TextInput name="Foo" type="search" />);
-      expect(input.find('input').first().props().type).toBe('search');
-    });
-
     it('give a url field when given in props', () => {
       const input = mount(<TextInput name="Foo" type="url" />);
       expect(input.find('input').first().props().type).toBe('url');
+    });
+
+    it('dont give the search field when given in props', () => {
+      const input = mount(<TextInput name="Foo" type="search" />);
+      expect(input.find('input').first().props().type).not.toBe('search');
+    });
+
+    it('add a search icon when search type is given in props', () => {
+      const input = mount(<TextInput name="Foo" type="search" />);
+      expect(input.containsMatchingElement(<Icon />));
     });
   });
 
