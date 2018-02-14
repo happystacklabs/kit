@@ -125,4 +125,9 @@ describe('TextInput', () => {
       expect(spy).toHaveBeenCalled();
     });
   });
+
+  describe('textArea', () => {
+    const input = mount(<TextInput name="Foo" textArea />);
+    expect(input.containsMatchingElement('textinput__input--textarea'));
+  });
 });

@@ -18,6 +18,12 @@ const textInputViewerOptions = [
     description: 'make the input read only',
   },
   {
+    name: 'textArea',
+    value: false,
+    type: 'bool',
+    description: 'tranform into a textarea',
+  },
+  {
     name: 'name',
     value: 'firstname',
     type: 'string',
