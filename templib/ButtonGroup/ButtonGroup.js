@@ -1,31 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import './ButtonGroup.css';
-import styles from './ButtonGroup.styles';
-import classNames from 'classnames/bind';
 
-
-let cx = classNames.bind(styles);
 
 const propTypes = {
-    children: PropTypes.node,
-    segmented: PropTypes.bool,
+  children: PropTypes.node,
+  segmented: PropTypes.bool,
+  className: PropTypes.string,
 };
 
+
+const defaultProps = {
+  children: undefined,
+  segmented: false,
+  className: undefined,
+};
+
+
 function ButtonGroup(props) {
-  const classButtonGroup = cx({
-    segmented: props.segmented},
+  const buttonGroupClassName = classNames(
+    { 'kit-button-group--segmented': props.segmented },
+    'kit-button-group',
     props.className,
-    styles.buttonGroup,
   );
 
   return (
-    <div className={classButtonGroup}>
+    <div className={buttonGroupClassName}>
       {props.children}
     </div>
   );
 }
 
+
 ButtonGroup.propTypes = propTypes;
+ButtonGroup.defaultProps = defaultProps;
+
 
 export default ButtonGroup;

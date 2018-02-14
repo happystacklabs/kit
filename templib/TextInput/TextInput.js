@@ -1,23 +1,62 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import './TextInput.css';
-import styles from './TextInput.styles';
-import Text from '../Text';
-import Icon from '../Icon';
-import Button from '../Button';
-import classNames from 'classnames/bind';
+import Text from '../Text/Text';
+import Icon from '../Icon/Icon';
 
 
-let cx = classNames.bind(styles);
+export const type = ['email', 'text', 'number', 'password', 'search', 'url'];
 
-export const type = [
-  'email',
-  'text',
-  'number',
-  'password',
-  'search',
-  'url',
-];
+
+function renderError(error) {
+  if (!error) { return undefined; }
+  return (
+    <div className="kit-textinput__error-message">
+      <Icon name="exclamation" color="negative" className="kit-textinput__error-icon" />
+      <Text color="negative" element="span" size="caption">{error}</Text>
+    </div>
+  );
+}
+
+
+function renderHelpText(helpText) {
+  if (!helpText) { return undefined; }
+  return (
+    <div className="kit-textinput__help-text">
+      <Text color="ink-light" element="span" size="caption">{helpText}</Text>
+    </div>
+  );
+}
+
+
+function renderLabel(name, labelText) {
+  if (!labelText) { return undefined; }
+  return (
+    <div className="kit-textinput__label">
+      <label htmlFor={name}>
+        <Text size="body">{labelText}</Text>
+      </label>
+    </div>
+  );
+}
+
+
+function renderAction(action) {
+  if (!action) { return undefined; }
+  return (
+    <div
+      onClick={action.onAction}
+      onKeyPress={action.onAction}
+      role="button"
+      tabIndex="0"
+      className="kit-textinput__action"
+    >
+      <Text size="body">{action.title}</Text>
+    </div>
+  );
+}
+
 
 const propTypes = {
   name: PropTypes.string.isRequired,
@@ -39,28 +78,43 @@ const propTypes = {
     onAction: PropTypes.func,
   }),
   onChange: PropTypes.func,
+  className: PropTypes.string,
 };
+
 
 const defaultProps = {
   type: 'text',
+  value: '',
+  placeholder: undefined,
+  readOnly: false,
+  disabled: false,
+  maxLength: undefined,
+  shake: false,
+  error: undefined,
+  label: undefined,
+  helpText: undefined,
+  action: undefined,
+  onChange: undefined,
+  className: undefined,
 };
+
 
 function TextInput(props) {
   function handleChange(event) {
     if (props.onChange === null) { return; }
-    props.onChange({name: props.name, value: event.target.value});
-  };
+    props.onChange({ name: props.name, value: event.target.value });
+  }
 
-  const readOnly = !props.readOnly && props.onChange ? false : true;
-
-  const classInput = cx({
-    shake: props.shake || (props.maxLength && props.value.length >= props.maxLength),
-    error: props.error },
-    styles.input
+  const inputClassName = classNames(
+    {
+      'kit-textinput__input--shake': props.shake || (props.maxLength && props.value.length >= props.maxLength),
+      'kit-textinput__input--error': props.error,
+    },
+    'kit-textinput__input',
   );
 
   return (
-    <div className={props.className}>
+    <div className={classNames(props.className, 'kit-textinput')}>
       {renderLabel(props.name, props.label)}
       {renderAction(props.action)}
       <input
@@ -68,9 +122,9 @@ function TextInput(props) {
         value={props.value}
         placeholder={props.placeholder}
         onChange={handleChange}
-        readOnly={readOnly}
+        readOnly={props.readOnly}
         disabled={props.disabled}
-        className={classInput}
+        className={inputClassName}
         maxLength={props.maxLength}
         type={props.type}
       />
@@ -80,54 +134,9 @@ function TextInput(props) {
   );
 }
 
-function renderError(error) {
-  if (error) {
-    return (
-      <div className={styles.errorMessage}>
-        <Icon name="exclamation" color="negative" className={styles.errorIcon} />
-        <Text color="negative" element="span" size="small">{error}</Text>
-      </div>
-    );
-  }
-}
-
-function renderHelpText(helpText) {
-  if (helpText) {
-    return (
-      <div className={styles.helpText}>
-        <Text color="inkLight" element="span" size="small">{helpText}</Text>
-      </div>
-    );
-  }
-}
-
-function renderLabel(name, labelText) {
-  if (labelText) {
-    return (
-      <div className={styles.label}>
-        <label htmlFor={name}>
-          <Text size="regular">{labelText}</Text>
-        </label>
-      </div>
-    );
-  }
-}
-
-function renderAction(action) {
-  if (action) {
-    return (
-      <Button
-        plain
-        className={styles.action}
-        onClick={action.onAction}
-      >
-        {action.title}
-      </Button>
-    );
-  }
-}
 
 TextInput.propTypes = propTypes;
 TextInput.defaultProps = defaultProps;
+
 
 export default TextInput;

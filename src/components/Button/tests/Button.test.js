@@ -90,7 +90,7 @@ describe('Button', () => {
   describe('loading', () => {
     it('render spinner when given by props', () => {
       const button = shallow(<Button loading />);
-      expect(button.find('div').first().hasClass('kit-button__loading')).toBe(true);
+      expect(button.find('div').at(1).hasClass('kit-button__loading')).toBe(true);
     });
 
     it('disable the button', () => {

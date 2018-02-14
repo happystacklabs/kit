@@ -78,7 +78,7 @@ tasksCommand[3]="task4"
 # Task 5
 ################################################################################
 tasks[4]='Run build'
-tasksCommand[4]='npm run build'
+tasksCommand[4]='npm run lib'
 
 ################################################################################
 # Task 6
@@ -98,5 +98,4 @@ tasksCommand[6]='surge ./build  kit.happystack.io'
 # Task 8
 ################################################################################
 tasks[7]='Deploy package to NPM'
-# tasksCommand[2]='npm publish'
 tasksCommand[7]='npm publish'

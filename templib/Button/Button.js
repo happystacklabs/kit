@@ -1,24 +1,42 @@
 import React from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import './Button.css';
-import styles from './Button.styles';
-import Spinner from '../Spinner';
-import classNames from 'classnames/bind';
+import Spinner from '../Spinner/Spinner';
 
-
-let cx = classNames.bind(styles);
 
 const sizes = {
-  'slim': styles.slim,
-  'regular': styles.regular,
-  'large': styles.large,
+  small: 'kit-button--small',
+  medium: 'kit-button--medium',
+  large: 'kit-button--large',
 };
 
+
 const colors = {
-  'positive': styles.positive,
-  'negative': styles.negative,
-  'purple': styles.purple,
+  positive: 'kit-button--positive',
+  negative: 'kit-button--negative',
+  main: 'kit-button--main',
+  default: 'kit-button--default',
 };
+
+
+function renderContent(propSize, loading, plain, children) {
+  if (loading) {
+    const size = propSize === 'large' ? 'medium' : 'small';
+    let type = propSize === 'small' ? 'loader2' : 'loader1';
+    type = plain ? 'loader2' : type;
+    return (
+      <div className="kit-button__loading">
+        <Spinner className="kit-button__spinner" color="ink-light" size={size} type={type} />
+        <span className="kit-button__content--hidden">{children}</span>
+      </div>
+    );
+  }
+  return (
+    <span>{children}</span>
+  );
+}
+
 
 const propTypes = {
   children: PropTypes.node,
@@ -30,21 +48,38 @@ const propTypes = {
   plain: PropTypes.bool,
   outline: PropTypes.bool,
   loading: PropTypes.bool,
+  className: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
+
 const defaultProps = {
-  size: 'regular',
- };
+  children: undefined,
+  disabled: false,
+  size: 'medium',
+  color: 'default',
+  square: false,
+  fullWidth: false,
+  plain: false,
+  outline: false,
+  loading: false,
+  className: undefined,
+  onClick: undefined,
+};
+
 
 function Button(props) {
-  const classButton = cx({
-    loading: props.loading,
-    outline: props.outline,
-    plain: props.plain,
-    fullWidth: props.fullWidth,
-    square: props.square},
+  const buttonClassNames = classNames(
+    {
+      'kit-button--loading kit-button--disabled': props.loading,
+      'kit-button--outline': props.outline,
+      'kit-button--plain': props.plain,
+      'kit-button--full-width': props.fullWidth,
+      'kit-button--square': props.square,
+      'kit-button--disabled': props.disabled,
+    },
     props.className,
-    styles.button,
+    'kit-button',
     colors[props.color],
     sizes[props.size],
   );
@@ -55,34 +90,16 @@ function Button(props) {
     <button
       onClick={props.onClick}
       disabled={disabled}
-      className={classButton}
+      className={buttonClassNames}
     >
-      {renderContent(props)}
+      {renderContent(props.size, props.loading, props.plain, props.children)}
     </button>
   );
 }
 
-function renderContent(props) {
- if (props.loading) {
-   const size = props.size === 'large' ? 'medium' : 'small';
-   const type = props.size === 'slim' ? 'loader2' : 'loader1';
-
-   return (
-     <div className={styles.loading}>
-       <span className={styles.spinner}>
-         <Spinner color="inkLight" size={size} type={type} />
-       </span>
-       <span className={styles.hidden}>{props.children}</span>
-     </div>
-   );
- } else {
-   return (
-     <span>{props.children}</span>
-   );
- }
-};
 
 Button.propTypes = propTypes;
 Button.defaultProps = defaultProps;
+
 
 export default Button;

@@ -1,5 +1,0 @@
-{
- "private": true,
- "name": "Select",
- "main": "./Select.js"
-}

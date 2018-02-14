@@ -1,14 +1,5 @@
 const spinnerViewerOptions = [
   {
-    name: 'type',
-    value: 'loader1',
-    type: [
-      'loader1',
-      'loader2',
-    ],
-    description: 'Change the loader animation and style',
-  },
-  {
     name: 'color',
     value: 'ink',
     type: [

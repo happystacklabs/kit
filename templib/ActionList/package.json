@@ -1,5 +1,0 @@
-{
- "private": true,
- "name": "ActionList",
- "main": "./ActionList.js"
-}

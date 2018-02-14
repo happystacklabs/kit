@@ -1,23 +1,41 @@
-.kit-Avatar__placeholder {
-  border: 1px solid #C4CDD5; }
-
-.kit-Avatar__avatar {
+/*----------------------------------------------------------------------------*
+ * avatar
+ *----------------------------------------------------------------------------*/
+.kit-avatar {
   display: inline-block; }
-  .kit-Avatar__avatar--small {
-    width: 32px;
-    height: 32px;
-    line-height: 32px; }
-  .kit-Avatar__avatar--medium {
-    width: 40px;
-    height: 40px;
-    line-height: 40px; }
-  .kit-Avatar__avatar--large {
-    width: 60px;
-    height: 60px;
-    line-height: 60px; }
 
-.kit-Avatar__avatar img,
-.kit-Avatar__placeholder {
+/*----------------------------------------------------------------------------*
+ * placeholder & image
+ *----------------------------------------------------------------------------*/
+.kit-avatar__placeholder {
+  border: 1px solid #c4cdd5; }
+
+.kit-avatar__image,
+.kit-avatar__placeholder {
   border-radius: 50%;
-  background: #FAFAFA;
+  background: #fafafa;
   text-align: center; }
+
+/*----------------------------------------------------------------------------*
+ * size
+ *----------------------------------------------------------------------------*/
+.kit-avatar--small .kit-avatar__image,
+.kit-avatar--small .kit-avatar__placeholder {
+  width: 32px;
+  height: 32px;
+  line-height: 32px; }
+
+.kit-avatar--medium .kit-avatar__image,
+.kit-avatar--medium .kit-avatar__placeholder {
+  width: 40px;
+  height: 40px;
+  line-height: 40px; }
+
+.kit-avatar--large .kit-avatar__image,
+.kit-avatar--large .kit-avatar__placeholder {
+  width: 60px;
+  height: 60px; }
+
+.kit-avatar--large .kit-avatar__placeholder .kit-text {
+  font-size: 24px;
+  line-height: 60px; }

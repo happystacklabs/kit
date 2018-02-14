@@ -23,12 +23,12 @@ const colors = {
 function renderContent(propSize, loading, plain, children) {
   if (loading) {
     const size = propSize === 'large' ? 'medium' : 'small';
-    let type = propSize === 'small' ? 'loader2' : 'loader1';
-    type = plain ? 'loader2' : type;
     return (
-      <div className="kit-button__loading">
-        <Spinner className="kit-button__spinner" color="ink-light" size={size} type={type} />
+      <div>
         <span className="kit-button__content--hidden">{children}</span>
+        <div className="kit-button__loading">
+          <Spinner className="kit-button__spinner" color="ink-light" size={size} />
+        </div>
       </div>
     );
   }

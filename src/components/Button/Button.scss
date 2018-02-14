@@ -167,35 +167,13 @@
 /*----------------------------------------------------------------------------*
  * loading
  *----------------------------------------------------------------------------*/
- .kit-button__content--hidden {
-   color: transparent;
- }
+.kit-button__content--hidden {
+  color: transparent;
+}
 
-.kit-button__loading {
+.kit-button__loading .kit-button__spinner {
   position: relative;
-}
-
-.kit-button--small .kit-button__loading {
-  height: 1px;
-  top: -10px;
-}
-
-.kit-button__spinner {
-  position: absolute !important;
-  left: 50%;
-  height: 50%;
-}
-
-.kit-button--large .kit-button__spinner {
-  margin: 7px 0 0 -1px;
-}
-
-.kit-button--medium .kit-button__spinner {
-  margin: 9px 0 0 -1px;
-}
-
-.kit-button--small .kit-button__spinner {
-  margin: 0 0 0 -2px;
+  margin-top: -15px;
 }
 
 

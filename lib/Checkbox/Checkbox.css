@@ -1,82 +1,142 @@
-.kit-Checkbox__wrapper {
-  min-height: 20px; }
+/*----------------------------------------------------------------------------*
+ * General
+ *----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*
+ * Color
+ *----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*
+ * Text
+ *----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*
+ * Button
+ *----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*
+ * Checkbox
+ *----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*
+ * input
+ *----------------------------------------------------------------------------*/
+.kit-checkbox__input {
+  opacity: 0;
+  position: absolute;
+  cursor: pointer; }
 
-.kit-Checkbox__input {
-  appearance: none;
-  outline: 0;
-  margin: 0;
-  padding: 0;
-  float: left; }
-  .kit-Checkbox__input:disabled:after {
-    border: 1px solid #E3E6EA; }
-  .kit-Checkbox__input:checked:disabled:after {
-    background: #FAFAFA; }
-  .kit-Checkbox__input:checked:disabled + .checkmark {
-    color: #E3E6EA; }
-  .kit-Checkbox__input:checked:disabled + .radioMiddle {
-    background: #E3E6EA; }
-  .kit-Checkbox__input:after {
-    display: inline-block;
-    content: '';
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    background: #FAFAFA;
-    border: 1px solid #C4CDD5;
-    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
-    border-radius: 3px;
-    transition: background .2s ease-in-out;
-    box-sizing: border-box; }
-  .kit-Checkbox__input:checked:after {
-    background: #5C6AC4; }
-  .kit-Checkbox__input:checked ~ .kit-Checkbox__checkmark {
-    transform: translate(-50%, -50%) scale(1); }
-
-.kit-Checkbox__label {
-  margin-left: 5px; }
-
-.kit-Checkbox__innerWrapper {
+/*----------------------------------------------------------------------------*
+ * mixed
+ *----------------------------------------------------------------------------*/
+.kit-checkbox__label {
   position: relative;
-  height: 20px;
-  float: left;
-  width: 20px;
+  padding-left: 26px;
+  user-select: none; }
+
+.kit-checkbox__label::before,
+.kit-checkbox__label::after {
+  position: absolute;
+  content: "";
   display: inline-block; }
 
-.kit-Checkbox__checkmark {
-  pointer-events: none;
-  width: 13px;
-  height: 13px;
-  position: absolute;
-  font-size: 13px;
-  transform: translate(-50%, -50%) scale(0);
-  left: 50%;
-  top: 50%;
-  transition: transform .2s ease-in-out; }
+/*----------------------------------------------------------------------------*
+ * checkbox
+ *----------------------------------------------------------------------------*/
+.kit-checkbox__label::before {
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: #fafafa;
+  border: 1px solid #c4cdd5;
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
+  border-radius: 3px;
+  transition: background 0.2s ease-in-out;
+  box-sizing: border-box;
+  cursor: pointer; }
 
-.kit-Checkbox__helpText {
-  clear: both;
-  margin-left: 27px; }
+.kit-checkbox--radio .kit-checkbox__label::before {
+  border-radius: 100px; }
 
-.kit-Checkbox__radioMiddle {
-  pointer-events: none;
-  display: block;
-  width: 5px;
-  border-radius: 5px;
-  height: 5px;
-  background: white;
-  position: absolute;
-  transform: translate(-50%, -50%) scale(0);
-  left: 50%;
-  top: 50%;
-  transition: transform .2s ease-in-out; }
+.kit-checkbox--error + .kit-checkbox__label::before {
+  color: #e03e30;
+  border: 1px solid #e03e30;
+  background: #f7cfcb; }
 
-.kit-Checkbox--error .kit-Checkbox__input:after,
-.kit-Checkbox--error .kit-Checkbox__input:checked:after {
-  background: #F9D8D6;
-  border: 2px solid #E03E30; }
+.kit-checkbox__input:checked + .kit-checkbox__label::before {
+  background: #5c6ac4; }
 
-.kit-Checkbox__radioInput .kit-Checkbox__input:after {
-  border-radius: 20px; }
+.kit-checkbox__input:focus + .kit-checkbox__label::before {
+  outline: 0; }
 
-.kit-Checkbox__radioInput .kit-Checkbox__input:checked ~ .kit-Checkbox__radioMiddle {
-  transform: translate(-50%, -50%) scale(1); }
+.kit-checkbox__input:active + .kit-checkbox__label::before {
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.3); }
+
+.kit-checkbox__input:disabled + .kit-checkbox__label::before {
+  background: #f2f2f2;
+  border: 1px solid #c4cdd5; }
+
+.kit-checkbox__input:checked:disabled + .kit-checkbox__label::before {
+  color: #fff;
+  background: #949dd8;
+  border: 1px solid #c4cdd5; }
+
+.kit-checkbox__input:active:disabled + .kit-checkbox__label::before {
+  box-shadow: none; }
+
+.kit-checkbox--error .kit-checkbox__input:checked + .kit-checkbox__label::before {
+  color: #e03e30;
+  border: 1px solid #e03e30;
+  background: #f7cfcb; }
+
+.kit-checkbox--error .kit-checkbox__input:checked:disabled + .kit-checkbox__label::before {
+  background: #f4bab5;
+  border: 1px solid #ed9189; }
+
+.kit-checkbox--radio.kit-checkbox--error .kit-checkbox__input:checked:disabled + .kit-checkbox__label::before {
+  background: #f4bab5;
+  border: 1px solid #ed9189; }
+
+/*----------------------------------------------------------------------------*
+ * checkmark
+ *----------------------------------------------------------------------------*/
+.kit-checkbox__label::after {
+  top: 4px;
+  left: 5px;
+  height: 6px;
+  width: 9px;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  transform: rotate(-45deg);
+  cursor: pointer; }
+
+.kit-checkbox--radio .kit-checkbox__label::after {
+  top: 7px;
+  left: 7px;
+  height: 6px;
+  width: 6px;
+  background: #fff;
+  border-radius: 100px;
+  transform: none;
+  border: none; }
+
+.kit-checkbox__input + .kit-checkbox__label::after {
+  content: none; }
+
+.kit-checkbox__input:checked + .kit-checkbox__label::after {
+  content: "";
+  color: #fff; }
+
+.kit-checkbox--error.kit-checkbox--radio .kit-checkbox__label::after {
+  background: #e03e30; }
+
+.kit-checkbox--error .kit-checkbox__input:checked + .kit-checkbox__label::after {
+  color: #e03e30; }
+
+.kit-checkbox--error .kit-checkbox__input:checked:disabled + .kit-checkbox__label::after {
+  color: #ed9189; }
+
+.kit-checkbox--error.kit-checkbox--radio .kit-checkbox__input:checked:disabled + .kit-checkbox__label::after {
+  background: #ed9189; }
+
+/*----------------------------------------------------------------------------*
+ * helptext
+ *----------------------------------------------------------------------------*/
+.kit-checkbox__help-text {
+  padding-left: 27px; }

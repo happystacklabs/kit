@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Spinner.css';
-import styles from './Spinner.styles';
 import classNames from 'classnames';
+import './Spinner.css';
 
 
 export const names = [
@@ -11,53 +10,61 @@ export const names = [
 ];
 
 export const colors = {
-  'ink': styles.ink,
-  'inkLight': styles.inkLight,
-  'positive': styles.positive,
-  'negative': styles.negative,
-  'purple': styles.purple,
-  'white': styles.white,
-}
+  ink: 'kit-spinner--ink',
+  'ink-light': 'kit-spinner--ink-light',
+  positive: 'kit-spinner--positive',
+  negative: 'kit-spinner--negative',
+  main: 'kit-spinner--main',
+  white: 'kit-spinner--white',
+};
+
 
 export const sizes = {
-  'small': styles.small,
-  'medium': styles.medium,
-  'large': styles.large,
+  small: 'kit-spinner--small',
+  medium: 'kit-spinner--medium',
+  large: 'kit-spinner--large',
 };
 
 
 export const types = {
-  'loader1': styles.loader1,
-  'loader2': styles.loader2,
-}
+  loader1: 'kit-spinner--loader1',
+  loader2: 'kit-spinner--loader2',
+};
+
 
 const propTypes = {
   type: PropTypes.oneOf(names),
   color: PropTypes.oneOf(Object.keys(colors)),
   size: PropTypes.oneOf(Object.keys(sizes)),
+  className: PropTypes.string,
 };
+
 
 const defaultProps = {
   type: 'loader1',
   color: 'ink',
   size: 'medium',
- };
+  className: undefined,
+};
+
 
 function Spinner(props) {
-  const classSpinner = classNames(
+  const spinnerClassName = classNames(
     props.className,
-    styles.spinner,
+    'kit-spinner',
     types[props.type],
     colors[props.color],
     sizes[props.size],
   );
 
   return (
-    <div className={classSpinner}>Loading...</div>
+    <div className={spinnerClassName}>Loading...</div>
   );
 }
 
+
 Spinner.propTypes = propTypes;
 Spinner.defaultProps = defaultProps;
+
 
 export default Spinner;

@@ -1,23 +1,33 @@
-.kit-Skeleton__line {
+/*----------------------------------------------------------------------------*
+ * line
+ *----------------------------------------------------------------------------*/
+.kit-skeleton__line {
   background: rgba(196, 205, 213, 0.4);
   border-radius: 3px;
   width: 100%;
   height: 8px;
   margin-bottom: 10px;
-  animation: animation 1.0s linear infinite alternate; }
-  .kit-Skeleton__line:last-child:not(:first-child) {
-    width: 90%; }
+  animation: kit-animation-skeleton 1s linear infinite alternate; }
 
-.kit-Skeleton__display {
+.kit-skeleton__line:last-child:not(:first-child) {
+  width: 90%; }
+
+/*----------------------------------------------------------------------------*
+ * display
+ *----------------------------------------------------------------------------*/
+.kit-skeleton__display {
   background: rgba(196, 205, 213, 0.4);
   border-radius: 3px;
   width: 110px;
   height: 30px;
   margin-bottom: 10px;
-  animation: animation 1.0s linear infinite alternate; }
+  animation: kit-animation-skeleton 1s linear infinite alternate; }
 
-@keyframes animation {
+/*----------------------------------------------------------------------------*
+ * animation
+ *----------------------------------------------------------------------------*/
+@keyframes kit-animation-skeleton {
   0% {
-    opacity: 0.45; }
+    opacity: 0.35; }
   100% {
-    opacity: 0.9; } }
+    opacity: 1.0; } }
