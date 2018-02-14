@@ -1,6 +1,10 @@
 import solid from '@fortawesome/fontawesome-free-solid';
+import brands from '@fortawesome/fontawesome-free-brands';
 
-const icons = Object.keys(solid).map(icon => solid[icon].iconName);
+
+const brandIcons = Object.keys(brands).map(icon => brands[icon].iconName);
+const solidIcons = Object.keys(solid).map(icon => solid[icon].iconName);
+const icons = [...solidIcons, ...brandIcons];
 
 const iconViewerOptions = [
   {
