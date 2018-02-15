@@ -18,6 +18,7 @@ import {
   ButtonGroup,
   Skeleton,
   Progress,
+  Dropzone,
 } from './components';
 
 // options import
@@ -38,6 +39,7 @@ import {
   buttonGroupViewerOptions,
   skeletonViewerOptions,
   progressViewerOptions,
+  dropzoneViewerOptions,
 } from './components/viewerOptions';
 
 
@@ -57,6 +59,14 @@ import {
 */
 
 const components = [
+  {
+    path: '/dropzone',
+    name: 'Dropzone',
+    options: dropzoneViewerOptions,
+    code: (
+      <Dropzone />
+    ),
+  },
   {
     path: '/progress',
     name: 'Progress',

@@ -88,6 +88,7 @@ const propTypes = {
   }),
   onChange: PropTypes.func,
   className: PropTypes.string,
+  textArea: PropTypes.bool,
 };
 
 
@@ -105,6 +106,7 @@ const defaultProps = {
   action: undefined,
   onChange: undefined,
   className: undefined,
+  textArea: false,
 };
 
 
@@ -118,6 +120,7 @@ function TextInput(props) {
     {
       'kit-textinput__input--shake': props.shake || (props.maxLength && props.value.length >= props.maxLength),
       'kit-textinput__input--error': props.error,
+      'kit-textinput__textarea': props.textArea,
     },
     'kit-textinput__input',
   );
@@ -133,17 +136,32 @@ function TextInput(props) {
     <div className={textInputClassName}>
       {renderLabel(props.name, props.label)}
       {renderAction(props.action)}
-      <input
-        name={props.name}
-        value={props.value}
-        placeholder={props.placeholder}
-        onChange={handleChange}
-        readOnly={props.readOnly}
-        disabled={props.disabled}
-        className={inputClassName}
-        maxLength={props.maxLength}
-        type={props.type !== 'search' ? props.type : undefined}
-      />
+      { props.textArea ?
+        (<textarea
+          name={props.name}
+          row={3}
+          value={props.value}
+          placeholder={props.placeholder}
+          onChange={handleChange}
+          readOnly={props.readOnly}
+          disabled={props.disabled}
+          className={inputClassName}
+          maxLength={props.maxLength}
+          type={props.type !== 'search' ? props.type : undefined}
+        />)
+      :
+        (<input
+          name={props.name}
+          value={props.value}
+          placeholder={props.placeholder}
+          onChange={handleChange}
+          readOnly={props.readOnly}
+          disabled={props.disabled}
+          className={inputClassName}
+          maxLength={props.maxLength}
+          type={props.type !== 'search' ? props.type : undefined}
+        />)
+      }
       {renderSearch(props.type)}
       {renderError(props.error)}
       {renderHelpText(props.helpText)}

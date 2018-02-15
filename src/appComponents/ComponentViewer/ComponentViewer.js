@@ -63,6 +63,7 @@ class ComponentViewer extends React.Component {
     const indexOnChange = newState.options.findIndex(x => x.name === 'onChange');
     // get the value of the Onchange option, it contains the name of the option to update
     const fieldValue = newState.options[indexOnChange].value;
+    if (fieldValue === null) { return; }
     // find the index of the option to update
     const indexValue = newState.options.findIndex(x => x.name === fieldValue);
     // update the option value with the event value

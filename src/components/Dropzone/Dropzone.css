@@ -1,0 +1,66 @@
+/*----------------------------------------------------------------------------*
+ * General
+ *----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*
+ * Color
+ *----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*
+ * Text
+ *----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*
+ * Button
+ *----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*
+ * Checkbox
+ *----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*
+ * dropzone
+ *----------------------------------------------------------------------------*/
+.kit-dropzone__container {
+  background: #fff;
+  box-shadow: inset 0 1px 4px 0 #c4cdd5;
+  border-radius: 4px;
+  width: 100%;
+  border: 1px dashed #5c6ac4;
+  padding: 8px;
+  box-sizing: border-box;
+  min-height: 150px; }
+
+.kit-dropzone__inner {
+  width: 100%;
+  background: #f2f3fa;
+  border-radius: 2px;
+  text-align: center;
+  padding: 25px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: background 0.2s;
+  min-height: 150px; }
+
+.kit-dropzone__inner:hover {
+  background: #eaecf8; }
+
+.kit-dropzone__inner:focus {
+  outline: 0; }
+
+.kit-dropzone__text {
+  display: block;
+  margin-top: 15px; }
+
+.kit-dropzone__text-link {
+  color: #5c6ac4; }
+
+.kit-dropzone__file-input {
+  display: none; }
+
+.kit-dropzone--dragover .kit-dropzone__inner {
+  background: #e4f4ec; }
+
+.kit-dropzone--dragover.kit-dropzone__container {
+  border: 1px dashed #58be8c; }
+
+.kit-dropzone--error .kit-dropzone__inner {
+  background: #f9dbd9; }
+
+.kit-dropzone--error.kit-dropzone__container {
+  border: 1px dashed #e03e30; }
