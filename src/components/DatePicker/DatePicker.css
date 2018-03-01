@@ -1,0 +1,127 @@
+/*----------------------------------------------------------------------------*
+ * General
+ *----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*
+ * Color
+ *----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*
+ * Text
+ *----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*
+ * Button
+ *----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*
+ * Checkbox
+ *----------------------------------------------------------------------------*/
+/*----------------------------------------------------------------------------*
+ * input
+ *----------------------------------------------------------------------------*/
+.datepicker__input {
+  font-family: -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Helvetica Neue, sans-serif;
+  color: #222c35; }
+
+.datepicker__singleinput input {
+  background: #fff;
+  border: 1px solid #c4cdd5;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #222c35;
+  padding: 0 2px 0 10px;
+  appearance: none;
+  min-height: 35px;
+  box-sizing: border-box;
+  width: 100%; }
+
+.datepicker__range input {
+  border: none;
+  border-radius: 3px;
+  margin: 5px;
+  text-align: center;
+  background: #fff;
+  min-height: 25px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #222c35; }
+
+.datepicker__singleinput input:focus {
+  border: 2px solid #5c6ac4;
+  outline: 0;
+  padding: 0 1px 0 9px; }
+
+.datepicker__singleinput input:disabled {
+  background: #fafafa;
+  color: #c4cdd5;
+  border: 1px solid #c4cdd5; }
+
+.datepicker__range input:focus {
+  outline: 0;
+  background: #5c6ac4;
+  color: #fff; }
+
+.datepicker__range input:disabled {
+  color: #c4cdd5; }
+
+.datepicker__input .DayPicker-Day {
+  border-radius: 0 !important;
+  border-top: 1px solid #C4CDD5;
+  border-left: 1px solid #C4CDD5;
+  color: #797d80;
+  font-size: 14px; }
+
+.datepicker__input .DayPicker-Day.DayPicker-Day--selected {
+  border: 1px solid #5c6ac4;
+  color: #fff;
+  background: #C2C7F5;
+  box-sizing: border-box; }
+
+.datepicker__input .DayPicker-Week {
+  border-right: 1px solid #C4CDD5; }
+
+.datepicker__input .DayPicker-Week:last-child {
+  border-bottom: 1px solid #C4CDD5; }
+
+.datepicker__input .DayPicker:not(.DayPicker--interactionDisabled) .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+  background: #C2C7F5;
+  color: #fff; }
+
+.datepicker__input .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
+  background: #5c6ac4; }
+
+/*----------------------------------------------------------------------------*
+ * range
+ *----------------------------------------------------------------------------*/
+.datepicker__range {
+  background: #fff;
+  border: 1px solid #c4cdd5;
+  border-radius: 3px;
+  appearance: none;
+  min-height: 35px;
+  box-sizing: border-box;
+  display: inline-block;
+  font-family: -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Helvetica Neue, sans-serif;
+  color: #222c35; }
+
+.datepicker__range .DayPicker-Day.DayPicker-Day--start,
+.datepicker__range .DayPicker-Day.DayPicker-Day--end {
+  color: #5c6ac4; }
+
+.datepicker__range .DayPicker-Weekday {
+  font-size: 12px;
+  color: #c4cdd5; }
+
+.datepicker__range .DayPickerInput-Overlay {
+  width: 555px;
+  background: #FFFFFF;
+  border: 1px solid #DFE2E3;
+  box-shadow: 0 1px 2px 0 #D9DADC;
+  border-radius: 3px;
+  margin-top: 10px; }
+
+.datepicker__range .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside):hover {
+  background: #5c6ac4;
+  color: #fff; }
+
+/*----------------------------------------------------------------------------*
+ * single
+ *----------------------------------------------------------------------------*/

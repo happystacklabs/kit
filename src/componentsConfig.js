@@ -19,6 +19,7 @@ import {
   Skeleton,
   Progress,
   Dropzone,
+  DatePicker,
 } from './components';
 
 // options import
@@ -40,6 +41,7 @@ import {
   skeletonViewerOptions,
   progressViewerOptions,
   dropzoneViewerOptions,
+  datePickerViewerOptions,
 } from './components/viewerOptions';
 
 
@@ -59,6 +61,14 @@ import {
 */
 
 const components = [
+  {
+    path: '/datepicker',
+    name: 'DatePicker',
+    options: datePickerViewerOptions,
+    code: (
+      <DatePicker />
+    ),
+  },
   {
     path: '/dropzone',
     name: 'Dropzone',
