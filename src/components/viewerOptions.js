@@ -16,3 +16,4 @@ export { default as skeletonViewerOptions } from './Skeleton/viewerOptions';
 export { default as progressViewerOptions } from './Progress/viewerOptions';
 export { default as dropzoneViewerOptions } from './Dropzone/viewerOptions';
 export { default as datePickerViewerOptions } from './DatePicker/viewerOptions';
+export { default as modalViewerOptions } from './Modal/viewerOptions';

@@ -17,6 +17,9 @@ function getNewProps(_this) {
     } else if (item.name === 'onClick') {
       object[item.name] = _this.onChildrenClick;
       return object;
+    } else if (item.name === 'closeModal') {
+      object[item.name] = _this.onChildrenClose;
+      return object;
     } else if (item.type === 'node') {
       return object;
     }
@@ -85,6 +88,23 @@ class ComponentViewer extends React.Component {
     const indexValue = newState.options.findIndex(x => x.name === fieldValue);
     // update the option value with the event value
     newState.options[indexValue].value = event.value;
+    // update the state
+    this.setState(newState);
+  };
+
+  onChildrenClose = (event) => {
+    // make a clone of state
+    const newState = Object.assign({}, this.state);
+    // find the index of the onClick option
+    const indexOnClick = newState.options.findIndex(x => x.name === 'closeModal');
+    // get the value of the Onclick option, it contains the name of the option to update
+    const fieldValue = newState.options[indexOnClick].value;
+    // fail safe
+    if (fieldValue === false) { return; }
+    // find the index of the option to update
+    const indexValue = newState.options.findIndex(x => x.name === fieldValue);
+    // update the option value with the event value
+    newState.options[indexValue].value = false;
     // update the state
     this.setState(newState);
   };

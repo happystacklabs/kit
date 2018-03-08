@@ -14,3 +14,5 @@ export { default as Checkbox } from './Checkbox/Checkbox';
 export { default as ButtonGroup } from './ButtonGroup/ButtonGroup';
 export { default as Button } from './Button/Button';
 export { default as Avatar } from './Avatar/Avatar';
+export { default as Dropzone } from './Dropzone/Dropzone';
+export { default as DatePicker } from './DatePicker/DatePicker';

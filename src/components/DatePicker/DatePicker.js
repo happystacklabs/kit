@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import { formatDate, parseDate } from 'react-day-picker/moment';
-import Icon from '../Icon/Icon';
 import 'react-day-picker/lib/style.css';
+import Icon from '../Icon/Icon';
 import './DatePicker.css';
 
 

@@ -20,6 +20,7 @@ import {
   Progress,
   Dropzone,
   DatePicker,
+  Modal,
 } from './components';
 
 // options import
@@ -42,6 +43,7 @@ import {
   progressViewerOptions,
   dropzoneViewerOptions,
   datePickerViewerOptions,
+  modalViewerOptions,
 } from './components/viewerOptions';
 
 
@@ -61,6 +63,14 @@ import {
 */
 
 const components = [
+  {
+    path: '/modal',
+    name: 'Modal',
+    options: modalViewerOptions,
+    code: (
+      <Modal />
+    ),
+  },
   {
     path: '/datepicker',
     name: 'DatePicker',
