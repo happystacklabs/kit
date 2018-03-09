@@ -92,7 +92,7 @@ class ComponentViewer extends React.Component {
     this.setState(newState);
   };
 
-  onChildrenClose = (event) => {
+  onChildrenClose = () => {
     // make a clone of state
     const newState = Object.assign({}, this.state);
     // find the index of the onClick option

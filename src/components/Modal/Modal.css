@@ -17,16 +17,14 @@
  * modal
  *----------------------------------------------------------------------------*/
 .kit-modal {
-  display: none;
-  transition: display 0.2s; }
+  display: none; }
 
 .kit-modal.kit-modal--on {
-  display: block;
-  transition: display 0.2s; }
+  display: block; }
 
 .kit-modal__backdrop {
   position: fixed;
-  z-index: 100;
+  z-index: 999;
   top: 0;
   left: 0;
   bottom: 0;

@@ -8,7 +8,7 @@ function Home() {
     <div className="home">
       <img className="home__logo" alt="Happystack" src="/images/happystack@2x.png" width="150" />
       <Text element="h1" size="display-xlarge">Happystack Kit</Text>
-      <img className="home__badge" alt="version" src="https://img.shields.io/badge/Version-0.5.0-green.svg?style=flat" />
+      <img className="home__badge" alt="version" src="https://img.shields.io/badge/Version-0.6.0-green.svg?style=flat" />
       <img className="home__badge" alt="license" src="https://img.shields.io/github/license/mashape/apistatus.svg" />
       <Text element="h4" size="display-small">Kit is a React component library created by Happystack to help streamline your development.</Text>
       <Text element="h3" size="display-medium">Installation:</Text>
