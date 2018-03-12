@@ -48,5 +48,10 @@ describe('Avatar', () => {
       const avatar = mount(<Avatar initial="Foooo" />);
       expect(avatar.find('div').first().text()).toBe('FO');
     });
+
+    it('doesnt show if source is provided', () => {
+      const avatar = mount(<Avatar initial="Foooo" source="bar" />);
+      expect(avatar.find('img').length).toBe(1);
+    });
   });
 });
