@@ -15,6 +15,9 @@ export const sizes = {
 function renderAvatar(initial, size, source) {
   if (initial) {
     const initialValue = initial.toUpperCase().substring(0, 2);
+    if (source) {
+      return <img className="kit-avatar__image" alt={source} src={source} />;
+    }
     return (
       <div className="kit-avatar__placeholder">
         <Text bold>{initialValue}</Text>

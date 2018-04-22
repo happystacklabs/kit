@@ -21,6 +21,7 @@ import {
   Dropzone,
   DatePicker,
   Modal,
+  Dropdown,
 } from './components';
 
 // options import
@@ -44,6 +45,7 @@ import {
   dropzoneViewerOptions,
   datePickerViewerOptions,
   modalViewerOptions,
+  dropdownViewerOptions,
 } from './components/viewerOptions';
 
 
@@ -69,6 +71,16 @@ const components = [
     options: modalViewerOptions,
     code: (
       <Modal />
+    ),
+  },
+  {
+    path: '/dropdown',
+    name: 'Dropdown',
+    options: dropdownViewerOptions,
+    code: (
+      <Dropdown>
+        <Button>Dropdown <Icon name="caret-down" color="ink" size="lg" /></Button>
+      </Dropdown>
     ),
   },
   {

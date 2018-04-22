@@ -14,41 +14,28 @@
  * Checkbox
  *----------------------------------------------------------------------------*/
 /*----------------------------------------------------------------------------*
- * modal
+ * dropdown
  *----------------------------------------------------------------------------*/
-.kit-modal {
-  display: none; }
-
-.kit-modal.kit-modal--on {
-  display: block; }
-
-.kit-modal__backdrop {
-  position: fixed;
-  z-index: 999;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(37, 40, 43, 0.6); }
-
-.kit-modal__panel {
-  padding: 25px;
+.kit-dropdown ul {
+  display: none;
+  z-index: 1;
   position: absolute;
-  width: 300px;
-  height: 300px;
-  left: 50%;
-  top: 50%;
-  margin-left: -150px;
-  margin-top: -150px;
-  z-index: 1000;
+  padding: 0;
+  margin: 0;
+  list-style: none;
   background: #FFFFFF;
   border: 1px solid #DFE2E3;
   box-shadow: 0 11px 21px 0 rgba(0, 0, 0, 0.3);
   border-radius: 3px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  padding: 5px 0; }
 
-.kit-modal__close {
-  display: block;
-  position: absolute;
-  top: 20px;
-  right: 15px; }
+.kit-dropdown li {
+  padding: 5px 25px;
+  cursor: pointer; }
+
+.kit-dropdown li:hover {
+  background: #F9F9F9; }
+
+ul.kit-dropdown__active {
+  display: block; }

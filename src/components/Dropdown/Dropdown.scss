@@ -1,0 +1,33 @@
+@import '../variables';
+
+/*----------------------------------------------------------------------------*
+ * dropdown
+ *----------------------------------------------------------------------------*/
+
+.kit-dropdown ul {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background: #FFFFFF;
+  border: 1px solid #DFE2E3;
+  box-shadow: 0 11px 21px 0 rgba(0,0,0,0.30);
+  border-radius: 3px;
+  box-sizing: border-box;
+  padding: 5px 0;
+}
+
+.kit-dropdown li {
+  padding: 5px 25px;
+  cursor: pointer;
+}
+
+.kit-dropdown li:hover {
+  background: #F9F9F9;
+}
+
+ul.kit-dropdown__active {
+    display: block;
+}
