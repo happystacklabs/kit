@@ -54,7 +54,7 @@ const defaultProps = {
 };
 
 
-function ChoiceList(props) {
+export function ChoiceList(props) {
   function handleChange(event) {
     if (props.onChange === null) { return; }
 

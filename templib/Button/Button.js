@@ -68,7 +68,7 @@ const defaultProps = {
 };
 
 
-function Button(props) {
+export function Button(props) {
   const buttonClassNames = classNames(
     {
       'kit-button--loading kit-button--disabled': props.loading,

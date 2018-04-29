@@ -29,7 +29,7 @@ const defaultProps = {
 };
 
 
-class DatePicker extends React.Component {
+export class DatePicker extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

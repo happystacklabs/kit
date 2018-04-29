@@ -25,7 +25,7 @@ const defaultProps = {
 };
 
 
-function Progress(props) {
+export function Progress(props) {
   let { progress } = props;
 
   // cap the progress value between 0 and 100

@@ -26,7 +26,7 @@ const defaultProps = {
 };
 
 
-function Thumbnail(props) {
+export function Thumbnail(props) {
   const thumbnailclassName = classNames(
     props.className,
     'kit-thumbnail',

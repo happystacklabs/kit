@@ -56,7 +56,7 @@ const defaultProps = {
 };
 
 
-function Checkbox(props) {
+export function Checkbox(props) {
   function handleChange() {
     if (props.onChange === null) { return; }
     props.onChange({ value: !props.checked, id: props.id });

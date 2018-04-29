@@ -75,7 +75,7 @@ const defaultProps = {
 };
 
 
-function Select(props) {
+export function Select(props) {
   function handleChange(event) {
     if (props.onChange === null) { return; }
     props.onChange({ value: event.target.value, name: props.name });

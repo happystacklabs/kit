@@ -51,7 +51,7 @@ const defaultProps = {
   multiple: false,
 };
 
-class Dropzone extends React.Component {
+export class Dropzone extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

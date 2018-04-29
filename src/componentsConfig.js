@@ -1,33 +1,29 @@
 import React from 'react';
 
 // components import
-import {
-  Text,
-  Button,
-  // Icon,
-  Select,
-  Switch,
-  TextInput,
-  Checkbox,
-  ChoiceList,
-  Spinner,
-  Paginator,
-  Tooltip,
-  Avatar,
-  Thumbnail,
-  ButtonGroup,
-  Skeleton,
-  Progress,
-  Dropzone,
-  DatePicker,
-  Modal,
-  Dropdown,
-} from './components';
+import Text from './components/Text/Text';
+import Button from './components/Button/Button';
+import Select from './components/Select/Select';
+import Switch from './components/Switch/Switch';
+import TextInput from './components/TextInput/TextInput';
+import Checkbox from './components/Checkbox/Checkbox';
+import ChoiceList from './components/ChoiceList/ChoiceList';
+import Spinner from './components/Spinner/Spinner';
+import Paginator from './components/Paginator/Paginator';
+import Avatar from './components/Avatar/Avatar';
+import Thumbnail from './components/Thumbnail/Thumbnail';
+import ButtonGroup from './components/ButtonGroup/ButtonGroup';
+import Skeleton from './components/Skeleton/Skeleton';
+import Progress from './components/Progress/Progress';
+import Dropzone from './components/Dropzone/Dropzone';
+import Modal from './components/Modal/Modal';
+import Dropdown from './components/Dropdown/Dropdown';
+import Tooltip from './components/Tooltip/Tooltip';
+import DatePicker from './components/DatePicker/DatePicker';
 
 // options import
 import {
   buttonViewerOptions,
-  // iconViewerOptions,
   selectViewerOptions,
   switchViewerOptions,
   textViewerOptions,
@@ -196,14 +192,6 @@ const components = [
       <Button />
     ),
   },
-  // {
-  //   path: '/icon',
-  //   name: 'Icon',
-  //   options: iconViewerOptions,
-  //   code: (
-  //     <Icon />
-  //   ),
-  // },
   {
     path: '/select',
     name: 'Select',

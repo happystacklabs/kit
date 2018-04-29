@@ -47,7 +47,7 @@ const defaultProps = {
 };
 
 
-function Avatar(props) {
+export function Avatar(props) {
   const avatarClassName = classNames(
     props.className,
     'kit-avatar',

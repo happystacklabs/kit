@@ -49,7 +49,7 @@ const defaultProps = {
 };
 
 
-function Text(props) {
+export function Text(props) {
   const Element = `${props.element}`;
 
   const classText = classNames(

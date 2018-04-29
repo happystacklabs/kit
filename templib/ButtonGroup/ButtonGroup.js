@@ -18,7 +18,7 @@ const defaultProps = {
 };
 
 
-function ButtonGroup(props) {
+export function ButtonGroup(props) {
   const buttonGroupClassName = classNames(
     { 'kit-button-group--segmented': props.segmented },
     'kit-button-group',

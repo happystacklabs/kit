@@ -40,7 +40,7 @@ const defaultProps = {
 };
 
 
-function Switch(props) {
+export function Switch(props) {
   function handleClick() {
     if (props.onClick === null) { return; }
     props.onClick({ value: !props.on, name: props.name });

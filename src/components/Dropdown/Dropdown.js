@@ -22,7 +22,7 @@ const defaultProps = {
 };
 
 
-class Dropdown extends React.Component {
+export class Dropdown extends React.Component {
   constructor() {
     super();
     this.state = { isOpen: false };
