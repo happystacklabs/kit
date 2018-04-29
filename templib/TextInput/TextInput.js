@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faSearch from '@fortawesome/fontawesome-free-solid/faSearch';
+import faExclamation from '@fortawesome/fontawesome-free-solid/faExclamation';
 import './TextInput.css';
 import Text from '../Text/Text';
-import Icon from '../Icon/Icon';
 
 
 export const type = ['email', 'text', 'number', 'password', 'search', 'url'];
@@ -13,7 +15,7 @@ function renderError(error) {
   if (!error) { return undefined; }
   return (
     <div className="kit-textinput__error-message">
-      <Icon name="exclamation" color="negative" className="kit-textinput__error-icon" />
+      <FontAwesomeIcon icon={faExclamation} className="kit-textinput__error-icon" />
       <Text color="negative" element="span" size="caption">{error}</Text>
     </div>
   );
@@ -61,7 +63,7 @@ function renderSearch(inputType) {
   if (inputType !== 'search') { return undefined; }
   return (
     <div className="kit-textinput__search" >
-      <Icon name="search" color="ink-light" size="sm" />
+      <FontAwesomeIcon icon={faSearch} size="sm" className="kit-textinput__search-icon" />
     </div>
   );
 }

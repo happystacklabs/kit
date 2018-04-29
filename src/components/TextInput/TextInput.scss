@@ -63,6 +63,7 @@
 .kit-textinput__error-icon {
   margin-right: 5px;
   text-align: left;
+  color: $negative;
 }
 
 .kit-textinput__input--error {
@@ -119,6 +120,10 @@
 
 .kit-textinput--search .kit-textinput__input:focus {
   padding-left: 29px;
+}
+
+.kit-textinput__search-icon {
+  color: $ink-light;
 }
 
 /*----------------------------------------------------------------------------*

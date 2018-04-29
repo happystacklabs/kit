@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import copy from 'copy-to-clipboard';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faClone from '@fortawesome/fontawesome-free-regular/faClone';
 import './ComponentViewer.css';
-import Icon from '../../components/Icon/Icon';
 import Button from '../../components/Button/Button';
 import Text from '../../components/Text/Text';
 
@@ -164,7 +165,7 @@ function ComponentViewerCode(props) {
       <div className="component-viewer__code-menu">
         <Text size="small" color="inkLight" className="component-viewer__item">React</Text>
         <Button onClick={onClickCopy} size="small" square >
-          <Icon name="clone" regular fixedWidth size="sm" />
+          <FontAwesomeIcon icon={faClone} fixedWidth size="sm" />
         </Button>
       </div>
       <Text element="span" size="regular" color="white" className="component-viewer__code-text" >

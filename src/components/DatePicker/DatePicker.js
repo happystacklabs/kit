@@ -4,7 +4,8 @@ import moment from 'moment';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import { formatDate, parseDate } from 'react-day-picker/moment';
 import 'react-day-picker/lib/style.css';
-import Icon from '../Icon/Icon';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faLongArrowAltRight from '@fortawesome/fontawesome-free-solid/faLongArrowAltRight';
 import './DatePicker.css';
 
 
@@ -89,7 +90,7 @@ class DatePicker extends React.Component {
       const { from, to } = this.state;
       const modifiers = { start: from, end: to };
       return (
-        <div className="datepicker__range datepicker__input">
+        <div className="kit-datepicker__range kit-datepicker__input">
           <DayPickerInput
             onDayChange={this.handleFromChange}
             value={this.state.from}
@@ -105,7 +106,7 @@ class DatePicker extends React.Component {
             numberOfMonths: 2,
           }}
           />
-          <Icon name="long-arrow-alt-right" color="ink" size="sm" />
+          <FontAwesomeIcon icon={faLongArrowAltRight} className="kit-datepicker__icon" size="sm" />
           <DayPickerInput
             onDayChange={this.handleToChange}
             value={this.state.to}
@@ -127,7 +128,7 @@ class DatePicker extends React.Component {
       );
     }
     return (
-      <div className="datepicker__input datepicker__singleinput">
+      <div className="kit-datepicker__input kit-datepicker__singleinput">
         <DayPickerInput
           onDayChange={this.handleChange}
           format="LL"

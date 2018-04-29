@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Icon from '../Icon/Icon';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faCloudUploadAlt from '@fortawesome/fontawesome-free-solid/faCloudUploadAlt';
 import Text from '../Text/Text';
 import './Dropzone.css';
 
@@ -10,7 +11,7 @@ function renderInner(state) {
   if (state.dragover) {
     return (
       <div>
-        <Icon name="cloud-upload-alt" color="positive" size="3x" />
+        <FontAwesomeIcon className="kit-dropzone__icon--positive" icon={faCloudUploadAlt} size="3x" />
         <Text className="kit-dropzone__text" element="span" size="body" color="positive">
           Drop file to upload
         </Text>
@@ -19,7 +20,7 @@ function renderInner(state) {
   } else if (state.error) {
     return (
       <div>
-        <Icon name="cloud-upload-alt" color="negative" size="3x" />
+        <FontAwesomeIcon icon={faCloudUploadAlt} className="kit-dropzone__icon--negative" size="3x" />
         <Text className="kit-dropzone__text" element="span" size="body" color="negative">
           Error: You selected multiple files. Upload another file.
         </Text>
@@ -28,7 +29,7 @@ function renderInner(state) {
   }
   return (
     <div>
-      <Icon name="cloud-upload-alt" color="main" size="3x" />
+      <FontAwesomeIcon icon={faCloudUploadAlt} className="kit-dropzone__icon--main" size="3x" />
       <Text className="kit-dropzone__text" element="span" size="body" color="ink-light">
         Drop and drop to upload or <span className="kit-dropzone__text-link">Browse file</span>
       </Text>

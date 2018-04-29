@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import './Dropdown.css';
-import Button from '../Button/Button';
 import Text from '../Text/Text';
-import Icon from '../Icon/Icon';
 
 
 const propTypes = {

@@ -62,3 +62,15 @@
 .kit-dropzone--error.kit-dropzone__container {
   border: 1px dashed $negative;
 }
+
+.kit-dropzone__icon--positive {
+  color: $positive;
+}
+
+.kit-dropzone__icon--negative {
+  color: $negative;
+}
+
+.kit-dropzone__icon--main {
+  color: $main;
+}

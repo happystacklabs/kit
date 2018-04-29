@@ -68,7 +68,8 @@
  *----------------------------------------------------------------------------*/
 .kit-textinput__error-icon {
   margin-right: 5px;
-  text-align: left; }
+  text-align: left;
+  color: #e03e30; }
 
 .kit-textinput__input--error {
   border: 1px solid #e03e30;
@@ -115,6 +116,9 @@
 
 .kit-textinput--search .kit-textinput__input:focus {
   padding-left: 29px; }
+
+.kit-textinput__search-icon {
+  color: #797d80; }
 
 /*----------------------------------------------------------------------------*
  * textArea

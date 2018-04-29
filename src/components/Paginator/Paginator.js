@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faChevronLeft from '@fortawesome/fontawesome-free-solid/faChevronLeft';
+import faChevronRight from '@fortawesome/fontawesome-free-solid/faChevronRight';
 import './Paginator.css';
 import Button from '../Button/Button';
-import Icon from '../Icon/Icon';
 
 
 const propTypes = {
@@ -48,11 +50,7 @@ function Paginator(props) {
           plain={props.plain}
           className="kit-paginator__left-button"
         >
-          <Icon
-            className="kit-paginator__left-icon"
-            name="chevron-left"
-            color="main"
-          />
+          <FontAwesomeIcon icon={faChevronLeft} className="kit-paginator__left-icon" />
         </Button>
       </div>
       <div className={nextClassName}>
@@ -63,11 +61,7 @@ function Paginator(props) {
           plain={props.plain}
           className="kit-paginator__right-button"
         >
-          <Icon
-            className="kit-paginator__right-icon"
-            name="chevron-right"
-            color="main"
-          />
+          <FontAwesomeIcon icon={faChevronRight} className="kit-paginator__right-icon" />
         </Button>
       </div>
     </nav>

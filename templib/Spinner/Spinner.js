@@ -1,14 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import Icon from '../Icon/Icon';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faSpinner from '@fortawesome/fontawesome-free-solid/faSpinner';
 import './Spinner.css';
 
-
-export const names = [
-  'loader1',
-  'loader2',
-];
 
 export const colors = ['ink', 'ink-light', 'positive', 'negative', 'main', 'white'];
 
@@ -43,7 +39,7 @@ function Spinner(props) {
 
   return (
     <div className={spinnerClassName}>
-      <Icon name="spinner" color={props.color} size="sm" spin />
+      <FontAwesomeIcon icon={faSpinner} size="sm" className={`kit-spinner--${props.color}`} pulse />
     </div>
   );
 }

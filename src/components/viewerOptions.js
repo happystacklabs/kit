@@ -1,5 +1,5 @@
 export { default as textViewerOptions } from './Text/viewerOptions';
-export { default as iconViewerOptions } from './Icon/viewerOptions';
+// export { default as iconViewerOptions } from './Icon/viewerOptions';
 export { default as textInputViewerOptions } from './TextInput/viewerOptions';
 export { default as selectViewerOptions } from './Select/viewerOptions';
 export { default as buttonViewerOptions } from './Button/viewerOptions';

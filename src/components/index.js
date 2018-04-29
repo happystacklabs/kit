@@ -8,7 +8,7 @@ export { default as Skeleton } from './Skeleton/Skeleton';
 export { default as Select } from './Select/Select';
 export { default as Progress } from './Progress/Progress';
 export { default as Paginator } from './Paginator/Paginator';
-export { default as Icon } from './Icon/Icon';
+// export { default as Icon } from './Icon/Icon';
 export { default as ChoiceList } from './ChoiceList/ChoiceList';
 export { default as Checkbox } from './Checkbox/Checkbox';
 export { default as ButtonGroup } from './ButtonGroup/ButtonGroup';

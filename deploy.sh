@@ -21,18 +21,18 @@ subtitle='Deploy'
 ################################################################################
 # Task 1
 ################################################################################
-task1() {
-  CI=true npm test
-}
-tasks[0]='Test suite'
-tasksCommand[0]="task1"
+# task1() {
+#   CI=true npm test
+# }
+# tasks[0]='Test suite'
+# tasksCommand[0]="task1"
 
 
 ################################################################################
 # Task 2
 ################################################################################
-tasks[1]='Linter'
-tasksCommand[1]='npm run lint'
+# tasks[1]='Linter'
+# tasksCommand[1]='npm run lint'
 
 
 ################################################################################
@@ -70,38 +70,38 @@ task4() {
 	rm "README.md.tmp"
 
 }
-tasks[2]='Bump version'
-tasksCommand[2]="task4"
+tasks[0]='Bump version'
+tasksCommand[0]="task4"
 
 
 ################################################################################
 # Task 5
 ################################################################################
-tasks[3]='Run lib'
-tasksCommand[3]='npm run lib'
+tasks[1]='Run lib'
+tasksCommand[1]='npm run lib'
 
 ################################################################################
 # Task 6
 ################################################################################
-tasks[4]='Run build'
-tasksCommand[4]='npm run build'
+tasks[2]='Run build'
+tasksCommand[2]='npm run build'
 
 ################################################################################
 # Task 7
 ################################################################################
-tasks[5]='Run 200.html'
-tasksCommand[5]='cp -rf ./build/index.html ./build/200.html'
+tasks[3]='Run 200.html'
+tasksCommand[3]='cp -rf ./build/index.html ./build/200.html'
 
 
 ################################################################################
 # Task 8
 ################################################################################
-tasks[6]='Deploy to Surge'
-tasksCommand[6]='surge ./build  kit.happystack.io'
+tasks[4]='Deploy to Surge'
+tasksCommand[4]='surge ./build  kit.happystack.io'
 
 
 ################################################################################
 # Task 9
 ################################################################################
-tasks[7]='Deploy package to NPM'
-tasksCommand[7]='npm publish'
+tasks[5]='Deploy package to NPM'
+tasksCommand[5]='npm publish'

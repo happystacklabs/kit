@@ -2,10 +2,12 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faChevronUp from '@fortawesome/fontawesome-free-solid/faChevronUp';
+import faChevronDown from '@fortawesome/fontawesome-free-solid/faChevronDown';
 import './Navigation.css';
 import Text from '../../components/Text/Text';
 import Button from '../../components/Button/Button';
-import Icon from '../../components/Icon/Icon';
 import Branding from '../Branding';
 
 
@@ -35,7 +37,11 @@ class Navigation extends React.Component {
         <Branding name="Kit" url="https://github.com/happystacklabs/kit" />
         <div className="navigation__mobile-menu">
           <Button className="navigation__mobile-button" plain onClick={this.mobileToggle} >
-            <Icon name={this.state.open ? 'chevron-up' : 'chevron-down'} />
+            {this.state.open ? (
+              <FontAwesomeIcon icon={faChevronUp} />
+            ) : (
+              <FontAwesomeIcon icon={faChevronDown} />
+            )}
           </Button>
         </div>
         <div className="navigation__content">

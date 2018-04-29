@@ -23,6 +23,10 @@
 .kit-paginator__left-button {
   border-radius: 3px 0 0 3px; }
 
+.kit-paginator__right-icon,
+.kit-paginator__left-icon {
+  color: #5c6ac4; }
+
 /*----------------------------------------------------------------------------*
  * right
  *----------------------------------------------------------------------------*/

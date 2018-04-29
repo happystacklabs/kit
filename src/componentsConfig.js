@@ -4,7 +4,7 @@ import React from 'react';
 import {
   Text,
   Button,
-  Icon,
+  // Icon,
   Select,
   Switch,
   TextInput,
@@ -27,7 +27,7 @@ import {
 // options import
 import {
   buttonViewerOptions,
-  iconViewerOptions,
+  // iconViewerOptions,
   selectViewerOptions,
   switchViewerOptions,
   textViewerOptions,
@@ -79,7 +79,7 @@ const components = [
     options: dropdownViewerOptions,
     code: (
       <Dropdown>
-        <Button>Dropdown <Icon name="caret-down" color="ink" size="lg" /></Button>
+        <Button>Dropdown</Button>
       </Dropdown>
     ),
   },
@@ -196,14 +196,14 @@ const components = [
       <Button />
     ),
   },
-  {
-    path: '/icon',
-    name: 'Icon',
-    options: iconViewerOptions,
-    code: (
-      <Icon />
-    ),
-  },
+  // {
+  //   path: '/icon',
+  //   name: 'Icon',
+  //   options: iconViewerOptions,
+  //   code: (
+  //     <Icon />
+  //   ),
+  // },
   {
     path: '/select',
     name: 'Select',

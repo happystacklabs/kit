@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import faAngleDown from '@fortawesome/fontawesome-free-solid/faAngleDown';
 import './Select.css';
-import Icon from '../Icon/Icon';
 import Text from '../Text/Text';
 
 
@@ -97,10 +98,7 @@ function Select(props) {
           {renderOptions(props.options)}
         </select>
         <div className="kit-select__arrow">
-          <Icon
-            name="angle-down"
-            color="ink-light"
-          />
+          <FontAwesomeIcon icon={faAngleDown} className="kit-select__icon" fixedWidth />
         </div>
       </div>
       {renderHelpText(props.helpText)}

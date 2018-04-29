@@ -64,3 +64,12 @@
 
 .kit-dropzone--error.kit-dropzone__container {
   border: 1px dashed #e03e30; }
+
+.kit-dropzone__icon--positive {
+  color: #58be8c; }
+
+.kit-dropzone__icon--negative {
+  color: #e03e30; }
+
+.kit-dropzone__icon--main {
+  color: #5c6ac4; }
