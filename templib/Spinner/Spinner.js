@@ -30,7 +30,7 @@ const defaultProps = {
 };
 
 
-export function Spinner(props) {
+function Spinner(props) {
   const spinnerClassName = classNames(
     props.className,
     'kit-spinner',

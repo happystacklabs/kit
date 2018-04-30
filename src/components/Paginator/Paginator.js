@@ -30,7 +30,7 @@ const defaultProps = {
 };
 
 
-export function Paginator(props) {
+function Paginator(props) {
   const previousClassName = classNames(
     { 'kit-paginator__left--disabled': props.disablePrevious },
     'kit-paginator__left',

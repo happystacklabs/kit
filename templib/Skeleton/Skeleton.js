@@ -29,7 +29,7 @@ const defaultProps = {
 };
 
 
-export function Skeleton(props) {
+function Skeleton(props) {
   return (
     <div className={props.className}>
       {renderSkeleton(props.display, props.lines)}

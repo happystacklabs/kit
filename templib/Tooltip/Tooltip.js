@@ -33,7 +33,7 @@ const defaultProps = {
 };
 
 
-export class Tooltip extends React.Component {
+class Tooltip extends React.Component {
   state = {
     childPosition: {},
     position: {},

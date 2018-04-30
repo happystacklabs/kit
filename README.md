@@ -2,7 +2,7 @@
 
 # Happystack Kit
 
-![Version](https://img.shields.io/badge/Version-0.9.0-green.svg?style=flat)
+![Version](https://img.shields.io/badge/Version-0.9.1-green.svg?style=flat)
 ![license](https://img.shields.io/github/license/mashape/apistatus.svg)
 
 

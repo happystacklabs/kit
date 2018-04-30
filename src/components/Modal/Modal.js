@@ -23,7 +23,7 @@ const defaultProps = {
 };
 
 
-export function Modal(props) {
+function Modal(props) {
   function handleClick() {
     if (props.closeModal === null) { return; }
     props.closeModal();

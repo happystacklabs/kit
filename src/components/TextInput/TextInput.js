@@ -112,7 +112,7 @@ const defaultProps = {
 };
 
 
-export function TextInput(props) {
+function TextInput(props) {
   function handleChange(event) {
     if (props.onChange === null) { return; }
     props.onChange({ name: props.name, value: event.target.value });
