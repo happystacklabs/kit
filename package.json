@@ -1,6 +1,6 @@
 {
   "name": "@happystack/kit",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "private": false,
   "author": "Heinrich Tremblay",
   "homepage": "https://kit.happystack.io",
@@ -16,7 +16,6 @@
     "component library"
   ],
   "license": "MIT",
-  "main": "lib/index.js",
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.2",
     "@fortawesome/fontawesome-free-brands": "^5.0.6",
